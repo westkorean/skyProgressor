@@ -17,24 +17,6 @@
       "body": "eaweaeawe",
       "author": "yoshi",
       "id": "QsTHr99Flps"
-    },
-    {
-      "title": "aweaw",
-      "body": "aweawewawa",
-      "author": "mario",
-      "id": "bXpfjyV3CWw"
-    },
-    {
-      "title": "aweaw",
-      "body": "aweawewawa",
-      "author": "yoshi",
-      "id": "dOLUi9xPSP4"
-    },
-    {
-      "title": "eres",
-      "body": "erserres",
-      "author": "mario",
-      "id": "H8ZGQNN1Yr4"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
