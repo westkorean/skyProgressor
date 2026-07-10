@@ -9,11 +9,11 @@ const Navbar = () => {
                     borderRadius: "8px"
                 }}>Home</a>
                 
-                <a href="/about" style={{
+                <a href="/create" style={{
                     color: "white",
                     backgroundColor: "#f1356d",
                     borderRadius: "8px"
-                }}>About</a>
+                }}>Create</a>
             </div>
         </nav>
     );
