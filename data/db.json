@@ -1,16 +1,41 @@
 {
-  "blogs":[
+  "blogs": [
     {
-      "title":"My First Blog",
-      "body":"Why do we use it?\nIt is a long established fact that a reader will be distracted ",
-      "author":"mario",
-      "id":1
+      "title": "My First Blog",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted ",
+      "author": "mario",
+      "id": "1"
     },
     {
-      "title":"Opening Party",
-      "body":"Why do we use it?\nIt is a long established fact that a reader will be distracted ",
-      "author":"yoshi",
-      "id":2
+      "title": "Opening Party",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted ",
+      "author": "yoshi",
+      "id": "2"
+    },
+    {
+      "title": "Asadadada",
+      "body": "eaweaeawe",
+      "author": "yoshi",
+      "id": "QsTHr99Flps"
+    },
+    {
+      "title": "aweaw",
+      "body": "aweawewawa",
+      "author": "mario",
+      "id": "bXpfjyV3CWw"
+    },
+    {
+      "title": "aweaw",
+      "body": "aweawewawa",
+      "author": "yoshi",
+      "id": "dOLUi9xPSP4"
+    },
+    {
+      "title": "eres",
+      "body": "erserres",
+      "author": "mario",
+      "id": "H8ZGQNN1Yr4"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
