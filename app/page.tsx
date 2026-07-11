@@ -1,6 +1,13 @@
 "use client";
 
 import { useState } from 'react';
+import { parseSkills } from '@/lib/parseProfile';
+import mockProfile from '@/lib/mockProfile.json';
+
+
+// inside handleSearch or a test button:
+const member = Object.values(mockProfile.profile.members)[0];
+console.log(parseSkills(member));
 
 export default function Home() {
   const [ign, setIgn] = useState('');

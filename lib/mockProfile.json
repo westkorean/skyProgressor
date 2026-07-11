@@ -1,0 +1,33 @@
+{
+  "success": true,
+  "profile": {
+    "profile_id": "83eeafe88f68419a8192406efe69fd86",
+    "cute_name": "Apple",
+    "game_mode": "ironman",
+    "members": {
+      "d8820c66657948a3be263d91361c471c": {
+        "last_save": 1783863120000,
+        "coin_purse": 4503948.56,
+        "experience_skill_mining": 45000,
+        "experience_skill_combat": 120000,
+        "experience_skill_farming": 8000,
+        "experience_skill_foraging": 3000,
+        "experience_skill_fishing": 15000,
+        "experience_skill_enchanting": 25000,
+        "experience_skill_alchemy": 5000,
+        "experience_skill_taming": 2000,
+        "slayer_bosses": {
+          "zombie": {
+            "xp": 12540,
+            "claimed_levels": { "level_1": true, "level_2": true }
+          },
+          "spider": { "xp": 520 }
+        },
+        "stats": {
+          "deaths": 124,
+          "highest_crit_damage": 542
+        }
+      }
+    }
+  }
+}
