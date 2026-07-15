@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from 'react';
+import SkillBar from '@/components/SkillBar';
+import { parseSkills } from '@/lib/parseProfile';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
@@ -22,7 +24,16 @@ export default function Home() {
       const profileRes = await fetch(`/api/profile?uuid=${uuidData.id}`);
       const profileData = await profileRes.json();
 
-      setResult(profileData);
+      if (!profileData.success) {
+        throw new Error(profileData.cause || 'Failed to fetch profile');
+      }
+
+      const selectedProfile = profileData.profiles.find((p: any) => p.selected);
+      const member = selectedProfile.members[uuidData.id];
+
+      const skills = parseSkills(member);
+
+      setResult({ skills });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
@@ -42,7 +53,14 @@ export default function Home() {
 
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {result && <pre>{JSON.stringify(result, null, 2)}</pre>}
+
+      {result?.skills && (
+        <div style={{ marginTop: '2rem' }}>
+          {result.skills.map((s: any) => (
+            <SkillBar key={s.skill} {...s} />
+          ))}
+        </div>
+      )}
     </main>
   );
 }
