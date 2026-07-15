@@ -27,13 +27,14 @@ function calculateSkillLevel(xp: number, maxLevel: number): SkillProgress['level
 }
 
 export function parseSkills(member: any): SkillProgress[] {
-  const skillKeys = Object.keys(member).filter((key) =>
-    key.startsWith('experience_skill_')
+  const experience = member?.player_data?.experience ?? {};
+  const skillKeys = Object.keys(experience).filter((key) =>
+    key.startsWith('SKILL_')
   );
 
   return skillKeys.map((key) => {
-    const skillName = key.replace('experience_skill_', '');
-    const xp = member[key];
+    const skillName = key.replace('SKILL_', '').toLowerCase();
+    const xp = experience[key];
     const maxLevel = SKILL_MAX_LEVELS[skillName] ?? 50;
     const { level, xpForNextLevel } = calculateSkillLevel(xp, maxLevel);
 
