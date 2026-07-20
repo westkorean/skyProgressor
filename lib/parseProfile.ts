@@ -1,4 +1,4 @@
-import { SKILL_XP_TABLE, SKILL_MAX_LEVELS, CATACOMBS_XP_TABLE, CATACOMBS_MAX_LEVEL, SLAYER_XP_TABLE } from './xpTables';
+import { SKILL_XP_TABLE, SKILL_MAX_LEVELS, CATACOMBS_XP_TABLE, CATACOMBS_MAX_LEVEL, SLAYER_XP_TABLE, TOTAL_FAIRY_SOULS } from './xpTables';
 
 export interface SkillProgress {
   skill: string;
@@ -21,6 +21,13 @@ export interface CatacombsProgress {
   currentXp: number;
   xpForNextLevel: number | null;
   progressPercent: number;
+}
+
+export interface FairySoulProgress {
+  collected: number;
+  total: number;
+  progressPercent: number;
+  remaining: number;
 }
 
 function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
@@ -105,4 +112,19 @@ export function parseCatacombs(member: any): CatacombsProgress {
   );
 
   return { level, currentXp: xp, xpForNextLevel, progressPercent };
+}
+
+export function parseFairySouls(member: any): FairySoulProgress {
+  const collected = member?.fairy_soul?.total_collected ?? 0;
+  const progressPercent = Math.min(
+    100,
+    Math.round((collected / TOTAL_FAIRY_SOULS) * 100)
+  );
+
+  return {
+    collected,
+    total: TOTAL_FAIRY_SOULS,
+    progressPercent,
+    remaining: Math.max(0, TOTAL_FAIRY_SOULS - collected),
+  };
 }

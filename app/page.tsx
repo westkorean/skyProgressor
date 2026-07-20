@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import SkillBar from '@/components/SkillBar';
-import { parseSkills, parseSlayers, parseCatacombs } from '@/lib/parseProfile';
+import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls  } from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
 import SuggestionCard from '@/components/SuggestionCard';
 
@@ -38,9 +38,10 @@ export default function Home() {
       const skills = parseSkills(member);
       const slayers = parseSlayers(member);
       const catacombs = parseCatacombs(member);
+      const fairySouls = parseFairySouls(member);
 
       const suggestions = getTopSuggestions(skills, slayers, catacombs);
-      setResult({ skills, slayers, catacombs, suggestions });
+      setResult({ skills, slayers, catacombs, fairySouls, suggestions });
 
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
@@ -64,6 +65,25 @@ export default function Home() {
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
+      {result?.fairySouls && (
+        <div style={{ marginTop: '2rem' }}>
+          <h2>Fairy Souls</h2>
+          <div>
+            {result.fairySouls.collected} / {result.fairySouls.total} collected
+            ({result.fairySouls.progressPercent}%)
+          </div>
+          <div style={{ background: '#333', borderRadius: '4px', height: '12px', marginTop: '0.5rem' }}>
+            <div
+              style={{
+                width: `${result.fairySouls.progressPercent}%`,
+                background: '#a78bfa',
+                height: '100%',
+                borderRadius: '4px',
+              }}
+            />
+          </div>
+        </div>
+      )}
       {result?.suggestions && (
         <div style={{ marginTop: '2rem' }}>
           <h2>Focus On Next</h2>
