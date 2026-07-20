@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import SkillBar from '@/components/SkillBar';
 import { parseSkills, parseSlayers, parseCatacombs } from '@/lib/parseProfile';
+import { getTopSuggestions } from '@/lib/getSuggestions';
+import SuggestionCard from '@/components/SuggestionCard';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  
 
   const handleSearch = async () => {
     setLoading(true);
@@ -36,7 +39,9 @@ export default function Home() {
       const slayers = parseSlayers(member);
       const catacombs = parseCatacombs(member);
 
-      setResult({ skills, slayers, catacombs });
+      const suggestions = getTopSuggestions(skills, slayers, catacombs);
+      setResult({ skills, slayers, catacombs, suggestions });
+
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
@@ -58,6 +63,15 @@ export default function Home() {
 
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {result?.suggestions && (
+        <div style={{ marginTop: '2rem' }}>
+          <h2>Focus On Next</h2>
+          {result.suggestions.map((s: any, i: number) => (
+            <SuggestionCard key={i} suggestion={s} />
+          ))}
+        </div>
+      )}
 
       {result?.skills && (
         <div style={{ marginTop: '2rem' }}>
