@@ -39,3 +39,5 @@ export const CATACOMBS_XP_TABLE: number[] = [
 ];
 
 export const CATACOMBS_MAX_LEVEL = 50;
+
+export const TOTAL_FAIRY_SOULS = 267; //RECHECK PERIODICALLY
