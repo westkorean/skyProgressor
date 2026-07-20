@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import SkillBar from '@/components/SkillBar';
-import { parseSkills } from '@/lib/parseProfile';
+import { parseSkills, parseSlayers, parseCatacombs } from '@/lib/parseProfile';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
@@ -14,6 +14,7 @@ export default function Home() {
     setLoading(true);
     setError(null);
     setResult(null);
+
 
     try {
       const uuidRes = await fetch(`/api/uuid?ign=${ign}`);
@@ -32,14 +33,18 @@ export default function Home() {
       const member = selectedProfile.members[uuidData.id];
 
       const skills = parseSkills(member);
+      const slayers = parseSlayers(member);
+      const catacombs = parseCatacombs(member);
 
-      setResult({ skills });
+      setResult({ skills, slayers, catacombs });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setLoading(false);
     }
   };
+
+
 
   return (
     <main style={{ padding: '2rem' }}>
@@ -59,6 +64,21 @@ export default function Home() {
           {result.skills.map((s: any) => (
             <SkillBar key={s.skill} {...s} />
           ))}
+        </div>
+      )}
+      {result?.slayers && (
+        <div style={{ marginTop: '2rem' }}>
+          <h2>Slayers</h2>
+          {result.slayers.map((s: any) => (
+            <SkillBar key={s.slayer} skill={s.slayer} {...s} />
+          ))}
+        </div>
+      )}
+
+      {result?.catacombs && (
+        <div style={{ marginTop: '2rem' }}>
+          <h2>Catacombs</h2>
+          <SkillBar skill="catacombs" {...result.catacombs} />
         </div>
       )}
     </main>

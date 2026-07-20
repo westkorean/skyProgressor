@@ -1,4 +1,4 @@
-import { SKILL_XP_TABLE, SKILL_MAX_LEVELS } from './xpTables';
+import { SKILL_XP_TABLE, SKILL_MAX_LEVELS, CATACOMBS_XP_TABLE, CATACOMBS_MAX_LEVEL, SLAYER_XP_TABLE } from './xpTables';
 
 export interface SkillProgress {
   skill: string;
@@ -8,22 +8,45 @@ export interface SkillProgress {
   progressPercent: number;
 }
 
-function calculateSkillLevel(xp: number, maxLevel: number): SkillProgress['level'] extends never ? never : {
+export interface SlayerProgress {
+  slayer: string;
   level: number;
-  xpIntoLevel: number;
+  currentXp: number;
   xpForNextLevel: number | null;
-} {
+  progressPercent: number;
+}
+
+export interface CatacombsProgress {
+  level: number;
+  currentXp: number;
+  xpForNextLevel: number | null;
+  progressPercent: number;
+}
+
+function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   let level = 0;
   for (let i = 1; i <= maxLevel; i++) {
-    if (xp >= SKILL_XP_TABLE[i]) {
+    if (xp >= xpTable[i]) {
       level = i;
     } else {
       break;
     }
   }
-  const xpForNextLevel = level < maxLevel ? SKILL_XP_TABLE[level + 1] : null;
-  const xpIntoLevel = xp - SKILL_XP_TABLE[level];
-  return { level, xpIntoLevel, xpForNextLevel };
+
+  const currentThreshold = xpTable[level] ?? 0;
+  const nextThreshold = level < maxLevel ? xpTable[level + 1] : null;
+
+  const progressPercent =
+    nextThreshold !== null
+      ? Math.min(
+          100,
+          Math.round(
+            ((xp - currentThreshold) / (nextThreshold - currentThreshold)) * 100
+          )
+        )
+      : 100;
+
+  return { level, xpForNextLevel: nextThreshold, progressPercent };
 }
 
 export function parseSkills(member: any): SkillProgress[] {
@@ -36,16 +59,11 @@ export function parseSkills(member: any): SkillProgress[] {
     const skillName = key.replace('SKILL_', '').toLowerCase();
     const xp = experience[key];
     const maxLevel = SKILL_MAX_LEVELS[skillName] ?? 50;
-    const { level, xpForNextLevel } = calculateSkillLevel(xp, maxLevel);
-
-    const currentThreshold = SKILL_XP_TABLE[level];
-    const nextThreshold = xpForNextLevel ?? currentThreshold;
-    const progressPercent =
-      xpForNextLevel !== null
-        ? Math.round(
-            ((xp - currentThreshold) / (nextThreshold - currentThreshold)) * 100
-          )
-        : 100;
+    const { level, xpForNextLevel, progressPercent } = calculateLevel(
+      xp,
+      SKILL_XP_TABLE,
+      maxLevel
+    );
 
     return {
       skill: skillName,
@@ -55,4 +73,36 @@ export function parseSkills(member: any): SkillProgress[] {
       progressPercent,
     };
   });
+}
+
+export function parseSlayers(member: any): SlayerProgress[] {
+  const bosses = member?.slayer?.slayer_bosses ?? {};
+
+  return Object.keys(bosses).map((slayerName) => {
+    const xp = bosses[slayerName]?.xp ?? 0;
+    const { level, xpForNextLevel, progressPercent } = calculateLevel(
+      xp,
+      SLAYER_XP_TABLE,
+      9
+    );
+
+    return {
+      slayer: slayerName,
+      level,
+      currentXp: xp,
+      xpForNextLevel,
+      progressPercent,
+    };
+  });
+}
+
+export function parseCatacombs(member: any): CatacombsProgress {
+  const xp = member?.dungeons?.dungeon_types?.catacombs?.experience ?? 0;
+  const { level, xpForNextLevel, progressPercent } = calculateLevel(
+    xp,
+    CATACOMBS_XP_TABLE,
+    CATACOMBS_MAX_LEVEL
+  );
+
+  return { level, currentXp: xp, xpForNextLevel, progressPercent };
 }
