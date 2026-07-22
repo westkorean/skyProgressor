@@ -2,35 +2,29 @@
 
 import { useState } from 'react';
 import SkillBar from '@/components/SkillBar';
-import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls  } from '@/lib/parseProfile';
-import { getTopSuggestions } from '@/lib/getSuggestions';
 import SuggestionCard from '@/components/SuggestionCard';
+import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls } from '@/lib/parseProfile';
+import { getTopSuggestions } from '@/lib/getSuggestions';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
   const [result, setResult] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  
 
   const handleSearch = async () => {
     setLoading(true);
     setError(null);
     setResult(null);
 
-
     try {
       const uuidRes = await fetch(`/api/uuid?ign=${ign}`);
       const uuidData = await uuidRes.json();
-
       if (!uuidRes.ok) throw new Error(uuidData.error);
 
       const profileRes = await fetch(`/api/profile?uuid=${uuidData.id}`);
       const profileData = await profileRes.json();
-
-      if (!profileData.success) {
-        throw new Error(profileData.cause || 'Failed to fetch profile');
-      }
+      if (!profileData.success) throw new Error(profileData.cause || 'Failed to fetch profile');
 
       const selectedProfile = profileData.profiles.find((p: any) => p.selected);
       const member = selectedProfile.members[uuidData.id];
@@ -39,10 +33,9 @@ export default function Home() {
       const slayers = parseSlayers(member);
       const catacombs = parseCatacombs(member);
       const fairySouls = parseFairySouls(member);
-
       const suggestions = getTopSuggestions(skills, slayers, catacombs);
-      setResult({ skills, slayers, catacombs, fairySouls, suggestions });
 
+      setResult({ skills, slayers, catacombs, fairySouls, suggestions });
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
@@ -50,71 +43,78 @@ export default function Home() {
     }
   };
 
-
-
   return (
-    <main style={{ padding: '2rem' }}>
-      <h1>SkyProgressor</h1>
-      <input
-        value={ign}
-        onChange={(e) => setIgn(e.target.value)}
-        placeholder="Enter your IGN"
-      />
-      <button onClick={handleSearch}>Search</button>
+    <main className="min-h-screen bg-neutral-950 text-neutral-100 px-4 py-10">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-3xl font-bold mb-6">SkyProgressor</h1>
 
-      {loading && <p>Loading...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+        <div className="flex gap-2 mb-8">
+          <input
+            value={ign}
+            onChange={(e) => setIgn(e.target.value)}
+            placeholder="Enter your IGN"
+            className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:border-emerald-500"
+          />
+          <button
+            onClick={handleSearch}
+            className="bg-emerald-600 hover:bg-emerald-500 transition-colors px-5 py-2 rounded-lg font-medium"
+          >
+            Search
+          </button>
+        </div>
 
-      {result?.fairySouls && (
-        <div style={{ marginTop: '2rem' }}>
-          <h2>Fairy Souls</h2>
-          <div>
-            {result.fairySouls.collected} / {result.fairySouls.total} collected
-            ({result.fairySouls.progressPercent}%)
-          </div>
-          <div style={{ background: '#333', borderRadius: '4px', height: '12px', marginTop: '0.5rem' }}>
-            <div
-              style={{
-                width: `${result.fairySouls.progressPercent}%`,
-                background: '#a78bfa',
-                height: '100%',
-                borderRadius: '4px',
-              }}
-            />
-          </div>
-        </div>
-      )}
-      {result?.suggestions && (
-        <div style={{ marginTop: '2rem' }}>
-          <h2>Focus On Next</h2>
-          {result.suggestions.map((s: any, i: number) => (
-            <SuggestionCard key={i} suggestion={s} />
-          ))}
-        </div>
-      )}
+        {loading && <p className="text-neutral-400">Loading...</p>}
+        {error && <p className="text-red-400">{error}</p>}
 
-      {result?.skills && (
-        <div style={{ marginTop: '2rem' }}>
-          {result.skills.map((s: any) => (
-            <SkillBar key={s.skill} {...s} />
-          ))}
-        </div>
-      )}
-      {result?.slayers && (
-        <div style={{ marginTop: '2rem' }}>
-          <h2>Slayers</h2>
-          {result.slayers.map((s: any) => (
-            <SkillBar key={s.slayer} skill={s.slayer} {...s} />
-          ))}
-        </div>
-      )}
+        {result?.suggestions && (
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold mb-3">Focus On Next</h2>
+            {result.suggestions.map((s: any, i: number) => (
+              <SuggestionCard key={i} suggestion={s} />
+            ))}
+          </section>
+        )}
 
-      {result?.catacombs && (
-        <div style={{ marginTop: '2rem' }}>
-          <h2>Catacombs</h2>
-          <SkillBar skill="catacombs" {...result.catacombs} />
-        </div>
-      )}
+        {result?.skills && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Skills</h2>
+            {result.skills.map((s: any) => (
+              <SkillBar key={s.skill} {...s} />
+            ))}
+          </section>
+        )}
+
+        {result?.slayers && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Slayers</h2>
+            {result.slayers.map((s: any) => (
+              <SkillBar key={s.slayer} skill={s.slayer} {...s} />
+            ))}
+          </section>
+        )}
+
+        {result?.catacombs && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Catacombs</h2>
+            <SkillBar skill="catacombs" {...result.catacombs} />
+          </section>
+        )}
+
+        {result?.fairySouls && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Fairy Souls</h2>
+            <div className="text-neutral-300 mb-2">
+              {result.fairySouls.collected} / {result.fairySouls.total} collected ({result.fairySouls.progressPercent}%)
+            </div>
+            <div className="bg-neutral-800 rounded-full h-3 overflow-hidden">
+              <div
+                className="bg-purple-500 h-full"
+                style={{ width: `${result.fairySouls.progressPercent}%` }}
+              />
+            </div>
+          </section>
+        )}
+      </div>
     </main>
   );
 }
