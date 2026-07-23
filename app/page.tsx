@@ -3,8 +3,11 @@
 import { useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
 import SuggestionCard from '@/components/SuggestionCard';
-import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls } from '@/lib/parseProfile';
+import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls, parseSkyblockLevel  } from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
+import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
+import SkyblockLevelCard from '@/components/SkyblockLevelCard';
+import ChatBox from '@/components/ChatBox';
 
 
 export default function Home() {
@@ -85,6 +88,8 @@ export default function Home() {
     const catacombs = parseCatacombs(member);
     const fairySouls = parseFairySouls(member);
     const suggestions = getTopSuggestions(skills, slayers, catacombs);
+    const skyblockLevel = parseSkyblockLevel(member);
+    const levelRecommendations = getSkyblockLevelRecommendations(member, slayers);
 
     const memberUuids = Object.keys(profile.members);
     const memberNames = await Promise.all(
@@ -110,6 +115,8 @@ export default function Home() {
       catacombs,
       fairySouls,
       suggestions,
+      skyblockLevel,
+      levelRecommendations,
       profileName: profile.cute_name,
       coopMembers: memberNames,
     });
@@ -190,6 +197,27 @@ export default function Home() {
               <SuggestionCard key={i} suggestion={s} />
             ))}
           </section>
+        )}
+
+
+        {result?.skyblockLevel && (
+          <SkyblockLevelCard
+            level={result.skyblockLevel.level}
+            progressPercent={result.skyblockLevel.progressPercent}
+            recommendations={result.levelRecommendations}
+          />
+        )}
+
+        {result && (
+          <ChatBox
+            playerData={{
+              skyblockLevel: result.skyblockLevel,
+              skills: result.skills,
+              slayers: result.slayers,
+              catacombs: result.catacombs,
+              fairySouls: result.fairySouls,
+            }}
+          />
         )}
 
         {result?.skills && (

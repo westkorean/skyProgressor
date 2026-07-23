@@ -128,3 +128,17 @@ export function parseFairySouls(member: any): FairySoulProgress {
     remaining: Math.max(0, TOTAL_FAIRY_SOULS - collected),
   };
 }
+
+export interface SkyblockLevelProgress {
+  level: number;
+  progressPercent: number;
+  currentXp: number;
+}
+
+export function parseSkyblockLevel(member: any): SkyblockLevelProgress {
+  const xp = member?.leveling?.experience ?? 0;
+  const level = Math.floor(xp / 100);
+  const progressPercent = Math.round(xp % 100);
+
+  return { level, progressPercent, currentXp: xp };
+}
