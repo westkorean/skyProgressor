@@ -1,71 +1,85 @@
-import { NextRequest, NextResponse } from 'next/server';
-import OpenAI from 'openai';
+import { streamText, convertToModelMessages  } from 'ai';
+import { createOpenAI } from '@ai-sdk/openai';
 
-const groq = new OpenAI({
+const groq = createOpenAI({
   apiKey: process.env.GROQ_API_KEY,
   baseURL: 'https://api.groq.com/openai/v1',
 });
 
+async function getSearchQuery(userMessage: string): Promise<string> {
+  const result = await streamText({
+    model: groq('llama-3.3-70b-versatile'),
+    maxOutputTokens: 30,
+    system:
+      'You turn a player question into a short Hypixel SkyBlock Wiki search query (2-5 words, just the topic, no extra words). Reply with ONLY the search query, nothing else.',
+    prompt: userMessage,
+  });
+  return (await result.text).trim();
+}
+
 async function searchWiki(query: string): Promise<string | null> {
   try {
     const baseUrl = 'https://hypixel-skyblock.fandom.com/api.php';
-
     const searchRes = await fetch(
-      `${baseUrl}?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=1`
+      `${baseUrl}?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=3`
     );
     const searchData = await searchRes.json();
-    const topResult = searchData?.query?.search?.[0];
+    const results = searchData?.query?.search ?? [];
+    if (results.length == 0) return null;
 
-    if (!topResult) return null;
-
-    const contentRes = await fetch(
-      `${baseUrl}?action=query&prop=extracts&explaintext=true&titles=${encodeURIComponent(
-        topResult.title
-      )}&format=json`
+    const extracts = await Promise.all(
+      results.map(async (r: any) => {
+        const contentRes = await fetch(
+          `${baseUrl}?action=query&prop=extracts&explaintext=true&titles=${encodeURIComponent(
+            r.title
+          )}&format=json`
+        );
+        const contentData = await contentRes.json();
+        const pages = contentData?.query?.pages;
+        const page: any = pages ? Object.values(pages)[0] : null;
+        return page?.extract ? `--- "${r.title}" ---\n${page.extract.slice(0, 1200)}` : null;
+      })
     );
-    const contentData = await contentRes.json();
-    const pages = contentData?.query?.pages;
-    const page: any = pages ? Object.values(pages)[0] : null;
 
-    if (!page?.extract) return null;
-
-    return `Wiki page "${topResult.title}":\n${page.extract.slice(0, 2000)}`;
+    return extracts.filter(Boolean).join('\n\n') || null;
   } catch {
     return null;
   }
 }
 
-export async function POST(request: NextRequest) {
+export async function POST(req: Request) {
   try {
-    const { message, playerData } = await request.json();
+    const { messages, playerData } = await req.json();
 
-    const wikiContext = await searchWiki(message);
+    const lastMessage = messages[messages.length - 1];
+    const latestUserMessage =
+      lastMessage?.parts?.find((p: any) => p.type == 'text')?.text ?? '';
+
+    const searchQuery = await getSearchQuery(latestUserMessage);
+    const wikiContext = await searchWiki(searchQuery);
 
     const systemPrompt = `You are a helpful Hypixel SkyBlock assistant. The player you're talking to has this current data:
 ${JSON.stringify(playerData, null, 2)}
 
-${wikiContext ? `Here is relevant, current information from the Hypixel SkyBlock Wiki:\n${wikiContext}\n\nUse this wiki content as your source of truth for game mechanics, locations, and details — it is more reliable than your own training knowledge.` : 'No specific wiki content was found for this question — if you are not confident about a specific game detail, say so honestly rather than guessing.'}
+${
+  wikiContext
+    ? `Here is current information from the Hypixel SkyBlock Wiki (searched using: "${searchQuery}"):\n${wikiContext}\n\nUse this wiki content as your primary source of truth.`
+    : 'No specific wiki content was found. If unsure about a specific game detail, say so honestly rather than guessing.'
+}
 
-Answer the player's question using this data where relevant. Keep answers concise and practical.
-
-When describing skill/slayer/catacombs progress, always phrase it as "X% of the way from level N to level N+1" to avoid ambiguity about which level the player currently holds vs is progressing toward.
+When describing skill/slayer/catacombs progress, always phrase it as "X% of the way from level N to level N+1".
 
 Respond in plain conversational text.`;
 
-    const response = await groq.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
-      max_tokens: 500,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: message },
-      ],
+    const result = streamText({
+      model: groq('llama-3.3-70b-versatile'),
+      system: systemPrompt,
+      messages: await convertToModelMessages(messages),
     });
 
-    const reply = response.choices[0]?.message?.content ?? 'Sorry, I could not generate a response.';
-
-    return NextResponse.json({ reply });
+    return result.toUIMessageStreamResponse();
   } catch (err) {
-    console.error(err);
-    return NextResponse.json({ error: 'Chat request failed' }, { status: 500 });
+    console.error('Chat route error:', err);
+    return new Response('Error: ' + (err instanceof Error ? err.message : 'unknown'), { status: 500 });
   }
 }
