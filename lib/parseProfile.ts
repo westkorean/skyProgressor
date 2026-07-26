@@ -30,6 +30,22 @@ export interface FairySoulProgress {
   remaining: number;
 }
 
+export interface ExtrasData {
+  magicalPower: number;
+  purse: number;
+  fairySoulsCollected: number;
+  petCount: number;
+  highestPetScore: number;
+  uniquePetTypes: number;
+  bestiaryKillsTotal: number;
+  minionSlots: number | string;
+}
+
+export interface CollectionEntry {
+  name: string;
+  amount: number;
+}
+
 function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   let level = 0;
   for (let i = 1; i <= maxLevel; i++) {
@@ -127,4 +143,55 @@ export function parseFairySouls(member: any): FairySoulProgress {
     progressPercent,
     remaining: Math.max(0, TOTAL_FAIRY_SOULS - collected),
   };
+}
+
+export interface SkyblockLevelProgress {
+  level: number;
+  progressPercent: number;
+  currentXp: number;
+}
+
+export function parseSkyblockLevel(member: any): SkyblockLevelProgress {
+  const xp = member?.leveling?.experience ?? 0;
+  const level = Math.floor(xp / 100);
+  const progressPercent = Math.round(xp % 100);
+
+  return { level, progressPercent, currentXp: xp };
+}
+
+export function parseExtras(member: any): ExtrasData {
+  const pets = member?.pets_data?.pets ?? [];
+
+  return {
+    magicalPower: member?.accessory_bag_storage?.highest_magical_power ?? 0,
+    purse: Math.round(member?.currencies?.coin_purse ?? 0),
+    fairySoulsCollected: member?.fairy_soul?.total_collected ?? 0,
+    petCount: pets.length,
+    highestPetScore: member?.leveling?.highest_pet_score ?? 0,
+    uniquePetTypes: new Set(pets.map((p: any) => p.type)).size,
+    bestiaryKillsTotal: Object.values(member?.bestiary?.kills ?? {}).reduce(
+      (sum: number, v: any) => sum + (typeof v == 'number' ? v : 0),
+      0
+    ),
+    minionSlots: member?.trapper_quest ? 'see accessory_bag_storage.bag_upgrades_purchased' : 'unknown',
+  };
+}
+
+export function parseCollections(member: any): CollectionEntry[] {
+  const collections = member?.collection ?? {};
+
+  return Object.entries(collections)
+    .map(([key, value]) => ({
+      name: formatCollectionName(key),
+      amount: value as number,
+    }))
+    .sort((a, b) => b.amount - a.amount); // highest first
+}
+
+function formatCollectionName(key: string): string {
+  return key
+    .replace(/:.*/, '') // strip variant suffixes like INK_SACK:3
+    .split('_')
+    .map((w) => w.charAt(0) + w.slice(1).toLowerCase())
+    .join(' ');
 }

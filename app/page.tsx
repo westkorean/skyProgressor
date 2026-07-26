@@ -3,9 +3,12 @@
 import { useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
 import SuggestionCard from '@/components/SuggestionCard';
-import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls } from '@/lib/parseProfile';
+import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls, parseSkyblockLevel, parseExtras, parseCollections   } from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
-
+import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
+import SkyblockLevelCard from '@/components/SkyblockLevelCard';
+import ChatBox from '@/components/ChatBox';
+import ExtrasCard from '@/components/ExtrasCard';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
@@ -73,7 +76,7 @@ export default function Home() {
       if (currentSearchId !== searchIdRef.current) return;
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
-      if (currentSearchId === searchIdRef.current) setLoading(false);
+      if (currentSearchId == searchIdRef.current) setLoading(false);
     }
   };
 
@@ -85,6 +88,10 @@ export default function Home() {
     const catacombs = parseCatacombs(member);
     const fairySouls = parseFairySouls(member);
     const suggestions = getTopSuggestions(skills, slayers, catacombs);
+    const skyblockLevel = parseSkyblockLevel(member);
+    const levelRecommendations = getSkyblockLevelRecommendations(member, slayers);
+    const extras = parseExtras(member);
+    const collections = parseCollections(member);
 
     const memberUuids = Object.keys(profile.members);
     const memberNames = await Promise.all(
@@ -99,7 +106,7 @@ export default function Home() {
       })
     );
 
-    if (searchId !== undefined && searchId !== searchIdRef.current) return;
+    if (searchId != undefined && searchId != searchIdRef.current) return;
 
     setCurrentProfile(profile);
     setViewingUuid(playerUuid);
@@ -110,6 +117,10 @@ export default function Home() {
       catacombs,
       fairySouls,
       suggestions,
+      skyblockLevel,
+      levelRecommendations,
+      extras, 
+      collections,
       profileName: profile.cute_name,
       coopMembers: memberNames,
     });
@@ -169,7 +180,7 @@ export default function Home() {
                 key={m.uuid}
                 onClick={() => viewMember(m.uuid)}
                 className={`inline-block rounded-lg px-3 py-1 text-sm mr-2 mb-2 border ${
-                  viewingUuid === m.uuid
+                  viewingUuid == m.uuid
                     ? 'bg-emerald-600 border-emerald-500'
                     : 'bg-neutral-900 border-neutral-700 hover:border-neutral-500'
                 }`}
@@ -190,6 +201,29 @@ export default function Home() {
               <SuggestionCard key={i} suggestion={s} />
             ))}
           </section>
+        )}
+
+
+        {result?.skyblockLevel && (
+          <SkyblockLevelCard
+            level={result.skyblockLevel.level}
+            progressPercent={result.skyblockLevel.progressPercent}
+            recommendations={result.levelRecommendations}
+          />
+        )}
+
+        {result && (
+          <ChatBox
+            playerData={{
+              skyblockLevel: result.skyblockLevel,
+              skills: result.skills,
+              slayers: result.slayers,
+              catacombs: result.catacombs,
+              fairySouls: result.fairySouls,
+              extras: result.extras,
+              collections: result.collections?.slice(0, 15),
+            }}
+          />
         )}
 
         {result?.skills && (
@@ -225,6 +259,8 @@ export default function Home() {
           </section>
         )}
 
+        {result?.extras && <ExtrasCard extras={result.extras} />}
+
         {result?.fairySouls && (
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
             <h2 className="text-xl font-semibold mb-4">Fairy Souls</h2>
@@ -236,6 +272,20 @@ export default function Home() {
                 className="bg-purple-500 h-full"
                 style={{ width: `${result.fairySouls.progressPercent}%` }}
               />
+            </div>
+          </section>
+        )}
+
+        {result?.collections && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Top Collections</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {result.collections.slice(0, 12).map((c: any) => (
+                <div key={c.name}>
+                  <div className="text-neutral-500 text-xs">{c.name}</div>
+                  <div className="font-medium">{c.amount.toLocaleString()}</div>
+                </div>
+              ))}
             </div>
           </section>
         )}
