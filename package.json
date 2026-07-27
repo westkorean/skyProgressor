@@ -11,6 +11,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^4.0.20",
     "@ai-sdk/react": "^4.0.40",
+    "@vercel/analytics": "^2.0.1",
     "ai": "^7.0.37",
     "next": "16.2.10",
     "openai": "^6.48.0",
