@@ -25,7 +25,7 @@ function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   const nextThreshold = level < maxLevel ? xpTable[level + 1] : null;
 
   const progressPercent =
-    nextThreshold !== null
+    nextThreshold != null
       ? Math.min(
           100,
           Math.round(

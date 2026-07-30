@@ -76,7 +76,7 @@ export default function Home() {
 
       await loadProfile(defaultProfile, uuidData.id, currentSearchId);
     } catch (err) {
-      if (currentSearchId !== searchIdRef.current) return;
+      if (currentSearchId != searchIdRef.current) return;
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       if (currentSearchId == searchIdRef.current) setLoading(false);
@@ -422,7 +422,7 @@ export default function Home() {
                 <span className="font-medium">{m.name}</span>
                 <span className="text-neutral-500">
                   {' '}—{' '}
-                  {m.remaining !== null && m.remaining !== undefined
+                  {m.remaining != null && m.remaining != undefined
                     ? `${m.remaining.toLocaleString()} more to next tier`
                     : 'max tier reached'}
                 </span>
