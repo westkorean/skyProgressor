@@ -103,19 +103,18 @@ async function searchWiki(query: string): Promise<string | null> {
 
 
 function summarizePlayerData(playerData: any) {
-
   if (!playerData) return 'No player data available.';
 
   return JSON.stringify({
     skills: playerData.skills,
     slayers: playerData.slayers,
     catacombs: playerData.catacombs,
-    purse: playerData.purse,
-    networth: playerData.networth,
-    armor: playerData.armor,
-    weapons: playerData.weapons,
+    skyblockLevel: playerData.skyblockLevel,
+    pets: playerData.pets,
+    accessories: playerData.accessories,
+    dungeons: playerData.dungeons,
+    collections: playerData.collections,
   }, null, 2);
-
 }
 
 

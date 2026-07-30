@@ -322,6 +322,7 @@ export function getCollectionMilestones(collections: CollectionEntry[]): Collect
         current: c.amount,
         nextTier,
         remaining: nextTier !== null ? nextTier - c.amount : null,
+        maxed: nextTier === null,
       };
     })
     .filter((m): m is CollectionMilestone => m != null);
