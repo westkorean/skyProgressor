@@ -1,4 +1,6 @@
 import { SKILL_XP_TABLE, SKILL_MAX_LEVELS, CATACOMBS_XP_TABLE, CATACOMBS_MAX_LEVEL, SLAYER_XP_TABLE, TOTAL_FAIRY_SOULS } from './xpTables';
+import { COLLECTION_TIERS } from './collectionTiers';
+import { BOSS_COLLECTIONS } from './bossCollections';
 
 export interface SkillProgress {
   skill: string;
@@ -30,20 +32,81 @@ export interface FairySoulProgress {
   remaining: number;
 }
 
-export interface ExtrasData {
-  magicalPower: number;
-  purse: number;
-  fairySoulsCollected: number;
-  petCount: number;
-  highestPetScore: number;
-  uniquePetTypes: number;
-  bestiaryKillsTotal: number;
-  minionSlots: number | string;
+export interface CollectionEntry {
+  rawKey: string;
+  name: string;
+  category: string;
+  amount: number;
+
+  tier: number;
+  maxTier: number;
+
+  nextTierRequirement: number | null;
+  remaining: number | null;
+
+  progressPercent: number;
 }
 
-export interface CollectionEntry {
+export interface CollectionMilestone {
+  key: string; 
   name: string;
-  amount: number;
+  current: number;
+  nextTier: number | null;
+  remaining: number | null;
+  maxed: boolean;
+}
+
+export interface BossCollectionProgress {
+  boss: string;
+  kills: number;
+  nextReward: string | null;
+  remaining: number | null;
+}
+
+export interface SkyblockLevelProgress {
+  level: number;
+  progressPercent: number;
+  currentXp: number;
+}
+
+const VARIANT_NAMES: Record<string, string> = {
+  'LOG': 'Oak Log',
+  'LOG:1': 'Spruce Log',
+  'LOG:2': 'Birch Log',
+  'LOG:3': 'Jungle Log',
+  'LOG_2': 'Acacia Log',
+  'LOG_2:1': 'Dark Oak Log',
+  'INK_SACK:3': 'Cocoa Beans',
+  'INK_SACK:4': 'Lapis Lazuli',
+  'SAND:1': 'Red Sand',
+};
+
+const COLLECTION_CATEGORIES: Record<string, string> = {
+  WHEAT: "Farming",
+  CARROT_ITEM: "Farming",
+  POTATO_ITEM: "Farming",
+  SUGAR_CANE: "Farming",
+
+  COBBLESTONE: "Mining",
+  COAL: "Mining",
+  IRON_INGOT: "Mining",
+  GOLD_INGOT: "Mining",
+  DIAMOND: "Mining",
+
+  LOG: "Foraging",
+  LOG_2: "Foraging",
+
+  MUTTON: "Combat",
+  ROTTEN_FLESH: "Combat"
+};
+
+
+function getCollectionCategory(key:string){
+
+  const base = key.replace(/:.*/, '');
+
+  return COLLECTION_CATEGORIES[base] ?? "Other";
+
 }
 
 function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
@@ -145,12 +208,6 @@ export function parseFairySouls(member: any): FairySoulProgress {
   };
 }
 
-export interface SkyblockLevelProgress {
-  level: number;
-  progressPercent: number;
-  currentXp: number;
-}
-
 export function parseSkyblockLevel(member: any): SkyblockLevelProgress {
   const xp = member?.leveling?.experience ?? 0;
   const level = Math.floor(xp / 100);
@@ -159,39 +216,129 @@ export function parseSkyblockLevel(member: any): SkyblockLevelProgress {
   return { level, progressPercent, currentXp: xp };
 }
 
-export function parseExtras(member: any): ExtrasData {
-  const pets = member?.pets_data?.pets ?? [];
+export function parseCollections(member:any): CollectionEntry[] {
 
-  return {
-    magicalPower: member?.accessory_bag_storage?.highest_magical_power ?? 0,
-    purse: Math.round(member?.currencies?.coin_purse ?? 0),
-    fairySoulsCollected: member?.fairy_soul?.total_collected ?? 0,
-    petCount: pets.length,
-    highestPetScore: member?.leveling?.highest_pet_score ?? 0,
-    uniquePetTypes: new Set(pets.map((p: any) => p.type)).size,
-    bestiaryKillsTotal: Object.values(member?.bestiary?.kills ?? {}).reduce(
-      (sum: number, v: any) => sum + (typeof v == 'number' ? v : 0),
-      0
-    ),
-    minionSlots: member?.trapper_quest ? 'see accessory_bag_storage.bag_upgrades_purchased' : 'unknown',
-  };
-}
-
-export function parseCollections(member: any): CollectionEntry[] {
   const collections = member?.collection ?? {};
 
   return Object.entries(collections)
-    .map(([key, value]) => ({
-      name: formatCollectionName(key),
-      amount: value as number,
-    }))
-    .sort((a, b) => b.amount - a.amount); // highest first
+    .map(([key,value])=>{
+
+      const amount = value as number;
+
+      const lookupKey = key.replace(/:.*/, '');
+
+      const tiers = COLLECTION_TIERS[lookupKey] ?? [];
+
+
+      let tier = 0;
+
+      tiers.forEach((requirement,index)=>{
+
+        if(amount >= requirement){
+          tier = index + 1;
+        }
+
+      });
+
+
+      const nextTierRequirement =
+        tiers.find(t=>t > amount) ?? null;
+
+
+      const previousRequirement =
+        tier > 0
+        ? tiers[tier-1]
+        : 0;
+
+
+      const progressPercent =
+        nextTierRequirement
+        ? Math.min(
+            100,
+            Math.round(
+              ((amount - previousRequirement) /
+              (nextTierRequirement - previousRequirement))
+              * 100
+            )
+          )
+        : 100;
+
+
+      return {
+
+        rawKey:key,
+
+        name:formatCollectionName(key),
+
+        amount,
+
+        category:getCollectionCategory(key),
+
+
+        tier,
+
+        maxTier:tiers.length,
+
+
+        nextTierRequirement,
+
+        remaining:
+          nextTierRequirement
+          ? nextTierRequirement - amount
+          : null,
+
+
+        progressPercent
+
+      };
+
+    })
+    .sort((a,b)=>b.amount-a.amount);
+
 }
 
-function formatCollectionName(key: string): string {
-  return key
-    .replace(/:.*/, '') // strip variant suffixes like INK_SACK:3
+function formatCollectionName(rawKey: string): string {
+  if (VARIANT_NAMES[rawKey]) return VARIANT_NAMES[rawKey];
+
+  return rawKey
+    .replace(/:.*/, '')
     .split('_')
     .map((w) => w.charAt(0) + w.slice(1).toLowerCase())
     .join(' ');
+}
+
+export function getCollectionMilestones(collections: CollectionEntry[]): CollectionMilestone[] {
+  return collections
+    .map((c) => {
+      const lookupKey = c.rawKey.replace(/:.*/, '');
+      const tiers = COLLECTION_TIERS[lookupKey];
+      if (!tiers) return null;
+
+      const nextTier = tiers.find((t) => t > c.amount) ?? null;
+
+      return {
+        key: c.rawKey,
+        name: c.name,
+        current: c.amount,
+        nextTier,
+        remaining: nextTier !== null ? nextTier - c.amount : null,
+      };
+    })
+    .filter((m): m is CollectionMilestone => m != null);
+}
+
+export function parseBossCollections(member: any): BossCollectionProgress[] {
+  const tierCompletions = member?.dungeons?.dungeon_types?.catacombs?.tier_completions ?? {};
+
+  return BOSS_COLLECTIONS.filter((b) => b.floor != null).map((boss) => {
+    const kills = tierCompletions[boss.floor!.toString()] ?? 0;
+    const next = boss.rewards.find((r) => r.required > kills) ?? null;
+
+    return {
+      boss: boss.name,
+      kills,
+      nextReward: next?.name ?? null,
+      remaining: next ? next.required - kills : null,
+    };
+  });
 }

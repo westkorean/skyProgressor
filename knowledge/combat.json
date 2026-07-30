@@ -1,0 +1,24 @@
+[
+  {
+    "id": "combat_progression",
+    "topic": "Combat progression",
+    "content": "Combat progression depends on damage, survivability, gear, and access to higher content. Recommendations should consider the player's current armor, weapon, pets, and combat level.",
+    "tags": [
+      "combat",
+      "damage",
+      "progression",
+      "gear"
+    ]
+  },
+  {
+    "id": "combat_gear_upgrades",
+    "topic": "Combat gear upgrades",
+    "content": "Players should avoid blindly buying expensive items. Recommend upgrades that provide meaningful progression based on their current setup and goals.",
+    "tags": [
+      "combat",
+      "armor",
+      "weapon",
+      "upgrade"
+    ]
+  }
+]

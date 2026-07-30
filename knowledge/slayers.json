@@ -1,0 +1,22 @@
+[
+  {
+    "id": "slayer_progression",
+    "topic": "Slayer progression",
+    "content": "Slayer progression depends on boss difficulty, survivability, damage output, and required gear. Players should avoid attempting bosses far above their current setup.",
+    "tags": [
+      "slayer",
+      "boss",
+      "progression"
+    ]
+  },
+  {
+    "id": "slayer_setup",
+    "topic": "Slayer setups",
+    "content": "Recommend slayer gear based on the specific slayer boss. A setup that works for one slayer may not be optimal for another.",
+    "tags": [
+      "slayer",
+      "gear",
+      "boss"
+    ]
+  }
+]

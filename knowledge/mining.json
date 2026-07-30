@@ -1,0 +1,35 @@
+[
+  {
+    "id": "mining_progression",
+    "topic": "Mining progression",
+    "content": "Mining progression depends on Heart of the Mountain progression, powder, gear, and access to mining areas. Players should generally improve their setup before expecting high mining profits.",
+    "tags": [
+      "mining",
+      "progression",
+      "hotm",
+      "powder"
+    ]
+  },
+  {
+    "id": "mining_hotm",
+    "topic": "Heart of the Mountain",
+    "content": "Heart of the Mountain perks are important for mining progression. Players should prioritize useful mining perks and powder collection before focusing on maximum gemstone profits.",
+    "tags": [
+      "mining",
+      "hotm",
+      "perk",
+      "powder"
+    ]
+  },
+  {
+    "id": "mining_gear",
+    "topic": "Mining gear upgrades",
+    "content": "Mining gear upgrades should match the player's current stage. Expensive mining setups are inefficient if the player lacks required HotM progression, powder, or knowledge of mining routes.",
+    "tags": [
+      "mining",
+      "gear",
+      "divan",
+      "drill"
+    ]
+  }
+]
