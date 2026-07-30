@@ -18,7 +18,7 @@ const raw =
 member?.inventory?.inv_contents?.data;
 
 
-if(typeof raw !== "string"){
+if(typeof raw != "string"){
 
   return {
     inventory:[]

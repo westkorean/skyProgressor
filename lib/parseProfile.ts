@@ -123,7 +123,7 @@ function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   const nextThreshold = level < maxLevel ? xpTable[level + 1] : null;
 
   const progressPercent =
-    nextThreshold !== null
+    nextThreshold != null
       ? Math.min(
           100,
           Math.round(
@@ -321,7 +321,8 @@ export function getCollectionMilestones(collections: CollectionEntry[]): Collect
         name: c.name,
         current: c.amount,
         nextTier,
-        remaining: nextTier !== null ? nextTier - c.amount : null,
+        remaining: nextTier != null ? nextTier - c.amount : null,
+        maxed: nextTier == null,
       };
     })
     .filter((m): m is CollectionMilestone => m != null);

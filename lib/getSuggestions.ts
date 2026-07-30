@@ -17,7 +17,7 @@ export function getTopSuggestions(
 
   // Skills closest to leveling up
   skills.forEach((s) => {
-    if (s.xpForNextLevel !== null) {
+    if (s.xpForNextLevel != null) {
       suggestions.push({
         category: 'skill',
         name: s.skill,
@@ -30,7 +30,7 @@ export function getTopSuggestions(
 
   // Slayers closest to leveling up
   slayers.forEach((s) => {
-    if (s.xpForNextLevel !== null) {
+    if (s.xpForNextLevel != null) {
       suggestions.push({
         category: 'slayer',
         name: s.slayer,
@@ -42,7 +42,7 @@ export function getTopSuggestions(
   });
 
   // Catacombs
-  if (catacombs.xpForNextLevel !== null) {
+  if (catacombs.xpForNextLevel != null) {
     suggestions.push({
       category: 'catacombs',
       name: 'catacombs',

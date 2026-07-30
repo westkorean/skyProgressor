@@ -76,7 +76,7 @@ export default function Home() {
 
       await loadProfile(defaultProfile, uuidData.id, currentSearchId);
     } catch (err) {
-      if (currentSearchId !== searchIdRef.current) return;
+      if (currentSearchId != searchIdRef.current) return;
       setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       if (currentSearchId == searchIdRef.current) setLoading(false);
@@ -233,7 +233,9 @@ export default function Home() {
               slayers: result.slayers,
               catacombs: result.catacombs,
               fairySouls: result.fairySouls,
-              extras: result.extras,
+              pets: result.pets,
+              accessories: result.accessories,
+              dungeons: result.dungeons,
               collections: result.collections?.slice(0, 15),
             }}
           />
@@ -299,6 +301,54 @@ export default function Home() {
                   {b.nextReward ? `, ${b.remaining} more for ${b.nextReward}` : ' (all rewards unlocked)'}
                 </span>
               </div>
+            ))}
+          </section>
+        )}
+
+
+        {result?.pets && result.pets.length > 0 && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Pets</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {result.pets.map((p: any, i: number) => (
+                <div key={i} className="bg-neutral-800 rounded-lg p-3">
+                  <div className="font-medium capitalize">{p.type.toLowerCase().replace(/_/g, ' ')}</div>
+                  <div className="text-xs text-neutral-400">{p.tier}</div>
+                  <div className="text-xs text-neutral-500 mt-1">{Math.round(p.exp).toLocaleString()} XP</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {result?.accessories && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Accessories</h2>
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <div className="text-neutral-500 text-xs uppercase">Magical Power</div>
+                <div className="font-medium">{result.accessories.magicalPower.toLocaleString()}</div>
+              </div>
+              <div>
+                <div className="text-neutral-500 text-xs uppercase">Bag Upgrades</div>
+                <div className="font-medium">{result.accessories.bagUpgrades}</div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {result?.dungeons?.classes && result.dungeons.classes.length > 0 && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Dungeon Classes</h2>
+            {result.dungeons.classes.map((c: any) => (
+              <SkillBar
+                key={c.name}
+                skill={c.name}
+                level={c.level}
+                currentXp={c.xp}
+                xpForNextLevel={c.level < 50 ? 1 : null}
+                progressPercent={c.progressPercent}
+              />
             ))}
           </section>
         )}
@@ -372,7 +422,7 @@ export default function Home() {
                 <span className="font-medium">{m.name}</span>
                 <span className="text-neutral-500">
                   {' '}—{' '}
-                  {m.remaining !== null && m.remaining !== undefined
+                  {m.remaining != null && m.remaining != undefined
                     ? `${m.remaining.toLocaleString()} more to next tier`
                     : 'max tier reached'}
                 </span>
