@@ -1,0 +1,22 @@
+[
+  {
+    "id": "general_progression",
+    "topic": "General SkyBlock progression",
+    "content": "Progression advice should consider multiple aspects including skills, combat level, gear, coins, collections, accessories, and unlocked content. The best next step depends on the player's profile.",
+    "tags": [
+      "progression",
+      "next",
+      "goal",
+      "profile"
+    ]
+  },
+  {
+    "id": "avoid_generic_advice",
+    "topic": "Personalized advice",
+    "content": "Do not give generic recommendations. Use the player's actual profile and explain why a recommendation fits their current stage.",
+    "tags": [
+      "advice",
+      "personalized"
+    ]
+  }
+]

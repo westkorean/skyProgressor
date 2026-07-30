@@ -1,0 +1,13 @@
+[
+  {
+    "id": "gear_upgrade_logic",
+    "topic": "Gear upgrade decisions",
+    "content": "Gear upgrades should be recommended based on the player's current equipment, goals, budget, and progression stage. Avoid recommending expensive items without explaining why they improve progression.",
+    "tags": [
+      "gear",
+      "upgrade",
+      "armor",
+      "weapon"
+    ]
+  }
+]

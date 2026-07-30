@@ -1,0 +1,12 @@
+[
+  {
+    "id": "pet_progression",
+    "topic": "Pet recommendations",
+    "content": "Pet recommendations should consider the player's activity, budget, and current progression. Expensive pets are not always the best upgrade.",
+    "tags": [
+      "pet",
+      "upgrade",
+      "progression"
+    ]
+  }
+]

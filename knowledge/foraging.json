@@ -1,0 +1,51 @@
+[
+  {
+    "id": "foraging_current_meta",
+    "topic": "Current Foraging progression meta",
+    "content": "After the Foraging Update, players should prioritize modern Foraging locations. For players with Galatea access, Galatea is one of the best progression areas because its logs provide significantly more Foraging XP and it has bonuses from systems such as Heart of the Forest. Galatea is beginner friendly and should not be described as a difficult endgame area.",
+    "tags": [
+      "foraging",
+      "progression",
+      "galatea",
+      "leveling",
+      "meta"
+    ]
+  },
+  {
+    "id": "foraging_log_xp",
+    "topic": "Foraging XP per log",
+    "content": "Different logs give different amounts of Foraging XP. Park logs such as Oak and Spruce give 6 Foraging XP per log. Fig Logs give 15 Foraging XP per log. Mangrove Logs give 20 Foraging XP per log. Do not claim all logs provide the same XP.",
+    "tags": [
+      "foraging",
+      "logs",
+      "xp",
+      "oak",
+      "spruce",
+      "fig",
+      "mangrove"
+    ]
+  },
+  {
+    "id": "foraging_dark_thicket",
+    "topic": "Dark Thicket strategy",
+    "content": "Dark Thicket can provide very strong Foraging XP because trees are dense and the Sweep mechanic allows players to clear trees efficiently. However, Dark Thicket can become crowded. If too many players are farming there, players should lobby swap or choose another efficient tree route.",
+    "tags": [
+      "foraging",
+      "dark",
+      "thicket",
+      "sweep",
+      "lobby"
+    ]
+  },
+  {
+    "id": "foraging_false_information",
+    "topic": "Foraging hallucination prevention",
+    "content": "Do not invent Foraging locations, items, or mechanics. Twig Park, Twigs as a Foraging resource, Ancient Logs, and similar unsupported terms should not be recommended. If a location or item is not confirmed, do not mention it.",
+    "tags": [
+      "foraging",
+      "wrong",
+      "hallucination",
+      "fake"
+    ]
+  }
+]

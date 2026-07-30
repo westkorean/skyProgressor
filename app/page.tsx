@@ -3,12 +3,16 @@
 import { useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
 import SuggestionCard from '@/components/SuggestionCard';
-import { parseSkills, parseSlayers, parseCatacombs, parseFairySouls, parseSkyblockLevel, parseExtras, parseCollections   } from '@/lib/parseProfile';
+import { getCollectionMilestones, parseSkills, parseSlayers, parseCatacombs, parseFairySouls, parseSkyblockLevel, parseCollections, parseBossCollections} from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
 import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
 import SkyblockLevelCard from '@/components/SkyblockLevelCard';
 import ChatBox from '@/components/ChatBox';
 import ExtrasCard from '@/components/ExtrasCard';
+import { parsePets } from '@/lib/parsePets';
+import { parseAccessories } from '@/lib/parseAccessories';
+import { parseInventory } from '@/lib/parseInventory';
+import { parseDungeons } from '@/lib/parseDungeons';
 
 export default function Home() {
   const [ign, setIgn] = useState('');
@@ -90,8 +94,13 @@ export default function Home() {
     const suggestions = getTopSuggestions(skills, slayers, catacombs);
     const skyblockLevel = parseSkyblockLevel(member);
     const levelRecommendations = getSkyblockLevelRecommendations(member, slayers);
-    const extras = parseExtras(member);
+    const pets = parsePets(member);
+    const accessories = parseAccessories(member);
+    const inventory = parseInventory(member);
+    const dungeons = parseDungeons(member);
     const collections = parseCollections(member);
+    const collectionMilestones = getCollectionMilestones(collections);
+    const bossCollections = parseBossCollections(member);
 
     const memberUuids = Object.keys(profile.members);
     const memberNames = await Promise.all(
@@ -119,8 +128,13 @@ export default function Home() {
       suggestions,
       skyblockLevel,
       levelRecommendations,
-      extras, 
+      pets,
+      accessories,
+      dungeons,
+      inventory,
       collections,
+      collectionMilestones,
+      bossCollections,
       profileName: profile.cute_name,
       coopMembers: memberNames,
     });
@@ -259,8 +273,6 @@ export default function Home() {
           </section>
         )}
 
-        {result?.extras && <ExtrasCard extras={result.extras} />}
-
         {result?.fairySouls && (
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
             <h2 className="text-xl font-semibold mb-4">Fairy Souls</h2>
@@ -276,17 +288,97 @@ export default function Home() {
           </section>
         )}
 
+
+        {result?.bossCollections && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Boss Collections</h2>
+            {result.bossCollections.map((b: any) => (
+              <div key={b.boss} className="mb-2 text-sm">
+                <span className="font-medium">{b.boss}</span>
+                <span className="text-neutral-500">
+                  {' '}— {b.kills} kills
+                  {b.nextReward ? `, ${b.remaining} more for ${b.nextReward}` : ' (all rewards unlocked)'}
+                </span>
+              </div>
+            ))}
+          </section>
+        )}
+
         {result?.collections && (
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
             <h2 className="text-xl font-semibold mb-4">Top Collections</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {result.collections.slice(0, 12).map((c: any) => (
-                <div key={c.name}>
-                  <div className="text-neutral-500 text-xs">{c.name}</div>
-                  <div className="font-medium">{c.amount.toLocaleString()}</div>
-                </div>
+              {result.collections.slice(0,50).map((c:any)=>(
+              <div
+              key={c.rawKey}
+              className="bg-neutral-800 rounded-lg p-4"
+              >
+
+              <div className="font-semibold">
+              {c.name}
+              </div>
+
+
+              <div className="text-sm text-neutral-400">
+              {c.category}
+              </div>
+
+
+              <div className="mt-2">
+              Tier {c.tier}/{c.maxTier || "?"}
+              </div>
+
+
+              <div>
+              {c.amount.toLocaleString()} collected
+              </div>
+
+
+              {c.maxTier > 0 && (
+
+              <div className="mt-2">
+
+              <div className="bg-neutral-700 h-2 rounded">
+              <div
+              className="bg-emerald-500 h-2 rounded"
+              style={{
+              width:`${c.progressPercent}%`
+              }}
+              />
+              </div>
+
+
+              {c.remaining && (
+              <p className="text-xs text-neutral-400 mt-1">
+              {c.remaining.toLocaleString()} until next tier
+              </p>
+              )}
+
+              </div>
+
+              )}
+
+              </div>
               ))}
             </div>
+          </section>
+        )}
+
+
+        {result?.collectionMilestones && result.collectionMilestones.length > 0 && (
+          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
+            <h2 className="text-xl font-semibold mb-4">Collection Milestones</h2>
+            {result.collectionMilestones.slice(0, 5).map((m: any) => (
+              <div key={m.key} className="mb-2 text-sm">
+                <span className="font-medium">{m.name}</span>
+                <span className="text-neutral-500">
+                  {' '}—{' '}
+                  {m.remaining !== null && m.remaining !== undefined
+                    ? `${m.remaining.toLocaleString()} more to next tier`
+                    : 'max tier reached'}
+                </span>
+              </div>
+            ))}
           </section>
         )}
       </div>

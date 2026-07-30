@@ -1,0 +1,26 @@
+[
+  {
+    "id": "dungeon_progression",
+    "topic": "Dungeon progression",
+    "content": "Dungeon progression requires balancing Catacombs level, class level, survivability, and gear. Players should not skip progression steps without sufficient stats.",
+    "tags": [
+      "dungeons",
+      "catacombs",
+      "progression"
+    ]
+  },
+  {
+    "id": "dungeon_classes",
+    "topic": "Dungeon classes",
+    "content": "Dungeon class recommendations depend on player preference, gear, and party role. Gear requirements vary significantly between floors.",
+    "tags": [
+      "dungeons",
+      "class",
+      "mage",
+      "berserk",
+      "archer",
+      "tank",
+      "healer"
+    ]
+  }
+]
