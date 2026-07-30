@@ -8,7 +8,6 @@ import { getTopSuggestions } from '@/lib/getSuggestions';
 import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
 import SkyblockLevelCard from '@/components/SkyblockLevelCard';
 import ChatBox from '@/components/ChatBox';
-import ExtrasCard from '@/components/ExtrasCard';
 import { parsePets } from '@/lib/parsePets';
 import { parseAccessories } from '@/lib/parseAccessories';
 import { parseInventory } from '@/lib/parseInventory';
