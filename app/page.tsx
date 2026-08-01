@@ -2,7 +2,13 @@
 'use client';
 
 import Image from 'next/image';
-import type { SkillProgress, SlayerProgress, CatacombsProgress, FairySoulProgress, SkyblockLevelProgress } from '@/lib/parseProfile';
+import type {
+  SkillProgress,
+  SlayerProgress,
+  CatacombsProgress,
+  FairySoulProgress,
+  SkyblockLevelProgress,
+} from '@/lib/parseProfile';
 import type { PetProgress } from '@/lib/parsePets';
 
 type CoopMember = { uuid: string; name: string };
@@ -303,7 +309,8 @@ export default function Home() {
           <div className="flex items-center gap-3 mb-6">
             <Image
               src={
-                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name ?? ''
+                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name ??
+                ''
               }
               alt="Current player skin"
               width={40}
@@ -471,7 +478,11 @@ export default function Home() {
                     >
                       <Image
                         src={getPetHeadSrc(p.headUuid)}
-                        alt={p.headUuid ? `${p.displayName} pet head` : 'placeholder pet head'}
+                        alt={
+                          p.headUuid
+                            ? `${p.displayName} pet head`
+                            : 'placeholder pet head'
+                        }
                         width={64}
                         height={64}
                         className="h-full w-full object-contain"
