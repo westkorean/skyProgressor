@@ -6,7 +6,12 @@ interface SkillBarProps {
   progressPercent: number;
 }
 
-export default function SkillBar({ skill, level, xpForNextLevel, progressPercent }: SkillBarProps) {
+export default function SkillBar({
+  skill,
+  level,
+  xpForNextLevel,
+  progressPercent,
+}: SkillBarProps) {
   return (
     <div className="mb-4 last:mb-0">
       <div className="flex justify-between mb-1">
@@ -20,7 +25,9 @@ export default function SkillBar({ skill, level, xpForNextLevel, progressPercent
         />
       </div>
       <div className="text-xs text-neutral-500 mt-1">
-        {xpForNextLevel != null ? `${progressPercent}% to Level ${level + 1}` : 'Max level reached'}
+        {xpForNextLevel != null
+          ? `${progressPercent}% to Level ${level + 1}`
+          : 'Max level reached'}
       </div>
     </div>
   );

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pet_progression",
+    "topic": "Pet recommendations",
+    "content": "Pet recommendations should consider the player's activity, budget, and current progression. Expensive pets are not always the best upgrade.",
+    "tags": ["pet", "upgrade", "progression"]
+  },
+  {
+    "id": "pet_mythic_examples",
+    "topic": "Mythic Pets",
+    "content": "Mythic pets like the Mythic Mithril Golem or Griffin are high value for late-game progression, usually granting powerful stat bonuses and unique abilities.",
+    "tags": ["pet", "mythic", "endgame"]
+  },
+  {
+    "id": "pet_skin_mapping",
+    "topic": "Skin mapping guidance",
+    "content": "When Hypixel does not provide a usable head id, map pet types to representative skin usernames or UUIDs in local data (see data/petSkins.json).",
+    "tags": ["pet", "skins", "assets"]
+  },
+  {
+    "id": "pet_small",
+    "topic": "Common Pets",
+    "content": "Common pets (Rabbit, Chicken, etc.) are cheap to obtain and useful early game. Focus on utility and upgrades rather than rarity early on.",
+    "tags": ["pet", "common", "earlygame"]
+  }
+]

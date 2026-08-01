@@ -1,9 +1,16 @@
-"use client";
+'use client';
 
 import { useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
 import SuggestionCard from '@/components/SuggestionCard';
-import { getCollectionMilestones, parseSkills, parseSlayers, parseCatacombs, parseFairySouls, parseSkyblockLevel, parseCollections, parseBossCollections} from '@/lib/parseProfile';
+import {
+  parseSkills,
+  parseSlayers,
+  parseCatacombs,
+  parseFairySouls,
+  parseSkyblockLevel,
+  parseCollections,
+} from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
 import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
 import SkyblockLevelCard from '@/components/SkyblockLevelCard';
@@ -12,6 +19,29 @@ import { parsePets } from '@/lib/parsePets';
 import { parseAccessories } from '@/lib/parseAccessories';
 import { parseInventory } from '@/lib/parseInventory';
 import { parseDungeons } from '@/lib/parseDungeons';
+
+const avatarUrl = (username: string) =>
+  `https://minotar.net/helm/${encodeURIComponent(username)}/40.png`;
+
+const formatDisplayName = (value?: string | null) =>
+  String(value ?? '')
+    .replace(/_/g, ' ')
+    .replace(/\b\w/g, (char) => char.toUpperCase())
+    .trim();
+
+const isValidMinecraftId = (id?: string | null) => {
+  if (!id) return false;
+  const v = String(id);
+  // UUID without dashes (32 hex) or with dashes (36) or a username (1-16 chars)
+  return /^(?:[0-9a-fA-F]{32}|[0-9a-fA-F-]{36}|[A-Za-z0-9_]{1,16})$/.test(v);
+};
+
+const getPetHeadSrc = (headId?: string | null) => {
+  if (isValidMinecraftId(headId)) {
+    return `https://minotar.net/helm/${encodeURIComponent(headId)}/64.png`;
+  }
+  return '/images/pet-placeholder.svg';
+};
 
 export default function Home() {
   const [ign, setIgn] = useState('');
@@ -26,7 +56,10 @@ export default function Home() {
   const [currentProfile, setCurrentProfile] = useState<any>(null);
   const [viewingUuid, setViewingUuid] = useState<string | null>(null);
 
-  const handleSearch = async () => {
+  const DEFAULT_DEVELOPER_IGN = 'westkorean';
+
+  const handleSearch = async (searchIgn?: string) => {
+    const ignToUse = searchIgn ?? ign;
     const currentSearchId = ++searchIdRef.current;
     setLoading(true);
     setError(null);
@@ -37,7 +70,9 @@ export default function Home() {
     setViewingUuid(null);
 
     try {
-      const uuidRes = await fetch(`/api/uuid?ign=${ign}`);
+      const uuidRes = await fetch(
+        `/api/uuid?ign=${encodeURIComponent(ignToUse)}`
+      );
       const uuidData = await uuidRes.json();
       if (!uuidRes.ok) throw new Error(uuidData.error);
 
@@ -61,10 +96,14 @@ export default function Home() {
         (p: any) => p.members && p.members[uuidData.id]
       );
 
-      validProfiles.sort((a: any, b: any) => a.cute_name.localeCompare(b.cute_name));
+      validProfiles.sort((a: any, b: any) =>
+        a.cute_name.localeCompare(b.cute_name)
+      );
 
       if (validProfiles.length == 0) {
-        throw new Error(`Could not find SkyBlock data for ${ign} on any profile.`);
+        throw new Error(
+          `Could not find SkyBlock data for ${ign} on any profile.`
+        );
       }
 
       setProfiles(validProfiles);
@@ -83,7 +122,11 @@ export default function Home() {
     }
   };
 
-  const loadProfile = async (profile: any, playerUuid: string, searchId?: number) => {
+  const loadProfile = async (
+    profile: any,
+    playerUuid: string,
+    searchId?: number
+  ) => {
     const member = profile.members[playerUuid];
 
     const skills = parseSkills(member);
@@ -92,14 +135,15 @@ export default function Home() {
     const fairySouls = parseFairySouls(member);
     const suggestions = getTopSuggestions(skills, slayers, catacombs);
     const skyblockLevel = parseSkyblockLevel(member);
-    const levelRecommendations = getSkyblockLevelRecommendations(member, slayers);
+    const levelRecommendations = getSkyblockLevelRecommendations(
+      member,
+      slayers
+    );
     const pets = parsePets(member);
     const accessories = parseAccessories(member);
     const inventory = parseInventory(member);
     const dungeons = parseDungeons(member);
     const collections = parseCollections(member);
-    const collectionMilestones = getCollectionMilestones(collections);
-    const bossCollections = parseBossCollections(member);
 
     const memberUuids = Object.keys(profile.members);
     const memberNames = await Promise.all(
@@ -132,8 +176,6 @@ export default function Home() {
       dungeons,
       inventory,
       collections,
-      collectionMilestones,
-      bossCollections,
       profileName: profile.cute_name,
       coopMembers: memberNames,
     });
@@ -147,9 +189,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 px-4 py-10">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-6">SkyProgressor</h1>
+        <h1 className="text-3xl font-bold mb-2">SkyProgressor</h1>
+        <p className="text-sm text-neutral-500 mb-6">
+          Built by <strong>westkorean</strong>, developer of SkyProgressor.
+        </p>
 
-        <div className="flex gap-2 mb-8">
+        <div className="flex gap-2 mb-4">
           <input
             value={ign}
             onChange={(e) => setIgn(e.target.value)}
@@ -157,11 +202,33 @@ export default function Home() {
             className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:border-emerald-500"
           />
           <button
-            onClick={handleSearch}
+            onClick={() => handleSearch()}
             disabled={loading}
             className="bg-emerald-600 hover:bg-emerald-500 transition-colors px-5 py-2 rounded-lg font-medium"
           >
             {loading ? 'Searching...' : 'Search'}
+          </button>
+        </div>
+
+        <div className="mb-6">
+          <button
+            onClick={() => handleSearch(DEFAULT_DEVELOPER_IGN)}
+            className="w-full flex items-center gap-4 rounded-xl border border-neutral-700 bg-neutral-900 p-4 text-left transition hover:border-emerald-500"
+          >
+            <img
+              src={avatarUrl(DEFAULT_DEVELOPER_IGN)}
+              alt="westkorean skin"
+              className="h-12 w-12 rounded-lg border border-neutral-800"
+            />
+            <div>
+              <div className="font-semibold">westkorean</div>
+              <div className="text-xs text-neutral-500">
+                Developer of SkyProgressor
+              </div>
+              <div className="text-sm text-neutral-400">
+                Click to view the developer profile
+              </div>
+            </div>
           </button>
         </div>
 
@@ -185,6 +252,28 @@ export default function Home() {
           </div>
         )}
 
+        {result && viewingUuid && (
+          <div className="flex items-center gap-3 mb-6">
+            <img
+              src={avatarUrl(
+                result.coopMembers.find((m: any) => m.uuid === viewingUuid)
+                  ?.name ?? ''
+              )}
+              alt="Current player skin"
+              className="h-10 w-10 rounded-lg border border-neutral-700"
+            />
+            <div>
+              <div className="text-neutral-500 text-xs uppercase tracking-wide">
+                Current Player
+              </div>
+              <div className="font-semibold">
+                {result.coopMembers.find((m: any) => m.uuid === viewingUuid)
+                  ?.name ?? 'Unknown'}
+              </div>
+            </div>
+          </div>
+        )}
+
         {result?.coopMembers && result.coopMembers.length > 1 && (
           <div className="mb-6">
             <span className="text-neutral-500 text-sm mr-2">Co-op:</span>
@@ -192,12 +281,17 @@ export default function Home() {
               <button
                 key={m.uuid}
                 onClick={() => viewMember(m.uuid)}
-                className={`inline-block rounded-lg px-3 py-1 text-sm mr-2 mb-2 border ${
+                className={`inline-flex items-center rounded-lg px-3 py-1 text-sm mr-2 mb-2 border ${
                   viewingUuid == m.uuid
                     ? 'bg-emerald-600 border-emerald-500'
                     : 'bg-neutral-900 border-neutral-700 hover:border-neutral-500'
                 }`}
               >
+                <img
+                  src={avatarUrl(m.name)}
+                  alt={`${m.name} skin`}
+                  className="h-6 w-6 rounded-full border border-neutral-800 mr-2"
+                />
                 {m.name}
               </button>
             ))}
@@ -215,7 +309,6 @@ export default function Home() {
             ))}
           </section>
         )}
-
 
         {result?.skyblockLevel && (
           <SkyblockLevelCard
@@ -248,7 +341,8 @@ export default function Home() {
               result.skills.map((s: any) => <SkillBar key={s.skill} {...s} />)
             ) : (
               <p className="text-neutral-500 text-sm">
-                Skills data unavailable — this player may have Skills API access turned off.
+                Skills data unavailable — this player may have Skills API access
+                turned off.
               </p>
             )}
           </section>
@@ -258,10 +352,13 @@ export default function Home() {
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
             <h2 className="text-xl font-semibold mb-4">Slayers</h2>
             {result.slayers.length > 0 ? (
-              result.slayers.map((s: any) => <SkillBar key={s.slayer} skill={s.slayer} {...s} />)
+              result.slayers.map((s: any) => (
+                <SkillBar key={s.slayer} skill={s.slayer} {...s} />
+              ))
             ) : (
               <p className="text-neutral-500 text-sm">
-                Slayer data unavailable — this player may have this API category turned off.
+                Slayer data unavailable — this player may have this API category
+                turned off.
               </p>
             )}
           </section>
@@ -278,7 +375,8 @@ export default function Home() {
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
             <h2 className="text-xl font-semibold mb-4">Fairy Souls</h2>
             <div className="text-neutral-300 mb-2">
-              {result.fairySouls.collected} / {result.fairySouls.total} collected ({result.fairySouls.progressPercent}%)
+              {result.fairySouls.collected} / {result.fairySouls.total}{' '}
+              collected ({result.fairySouls.progressPercent}%)
             </div>
             <div className="bg-neutral-800 rounded-full h-3 overflow-hidden">
               <div
@@ -289,32 +387,71 @@ export default function Home() {
           </section>
         )}
 
-
-        {result?.bossCollections && (
-          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
-            <h2 className="text-xl font-semibold mb-4">Boss Collections</h2>
-            {result.bossCollections.map((b: any) => (
-              <div key={b.boss} className="mb-2 text-sm">
-                <span className="font-medium">{b.boss}</span>
-                <span className="text-neutral-500">
-                  {' '}— {b.kills} kills
-                  {b.nextReward ? `, ${b.remaining} more for ${b.nextReward}` : ' (all rewards unlocked)'}
-                </span>
-              </div>
-            ))}
-          </section>
-        )}
-
-
         {result?.pets && result.pets.length > 0 && (
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
-            <h2 className="text-xl font-semibold mb-4">Pets</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-semibold">Pets</h2>
+              <span className="text-sm text-neutral-500">
+                {result.pets.length} active
+              </span>
+            </div>
+            <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-1">
               {result.pets.map((p: any, i: number) => (
-                <div key={i} className="bg-neutral-800 rounded-lg p-3">
-                  <div className="font-medium capitalize">{p.type.toLowerCase().replace(/_/g, ' ')}</div>
-                  <div className="text-xs text-neutral-400">{p.tier}</div>
-                  <div className="text-xs text-neutral-500 mt-1">{Math.round(p.exp).toLocaleString()} XP</div>
+                <div
+                  key={i}
+                  className="group relative aspect-square overflow-visible rounded-3xl p-1"
+                >
+                  <div className="relative flex h-full w-full items-center justify-center rounded-3xl">
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-10">
+                      <div
+                        className="rounded-3xl"
+                        style={{
+                          width: 64,
+                          height: 64,
+                          // stronger, but still subtle glow using 40% alpha
+                          boxShadow: `0 12px 48px 12px ${p.tierColor}66`,
+                          borderRadius: '12px',
+                        }}
+                      />
+                    </div>
+
+                    <div
+                      className="relative h-16 w-16 overflow-hidden rounded-3xl shadow-lg"
+                      style={{ backgroundColor: p.tierColor, zIndex: 10 }}
+                    >
+                      <img
+                        src={getPetHeadSrc(p.headUuid)}
+                        alt={
+                          p.headUuid
+                            ? `${p.displayName} pet head`
+                            : 'placeholder pet head'
+                        }
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                  </div>
+
+                  {/* (name badge removed - names shown in hover popup only) */}
+
+                  {/* Hover popup - positioned above the tile and allowed to overflow */}
+                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full w-56 z-50 opacity-0 pointer-events-none transition duration-200 group-hover:opacity-100 group-hover:pointer-events-auto">
+                    <div className="bg-neutral-900/95 border border-neutral-800 rounded-lg p-3 text-xs text-neutral-200 shadow-xl">
+                      <div className="font-semibold text-white leading-tight capitalize">
+                        {p.displayName}
+                      </div>
+                      <div className="text-neutral-400 text-[11px] mt-1">
+                        Rarity: {p.tier}
+                      </div>
+                      <div className="mt-2 text-[11px] text-neutral-200">
+                        XP: {Math.round(p.exp).toLocaleString()}
+                      </div>
+                      {p.heldItem && (
+                        <div className="mt-1 text-[11px] text-neutral-200">
+                          {formatDisplayName(p.heldItem)}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -326,12 +463,20 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-4">Accessories</h2>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>
-                <div className="text-neutral-500 text-xs uppercase">Magical Power</div>
-                <div className="font-medium">{result.accessories.magicalPower.toLocaleString()}</div>
+                <div className="text-neutral-500 text-xs uppercase">
+                  Magical Power
+                </div>
+                <div className="font-medium">
+                  {result.accessories.magicalPower.toLocaleString()}
+                </div>
               </div>
               <div>
-                <div className="text-neutral-500 text-xs uppercase">Bag Upgrades</div>
-                <div className="font-medium">{result.accessories.bagUpgrades}</div>
+                <div className="text-neutral-500 text-xs uppercase">
+                  Bag Upgrades
+                </div>
+                <div className="font-medium">
+                  {result.accessories.bagUpgrades}
+                </div>
               </div>
             </div>
           </section>
@@ -355,79 +500,52 @@ export default function Home() {
 
         {result?.collections && (
           <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
-            <h2 className="text-xl font-semibold mb-4">Top Collections</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {result.collections.slice(0,50).map((c:any)=>(
-              <div
-              key={c.rawKey}
-              className="bg-neutral-800 rounded-lg p-4"
-              >
+            <h2 className="text-xl font-semibold mb-4">Collections</h2>
+            {[
+              'Boss',
+              'Combat',
+              'Farming',
+              'Fishing',
+              'Foraging',
+              'Mining',
+              'Rift',
+            ].map((category) => {
+              const items = result.collections.filter(
+                (c: any) => c.category == category
+              );
+              if (items.length == 0) return null;
 
-              <div className="font-semibold">
-              {c.name}
-              </div>
-
-
-              <div className="text-sm text-neutral-400">
-              {c.category}
-              </div>
-
-
-              <div className="mt-2">
-              Tier {c.tier}/{c.maxTier || "?"}
-              </div>
-
-
-              <div>
-              {c.amount.toLocaleString()} collected
-              </div>
-
-
-              {c.maxTier > 0 && (
-
-              <div className="mt-2">
-
-              <div className="bg-neutral-700 h-2 rounded">
-              <div
-              className="bg-emerald-500 h-2 rounded"
-              style={{
-              width:`${c.progressPercent}%`
-              }}
-              />
-              </div>
-
-
-              {c.remaining && (
-              <p className="text-xs text-neutral-400 mt-1">
-              {c.remaining.toLocaleString()} until next tier
-              </p>
-              )}
-
-              </div>
-
-              )}
-
-              </div>
-              ))}
-            </div>
-          </section>
-        )}
-
-
-        {result?.collectionMilestones && result.collectionMilestones.length > 0 && (
-          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
-            <h2 className="text-xl font-semibold mb-4">Collection Milestones</h2>
-            {result.collectionMilestones.slice(0, 5).map((m: any) => (
-              <div key={m.key} className="mb-2 text-sm">
-                <span className="font-medium">{m.name}</span>
-                <span className="text-neutral-500">
-                  {' '}—{' '}
-                  {m.remaining != null && m.remaining != undefined
-                    ? `${m.remaining.toLocaleString()} more to next tier`
-                    : 'max tier reached'}
-                </span>
-              </div>
-            ))}
+              return (
+                <div key={category} className="mb-6">
+                  <h3 className="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">
+                    {category}
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                    {items.map((c: any) => (
+                      <div
+                        key={c.rawKey}
+                        className="bg-neutral-800 rounded-lg p-3"
+                      >
+                        <div className="font-semibold text-sm">{c.name}</div>
+                        <div className="text-xs text-neutral-400">
+                          {c.maxTier > 0
+                            ? `Tier ${c.tier}/${c.maxTier}`
+                            : 'Tier data unavailable'}
+                        </div>
+                        <div className="text-xs text-neutral-500 mt-1">
+                          {c.amount.toLocaleString()} collected
+                        </div>
+                        {c.detail && (
+                          <div className="text-xs text-neutral-500 mt-2">
+                            {c.detail}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </section>
         )}
       </div>

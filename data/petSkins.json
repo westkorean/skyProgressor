@@ -1,0 +1,18 @@
+{
+  "GRIFFIN": {
+    "suggestedSkin": "GriffinHeadUser",
+    "notes": "Optional mapping to a skin that visually matches the Griffin pet"
+  },
+  "MITHRIL_GOLEM": {
+    "suggestedSkin": "MithrilGolemHead",
+    "notes": "Use a blocky stone-themed head"
+  },
+  "BEE": {
+    "suggestedSkin": "BeeHeadExample",
+    "notes": "Yellow/black themed bee head"
+  },
+  "RABBIT": {
+    "suggestedSkin": "RabbitHeadExample",
+    "notes": "Small white rabbit-style head"
+  }
+}
