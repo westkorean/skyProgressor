@@ -1,0 +1,2154 @@
+{
+  "defaults": {
+    "FROG": {
+      "textureHash": "45852a95928897746012988fbd5dbaa1b70b7a5fb65157016f4ff3f245374c08",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Frog_Pet",
+      "displayName": "Frog Pet",
+      "imageFile": "Frog_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BEE": {
+      "textureHash": "7e941987e825a24ea7baafab9819344b6c247c75c54a691987cd296bc163c263",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Bee_Pet",
+      "displayName": "Bee Pet",
+      "imageFile": "Bee_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ZOMBIE": {
+      "textureHash": "56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Zombie_Pet",
+      "displayName": "Zombie Pet",
+      "imageFile": "Zombie_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "RABBIT": {
+      "textureHash": "117bffc1972acd7f3b4a8f43b5b6c7534695b8fd62677e0306b2831574b",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Rabbit_Pet",
+      "displayName": "Rabbit Pet",
+      "imageFile": "Rabbit_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "DROPLET_WISP": {
+      "textureHash": "b412e70375ec99ee38ae94b30e9b10752d459662b54794dfe66fe6a183c672d3",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Droplet_Wisp_Pet",
+      "displayName": "Droplet Wisp Pet",
+      "imageFile": "Droplet_Wisp_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "FRACTURED_MONTEZUMA_SOUL": {
+      "textureHash": "df656c06e8a5cb4692564ee21748bddec9d785d1834284aaa1439601bba47d6b",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Montezuma_Pet",
+      "displayName": "Montezuma Pet",
+      "imageFile": "Montezuma_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BABY_YETI": {
+      "textureHash": "ab126814fc3fa846dad934c349628a7a1de5b415021a03ef4211d62514d5",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Baby_Yeti_Pet",
+      "displayName": "Baby Yeti Pet",
+      "imageFile": "Baby_Yeti_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BAT": {
+      "textureHash": "382fc3f71b41769376a9e92fe3adbaac3772b999b219c9d6b4680ba9983e527",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Bat_Pet",
+      "displayName": "Bat Pet",
+      "imageFile": "Bat_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BLACK_CAT": {
+      "textureHash": "e4b45cbaa19fe3d68c856cd3846c03b5f59de81a480eec921ab4fa3cd81317",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Black_Cat_Pet",
+      "displayName": "Black Cat Pet",
+      "imageFile": "Black_Cat_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ENDERMAN": {
+      "textureHash": "6eab75eaa5c9f2c43a0d23cfdce35f4df632e9815001850377385f7b2f039ce1",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Enderman_Pet",
+      "displayName": "Enderman Pet",
+      "imageFile": "Enderman_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ENDERMITE": {
+      "textureHash": "5a1a0831aa03afb4212adcbb24e5dfaa7f476a1173fce259ef75a85855",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Endermite_Pet",
+      "displayName": "Endermite Pet",
+      "imageFile": "Endermite_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GRIFFIN": {
+      "textureHash": "4c27e3cb52a64968e60c861ef1ab84e0a0cb5f07be103ac78da67761731f00c8",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Griffin_Pet",
+      "displayName": "Griffin Pet",
+      "imageFile": "Griffin_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GUARDIAN": {
+      "textureHash": "221025434045bda7025b3e514b316a4b770c6faa4ba9adb4be3809526db77f9d",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Guardian_Pet",
+      "displayName": "Guardian Pet",
+      "imageFile": "Guardian_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "HERMIT_CRAB": {
+      "textureHash": "26629dfa3fdfef04054024e0156d5e19da5401b1911f59b4bd3982685fe54c2c",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Hermit_Crab_Pet",
+      "displayName": "Hermit Crab Pet",
+      "imageFile": "Hermit_Crab_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "JERRY": {
+      "textureHash": "822d8e751c8f2fd4c8942c44bdb2f5ca4d8ae8e575ed3eb34c18a86e93b",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Jerry_Pet",
+      "displayName": "Jerry Pet",
+      "imageFile": "Jerry_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MITHRIL_GOLEM": {
+      "textureHash": "c1b2dfe8ed5dffc5b1687bc1c249c39de2d8a6c3d90305c95f6d1a1a330a0b1",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Mithril_Golem_Pet",
+      "displayName": "Mithril Golem Pet",
+      "imageFile": "Mithril_Golem_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SPIDER": {
+      "textureHash": "cd541541daaff50896cd258bdbdd4cf80c3ba816735726078bfe393927e57f1",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Spider_Pet",
+      "displayName": "Spider Pet",
+      "imageFile": "Spider_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GOLDEN_DRAGON": {
+      "textureHash": "2e9f9b1fc014166cb46a093e5349b2bf6edd201b680d62e48dbf3af9b0459116",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Golden_Dragon_Pet",
+      "displayName": "Golden Dragon Pet",
+      "imageFile": "Golden_Dragon_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "JADE_DRAGON": {
+      "textureHash": "4099589796de185787ab92c3066d0d0af832ffad7153a42bb2e2d23598e7ea60",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Jade_Dragon_Pet",
+      "displayName": "Jade Dragon Pet",
+      "imageFile": "Jade_Dragon_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ROSE_DRAGON": {
+      "textureHash": "9b7c3de075a2bb238ef51431206b10d586cb2a5b1cc41fe851cc5f0b02d357c7",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Rose_Dragon_Pet",
+      "displayName": "Rose Dragon Pet",
+      "imageFile": "Rose_Dragon_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "AMMONITE": {
+      "textureHash": "a074a7bd976fe6aba1624161793be547d54c835cf422243a851ba09d1e650553",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Ammonite_Pet",
+      "displayName": "Ammonite Pet",
+      "imageFile": "Ammonite_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ANKYLOSAURUS": {
+      "textureHash": "c1aa836b9096c417903299a6c5ab41738c19648ac439fed4bcbe6c32605338dc",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Ankylosaurus_Pet",
+      "displayName": "Ankylosaurus Pet",
+      "imageFile": "Ankylosaurus_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ARMADILLO": {
+      "textureHash": "c1eb6df4736ae24dd12a3d00f91e6e3aa7ade6bbefb0978afef2f0f92461018f",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Armadillo_Pet",
+      "displayName": "Armadillo Pet",
+      "imageFile": "Armadillo_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BAL": {
+      "textureHash": "c469ba2047122e0a2de3c7437ad3dd5d31f1ac2d27abde9f8841e1d92a8c5b75",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Bal_Pet",
+      "displayName": "Bal Pet",
+      "imageFile": "Bal_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BLAZE": {
+      "textureHash": "b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Blaze_Pet",
+      "displayName": "Blaze Pet",
+      "imageFile": "Blaze_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "BLUE_WHALE": {
+      "textureHash": "dab779bbccc849f88273d844e8ca2f3a67a1699cb216c0a11b44326ce2cc20",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Blue_Whale_Pet",
+      "displayName": "Blue Whale Pet",
+      "imageFile": "Blue_Whale_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "CHICKEN": {
+      "textureHash": "7f37d524c3eed171ce149887ea1dee4ed399904727d521865688ece3bac75e",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Chicken_Pet",
+      "displayName": "Chicken Pet",
+      "imageFile": "Chicken_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "CROW": {
+      "textureHash": "c31e7e1c614639bbc95a0d81ff7e5f7f606d9b33115cf2bf2a40cdcbbb531324",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Crow_Pet",
+      "displayName": "Crow Pet",
+      "imageFile": "Crow_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "DOLPHIN": {
+      "textureHash": "1415d2c543e34bb88ede94d79b9427691fc9be72daad8831a9ef297180546e18",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Dolphin_Pet",
+      "displayName": "Dolphin Pet",
+      "imageFile": "Dolphin_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "EERIE": {
+      "textureHash": "c3af70c6ff76ba48f24ee8a2063a5b50bbfabf409f4795248a292f8289f47c98",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Eerie_Pet",
+      "displayName": "Eerie Pet",
+      "imageFile": "Eerie_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ELEPHANT": {
+      "textureHash": "7071a76f669db5ed6d32b48bb2dba55d5317d7f45225cb3267ec435cfa514",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Elephant_Pet",
+      "displayName": "Elephant Pet",
+      "imageFile": "Elephant_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ENDER_DRAGON": {
+      "textureHash": "aec3ff563290b13ff3bcc36898af7eaa988b6cc18dc254147f58374afe9b21b9",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Ender_Dragon_Pet",
+      "displayName": "Ender Dragon Pet",
+      "imageFile": "Ender_Dragon_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GHOUL": {
+      "textureHash": "87934565bf522f6f4726cdfe127137be11d37c310db34d8c70253392b5ff5b",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Ghoul_Pet",
+      "displayName": "Ghoul Pet",
+      "imageFile": "Ghoul_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GIRAFFE": {
+      "textureHash": "fa5ef8694ecca227378d37a08b51d886b947e7d4b3a134256a9c674d79dbdf7",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Giraffe_Pet",
+      "displayName": "Giraffe Pet",
+      "imageFile": "Giraffe_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GLACITE_GOLEM": {
+      "textureHash": "af132a6593876d3c377d503fd66eca3fb938743251f7b16a9870c60b7388c8a3",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Glacite_Golem_Pet",
+      "displayName": "Glacite Golem Pet",
+      "imageFile": "Glacite_Golem_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GOBLIN": {
+      "textureHash": "7309d8dc35a638a04b915a3b15a1452ceeae0d7ea42bcdadb21b03046987515c",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Goblin_Pet",
+      "displayName": "Goblin Pet",
+      "imageFile": "Goblin_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GOLEM": {
+      "textureHash": "89091d79ea0f59ef7ef94d7bba6e5f17f2f7d4572c44f90f76c4819a714",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Golem_Pet",
+      "displayName": "Golem Pet",
+      "imageFile": "Golem_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "GRANDMA_WOLF": {
+      "textureHash": "e897c5640ccfc68ffb65e331b7070ce5d14439ad2cd7d9612a6feb023eedac18",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Grandma_Wolf_Pet",
+      "displayName": "Grandma Wolf Pet",
+      "imageFile": "Grandma_Wolf_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "HEDGEHOG": {
+      "textureHash": "5f5e835c116e8e200e2e06aa593cab8f1a9f8c40e7f005a9c76f12e24f4c6370",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Hedgehog_Pet",
+      "displayName": "Hedgehog Pet",
+      "imageFile": "Hedgehog_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "HORSE": {
+      "textureHash": "36fcd3ec3bc84bafb4123ea479471f9d2f42d8fb9c5f11cf5f4e0d93226",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Horse_Pet",
+      "displayName": "Horse Pet",
+      "imageFile": "Horse_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "HOUND": {
+      "textureHash": "b7c8bef6beb77e29af8627ecdc38d86aa2fea7ccd163dc73c00f9f258f9a1457",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Hound_Pet",
+      "displayName": "Hound Pet",
+      "imageFile": "Hound_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "JELLYFISH": {
+      "textureHash": "913f086ccb56323f238ba3489ff2a1a34c0fdceeafc483acff0e5488cfd6c2f1",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Jellyfish_Pet",
+      "displayName": "Jellyfish Pet",
+      "imageFile": "Jellyfish_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "KUUDRA": {
+      "textureHash": "1f0239fb498e5907ede12ab32629ee95f0064574a9ffdff9fc3a1c8e2ec17587",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Kuudra_Pet",
+      "displayName": "Kuudra Pet",
+      "imageFile": "Kuudra_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "LION": {
+      "textureHash": "b72e49d5e4af473571e7e078ab78c3e83968d2fe109da95244c5d0cb7d22b46b",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Lion_Pet",
+      "displayName": "Lion Pet",
+      "imageFile": "Lion_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MAGMA_CUBE": {
+      "textureHash": "38957d5023c937c4c41aa2412d43410bda23cf79a9f6ab36b76fef2d7c429",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Magma_Cube_Pet",
+      "displayName": "Magma Cube Pet",
+      "imageFile": "Magma_Cube_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MAMMOTH": {
+      "textureHash": "6b10715732cd1fd49fa1b6187947c307dd4687105cf033840607f9d6234743ad",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Mammoth_Pet",
+      "displayName": "Mammoth Pet",
+      "imageFile": "Mammoth_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MEGALODON": {
+      "textureHash": "a94ae433b301c7fb7c68cba625b0bd36b0b14190f20e34a7c8ee0d9de06d53b9",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Megalodon_Pet",
+      "displayName": "Megalodon Pet",
+      "imageFile": "Megalodon_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MOLE": {
+      "textureHash": "727baaafc09978d4bda73e16afdde85ec13b0f95ad989524c5fcaa717cf06b4a",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Mole_Pet",
+      "displayName": "Mole Pet",
+      "imageFile": "Mole_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MONKEY": {
+      "textureHash": "13cf8db84807c471d7c6922302261ac1b5a179f96d1191156ecf3e1b1d3ca",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Monkey_Pet",
+      "displayName": "Monkey Pet",
+      "imageFile": "Monkey_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "MOOSHROOM_COW": {
+      "textureHash": "2b52841f2fd589e0bc84cbabf9e1c27cb70cac98f8d6b3dd065e55a4dcb70d77",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Mooshroom_Cow_Pet",
+      "displayName": "Mooshroom Cow Pet",
+      "imageFile": "Mooshroom_Cow_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "OCELOT": {
+      "textureHash": "5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Ocelot_Pet",
+      "displayName": "Ocelot Pet",
+      "imageFile": "Ocelot_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "OWL": {
+      "textureHash": "da3216da54e7368fb40b721239ad95e07ef4f97d93f1c42ff319bab9a53882af",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Owl_Pet",
+      "displayName": "Owl Pet",
+      "imageFile": "Owl_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PARROT": {
+      "textureHash": "f0bfa850f5de4b2981cce78f52fc2cc7cd7b5c62caefeddeb9cf311e83d9097",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Parrot_Pet",
+      "displayName": "Parrot Pet",
+      "imageFile": "Parrot_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PENGUIN": {
+      "textureHash": "37534e97f36e5a8335928e171ec99608bee7fb16e260afb301025b3b17eeefc4",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Penguin_Pet",
+      "displayName": "Penguin Pet",
+      "imageFile": "Penguin_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PHOENIX": {
+      "textureHash": "23aaf7b1a778949696cb99d4f04ad1aa518ceee256c72e5ed65bfa5c2d88d9e",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Phoenix_Pet",
+      "displayName": "Phoenix Pet",
+      "imageFile": "Phoenix_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PIG": {
+      "textureHash": "621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Pig_Pet",
+      "displayName": "Pig Pet",
+      "imageFile": "Pig_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PIGMAN": {
+      "textureHash": "63d9cb6513f2072e5d4e426d70a5557bc398554c880d4e7b7ec8ef4945eb02f2",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Pigman_Pet",
+      "displayName": "Pigman Pet",
+      "imageFile": "Pigman_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "RIFT_FERRET": {
+      "textureHash": "b6b11399448260185da1d17e54c984515faab6d8585f00972451ec2b43d46f94",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Rift_Ferret_Pet",
+      "displayName": "Rift Ferret Pet",
+      "imageFile": "Rift_Ferret_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "ROCK": {
+      "textureHash": "cb2b5d48e57577563aca31735519cb622219bc058b1f34648b67b8e71bc0fa",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Rock_Pet",
+      "displayName": "Rock Pet",
+      "imageFile": "Rock_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SCATHA": {
+      "textureHash": "df03ad96092f3f789902436709cdf69de6b727c121b3c2daef9ffa1ccaed186c",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Scatha_Pet",
+      "displayName": "Scatha Pet",
+      "imageFile": "Scatha_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SEAL": {
+      "textureHash": "3a7728bbf6f53f6c1e3b121778e2c2175f6c27032dbd9a5fb3a0d8747e104f67",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Seal_Pet",
+      "displayName": "Seal Pet",
+      "imageFile": "Seal_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SHEEP": {
+      "textureHash": "64e22a46047d272e89a1cfa13e9734b7e12827e235c2012c1a95962874da0",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Sheep_Pet",
+      "displayName": "Sheep Pet",
+      "imageFile": "Sheep_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SILVERFISH": {
+      "textureHash": "da91dab8391af5fda54acd2c0b18fbd819b865e1a8f1d623813fa761e924540",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Silverfish_Pet",
+      "displayName": "Silverfish Pet",
+      "imageFile": "Silverfish_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SKELETON": {
+      "textureHash": "fca445749251bdd898fb83f667844e38a1dff79a1529f79a42447a0599310ea4",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Skeleton_Pet",
+      "displayName": "Skeleton Pet",
+      "imageFile": "Skeleton_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SKELETON_HORSE": {
+      "textureHash": "47effce35132c86ff72bcae77dfbb1d22587e94df3cbc2570ed17cf8973a",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Skeleton_Horse_Pet",
+      "displayName": "Skeleton Horse Pet",
+      "imageFile": "Skeleton_Horse_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SNAIL": {
+      "textureHash": "50a9933a3b10489d38f6950c4e628bfcf9f7a27f8d84666f04f14d5374252972",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Snail_Pet",
+      "displayName": "Snail Pet",
+      "imageFile": "Snail_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SPINOSAURUS": {
+      "textureHash": "d3c9d479471a2f13f22548315159591720992e70c920fef83a901b7186720e3c",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Spinosaurus_Pet",
+      "displayName": "Spinosaurus Pet",
+      "imageFile": "Spinosaurus_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SPIRIT": {
+      "textureHash": "8d9ccc670677d0cebaad4058d6aaf9acfab09abea5d86379a059902f2fe22655",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Spirit_Pet",
+      "displayName": "Spirit Pet",
+      "imageFile": "Spirit_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "SQUID": {
+      "textureHash": "01433be242366af126da434b8735df1eb5b3cb2cede39145974e9c483607bac",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Squid_Pet",
+      "displayName": "Squid Pet",
+      "imageFile": "Squid_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "TYRANNOSAURUS": {
+      "textureHash": "93f28ec96df59c67e9d2fc2e7e3d055fa31646e4111add9fe26a692801964126",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/T-Rex_Pet",
+      "displayName": "T-Rex Pet",
+      "imageFile": "T-Rex_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "TIGER": {
+      "textureHash": "fc42638744922b5fcf62cd9bf27eeab91b2e72d6c70e86cc5aa3883993e9d84",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Tiger_Pet",
+      "displayName": "Tiger Pet",
+      "imageFile": "Tiger_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "TURTLE": {
+      "textureHash": "212b58c841b394863dbcc54de1c2ad2648af8f03e648988c1f9cef0bc20ee23c",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Turtle_Pet",
+      "displayName": "Turtle Pet",
+      "imageFile": "Turtle_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "WITCH": {
+      "textureHash": "baf818b04d6ae98a69ad8d9463d8d0379921d3eb79222e1c6272f65372d80775",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Witch_Pet",
+      "displayName": "Witch Pet",
+      "imageFile": "Witch_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "WITHER_SKELETON": {
+      "textureHash": "f5ec964645a8efac76be2f160d7c9956362f32b6517390c59c3085034f050cff",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Wither_Skeleton_Pet",
+      "displayName": "Wither Skeleton Pet",
+      "imageFile": "Wither_Skeleton_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "WOLF": {
+      "textureHash": "dc3dd984bb659849bd52994046964c22725f717e986b12d548fd169367d494",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Wolf_Pet",
+      "displayName": "Wolf Pet",
+      "imageFile": "Wolf_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PRECURSOR_DRONE": {
+      "textureHash": "51aae288ab9d5354fda4e395a36421bd261a9b6213dbb786d7ab39465e479ce9",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Precursor_Drone_Pet",
+      "displayName": "Precursor Drone Pet",
+      "imageFile": "Precursor_Drone_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "FLYING_FISH": {
+      "textureHash": "40cd71fbbbbb66c7baf7881f415c64fa84f6504958a57ccdb8589252647ea",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Flying_Fish_Pet",
+      "displayName": "Flying Fish Pet",
+      "imageFile": "Flying_Fish_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "FROST_WISP": {
+      "textureHash": "1d8ad9936d758c5ea30b0b7cc7c67c2bfcea829ecf2425c0b50fc92a26ae23d0",
+      "source": "hypixel-fandom",
+      "sourceUrl": "https://hypixel-skyblock.fandom.com/wiki/Frost_Wisp_Pet",
+      "displayName": "Frost Wisp Pet",
+      "imageFile": "Frost_Wisp_Pet.png",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    }
+  },
+  "skins": {
+    "PET_SKIN_SHEEP_NEON_BLUE": {
+      "petType": "SHEEP",
+      "textureHash": "e55b3fe9311c99342ea565483cbf9e969a258faf7afa30270fb9a0929377acfd",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SILVERFISH": {
+      "petType": "SILVERFISH",
+      "textureHash": "d8552ff591042c4a38f8ba0626784ae28c4545a97d423fd9037c341035593273",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_COOL": {
+      "petType": "ROCK",
+      "textureHash": "fefcdbb7d95502acc1ae35a32a40ce4dec8f4c9f0da26c9d9fe7c2c3eb748f6",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_NEON_GREEN": {
+      "petType": "SHEEP",
+      "textureHash": "2c14d66911554bd0882339074bf6b8110c2d3509b69e7a6144e4d5a7164bacc8",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_ORANGE": {
+      "petType": "SHEEP",
+      "textureHash": "83b86b1b5561359a8591956bdaa157d6844771afaca1247d6cdfd3d2b02513b6",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_BLUE": {
+      "petType": "ELEPHANT",
+      "textureHash": "4b62969c005815d0409136380febc5ac468aaba9bda4db80954fa5426ee0a323",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_WOLF_HENZO_DOGGO": {
+      "petType": "WOLF",
+      "textureHash": "c0574dc7b9a89835f191acc0b695e811e27b66222e025c10a6090fb512d90fab",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_YETI_GROWN_UP": {
+      "petType": "BABY_YETI",
+      "textureHash": "f5f29a975529276d916fc67998833c11ee178ff21e5941afdfb0fa7010f8374e",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_THINKING": {
+      "petType": "ROCK",
+      "textureHash": "dd2f781f03c365bbc5dd1e7186ab38dc69465e836c9fe066a9a844f34a4da92",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_MONKEY_GOLDEN": {
+      "petType": "MONKEY",
+      "textureHash": "e9281c4d87d68526b0749d4361e6ef786c8a35717aa053da704b1d53410d37a6",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_JERRY_GREEN_ELF": {
+      "petType": "JERRY",
+      "textureHash": "4ec5455f43426ca1874b5c7b4a492ec3722a502f8b9599e758e133fed8b3c1e4",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_MONKEY_SUNGLASSES": {
+      "petType": "MONKEY",
+      "textureHash": "ccb5de94f814069b317b318abbe0d000d51dfe9258bbe9e9e87ca7f57ff45df9",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ENDERMITE_RADIANT": {
+      "petType": "ENDERMITE",
+      "textureHash": "2fc4a7542b754420b1b19f9a28ea00040555a9e876052b97f65840308a93348d",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_MONOCHROME": {
+      "petType": "ELEPHANT",
+      "textureHash": "4bdf0f628c05e86cabdee2f5858dd5def7f8b8d940cbf25f9937e2ffb53432f4",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_TIGER_TWILIGHT": {
+      "petType": "TIGER",
+      "textureHash": "896211dc599368dbd9056c0116ab61063991db793be93066a858eb4e9ce56438",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_JERRY_RED_ELF": {
+      "petType": "JERRY",
+      "textureHash": "1d82f9c36e824c1e37963a849bf5abd76d3b349125023504af58369086089ee9",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_WOLF": {
+      "petType": "WOLF",
+      "textureHash": "c8e414e762e1024c799e70b7a527c22fb95648f141d660b10c512cc124334218",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_WHITE": {
+      "petType": "SHEEP",
+      "textureHash": "b92a1a5c325f25f7438a0abb4f86ba6cf75552d02c7349a7292981459b31d2f7",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_RABBIT_ROSE": {
+      "petType": "RABBIT",
+      "textureHash": "d7cddf5b20cb50d6600e5333c6bb3fb15b4741f17e3675fc2bfc09c2cd09e619",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ENDERMAN": {
+      "petType": "ENDERMAN",
+      "textureHash": "ea84cc8818c293484fdaafc8fa2f0bf39e55733a247d68023df2c6c6b9b671d0",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_RED": {
+      "petType": "SHEEP",
+      "textureHash": "5582ee5d1c5c08d37df26d6922be0808be9c0b6b347d89c0da263562fafcd505",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_GREEN": {
+      "petType": "SHEEP",
+      "textureHash": "10201d6846d70d94255f7f7d1fb1f17fd27fdf20465d283472f6aca34c2202bd",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_DERP": {
+      "petType": "ROCK",
+      "textureHash": "c4f89fbd12c209f7f26c1f34a1bd7f47635814759c09688dd212b205c73a8c02",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_LIGHT_GREEN": {
+      "petType": "SHEEP",
+      "textureHash": "cf183ec2fe58faa43e568419b7a0dc446ece4ea0be52ec784c94e1d74b75939d",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_LIGHT_GRAY": {
+      "petType": "SHEEP",
+      "textureHash": "fa35c02e3f035cd6586c42938065fdc1241d0ef8838e6e901e146ea6b6f0bffe",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ENDERMAN_SLAYER": {
+      "petType": "ENDERMAN",
+      "textureHash": "8fff41e1afc597b14f77b8e44e2a134dabe161a1526ade80e6290f2df331dc11",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_DRAGON_PASTEL": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "4a62ec4e019fe0fed059663ae59daa0d91729517bf33ae7f7d7e722913602df4",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_LIGHT_BLUE": {
+      "petType": "SHEEP",
+      "textureHash": "722220de1a863bc5d9b9e7a6a3b03214c9f3d698ed3fe0d28220f3b93b7685c5",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_GREEN": {
+      "petType": "ELEPHANT",
+      "textureHash": "360c122ade5b2fedca14aa78c834a7b0ac9cb5da2a0c93112163086f90c13b68",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_EMBARRASSED": {
+      "petType": "ROCK",
+      "textureHash": "27ff34992e66599e8529008be3fb577cb0ab545294253e25a0cc988e416c849",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_RABBIT_AQUAMARINE": {
+      "petType": "RABBIT",
+      "textureHash": "35a2119d122961852c010c1007ab2aff95b4bbeb74407463f6d2e1ff0792c812",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_BLUE": {
+      "petType": "SHEEP",
+      "textureHash": "4158a501213747e119669082de5b751d66c2c55d7c051cb58367ca4665289f60",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_BLACK_CAT_ONYX": {
+      "petType": "BLACK_CAT",
+      "textureHash": "be924115d3a8bbacfd4fafb6cc70f99a2f7580e4583a50fa9b9c285a98ac0c56",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_BLACK": {
+      "petType": "SHEEP",
+      "textureHash": "aa9dcda642a807cd2daa4aa6be87cef96e08a8c8f5cec2657dda4266c6a884c2",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_YELLOW": {
+      "petType": "SHEEP",
+      "textureHash": "9c840b66c6442059ba31fc34998e15c4447a429d3f789a7e9f62e6a57dda0ab2",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_BLACK_CAT_IVORY": {
+      "petType": "BLACK_CAT",
+      "textureHash": "f51b17d7ded6c7e8f3b2dac12378a6fc4e9228b911986f64c8af45837ae6d9e1",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_GRAY": {
+      "petType": "SHEEP",
+      "textureHash": "18e9c92b3768c464b6e557b5e3d8e4daa8a377c983b8fb25019760b6eae03127",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_CHICKEN_BABY_CHICK": {
+      "petType": "CHICKEN",
+      "textureHash": "e50cbbc2b54a3e791262dcd5e2341486d9b15a5da4f98fc03458c05b395f0335",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_RED": {
+      "petType": "ELEPHANT",
+      "textureHash": "ba5c66ec66cb6b4b5550085f583b4e5c1cee5247bec5fbcc5c318c30c66cab42",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_PINK": {
+      "petType": "ELEPHANT",
+      "textureHash": "570eef474ec0e56cc34c2307eaa39f024612f8cd7248e7d5b14169ebd307c742",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_PURPLE": {
+      "petType": "SHEEP",
+      "textureHash": "99a88cf7dd33063587c6b540e6130abc5d07f1a65c47573ab3c1ad3ccec8857f",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_NEON_RED": {
+      "petType": "SHEEP",
+      "textureHash": "4918be142a20b2b39bc582f421f6ae87b3184b5c9523d16fbe6d69530107886a",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_MEGALODON_BULLHEAD": {
+      "petType": "MEGALODON",
+      "textureHash": "e6e6fb66bfe9737a33ba53f3d5a8b9fdba1c65a5d2760bcd9a6e54928527103b",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_MONKEY_GORILLA": {
+      "petType": "MONKEY",
+      "textureHash": "c3eb3e37e9873bfc176b9ed8ef4fbef833de144546bfaefdf24863c3eb87bb86",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_DRAGON_NEON_BLUE": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "96a4b9fbcf8c3e7e1232e57d6a2870ba3ea30f76407ae1197fd52e9f76ca46ac",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_BROWN": {
+      "petType": "SHEEP",
+      "textureHash": "57f4059f828d97457bfed8c4d8a8bbaa944cf8e259fc2f82ff2785ea51d55905",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_PINK": {
+      "petType": "SHEEP",
+      "textureHash": "afa7747684dcb96192d90342cea62742ec363da07cb5e6e25eecec888cd2076",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_DRAGON_NEON_RED": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "e05c9b4f4218677c5b4bcc9c7d9e29e18d1684a536781fede1280fc5e6961538",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SILVERFISH_FOSSILIZED": {
+      "petType": "SILVERFISH",
+      "textureHash": "ca3a363368ed1e06cee3900717f062e02ec39aee1747675392255b48f7f83600",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_GUARDIAN": {
+      "petType": "GUARDIAN",
+      "textureHash": "37cc76e7af29f5f3fbfd6ece794160811eff96f753459fa61d7ad176a064e3c5",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_MAGENTA": {
+      "petType": "SHEEP",
+      "textureHash": "d4829d39a54ed06bb5d04a2a21d2636c5ddf27b53dc8448262fdabc775ec640a",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_NEON_YELLOW": {
+      "petType": "SHEEP",
+      "textureHash": "94263428c23da9165b2639a8f2428ff4835227945c9e1038461cf644d67cc82a",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_RABBIT": {
+      "petType": "RABBIT",
+      "textureHash": "a34631d940fddb689ddef6a3b352c50220c460dba05cd18dc83192b59dc647f8",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_LAUGH": {
+      "petType": "ROCK",
+      "textureHash": "8cc1ef513d5f616675242174acde7b9d6259a47c4fe8f6e4b6e20920319d7073",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_HORSE_ZOMBIE": {
+      "petType": "SKELETON_HORSE",
+      "textureHash": "578211e1b4d99d1c7bfda4838e48fc884c3eae376f58d932bc2f78b0a919f8e7",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_DRAGON_NEON_PURPLE": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "54bdf5ba6289b29e27c57db1ec7f76151c39492d409268e00a9838e8c963159",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_ORANGE": {
+      "petType": "ELEPHANT",
+      "textureHash": "554a34a80c474206d3700b8fced6b44fab0b0ed0b05c1293ff0c5d86eda251d1",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_WITHER": {
+      "petType": "WITHER_SKELETON",
+      "textureHash": "224c2d14a0219af5ccfcaa36e8a333e271724ed61276611f9529e16c10273a0d",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_SHEEP_AQUA": {
+      "petType": "SHEEP",
+      "textureHash": "5e92c240c4965155e31f26580f9dcc0e8a7bf5d3e410aab6c199f593238ce565",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_WHALE_ORCA": {
+      "petType": "BLUE_WHALE",
+      "textureHash": "b008ca9c00cecf499685030e8ef0c230a32908619ce9dc10690b69111591faa1",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_DOLPHIN_SNUBNOSE": {
+      "petType": "DOLPHIN",
+      "textureHash": "1ed725cdefc00f7fde47cb70498e8bfce4ac301339099b410f52ebe27f9a2b81",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ELEPHANT_PURPLE": {
+      "petType": "ELEPHANT",
+      "textureHash": "5ff9df290b6c5a4984fc6e516605f9816b9882f7bf04db08d3f7ee32d1969a44",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_MEGALODON_BABY": {
+      "petType": "MEGALODON",
+      "textureHash": "7cdb1ff8c967c831eb685e09e5dea586ed291472395acf7a25e9d5bb41d6c082",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_ROCK_SMILE": {
+      "petType": "ROCK",
+      "textureHash": "713c8b2916a275db4c1762cf5f13d7b95b91d60baf5164a447d6efa7704cf11b",
+      "source": "hypixel-api",
+      "updatedAt": "2026-08-01T19:13:27.569Z"
+    },
+    "PET_SKIN_HOUND_BEAGLE": {
+      "petType": "HOUND",
+      "textureHash": "877364e0ce27f0239b7754706b93022d0cf945854015d6096f9cf43d24a38269",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Beagle",
+      "releaseDate": "2021-08-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SQUID_GLOW": {
+      "petType": "SQUID",
+      "textureHash": "fca9982520eee4066bab0ae697f3b3656084b6639ba89113bd8e23ab7288563d",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Glow",
+      "releaseDate": "2021-09-14 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TIGER_SABER_TOOTH": {
+      "petType": "TIGER",
+      "textureHash": "e92dba2fbd699d541b2fa0fbcaff640ad8c311987ade59a13b2a65d0ce319316",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Saber-Tooth",
+      "releaseDate": "2021-09-28 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_PARROT_GOLD_MACAW": {
+      "petType": "PARROT",
+      "textureHash": "5dad34650f8d1c6afbfd979b38d7e1412e636215b8f85240e06d998278879b8b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Gold Macaw",
+      "releaseDate": "2021-10-20 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BAT_VAMPIRE": {
+      "petType": "BAT",
+      "textureHash": "473af69ed9bf67e2f5403dd7d28bbe32034749bbfb635ac1789a412053cdcbf0",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Vampire",
+      "releaseDate": "2021-10-31 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_PHOENIX_ICE": {
+      "petType": "PHOENIX",
+      "textureHash": "12582057e52d0f7fffd1a1f93acf196db5f09b76f1ba3ede28476cc4cd82da97",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Ice",
+      "releaseDate": "2021-11-25 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_OCELOT_SNOW_TIGER": {
+      "petType": "OCELOT",
+      "textureHash": "496499b99c88314b1459fc5b515c477b069bf2229a2833abb2e1ff20b5f29457",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Snow Tiger",
+      "releaseDate": "2021-12-14 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BLAZE_FROZEN": {
+      "petType": "BLAZE",
+      "textureHash": "9617a34c8ff467fdb45be3ff17863fcff7e8424c8dd9b99666edd13b44b32e8c",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Frozen",
+      "releaseDate": "2021-12-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_DOLPHIN_SNUBNOSE_GREEN": {
+      "petType": "DOLPHIN",
+      "textureHash": "5f2879bd8b0bafdd71dbd3fc5850afc6c53da60d4252182cfc80737a00d72408",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Green Snubfin",
+      "releaseDate": "2022-01-19 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_DOLPHIN_SNUBNOSE_RED": {
+      "petType": "DOLPHIN",
+      "textureHash": "779df5b4da325c0d740251b4204a0cd22d9fdb88cecb6eff6176ef4f2ecedb1e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Red Snubfin",
+      "releaseDate": "2022-01-19 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_DOLPHIN_SNUBNOSE_PURPLE": {
+      "petType": "DOLPHIN",
+      "textureHash": "fd0b213c15dd7b8c67512bc18bf14d32dc4b57b9c305d1c7514aa3e2609a78a4",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Purple Snubfin",
+      "releaseDate": "2022-01-19 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_DOLPHIN_SNUBFIN": {
+      "petType": "DOLPHIN",
+      "textureHash": "279413c788c7f450234bdab0cf0d0291c57f730e380c6d4c7746fde15928381",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Snubfin",
+      "releaseDate": "2022-01-19 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TIGER_GOLDEN": {
+      "petType": "TIGER",
+      "textureHash": "c85f8db6e5b826d3dd5847cd8d7279f4d4dd50bc955ca7968c7c49b496ed7a3b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Golden",
+      "releaseDate": "2022-02-01 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ARMADILLO_ENCHANTED": {
+      "petType": "ARMADILLO",
+      "textureHash": "7426d7b174e8bd9c283f91a42cf2dfa95a518d5eae97ab5595412d4951d4db18",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Enchanted",
+      "releaseDate": "2022-02-16 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ARMADILLO_SEAFOAM": {
+      "petType": "ARMADILLO",
+      "textureHash": "d0c72b0db2ecbdaf153c563593d17d546b302b278b1b81d3e063963b5b0e5bc4",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Seafoam",
+      "releaseDate": "2022-02-16 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_JERRY_HANDSOME": {
+      "petType": "JERRY",
+      "textureHash": "11be7e0da38de93dba068a40011808ecc39bb757d3fdee8fb25128e2a06dde86",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Handsome",
+      "releaseDate": "2022-04-01 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_KUUDRA_LOYALTY": {
+      "petType": "KUUDRA",
+      "textureHash": "bb7d06ab10c4d15433670ca59ed6ad87d797c24bf7bfc3343730aa1594a4970c",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Loyalty",
+      "releaseDate": "2022-05-13 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMAN_NEON": {
+      "petType": "ENDERMAN",
+      "textureHash": "6f9020c07d875bad1440337adb55a08c15db06b994646a691795f4cd293fe3de",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Neon",
+      "releaseDate": "2022-06-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMAN_XENON": {
+      "petType": "ENDERMAN",
+      "textureHash": "92defbe3cde326d4511bb53339d777afa703f3ec4daa697d61a4402744cbb0cd",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Xenon",
+      "releaseDate": "2022-06-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BAL_INFERNO": {
+      "petType": "BAL",
+      "textureHash": "15ae6e347c2c828020b22f6faed62baf27548fad1656447af007b802d6f556e4",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Inferno",
+      "releaseDate": "2022-06-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDER_DRAGON_UNDEAD": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "e7232b2d2e618076cd620e352445d4a16382fdb24bcfafba7acceec0c146d2f6",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Undead",
+      "releaseDate": "2022-07-22 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_RGBEE": {
+      "petType": "BEE",
+      "textureHash": "99c6da45da5a46614c05d5f8d7b3dfefb025e82ca4cdb4f0db64ced1315df659",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "RGBee",
+      "releaseDate": "2022-08-26 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_JELLYFISH_LUMINESCENT": {
+      "petType": "JELLYFISH",
+      "textureHash": "fb656bac64ada64fa221e9f48fbf8ab9334b7934efb979d758df4d0c1bd17695",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Luminescent",
+      "releaseDate": "2022-09-09 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ROCK_SUS": {
+      "petType": "ROCK",
+      "textureHash": "54f2672f949d435c2cda44367b0f08a6ca25ea7f46a50b66f28840ad838c858",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Sus",
+      "releaseDate": "2022-08-18 00:00:00 GMT+1",
+      "legacySource": "regalia",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ROCK_SWEATING": {
+      "petType": "ROCK",
+      "textureHash": "26ca4c9f9543238de127a0af424e2e0dcfe7ef26fbd21c9a026adac2caa1fe04",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Sweating",
+      "releaseDate": "2022-08-18 00:00:00 GMT+1",
+      "legacySource": "regalia",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ROCK_SURPRISED": {
+      "petType": "ROCK",
+      "textureHash": "8c7c4545d4134fae44ef319303c91ad14fcc9354b0bf071933b4a420e172fbd1",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Surprised",
+      "releaseDate": "2022-08-18 00:00:00 GMT+1",
+      "legacySource": "regalia",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ROCK_BLINKING": {
+      "petType": "ROCK",
+      "textureHash": "f814eadaa5da6e38f8536501d457a130adef9a025103bdd19dd4732d353509a0",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Blinking",
+      "releaseDate": "2022-08-18 00:00:00 GMT+1",
+      "legacySource": "regalia",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_GOLDEN_DRAGON_ANUBIS": {
+      "petType": "GOLDEN_DRAGON",
+      "textureHash": "b44df25075a320c68df0e9bc76fd7f0db0be6f128e59d14f0591fed5cc6c396e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Anubis",
+      "releaseDate": "2022-09-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BLACK_CAT_PURRANORMAL": {
+      "petType": "BLACK_CAT",
+      "textureHash": "534a1340f5aa4f013bd49e9d41d8a471d3a044165adcb929c05fe052376e5e4b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Purranormal Black Cat",
+      "releaseDate": "2022-10-05 18:00:00 GMT+1",
+      "legacySource": "tyashoi_alchemist",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_ZOMBEE": {
+      "petType": "BEE",
+      "textureHash": "f6e1ae93ad5e94a0904a0877ff14a9de56083242a5786ac7dc503e098ae37120",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "ZomBee Bee",
+      "releaseDate": "2022-10-05 18:00:00 GMT+1",
+      "legacySource": "tyashoi_alchemist",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_HIDE_AND_SQUEAK": {
+      "petType": "RAT",
+      "textureHash": "c484a612ef0b1061478ddd7595abd612fb61de5a3cdc7d0e53c5f6915f0ebb8f",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Hide and Squeak Rat",
+      "releaseDate": "2022-10-05 18:00:00 GMT+1",
+      "legacySource": "tyashoi_alchemist",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SHEEP_CHROMA_WOOLY": {
+      "petType": "SHEEP",
+      "textureHash": "53911510276c27656be97386baabb2d8543c0dffb9e5723ad279438fc2eaa51e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Chroma Sheep",
+      "releaseDate": "2022-10-07 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SHEEP_BLACK_WOOLY": {
+      "petType": "SHEEP",
+      "textureHash": "dd7d6f438d16594c46b1fc3c868e4b68c53324ad01bcfe1a22052fc822cb5bb1",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Black Wooly Sheep",
+      "releaseDate": "2022-10-07 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SHEEP_WHITE_WOOLY": {
+      "petType": "SHEEP",
+      "textureHash": "7b44fb8a08057e4a7278a6c5aa2cb692f2e7cfea960c68fc0d4d2e26e88dd359",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "White Wooly Sheep",
+      "releaseDate": "2022-10-07 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MOOSHROOM_COW_MOOCELIUM": {
+      "petType": "MOOSHROOM_COW",
+      "textureHash": "b92d94a5efca94f8739973b44a01bbbdf4a2c0e05dbb45e97342076c950b73a7",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Moocelium Mooshroom Mushroom Cow",
+      "releaseDate": "2022-10-21 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SNOWMAN_ICE_GOLEM": {
+      "petType": "SNOWMAN",
+      "textureHash": "69736cfd666c4237e910892d8974889e199c2d59b7d006dcaa01b6241393fe23",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Ice Golem Snowman",
+      "releaseDate": "2022-10-21 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_CHICKEN_TURKEY": {
+      "petType": "CHICKEN",
+      "textureHash": "a36c5153d00dd7356eb9aa438e9f1fe668ce3e26498793ed33c13908955b95e4",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Turkey Chicken",
+      "releaseDate": "2022-11-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TIGER_NEON": {
+      "petType": "TIGER",
+      "textureHash": "805de32806ea868cb6e222656936932f106fb4f44018afdbf78e4566d5e0a34b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Neon Tiger",
+      "releaseDate": "2022-11-04 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ROCK_NORTH_STAR": {
+      "petType": "ROCK",
+      "textureHash": "45f5cab199508725ea2bbe3ed2d84b891c5d8b7ee7eaedc69e67196dc6fee3d9",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "North Star",
+      "releaseDate": "2022-12-25 18:00:00 GMT+1",
+      "legacySource": "advent_calendar",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_GRIFFIN_REINDRAKE": {
+      "petType": "GRIFFIN",
+      "textureHash": "70beb4c7f5f8d14be3a04f6fa3573fa8bd59ea2236b66f05fba57c678ca37776",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Reindrake",
+      "releaseDate": "2022-12-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_REINDEER_AURORA": {
+      "petType": "REINDEER",
+      "textureHash": "39f88de3aa15a64da4fe190ae1d674cfcafd4fbf4c29855c87671bd741625cc6",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Aurora",
+      "releaseDate": "2022-12-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RABBIT_LUNAR": {
+      "petType": "RABBIT",
+      "textureHash": "71e3f67fb39b2a1e01426aa091c5a6666b237286eb1c4c5fcbca505dfe1dbdc3",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Lunar",
+      "releaseDate": "2023-01-22 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SCATHA_ALBINO": {
+      "petType": "SCATHA",
+      "textureHash": "d608fdc7c9c2fbb51fc7bbfca8874752d9435875d782654b4f1d2b2220e9d6ae",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Albino",
+      "releaseDate": "2023-02-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SCATHA_GOLDEN": {
+      "petType": "SCATHA",
+      "textureHash": "4313bb28c6e2cfe4444a3eaacab53103cc91f9419015292facfd431e950bf71a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Golden",
+      "releaseDate": "2023-02-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SCATHA_DARK": {
+      "petType": "SCATHA",
+      "textureHash": "9b6946ddfdcdc5a894faa8f1b048728521dc0f93c751d6980f85b98a504a1789",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Dark",
+      "releaseDate": "2023-02-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_AMMONITE_MAGMA": {
+      "petType": "AMMONITE",
+      "textureHash": "7008b8d08f812efe328f898aa7ccf70a68c7dded3ba715490e25065e7ff34d13",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Magma",
+      "releaseDate": "2023-04-21 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_AMMONITE_NATURAL": {
+      "petType": "AMMONITE",
+      "textureHash": "f1546d6a690ecf22a5a93812435ddacbbe9c278a02ea38039d938313344dba53",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Natural",
+      "releaseDate": "2023-04-21 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MONKEY_LEMUR": {
+      "petType": "MONKEY",
+      "textureHash": "b6f45eb8a8bef3f8ee406ac0923d8626c5e5b7ff511cfbd417c994b68941f104",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Lemur",
+      "releaseDate": "2023-06-19 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_PARROT_BUCCANEER": {
+      "petType": "PARROT",
+      "textureHash": "385de4d50ab148f68fa377cdd760f9d23f20d503b3e1c1ad74120029ccdc7299",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Buccaneer",
+      "releaseDate": "2023-07-15 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDER_DRAGON_BABY_BLUE": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "49582fa21c45c40a80a9a791842f71078f47c335d627bb560eb86dad641a8c4",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Baby Blue",
+      "releaseDate": "2023-07-29 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDER_DRAGON_BABY": {
+      "petType": "ENDER_DRAGON",
+      "textureHash": "24e73adc6be7922d0d6287192b48b4afcd6d72207773d0b15a1903b051ec0c22",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Baby",
+      "releaseDate": "2023-07-29 18:00:00 GMT+1",
+      "legacySource": "/head/firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TURTLE_ANCIENT": {
+      "petType": "TURTLE",
+      "textureHash": "5a85b6d364e8cd9dc777c0beed34e1af28d1bd6777a93852073c142a8ae17586",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Ancient",
+      "releaseDate": "2023-09-03 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TURTLE_ANCIENT_GOLDEN": {
+      "petType": "TURTLE",
+      "textureHash": "b972da505e9e55e32039c5d8f5dbb2f12ab52eea02bec3df6a40adb8b8fecbb0",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Golden Ancient",
+      "releaseDate": "2023-09-03 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BABY_YETI_DARK_SASQUATCH": {
+      "petType": "BABY_YETI",
+      "textureHash": "e8aebb0944fbfaa30ee685684abe2340a532dd21da7e364adb6e839f06466adc",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Dark Sasquatch",
+      "releaseDate": "2023-09-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BABY_YETI_MIDNIGHT": {
+      "petType": "BABY_YETI",
+      "textureHash": "128aa536588508afb2648253edee46849f308165d382f8ab883bf6de4a135d39",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Midnight",
+      "releaseDate": "2023-09-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BABY_YETI_LIGHT_SASQUATCH": {
+      "petType": "BABY_YETI",
+      "textureHash": "128aa536588508afb2648253edee46849f308165d382f8ab883bf6de4a135d39",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Light Sasquatch",
+      "releaseDate": "2023-09-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMITE_DYNAMITE": {
+      "petType": "ENDERMITE",
+      "textureHash": "9ebfdace31ac59cdd397869ac4471d8c7ddb4b4d6fa5e9928bbda45f092230d0",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Dynamite",
+      "releaseDate": "2023-10-03 18:00:00 GMT+1",
+      "legacySource": "tyashoi_alchemist",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_WOLF_HUSKY": {
+      "petType": "WOLF",
+      "textureHash": "7a558f634d802974dc6ab7e1a4aa72ade63c356268ef2e512f4c09d050e6cf0b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Husky",
+      "releaseDate": "2023-10-14 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BAT_CANDY": {
+      "petType": "BAT",
+      "textureHash": "44a22f845e588a1380f429e4d98732453995bebbefa1ba79b5134ca70ad78995",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Candy",
+      "releaseDate": "2023-10-28 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BAT_BONE": {
+      "petType": "BAT",
+      "textureHash": "2444eb6f238a00528a7f9bfbdcd6c6b0bac8bdb1e3749ef4f0931013c78b8804",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Bone",
+      "releaseDate": "2023-10-28 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_GYM_RAT": {
+      "petType": "RAT",
+      "textureHash": "e9f05d0552f5418957808d3b098567e9d6294e5257f6c677f22f3401c9616231",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Gym",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_JUNK_RAT": {
+      "petType": "RAT",
+      "textureHash": "879d59e8cff4831c985988f5701a6689a88ccbcb094a97b61bd408384d093417",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Junk",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_KARATE": {
+      "petType": "RAT",
+      "textureHash": "c0983ff7f3e7525f32fceab07b64aced104e4c8798294a1dcc262e5283327258",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Karate",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_MR_CLAWS": {
+      "petType": "RAT",
+      "textureHash": "11787e838120c6cce0570154a406adeefec3f04afdaec915067db829b3588270",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Mr Claws",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_PIRATE": {
+      "petType": "RAT",
+      "textureHash": "d7c7624fc4463749ed516df1bbbaa67c172ffc9f20b6f2d5b80e39ccf03d5f7a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "PiRate",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_SECRAT_SERVICE": {
+      "petType": "RAT",
+      "textureHash": "3d248f8e7cb791ece9bcea2dd0381f2eb138f18f02b9657099625735cd4bfc0e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "SecRat Service Rat Skin",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_SECURATY_GUARD": {
+      "petType": "RAT",
+      "textureHash": "e0da7bef0d3dda928ad34d6f7ca780e08659af043bdb31a09e123ccf6b63ad3c",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "SecuRaty Guard",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RAT_SQUEAKHEART": {
+      "petType": "RAT",
+      "textureHash": "278ca13dc36d2efbc628a8f0265325e589a56475cc6cde1f267e7ed083f1f8ff",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Squeakheart",
+      "releaseDate": "2023-11-18 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMAN_SUN": {
+      "petType": "ENDERMAN",
+      "textureHash": "7f261e3fe875dd75a7fbd4ea7b1932ca2f3e18665a80f32429e4f3fe504dca76",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Sun",
+      "releaseDate": "2023-11-25 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMAN_NEBULA": {
+      "petType": "ENDERMAN",
+      "textureHash": "b32907495cfb0cf38bb0cdd2cd1822111cb6469088cd98423143815b55dbbd4a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Nebula",
+      "releaseDate": "2023-11-25 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ENDERMAN_BLUE_MOON": {
+      "petType": "ENDERMAN",
+      "textureHash": "181586f6e79169d79570e319b2f08895cf366ca3ac506af88f831510783f8987",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Blue Moon",
+      "releaseDate": "2023-11-25 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_CHICKEN_RUBBER": {
+      "petType": "CHICKEN",
+      "textureHash": "414b3d49dfaf37ce453deb2cafb67dd4b4701195bacc0b6d9a38ac32e34a3eb2",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Rubber Chicken",
+      "releaseDate": "2023-11-25 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SLUG_AZURE_SEA_SLUG": {
+      "petType": "SLUG",
+      "textureHash": "164e899de34b54cc75cf0959067678d2c4173f1da0fc3f8ba1384b6a58a6d847",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Azure Sea",
+      "releaseDate": "2023-12-02 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SLUG_LEAF_SHEEP_SEA_SLUG": {
+      "petType": "SLUG",
+      "textureHash": "c55803ea21a24393b5f5e16b72121e658c67696ffa599b13d8127a7fef5183b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Leaf Sheep Sea",
+      "releaseDate": "2023-12-02 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SLUG_VIOLET_SEA_SLUG": {
+      "petType": "SLUG",
+      "textureHash": "d1ded62405522ec72b8c4ef306e1098b3ede765d971d574ffa03c0b099f803a6",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Violet Sea",
+      "releaseDate": "2023-12-02 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SNAIL_RAINBOW": {
+      "petType": "SNAIL",
+      "textureHash": "e95522a1aabe6709ee077de132ae1e501b84e98d5bb0d531ca3d637c121297f6",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Rainbow",
+      "releaseDate": "2023-12-02 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_WOLF_DOGE": {
+      "petType": "WOLF",
+      "textureHash": "8e19ac0af105a22640b764815687bf069336ede7c63c0c9fbb843e22d172d0b1",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Doge",
+      "releaseDate": "2023-12-16 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ZOMBIE_SENTINEL": {
+      "petType": "ZOMBIE",
+      "textureHash": "2422c02fe18d29ed2e3554febab7ef4e3f17c85a6cc379aec5d89aec233b78cb",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Sentinel",
+      "releaseDate": "2023-12-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ZOMBIE_BRAIN_FREEZE": {
+      "petType": "ZOMBIE",
+      "textureHash": "b1abfeefe236b3c9a23a71b30d0c7892133423d6b40bfa21e8d8d66cde8d8e19",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Brain Freeze",
+      "releaseDate": "2023-12-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ZOMBIE_BIG_BRAIN": {
+      "petType": "ZOMBIE",
+      "textureHash": "3871a02f09137806064c3e90d9bb8e0346fe73a392679da0a6584c605b0724fb",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Big Brain",
+      "releaseDate": "2023-12-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BABY_YETI_PLUSHIE": {
+      "petType": "BABY_YETI",
+      "textureHash": "f0ef518cb67739c4af18cdfffa05360079afc735ef291528fa7ae0c926804c59",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Plushie",
+      "releaseDate": "2023-12-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SNOWMAN_PLUSHIE": {
+      "petType": "SNOWMAN",
+      "textureHash": "316cc8f6d7d3b211dac2dc87bd7779e1ff8a001db99c6c77e679a85a669b1441",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Plushie",
+      "releaseDate": "2023-12-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ELEPHANT_BLACK_PLUSHIE": {
+      "petType": "ELEPHANT",
+      "textureHash": "e69e45deda0db5a91e6b8aac2765c605509170e1cfc3500b0d757e630e4ab247",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Black Plushie",
+      "releaseDate": "2024-01-06 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ELEPHANT_GRAY_PLUSHIE": {
+      "petType": "ELEPHANT",
+      "textureHash": "3f123b8de86123ef2bf01d84bc97d258205eb99df95a5a85e8dcfaac8068d4f1",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Gray Plushie",
+      "releaseDate": "2024-01-06 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ELEPHANT_BLUE_PLUSHIE": {
+      "petType": "ELEPHANT",
+      "textureHash": "20226fa7c2569ea7569033b3a11043d25213955f9f792e517fb75fc405d4223a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Blue Plushie",
+      "releaseDate": "2024-01-06 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ELEPHANT_COSMIC": {
+      "petType": "ELEPHANT",
+      "textureHash": "ed1a8896ab5fb9ede183df9938f24f596ac23f73fe6205749250bddfdb103f03",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Cosmic",
+      "releaseDate": "2024-01-06 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_ELEPHANT_PINK_PLUSHIE": {
+      "petType": "ELEPHANT",
+      "textureHash": "7d1fd8b2236a5285057774de0c0b748453aa5fbf85219dab726b333a9d86664a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Pink Plushie",
+      "releaseDate": "2024-01-06 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MONKEY_SEE_HEAR_SPEAK": {
+      "petType": "MONKEY",
+      "textureHash": "a6b856d923ca6f40013832af51370196db541b8c5209f4ea80e2eadf658d7949",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "See, Hear, Speak",
+      "releaseDate": "2024-01-13 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_GIRAFFE_SAFARI": {
+      "petType": "GIRAFFE",
+      "textureHash": "16474dfc3fb1c5932b33d2b85adc840f1dcaa8c5b84bf6e32b35bba1302885f7",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Safari",
+      "releaseDate": "2024-01-13 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MONKEY_ASTRONAUT": {
+      "petType": "MONKEY",
+      "textureHash": "f7e0a9ab4fb38db15bb958a6b2cf852893f62d0395f55a084d8e28c8d5b48e7e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Astronaut",
+      "releaseDate": "2024-01-13 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_OCELOT_JUNGLE": {
+      "petType": "OCELOT",
+      "textureHash": "e25101f8531b1207d607597d3b87d7c65b990fb97d918c0dbddcf16f5f713f7f",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Jungle",
+      "releaseDate": "2024-01-13 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MITHRIL_GOLEM_CRYSTAL": {
+      "petType": "MITHRIL_GOLEM",
+      "textureHash": "a20aa3dfd94a622bbe4facf0b19e6dbb07636e7762ade427ccaa2f94a075326c",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Crystal",
+      "releaseDate": "2024-01-20 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MITHRIL_GOLEM_CHERRY_BLOSSOM": {
+      "petType": "MITHRIL_GOLEM",
+      "textureHash": "8d8e9ab5c4c8ed7a9308fb68b0cb40cdae0cedc58eff21cf00b560a60365d6d5",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Cherry Blossom",
+      "releaseDate": "2024-01-20 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MITHRIL_GOLEM_COPPER": {
+      "petType": "MITHRIL_GOLEM",
+      "textureHash": "bdc264745689b75ff1ce396479fde465f3a622ab1e9e013a3e448682ad9095b2",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Copper",
+      "releaseDate": "2024-01-20 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_GOLDEN_DRAGON_ANCIENT": {
+      "petType": "GOLDEN_DRAGON",
+      "textureHash": "b761ef38b2196eb057be70791367b7b380e3bfd7494517399f96cc10d27e509e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Ancient",
+      "releaseDate": "2024-02-10 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_BEEDAZZLED": {
+      "petType": "BEE",
+      "textureHash": "66671fa36a56cd08c85f0956fca5ffa3793d744a373244b92b71a55da5636c0f",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "BeeDazzled",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_BEELOVED": {
+      "petType": "BEE",
+      "textureHash": "fb2e99137ba2a2996ec45e806550d617da479a0a48846b5f8bbc81b6ab59dd2f",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "BeeLoved",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_GREAT_GATSBEE": {
+      "petType": "BEE",
+      "textureHash": "a1235c3dececec89f37f25abbefa227ec3a4fe73e03be9361ed473301b4e0d7b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Great Gats",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_HIVE": {
+      "petType": "BEE",
+      "textureHash": "8ac223e6e77dad17bb3aa0909556f651776f81d4c760c7167b2e27c49c4fc59",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Hive",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_HONEY": {
+      "petType": "BEE",
+      "textureHash": "36e7a813e27580e0b5cade870905b8c8c7cbc178f80893384c8697baeb8a6a8",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Honey",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_RUGBEE": {
+      "petType": "BEE",
+      "textureHash": "32eab2723eed1866b234b4ab967ee6392674d76dd7508b94640311ed1fdb36e5",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "RugBee",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_SPELLING_BEE": {
+      "petType": "BEE",
+      "textureHash": "9a09e730872732d3d267120a4a1ba732ab224ee96215e80bbec78af4dcfdd2a1",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Spelling",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_USB": {
+      "petType": "BEE",
+      "textureHash": "ad8e4187921f223878af435d4554c32473e7437f59236618c80a0cd773b9606d",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "USBee",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_WANNA_BEE": {
+      "petType": "BEE",
+      "textureHash": "61bbdb3a28ec3ec7e562c82a2851c15f26452d81043bca1747db9b0c91b43210",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Wanna",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_BEE_WASABEE": {
+      "petType": "BEE",
+      "textureHash": "c7887fb09860985d5bafaae88c706ec9b190a03c1a7501b5ba34a32950542c17",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "WasaBee",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_JERRY_LEPRECHAUN": {
+      "petType": "JERRY",
+      "textureHash": "4f71c743ce4c945dcfd942e3b5f8747e32c7ede6041c1f5fa71ba9eac1e71818",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Leprechaun",
+      "releaseDate": "2024-02-24 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TARANTULA_PINK": {
+      "petType": "TARANTULA",
+      "textureHash": "e841ad77a748ed3d1d50855d1749981d5f38f8dbf55c14f74dd4235766181e3b",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Pink",
+      "releaseDate": "2024-03-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_TARANTULA_GREENBOTTLE": {
+      "petType": "TARANTULA",
+      "textureHash": "b6f03e15ccdf4b43016959efd357e61a77e98ab4a18b006cfdb209c5cfb99457",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Greenbottle",
+      "releaseDate": "2024-03-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SPIDER_BLACK_WIDOW": {
+      "petType": "SPIDER",
+      "textureHash": "4ef27331cb9b93ec33be5ff388900d2666967ca2712c29057de9fa702a84b87a",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Black Widow",
+      "releaseDate": "2024-03-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_SPIDER_PEACOCK": {
+      "petType": "SPIDER",
+      "textureHash": "f9c75185cf50c6680b98bd25d99820fc238bfdbc8d8c694cef207a5ac84ee1e3",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Peacock",
+      "releaseDate": "2024-03-23 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_MAGMA_CUBE_CHOCO_CUBE": {
+      "petType": "MAGMA_CUBE",
+      "textureHash": "e2d1620300a8e1e0bda70c71efbc46b7845d6171584d800fa9004cfad88d2aa8",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Choco",
+      "releaseDate": "2024-03-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_RABBIT_PLUSHIE": {
+      "petType": "RABBIT",
+      "textureHash": "a15683eaca0913279361a1f8baa461a90f1cf0193df938f81507b0d84f9fb37e",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Plushie",
+      "releaseDate": "2024-03-30 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:13:28.042Z"
+    },
+    "PET_SKIN_WHALE_COSMIC": {
+      "petType": "BLUE_WHALE",
+      "textureHash": "1a68f59a187f5b7183df2ea708a6e4704845afd433272cd32cbed52286db1fd3",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Cosmic",
+      "releaseDate": "2023-06-02 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    },
+    "PET_SKIN_CAT_SPACE_KITTY": {
+      "petType": "BLACK_CAT",
+      "textureHash": "c6f8dfc25e70cc036774e77253349c548a10f232a999b7287a84b2f9b5c6c4a8",
+      "source": "skycrypt-github",
+      "sourceUrl": "https://raw.githubusercontent.com/SkyCryptWebsite/SkyCrypt/development/src/constants/skins-animations.js",
+      "displayName": "Space Kitty",
+      "releaseDate": "2023-12-16 18:00:00 GMT+1",
+      "legacySource": "firesale",
+      "updatedAt": "2026-08-01T19:15:04.246Z"
+    }
+  }
+}

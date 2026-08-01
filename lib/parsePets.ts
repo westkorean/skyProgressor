@@ -6,6 +6,7 @@ export interface PetProgress {
   candyUsed: number;
   tierColor: string;
   headUuid?: string | null;
+  skinId: string | null;
   displayName: string;
 }
 
@@ -53,6 +54,7 @@ export function parsePets(member: any): PetProgress[] {
         candyUsed: pet.candyUsed ?? 0,
         tierColor: PET_RARITY_COLORS[tier] ?? PET_RARITY_COLORS.COMMON,
         headUuid,
+        skinId: typeof pet.skin === 'string' ? pet.skin : null,
         displayName: String(
           pet.display_name ?? pet.name ?? pet.type ?? 'Unknown'
         )
