@@ -1,4 +1,49 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
+
+import Image from 'next/image';
+import type { SkillProgress, SlayerProgress, CatacombsProgress, FairySoulProgress, SkyblockLevelProgress } from '@/lib/parseProfile';
+import type { PetProgress } from '@/lib/parsePets';
+
+type CoopMember = { uuid: string; name: string };
+
+type CollectionEntry = {
+  rawKey: string;
+  name: string;
+  category: string;
+  amount: number;
+  tier: number;
+  maxTier: number;
+  nextTierRequirement: number | null;
+  remaining: number | null;
+  progressPercent: number;
+  detail?: string;
+};
+
+type ResultData = {
+  skills: SkillProgress[];
+  slayers: SlayerProgress[];
+  catacombs: CatacombsProgress;
+  fairySouls: FairySoulProgress;
+  suggestions: unknown[];
+  skyblockLevel: SkyblockLevelProgress;
+  levelRecommendations: unknown[];
+  pets: PetProgress[];
+  accessories: { magicalPower: number; bagUpgrades: number };
+  dungeons: any;
+  inventory: any;
+  collections: CollectionEntry[];
+  profileName: string;
+  coopMembers: CoopMember[];
+};
+
+type Profile = {
+  profile_id: string;
+  cute_name: string;
+  selected?: boolean;
+  game_mode?: string;
+  members?: Record<string, unknown>;
+};
 
 import { useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
@@ -45,15 +90,15 @@ const getPetHeadSrc = (headId?: string | null) => {
 
 export default function Home() {
   const [ign, setIgn] = useState('');
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<ResultData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [profiles, setProfiles] = useState<any[]>([]);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
   const [uuid, setUuid] = useState<string | null>(null);
   const searchIdRef = useRef(0);
 
-  const [currentProfile, setCurrentProfile] = useState<any>(null);
+  const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
   const [viewingUuid, setViewingUuid] = useState<string | null>(null);
 
   const DEFAULT_DEVELOPER_IGN = 'westkorean';
@@ -215,10 +260,12 @@ export default function Home() {
             onClick={() => handleSearch(DEFAULT_DEVELOPER_IGN)}
             className="w-full flex items-center gap-4 rounded-xl border border-neutral-700 bg-neutral-900 p-4 text-left transition hover:border-emerald-500"
           >
-            <img
+            <Image
               src={avatarUrl(DEFAULT_DEVELOPER_IGN)}
               alt="westkorean skin"
-              className="h-12 w-12 rounded-lg border border-neutral-800"
+              width={48}
+              height={48}
+              className="rounded-lg border border-neutral-800"
             />
             <div>
               <div className="font-semibold">westkorean</div>
@@ -254,13 +301,14 @@ export default function Home() {
 
         {result && viewingUuid && (
           <div className="flex items-center gap-3 mb-6">
-            <img
-              src={avatarUrl(
-                result.coopMembers.find((m: any) => m.uuid === viewingUuid)
-                  ?.name ?? ''
-              )}
+            <Image
+              src={
+                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name ?? ''
+              }
               alt="Current player skin"
-              className="h-10 w-10 rounded-lg border border-neutral-700"
+              width={40}
+              height={40}
+              className="rounded-lg border border-neutral-700"
             />
             <div>
               <div className="text-neutral-500 text-xs uppercase tracking-wide">
@@ -277,7 +325,7 @@ export default function Home() {
         {result?.coopMembers && result.coopMembers.length > 1 && (
           <div className="mb-6">
             <span className="text-neutral-500 text-sm mr-2">Co-op:</span>
-            {result.coopMembers.map((m: any) => (
+            {result.coopMembers.map((m: CoopMember) => (
               <button
                 key={m.uuid}
                 onClick={() => viewMember(m.uuid)}
@@ -287,10 +335,12 @@ export default function Home() {
                     : 'bg-neutral-900 border-neutral-700 hover:border-neutral-500'
                 }`}
               >
-                <img
+                <Image
                   src={avatarUrl(m.name)}
                   alt={`${m.name} skin`}
-                  className="h-6 w-6 rounded-full border border-neutral-800 mr-2"
+                  width={24}
+                  height={24}
+                  className="rounded-full border border-neutral-800 mr-2"
                 />
                 {m.name}
               </button>
@@ -419,13 +469,11 @@ export default function Home() {
                       className="relative h-16 w-16 overflow-hidden rounded-3xl shadow-lg"
                       style={{ backgroundColor: p.tierColor, zIndex: 10 }}
                     >
-                      <img
+                      <Image
                         src={getPetHeadSrc(p.headUuid)}
-                        alt={
-                          p.headUuid
-                            ? `${p.displayName} pet head`
-                            : 'placeholder pet head'
-                        }
+                        alt={p.headUuid ? `${p.displayName} pet head` : 'placeholder pet head'}
+                        width={64}
+                        height={64}
                         className="h-full w-full object-contain"
                       />
                     </div>
