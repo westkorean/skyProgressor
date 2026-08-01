@@ -33,7 +33,7 @@ type ResultData = {
   fairySouls: FairySoulProgress;
   suggestions: unknown[];
   skyblockLevel: SkyblockLevelProgress;
-  levelRecommendations: unknown[];
+  levelRecommendations: LevelRecommendation[];
   pets: PetProgress[];
   accessories: { magicalPower: number; bagUpgrades: number };
   dungeons: any;
@@ -63,7 +63,10 @@ import {
   parseCollections,
 } from '@/lib/parseProfile';
 import { getTopSuggestions } from '@/lib/getSuggestions';
-import { getSkyblockLevelRecommendations } from '@/lib/getSkyblockLevelRecommendations';
+import {
+  getSkyblockLevelRecommendations,
+  type LevelRecommendation,
+} from '@/lib/getSkyblockLevelRecommendations';
 import SkyblockLevelCard from '@/components/SkyblockLevelCard';
 import ChatBox from '@/components/ChatBox';
 import { parsePets } from '@/lib/parsePets';
@@ -71,8 +74,10 @@ import { parseAccessories } from '@/lib/parseAccessories';
 import { parseInventory } from '@/lib/parseInventory';
 import { parseDungeons } from '@/lib/parseDungeons';
 
-const avatarUrl = (username: string) =>
-  `https://minotar.net/helm/${encodeURIComponent(username)}/40.png`;
+const avatarUrl = (username?: string | null, size = 40) =>
+  username && username.trim()
+    ? `https://minotar.net/helm/${encodeURIComponent(username)}/${size}.png`
+    : '/images/pet-placeholder.svg';
 
 const formatDisplayName = (value?: string | null) =>
   String(value ?? '')
@@ -88,7 +93,7 @@ const isValidMinecraftId = (id?: string | null) => {
 };
 
 const getPetHeadSrc = (headId?: string | null) => {
-  if (isValidMinecraftId(headId)) {
+  if (typeof headId === 'string' && isValidMinecraftId(headId)) {
     return `https://minotar.net/helm/${encodeURIComponent(headId)}/64.png`;
   }
   return '/images/pet-placeholder.svg';
@@ -308,10 +313,9 @@ export default function Home() {
         {result && viewingUuid && (
           <div className="flex items-center gap-3 mb-6">
             <Image
-              src={
-                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name ??
-                ''
-              }
+              src={avatarUrl(
+                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name
+              )}
               alt="Current player skin"
               width={40}
               height={40}

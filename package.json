@@ -13,7 +13,7 @@
     "@ai-sdk/react": "^4.0.40",
     "@vercel/analytics": "^2.0.1",
     "ai": "^7.0.37",
-    "next": "^9.3.3",
+    "next": "16.2.10",
     "openai": "^6.48.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",

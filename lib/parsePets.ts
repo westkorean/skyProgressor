@@ -60,7 +60,7 @@ export function parsePets(member: any): PetProgress[] {
           .replace(/\b\w/g, (char: string) => char.toUpperCase()),
       };
     })
-    .sort((a, b) => {
+    .sort((a: PetProgress, b: PetProgress) => {
       const rankA = PET_RARITY_ORDER.indexOf(a.tier);
       const rankB = PET_RARITY_ORDER.indexOf(b.tier);
       const normalizedA = rankA === -1 ? PET_RARITY_ORDER.length : rankA;
