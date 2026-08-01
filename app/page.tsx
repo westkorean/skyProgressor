@@ -10,6 +10,7 @@ import type {
   SkyblockLevelProgress,
 } from '@/lib/parseProfile';
 import type { PetProgress } from '@/lib/parsePets';
+import type { ProfileOverviewData } from '@/components/ProfileOverviewCard';
 
 type CoopMember = { uuid: string; name: string };
 
@@ -41,6 +42,7 @@ type ResultData = {
   collections: CollectionEntry[];
   profileName: string;
   coopMembers: CoopMember[];
+  overview: ProfileOverviewData;
 };
 
 type Profile = {
@@ -75,6 +77,8 @@ import { parseInventory } from '@/lib/parseInventory';
 import { parseDungeons } from '@/lib/parseDungeons';
 import { getPetTextureHash } from '@/lib/petTextures';
 import { getPetItemMetadata } from '@/lib/petItems';
+import ProfileOverviewCard from '@/components/ProfileOverviewCard';
+import { parseProfileEconomy } from '@/lib/parseProfileOverview';
 
 const avatarUrl = (username?: string | null, size = 40) =>
   username && username.trim()
@@ -173,11 +177,12 @@ export default function Home() {
   };
 
   const loadProfile = async (
-    profile: any,
+    profile: Profile,
     playerUuid: string,
     searchId?: number
   ) => {
-    const member = profile.members[playerUuid];
+    const profileMembers = profile.members ?? {};
+    const member = profileMembers[playerUuid];
 
     const skills = parseSkills(member);
     const slayers = parseSlayers(member);
@@ -191,11 +196,12 @@ export default function Home() {
     );
     const pets = parsePets(member);
     const accessories = parseAccessories(member);
-    const inventory = parseInventory(member);
+    const inventory = await parseInventory(member);
     const dungeons = parseDungeons(member);
     const collections = parseCollections(member);
+    const economy = parseProfileEconomy(member, profile);
 
-    const memberUuids = Object.keys(profile.members);
+    const memberUuids = Object.keys(profileMembers);
     const memberNames = await Promise.all(
       memberUuids.map(async (mUuid) => {
         try {
@@ -228,6 +234,34 @@ export default function Home() {
       collections,
       profileName: profile.cute_name,
       coopMembers: memberNames,
+      overview: {
+        ign:
+          memberNames.find((profileMember) => profileMember.uuid === playerUuid)
+            ?.name ?? 'Unknown',
+        profileName: profile.cute_name,
+        gameMode: typeof profile.game_mode === 'string' ? profile.game_mode : null,
+        skyblockLevel: skyblockLevel.level,
+        purse: economy.purse,
+        bank: economy.bank,
+        magicalPower: accessories.magicalPower,
+        skillAverage:
+          skills.length > 0
+            ? skills.reduce((total, skill) => total + skill.level, 0) /
+              skills.length
+            : 0,
+        catacombsLevel: catacombs.level,
+        activePet: (() => {
+          const activePet = pets.find((pet) => pet.active);
+          return activePet
+            ? { name: activePet.displayName, rarity: activePet.tier }
+            : null;
+        })(),
+        fairySouls: {
+          collected: fairySouls.collected,
+          total: fairySouls.total,
+        },
+        members: memberNames,
+      },
     });
   };
 
@@ -355,6 +389,8 @@ export default function Home() {
 
         {loading && <p className="text-neutral-400">Loading...</p>}
         {error && <p className="text-red-400">{error}</p>}
+
+        {result && <ProfileOverviewCard overview={result.overview} />}
 
         {result?.suggestions && (
           <section className="mb-8">

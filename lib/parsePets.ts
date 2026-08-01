@@ -7,6 +7,7 @@ export interface PetProgress {
   tierColor: string;
   headUuid?: string | null;
   skinId: string | null;
+  active: boolean;
   displayName: string;
 }
 
@@ -30,31 +31,40 @@ const PET_RARITY_COLORS: Record<string, string> = {
   SPECIAL: '#ec4899',
 };
 
-export function parsePets(member: any): PetProgress[] {
-  const pets = Array.isArray(member?.pets_data?.pets)
-    ? member.pets_data.pets
-    : [];
+function record(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === 'object'
+    ? (value as Record<string, unknown>)
+    : null;
+}
+
+export function parsePets(member: unknown): PetProgress[] {
+  const memberRecord = record(member);
+  const petsData = record(memberRecord?.pets_data);
+  const pets = Array.isArray(petsData?.pets) ? petsData.pets : [];
 
   return pets
-    .map((pet: any) => {
+    .map((value): PetProgress => {
+      const pet = record(value) ?? {};
       const tier = String(pet.tier ?? 'COMMON').toUpperCase();
+      const skin = record(pet.skin);
       const headUuid =
         pet.uuid ??
         pet.pet_id ??
         pet.petUuid ??
         pet.pet_uuid ??
         pet.skinUuid ??
-        pet.skin?.uuid ??
+        skin?.uuid ??
         null;
       return {
-        type: pet.type ?? 'UNKNOWN',
+        type: typeof pet.type === 'string' ? pet.type : 'UNKNOWN',
         tier,
-        exp: pet.exp ?? 0,
-        heldItem: pet.heldItem ?? null,
-        candyUsed: pet.candyUsed ?? 0,
+        exp: typeof pet.exp === 'number' ? pet.exp : 0,
+        heldItem: typeof pet.heldItem === 'string' ? pet.heldItem : null,
+        candyUsed: typeof pet.candyUsed === 'number' ? pet.candyUsed : 0,
         tierColor: PET_RARITY_COLORS[tier] ?? PET_RARITY_COLORS.COMMON,
-        headUuid,
+        headUuid: typeof headUuid === 'string' ? headUuid : null,
         skinId: typeof pet.skin === 'string' ? pet.skin : null,
+        active: pet.active === true,
         displayName: String(
           pet.display_name ?? pet.name ?? pet.type ?? 'Unknown'
         )
