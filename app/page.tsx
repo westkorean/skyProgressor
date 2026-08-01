@@ -73,6 +73,8 @@ import { parsePets } from '@/lib/parsePets';
 import { parseAccessories } from '@/lib/parseAccessories';
 import { parseInventory } from '@/lib/parseInventory';
 import { parseDungeons } from '@/lib/parseDungeons';
+import { getPetTextureHash } from '@/lib/petTextures';
+import { getPetItemMetadata } from '@/lib/petItems';
 
 const avatarUrl = (username?: string | null, size = 40) =>
   username && username.trim()
@@ -85,17 +87,9 @@ const formatDisplayName = (value?: string | null) =>
     .replace(/\b\w/g, (char) => char.toUpperCase())
     .trim();
 
-const isValidMinecraftId = (id?: string | null) => {
-  if (!id) return false;
-  const v = String(id);
-  // UUID without dashes (32 hex) or with dashes (36) or a username (1-16 chars)
-  return /^(?:[0-9a-fA-F]{32}|[0-9a-fA-F-]{36}|[A-Za-z0-9_]{1,16})$/.test(v);
-};
-
-const getPetHeadSrc = (headId?: string | null) => {
-  if (typeof headId === 'string' && isValidMinecraftId(headId)) {
-    return `https://minotar.net/helm/${encodeURIComponent(headId)}/64.png`;
-  }
+const getPetHeadSrc = (petType: string, skinId?: string | null) => {
+  const textureHash = getPetTextureHash(petType, skinId);
+  if (textureHash) return `/pet-heads/${textureHash}.png?v=isometric-2`;
   return '/images/pet-placeholder.svg';
 };
 
@@ -477,19 +471,24 @@ export default function Home() {
                     </div>
 
                     <div
-                      className="relative h-16 w-16 overflow-hidden rounded-3xl shadow-lg"
-                      style={{ backgroundColor: p.tierColor, zIndex: 10 }}
+                      className="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-3xl shadow-lg"
+                      style={{
+                        backgroundColor: p.tierColor,
+                        zIndex: 10,
+                        boxShadow: `0 0 10px 3px ${p.tierColor}, 0 0 28px 9px ${p.tierColor}99`,
+                      }}
                     >
                       <Image
-                        src={getPetHeadSrc(p.headUuid)}
+                        src={getPetHeadSrc(p.type, p.skinId)}
                         alt={
-                          p.headUuid
+                          getPetTextureHash(p.type, p.skinId)
                             ? `${p.displayName} pet head`
                             : 'placeholder pet head'
                         }
                         width={64}
                         height={64}
-                        className="h-full w-full object-contain"
+                        unoptimized
+                        className="h-14 w-14 object-contain"
                       />
                     </div>
                   </div>
@@ -508,11 +507,24 @@ export default function Home() {
                       <div className="mt-2 text-[11px] text-neutral-200">
                         XP: {Math.round(p.exp).toLocaleString()}
                       </div>
-                      {p.heldItem && (
-                        <div className="mt-1 text-[11px] text-neutral-200">
-                          {formatDisplayName(p.heldItem)}
-                        </div>
-                      )}
+                      {p.heldItem && (() => {
+                        const petItem = getPetItemMetadata(p.heldItem);
+                        return (
+                          <div className="mt-1 flex items-center gap-1.5 text-[11px] text-neutral-200">
+                            {petItem?.imageUrl && (
+                              <Image
+                                src={petItem.imageUrl}
+                                alt=""
+                                width={20}
+                                height={20}
+                                unoptimized
+                                className="h-5 w-5 object-contain [image-rendering:pixelated]"
+                              />
+                            )}
+                            <span>{petItem?.name ?? formatDisplayName(p.heldItem)}</span>
+                          </div>
+                        );
+                      })()}
                     </div>
                   </div>
                 </div>

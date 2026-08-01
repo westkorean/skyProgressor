@@ -1,0 +1,395 @@
+{
+  "AMMONITE": {
+    "default": "a074a7bd976fe6aba1624161793be547d54c835cf422243a851ba09d1e650553",
+    "skins": {}
+  },
+  "ANKYLOSAURUS": {
+    "default": "c1aa836b9096c417903299a6c5ab41738c19648ac439fed4bcbe6c32605338dc",
+    "skins": {}
+  },
+  "ARMADILLO": {
+    "default": "c1eb6df4736ae24dd12a3d00f91e6e3aa7ade6bbefb0978afef2f0f92461018f",
+    "skins": {}
+  },
+  "BABY_YETI": {
+    "default": "ab126814fc3fa846dad934c349628a7a1de5b415021a03ef4211d62514d5",
+    "skins": {
+      "PET_SKIN_YETI_GROWN_UP": "f5f29a975529276d916fc67998833c11ee178ff21e5941afdfb0fa7010f8374e"
+    }
+  },
+  "BAL": {
+    "default": "c469ba2047122e0a2de3c7437ad3dd5d31f1ac2d27abde9f8841e1d92a8c5b75",
+    "skins": {}
+  },
+  "BAT": {
+    "default": "382fc3f71b41769376a9e92fe3adbaac3772b999b219c9d6b4680ba9983e527",
+    "skins": {}
+  },
+  "BEE": {
+    "default": "7e941987e825a24ea7baafab9819344b6c247c75c54a691987cd296bc163c263",
+    "skins": {}
+  },
+  "BINGO": {
+    "default": "d4cd9c707c7092d4759fe2b2b6a713215b6e39919ec4e7afb1ae2b6f8576674c",
+    "skins": {}
+  },
+  "BLACK_CAT": {
+    "default": "e4b45cbaa19fe3d68c856cd3846c03b5f59de81a480eec921ab4fa3cd81317",
+    "skins": {
+      "PET_SKIN_BLACK_CAT_IVORY": "f51b17d7ded6c7e8f3b2dac12378a6fc4e9228b911986f64c8af45837ae6d9e1",
+      "PET_SKIN_BLACK_CAT_ONYX": "be924115d3a8bbacfd4fafb6cc70f99a2f7580e4583a50fa9b9c285a98ac0c56"
+    }
+  },
+  "BLAZE": {
+    "default": "b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0",
+    "skins": {}
+  },
+  "BLUE_WHALE": {
+    "default": "dab779bbccc849f88273d844e8ca2f3a67a1699cb216c0a11b44326ce2cc20",
+    "skins": {
+      "PET_SKIN_WHALE_ORCA": "b008ca9c00cecf499685030e8ef0c230a32908619ce9dc10690b69111591faa1"
+    }
+  },
+  "CHICKEN": {
+    "default": "7f37d524c3eed171ce149887ea1dee4ed399904727d521865688ece3bac75e",
+    "skins": {
+      "PET_SKIN_CHICKEN_BABY_CHICK": "e50cbbc2b54a3e791262dcd5e2341486d9b15a5da4f98fc03458c05b395f0335"
+    }
+  },
+  "DOLPHIN": {
+    "default": "cefe7d803a45aa2af1993df2544a28df849a762663719bfefc58bf389ab7f5",
+    "skins": {
+      "PET_SKIN_DOLPHIN_SNUBNOSE": "1ed725cdefc00f7fde47cb70498e8bfce4ac301339099b410f52ebe27f9a2b81"
+    }
+  },
+  "DROPLET_WISP": {
+    "default": "b412e70375ec99ee38ae94b30e9b10752d459662b54794dfe66fe6a183c672d3",
+    "skins": {}
+  },
+  "EERIE": {
+    "default": "c3af70c6ff76ba48f24ee8a2063a5b50bbfabf409f4795248a292f8289f47c98",
+    "skins": {}
+  },
+  "ELEPHANT": {
+    "default": "7071a76f669db5ed6d32b48bb2dba55d5317d7f45225cb3267ec435cfa514",
+    "skins": {
+      "PET_SKIN_ELEPHANT_BLUE": "4b62969c005815d0409136380febc5ac468aaba9bda4db80954fa5426ee0a323",
+      "PET_SKIN_ELEPHANT_GREEN": "360c122ade5b2fedca14aa78c834a7b0ac9cb5da2a0c93112163086f90c13b68",
+      "PET_SKIN_ELEPHANT_MONOCHROME": "4bdf0f628c05e86cabdee2f5858dd5def7f8b8d940cbf25f9937e2ffb53432f4",
+      "PET_SKIN_ELEPHANT_ORANGE": "554a34a80c474206d3700b8fced6b44fab0b0ed0b05c1293ff0c5d86eda251d1",
+      "PET_SKIN_ELEPHANT_PINK": "570eef474ec0e56cc34c2307eaa39f024612f8cd7248e7d5b14169ebd307c742",
+      "PET_SKIN_ELEPHANT_PURPLE": "5ff9df290b6c5a4984fc6e516605f9816b9882f7bf04db08d3f7ee32d1969a44",
+      "PET_SKIN_ELEPHANT_RED": "ba5c66ec66cb6b4b5550085f583b4e5c1cee5247bec5fbcc5c318c30c66cab42"
+    }
+  },
+  "ENDER_DRAGON": {
+    "default": "aec3ff563290b13ff3bcc36898af7eaa988b6cc18dc254147f58374afe9b21b9",
+    "skins": {
+      "PET_SKIN_DRAGON_NEON_BLUE": "96a4b9fbcf8c3e7e1232e57d6a2870ba3ea30f76407ae1197fd52e9f76ca46ac",
+      "PET_SKIN_DRAGON_NEON_PURPLE": "54bdf5ba6289b29e27c57db1ec7f76151c39492d409268e00a9838e8c963159",
+      "PET_SKIN_DRAGON_NEON_RED": "e05c9b4f4218677c5b4bcc9c7d9e29e18d1684a536781fede1280fc5e6961538",
+      "PET_SKIN_DRAGON_PASTEL": "4a62ec4e019fe0fed059663ae59daa0d91729517bf33ae7f7d7e722913602df4"
+    }
+  },
+  "ENDERMAN": {
+    "default": "6eab75eaa5c9f2c43a0d23cfdce35f4df632e9815001850377385f7b2f039ce1",
+    "skins": {
+      "PET_SKIN_ENDERMAN": "ea84cc8818c293484fdaafc8fa2f0bf39e55733a247d68023df2c6c6b9b671d0",
+      "PET_SKIN_ENDERMAN_SLAYER": "8fff41e1afc597b14f77b8e44e2a134dabe161a1526ade80e6290f2df331dc11"
+    }
+  },
+  "ENDERMITE": {
+    "default": "5a1a0831aa03afb4212adcbb24e5dfaa7f476a1173fce259ef75a85855",
+    "skins": {
+      "PET_SKIN_ENDERMITE_RADIANT": "2fc4a7542b754420b1b19f9a28ea00040555a9e876052b97f65840308a93348d"
+    }
+  },
+  "FLYING_FISH": {
+    "default": "40cd71fbbbbb66c7baf7881f415c64fa84f6504958a57ccdb8589252647ea",
+    "skins": {}
+  },
+  "FRACTURED_MONTEZUMA_SOUL": {
+    "default": "df656c06e8a5cb4692564ee21748bddec9d785d1834284aaa1439601bba47d6b",
+    "skins": {}
+  },
+  "FROST_WISP": {
+    "default": "1d8ad9936d758c5ea30b0b7cc7c67c2bfcea829ecf2425c0b50fc92a26ae23d0",
+    "skins": {}
+  },
+  "GHOUL": {
+    "default": "87934565bf522f6f4726cdfe127137be11d37c310db34d8c70253392b5ff5b",
+    "skins": {}
+  },
+  "GIRAFFE": {
+    "default": "176b4e390f2ecdb8a78dc611789ca0af1e7e09229319c3a7aa8209b63b9",
+    "skins": {}
+  },
+  "GLACIAL_WISP": {
+    "default": "3e2018feebe1a99177b3cb196d4e44521268b4b3eb56e6419cb0253cdbf0456c",
+    "skins": {}
+  },
+  "GLACITE_GOLEM": {
+    "default": "af132a6593876d3c377d503fd66eca3fb938743251f7b16a9870c60b7388c8a3",
+    "skins": {}
+  },
+  "GOBLIN": {
+    "default": "7309d8dc35a638a04b915a3b15a1452ceeae0d7ea42bcdadb21b03046987515c",
+    "skins": {}
+  },
+  "GOLDEN_DRAGON": {
+    "default": "2e9f9b1fc014166cb46a093e5349b2bf6edd201b680d62e48dbf3af9b0459116",
+    "skins": {}
+  },
+  "GOLEM": {
+    "default": "89091d79ea0f59ef7ef94d7bba6e5f17f2f7d4572c44f90f76c4819a714",
+    "skins": {}
+  },
+  "GRANDMA_WOLF": {
+    "default": "4e794274c1bb197ad306540286a7aa952974f5661bccf2b725424f6ed79c7884",
+    "skins": {}
+  },
+  "GRIFFIN": {
+    "default": "4c27e3cb52a64968e60c861ef1ab84e0a0cb5f07be103ac78da67761731f00c8",
+    "skins": {}
+  },
+  "GUARDIAN": {
+    "default": "221025434045bda7025b3e514b316a4b770c6faa4ba9adb4be3809526db77f9d",
+    "skins": {
+      "PET_SKIN_GUARDIAN": "37cc76e7af29f5f3fbfd6ece794160811eff96f753459fa61d7ad176a064e3c5"
+    }
+  },
+  "HORSE": {
+    "default": "36fcd3ec3bc84bafb4123ea479471f9d2f42d8fb9c5f11cf5f4e0d93226",
+    "skins": {}
+  },
+  "HOUND": {
+    "default": "b7c8bef6beb77e29af8627ecdc38d86aa2fea7ccd163dc73c00f9f258f9a1457",
+    "skins": {}
+  },
+  "JELLYFISH": {
+    "default": "913f086ccb56323f238ba3489ff2a1a34c0fdceeafc483acff0e5488cfd6c2f1",
+    "skins": {}
+  },
+  "JERRY": {
+    "default": "822d8e751c8f2fd4c8942c44bdb2f5ca4d8ae8e575ed3eb34c18a86e93b",
+    "skins": {
+      "PET_SKIN_JERRY_GREEN_ELF": "4ec5455f43426ca1874b5c7b4a492ec3722a502f8b9599e758e133fed8b3c1e4",
+      "PET_SKIN_JERRY_RED_ELF": "1d82f9c36e824c1e37963a849bf5abd76d3b349125023504af58369086089ee9"
+    }
+  },
+  "KUUDRA": {
+    "default": "1f0239fb498e5907ede12ab32629ee95f0064574a9ffdff9fc3a1c8e2ec17587",
+    "skins": {}
+  },
+  "LION": {
+    "default": "38ff473bd52b4db2c06f1ac87fe1367bce7574fac330ffac7956229f82efba1",
+    "skins": {}
+  },
+  "MAGMA_CUBE": {
+    "default": "38957d5023c937c4c41aa2412d43410bda23cf79a9f6ab36b76fef2d7c429",
+    "skins": {}
+  },
+  "MAMMOTH": {
+    "default": "6b10715732cd1fd49fa1b6187947c307dd4687105cf033840607f9d6234743ad",
+    "skins": {}
+  },
+  "MEGALODON": {
+    "default": "a94ae433b301c7fb7c68cba625b0bd36b0b14190f20e34a7c8ee0d9de06d53b9",
+    "skins": {
+      "PET_SKIN_MEGALODON_BABY": "7cdb1ff8c967c831eb685e09e5dea586ed291472395acf7a25e9d5bb41d6c082",
+      "PET_SKIN_MEGALODON_BULLHEAD": "e6e6fb66bfe9737a33ba53f3d5a8b9fdba1c65a5d2760bcd9a6e54928527103b"
+    }
+  },
+  "MITHRIL_GOLEM": {
+    "default": "c1b2dfe8ed5dffc5b1687bc1c249c39de2d8a6c3d90305c95f6d1a1a330a0b1",
+    "skins": {}
+  },
+  "MOLE": {
+    "default": "727baaafc09978d4bda73e16afdde85ec13b0f95ad989524c5fcaa717cf06b4a",
+    "skins": {}
+  },
+  "MONKEY": {
+    "default": "13cf8db84807c471d7c6922302261ac1b5a179f96d1191156ecf3e1b1d3ca",
+    "skins": {
+      "PET_SKIN_MONKEY_GOLDEN": "e9281c4d87d68526b0749d4361e6ef786c8a35717aa053da704b1d53410d37a6",
+      "PET_SKIN_MONKEY_GORILLA": "c3eb3e37e9873bfc176b9ed8ef4fbef833de144546bfaefdf24863c3eb87bb86",
+      "PET_SKIN_MONKEY_SUNGLASSES": "ccb5de94f814069b317b318abbe0d000d51dfe9258bbe9e9e87ca7f57ff45df9"
+    }
+  },
+  "MOOSHROOM_COW": {
+    "default": "2b52841f2fd589e0bc84cbabf9e1c27cb70cac98f8d6b3dd065e55a4dcb70d77",
+    "skins": {}
+  },
+  "OCELOT": {
+    "default": "5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1",
+    "skins": {}
+  },
+  "OWL": {
+    "default": "da3216da54e7368fb40b721239ad95e07ef4f97d93f1c42ff319bab9a53882af",
+    "skins": {}
+  },
+  "PARROT": {
+    "default": "5df4b3401a4d06ad66ac8b5c4d189618ae617f9c143071c8ac39a563cf4e4208",
+    "skins": {}
+  },
+  "PENGUIN": {
+    "default": "37534e97f36e5a8335928e171ec99608bee7fb16e260afb301025b3b17eeefc4",
+    "skins": {}
+  },
+  "PHOENIX": {
+    "default": "23aaf7b1a778949696cb99d4f04ad1aa518ceee256c72e5ed65bfa5c2d88d9e",
+    "skins": {}
+  },
+  "PIG": {
+    "default": "621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4",
+    "skins": {}
+  },
+  "PIGMAN": {
+    "default": "63d9cb6513f2072e5d4e426d70a5557bc398554c880d4e7b7ec8ef4945eb02f2",
+    "skins": {}
+  },
+  "RABBIT": {
+    "default": "117bffc1972acd7f3b4a8f43b5b6c7534695b8fd62677e0306b2831574b",
+    "skins": {
+      "PET_SKIN_RABBIT": "a34631d940fddb689ddef6a3b352c50220c460dba05cd18dc83192b59dc647f8",
+      "PET_SKIN_RABBIT_AQUAMARINE": "35a2119d122961852c010c1007ab2aff95b4bbeb74407463f6d2e1ff0792c812",
+      "PET_SKIN_RABBIT_ROSE": "d7cddf5b20cb50d6600e5333c6bb3fb15b4741f17e3675fc2bfc09c2cd09e619"
+    }
+  },
+  "RAT": {
+    "default": "a8abb471db0ab78703011979dc8b40798a941f3a4dec3ec61cbeec2af8cffe8",
+    "skins": {}
+  },
+  "REINDEER": {
+    "default": "a2df65c6fd19a58bee38252192ac7ce2cf1dc8632c3547a9228b6b697240d098",
+    "skins": {}
+  },
+  "RIFT_FERRET": {
+    "default": "b6b11399448260185da1d17e54c984515faab6d8585f00972451ec2b43d46f94",
+    "skins": {}
+  },
+  "ROCK": {
+    "default": "cb2b5d48e57577563aca31735519cb622219bc058b1f34648b67b8e71bc0fa",
+    "skins": {
+      "PET_SKIN_ROCK_COOL": "fefcdbb7d95502acc1ae35a32a40ce4dec8f4c9f0da26c9d9fe7c2c3eb748f6",
+      "PET_SKIN_ROCK_DERP": "c4f89fbd12c209f7f26c1f34a1bd7f47635814759c09688dd212b205c73a8c02",
+      "PET_SKIN_ROCK_EMBARRASSED": "27ff34992e66599e8529008be3fb577cb0ab545294253e25a0cc988e416c849",
+      "PET_SKIN_ROCK_LAUGH": "8cc1ef513d5f616675242174acde7b9d6259a47c4fe8f6e4b6e20920319d7073",
+      "PET_SKIN_ROCK_SMILE": "713c8b2916a275db4c1762cf5f13d7b95b91d60baf5164a447d6efa7704cf11b",
+      "PET_SKIN_ROCK_THINKING": "dd2f781f03c365bbc5dd1e7186ab38dc69465e836c9fe066a9a844f34a4da92"
+    }
+  },
+  "SCATHA": {
+    "default": "df03ad96092f3f789902436709cdf69de6b727c121b3c2daef9ffa1ccaed186c",
+    "skins": {}
+  },
+  "SHEEP": {
+    "default": "64e22a46047d272e89a1cfa13e9734b7e12827e235c2012c1a95962874da0",
+    "skins": {
+      "PET_SKIN_SHEEP_AQUA": "5e92c240c4965155e31f26580f9dcc0e8a7bf5d3e410aab6c199f593238ce565",
+      "PET_SKIN_SHEEP_BLACK": "aa9dcda642a807cd2daa4aa6be87cef96e08a8c8f5cec2657dda4266c6a884c2",
+      "PET_SKIN_SHEEP_BLUE": "4158a501213747e119669082de5b751d66c2c55d7c051cb58367ca4665289f60",
+      "PET_SKIN_SHEEP_BROWN": "57f4059f828d97457bfed8c4d8a8bbaa944cf8e259fc2f82ff2785ea51d55905",
+      "PET_SKIN_SHEEP_GRAY": "18e9c92b3768c464b6e557b5e3d8e4daa8a377c983b8fb25019760b6eae03127",
+      "PET_SKIN_SHEEP_GREEN": "10201d6846d70d94255f7f7d1fb1f17fd27fdf20465d283472f6aca34c2202bd",
+      "PET_SKIN_SHEEP_LIGHT_BLUE": "722220de1a863bc5d9b9e7a6a3b03214c9f3d698ed3fe0d28220f3b93b7685c5",
+      "PET_SKIN_SHEEP_LIGHT_GRAY": "fa35c02e3f035cd6586c42938065fdc1241d0ef8838e6e901e146ea6b6f0bffe",
+      "PET_SKIN_SHEEP_LIGHT_GREEN": "cf183ec2fe58faa43e568419b7a0dc446ece4ea0be52ec784c94e1d74b75939d",
+      "PET_SKIN_SHEEP_MAGENTA": "d4829d39a54ed06bb5d04a2a21d2636c5ddf27b53dc8448262fdabc775ec640a",
+      "PET_SKIN_SHEEP_NEON_BLUE": "e55b3fe9311c99342ea565483cbf9e969a258faf7afa30270fb9a0929377acfd",
+      "PET_SKIN_SHEEP_NEON_GREEN": "2c14d66911554bd0882339074bf6b8110c2d3509b69e7a6144e4d5a7164bacc8",
+      "PET_SKIN_SHEEP_NEON_RED": "4918be142a20b2b39bc582f421f6ae87b3184b5c9523d16fbe6d69530107886a",
+      "PET_SKIN_SHEEP_NEON_YELLOW": "94263428c23da9165b2639a8f2428ff4835227945c9e1038461cf644d67cc82a",
+      "PET_SKIN_SHEEP_ORANGE": "83b86b1b5561359a8591956bdaa157d6844771afaca1247d6cdfd3d2b02513b6",
+      "PET_SKIN_SHEEP_PINK": "afa7747684dcb96192d90342cea62742ec363da07cb5e6e25eecec888cd2076",
+      "PET_SKIN_SHEEP_PURPLE": "99a88cf7dd33063587c6b540e6130abc5d07f1a65c47573ab3c1ad3ccec8857f",
+      "PET_SKIN_SHEEP_RED": "5582ee5d1c5c08d37df26d6922be0808be9c0b6b347d89c0da263562fafcd505",
+      "PET_SKIN_SHEEP_WHITE": "b92a1a5c325f25f7438a0abb4f86ba6cf75552d02c7349a7292981459b31d2f7",
+      "PET_SKIN_SHEEP_YELLOW": "9c840b66c6442059ba31fc34998e15c4447a429d3f789a7e9f62e6a57dda0ab2"
+    }
+  },
+  "SILVERFISH": {
+    "default": "da91dab8391af5fda54acd2c0b18fbd819b865e1a8f1d623813fa761e924540",
+    "skins": {
+      "PET_SKIN_SILVERFISH": "d8552ff591042c4a38f8ba0626784ae28c4545a97d423fd9037c341035593273",
+      "PET_SKIN_SILVERFISH_FOSSILIZED": "ca3a363368ed1e06cee3900717f062e02ec39aee1747675392255b48f7f83600"
+    }
+  },
+  "SKELETON": {
+    "default": "fca445749251bdd898fb83f667844e38a1dff79a1529f79a42447a0599310ea4",
+    "skins": {}
+  },
+  "SKELETON_HORSE": {
+    "default": "47effce35132c86ff72bcae77dfbb1d22587e94df3cbc2570ed17cf8973a",
+    "skins": {
+      "PET_SKIN_HORSE_ZOMBIE": "578211e1b4d99d1c7bfda4838e48fc884c3eae376f58d932bc2f78b0a919f8e7"
+    }
+  },
+  "SLUG": {
+    "default": "7a79d0fd677b54530961117ef84adc206e2cc5045c1344d61d776bf8ac2fe1ba",
+    "skins": {}
+  },
+  "SNAIL": {
+    "default": "50a9933a3b10489d38f6950c4e628bfcf9f7a27f8d84666f04f14d5374252972",
+    "skins": {}
+  },
+  "SNOWMAN": {
+    "default": "11136616d8c4a87a54ce78a97b551610c2b2c8f6d410bc38b858f974b113b208",
+    "skins": {}
+  },
+  "SPIDER": {
+    "default": "cd541541daaff50896cd258bdbdd4cf80c3ba816735726078bfe393927e57f1",
+    "skins": {}
+  },
+  "SPINOSAURUS": {
+    "default": "d3c9d479471a2f13f22548315159591720992e70c920fef83a901b7186720e3c",
+    "skins": {}
+  },
+  "SPIRIT": {
+    "default": "8d9ccc670677d0cebaad4058d6aaf9acfab09abea5d86379a059902f2fe22655",
+    "skins": {}
+  },
+  "SQUID": {
+    "default": "01433be242366af126da434b8735df1eb5b3cb2cede39145974e9c483607bac",
+    "skins": {}
+  },
+  "SUBZERO_WISP": {
+    "default": "7a0eb37e58c942eca4d33ab44e26eb1910c783788510b0a53b6f4d18881e237e",
+    "skins": {}
+  },
+  "TARANTULA": {
+    "default": "8300986ed0a04ea79904f6ae53f49ed3a0ff5b1df62bba622ecbd3777f156df8",
+    "skins": {}
+  },
+  "TIGER": {
+    "default": "fc42638744922b5fcf62cd9bf27eeab91b2e72d6c70e86cc5aa3883993e9d84",
+    "skins": {
+      "PET_SKIN_TIGER_TWILIGHT": "896211dc599368dbd9056c0116ab61063991db793be93066a858eb4e9ce56438"
+    }
+  },
+  "TURTLE": {
+    "default": "212b58c841b394863dbcc54de1c2ad2648af8f03e648988c1f9cef0bc20ee23c",
+    "skins": {}
+  },
+  "TYRANNOSAURUS": {
+    "default": "93f28ec96df59c67e9d2fc2e7e3d055fa31646e4111add9fe26a692801964126",
+    "skins": {}
+  },
+  "WITHER_SKELETON": {
+    "default": "f5ec964645a8efac76be2f160d7c9956362f32b6517390c59c3085034f050cff",
+    "skins": {
+      "PET_SKIN_WITHER": "224c2d14a0219af5ccfcaa36e8a333e271724ed61276611f9529e16c10273a0d"
+    }
+  },
+  "WOLF": {
+    "default": "dc3dd984bb659849bd52994046964c22725f717e986b12d548fd169367d494",
+    "skins": {
+      "PET_SKIN_WOLF": "c8e414e762e1024c799e70b7a527c22fb95648f141d660b10c512cc124334218",
+      "PET_SKIN_WOLF_HENZO_DOGGO": "c0574dc7b9a89835f191acc0b695e811e27b66222e025c10a6090fb512d90fab"
+    }
+  },
+  "ZOMBIE": {
+    "default": "56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11",
+    "skins": {}
+  }
+}

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update:pet-textures": "tsx scripts/updatePetTextures.ts && tsx scripts/importPetCatalog.ts && tsx scripts/generatePetHeadImages.ts",
+    "update:pet-items": "tsx scripts/updatePetItems.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.20",
@@ -31,6 +33,7 @@
     "postcss": "^8.5.21",
     "prettier": "^3.9.5",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   },
   "overrides": {
