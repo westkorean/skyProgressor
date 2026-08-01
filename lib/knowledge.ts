@@ -1,9 +1,9 @@
-import foraging from "@/knowledge/foraging.json";
-import mining from "@/knowledge/mining.json";
-import combat from "@/knowledge/combat.json";
-import farming from "@/knowledge/farming.json";
-import dungeons from "@/knowledge/dungeons.json";
-import slayers from "@/knowledge/slayers.json";
+import foraging from '@/data/foraging.json';
+import mining from '@/data/mining.json';
+import combat from '@/data/combat.json';
+import farming from '@/data/farming.json';
+import dungeons from '@/data/dungeons.json';
+import slayers from '@/data/slayers.json';
 
 export const knowledgeBase = [
   ...foraging,
@@ -11,5 +11,5 @@ export const knowledgeBase = [
   ...combat,
   ...farming,
   ...dungeons,
-  ...slayers
+  ...slayers,
 ];
