@@ -1,154 +1,167 @@
-import { COLLECTION_TIERS, BOSS_COLLECTIONS } from './collectionData';
+import generatedCollections from '@/data/collections.generated.json';
+import { BOSS_COLLECTIONS } from './collectionData';
 
-const VARIANT_NAMES: Record<string, string> = {
-  LOG: 'Oak Log',
-  'LOG:1': 'Spruce Log',
-  'LOG:2': 'Birch Log',
-  'LOG:3': 'Jungle Log',
-  LOG_2: 'Acacia Log',
-  'LOG_2:1': 'Dark Oak Log',
-  'INK_SACK:3': 'Cocoa Beans',
-  'INK_SACK:4': 'Lapis Lazuli',
-  'SAND:1': 'Red Sand',
-};
+export const COLLECTION_CATEGORY_ORDER = [
+  'Farming',
+  'Mining',
+  'Combat',
+  'Fishing',
+  'Foraging',
+  'Rift',
+  'Crimson Isle',
+  'Other',
+] as const;
 
-const COLLECTION_CATEGORIES: Record<string, string> = {
-  WHEAT: 'Farming',
-  CARROT_ITEM: 'Farming',
-  POTATO_ITEM: 'Farming',
-  SUGAR_CANE: 'Farming',
-  COBBLESTONE: 'Mining',
-  COAL: 'Mining',
-  IRON_INGOT: 'Mining',
-  GOLD_INGOT: 'Mining',
-  DIAMOND: 'Mining',
-  LOG: 'Foraging',
-  LOG_2: 'Foraging',
-  MUTTON: 'Combat',
-  ROTTEN_FLESH: 'Combat',
-};
+export type CollectionCategory = (typeof COLLECTION_CATEGORY_ORDER)[number];
 
-type CollectionEntry = {
+export interface CollectionEntry {
   rawKey: string;
   name: string;
-  category: string;
+  category: CollectionCategory;
   amount: number;
-  tier: number;
-  maxTier: number;
+  tier: number | null;
+  maxTier: number | null;
   nextTierRequirement: number | null;
   remaining: number | null;
   progressPercent: number;
-  detail?: string;
-};
-
-function getCollectionCategory(key: string) {
-  const base = key.replace(/:.*/, '');
-  if (base.startsWith('BOSS_')) return 'Boss';
-  return COLLECTION_CATEGORIES[base] ?? 'Other';
+  nextReward: string | null;
 }
 
-function formatCollectionName(rawKey: string) {
-  if (VARIANT_NAMES[rawKey]) return VARIANT_NAMES[rawKey];
+type CollectionTier = {
+  tier: number;
+  amountRequired: number;
+  unlocks: string[];
+};
 
-  return rawKey
+type CollectionMetadata = {
+  id: string;
+  name: string;
+  category: string;
+  maxTiers: number | null;
+  tiers: CollectionTier[];
+};
+
+const metadata = generatedCollections.items as Record<string, CollectionMetadata>;
+
+const CRIMSON_ISLE_COLLECTIONS = new Set([
+  'BLAZE_ROD',
+  'CHILI_PEPPER',
+  'GHAST_TEAR',
+  'GLOWSTONE_DUST',
+  'MAGMA_CREAM',
+  'MAGMA_FISH',
+  'MYCEL',
+  'NETHERRACK',
+  'QUARTZ',
+  'SAND:1',
+  'SULPHUR',
+  'SULPHUR_ORE',
+]);
+
+const CATEGORY_NAMES: Record<string, CollectionCategory> = {
+  FARMING: 'Farming',
+  MINING: 'Mining',
+  COMBAT: 'Combat',
+  FISHING: 'Fishing',
+  FORAGING: 'Foraging',
+  RIFT: 'Rift',
+};
+
+function record(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === 'object' && !Array.isArray(value)
+    ? (value as Record<string, unknown>)
+    : null;
+}
+
+function categoryFor(id: string, sourceCategory?: string): CollectionCategory {
+  if (CRIMSON_ISLE_COLLECTIONS.has(id)) return 'Crimson Isle';
+  return (sourceCategory && CATEGORY_NAMES[sourceCategory]) || 'Other';
+}
+
+function displayName(id: string): string {
+  return id
     .replace(/:.*/, '')
     .split('_')
-    .map((w) => w.charAt(0) + w.slice(1).toLowerCase())
+    .map((word) => word.charAt(0) + word.slice(1).toLowerCase())
     .join(' ');
 }
 
-function createCollectionEntry(
-  rawKey: string,
+function createEntry(
+  id: string,
   amount: number,
-  category: string,
-  name: string,
-  tiers: number[]
+  itemMetadata?: CollectionMetadata
 ): CollectionEntry {
-  let tier = 0;
-  let nextTierRequirement: number | null = null;
-  let progressPercent = 0;
-  let remaining: number | null = null;
-
-  if (tiers.length > 0) {
-    tiers.forEach((requirement, index) => {
-      if (amount >= requirement) {
-        tier = index + 1;
-      }
-    });
-
-    nextTierRequirement = tiers.find((t) => t > amount) ?? null;
-    const previousRequirement = tier > 0 ? tiers[tier - 1] : 0;
-
-    progressPercent = nextTierRequirement
-      ? Math.min(
+  const tiers = Array.isArray(itemMetadata?.tiers)
+    ? [...itemMetadata.tiers].sort((a, b) => a.tier - b.tier)
+    : [];
+  const achieved = [...tiers]
+    .reverse()
+    .find((candidate) => amount >= candidate.amountRequired);
+  const nextTier = tiers.find((candidate) => candidate.amountRequired > amount);
+  const previousRequirement = achieved?.amountRequired ?? 0;
+  const progressPercent = nextTier
+    ? Math.max(
+        0,
+        Math.min(
           100,
           Math.round(
             ((amount - previousRequirement) /
-              (nextTierRequirement - previousRequirement)) *
+              (nextTier.amountRequired - previousRequirement)) *
               100
           )
         )
-      : 100;
-
-    remaining = nextTierRequirement ? nextTierRequirement - amount : null;
-  }
+      )
+    : tiers.length > 0
+      ? 100
+      : 0;
 
   return {
-    rawKey,
-    name,
-    category,
+    rawKey: id,
+    name: itemMetadata?.name ?? displayName(id),
+    category: categoryFor(id, itemMetadata?.category),
     amount,
-    tier,
-    maxTier: tiers.length,
-    nextTierRequirement,
-    remaining,
+    tier: achieved?.tier ?? null,
+    maxTier: itemMetadata?.maxTiers ?? (tiers.length || null),
+    nextTierRequirement: nextTier?.amountRequired ?? null,
+    remaining: nextTier ? Math.max(0, nextTier.amountRequired - amount) : null,
     progressPercent,
+    nextReward: nextTier?.unlocks.length ? nextTier.unlocks.join(', ') : null,
   };
 }
 
-function parseBossCollectionEntries(member: any): CollectionEntry[] {
-  const tierCompletions =
-    member?.dungeons?.dungeon_types?.catacombs?.tier_completions ?? {};
+function bossEntries(member: unknown): CollectionEntry[] {
+  const memberRecord = record(member);
+  const dungeons = record(memberRecord?.dungeons);
+  const dungeonTypes = record(dungeons?.dungeon_types);
+  const catacombs = record(dungeonTypes?.catacombs);
+  const completions = record(catacombs?.tier_completions);
 
   return BOSS_COLLECTIONS.map((boss) => {
-    const kills =
-      boss.floor != null ? (tierCompletions[boss.floor.toString()] ?? 0) : 0;
-    const tiers = boss.rewards.map((reward) => reward.required);
-    const entry = createCollectionEntry(
-      `BOSS_${boss.name.toUpperCase()}`,
-      kills,
-      'Boss',
-      boss.name,
-      tiers
-    );
-
-    if (entry.nextTierRequirement) {
-      entry.detail = `Next reward at ${entry.nextTierRequirement} kills`;
-    } else {
-      entry.detail = 'All rewards unlocked';
-    }
-
-    return entry;
+    const rawKills = boss.floor === null ? 0 : completions?.[String(boss.floor)];
+    const amount = typeof rawKills === 'number' ? rawKills : 0;
+    const tiers = boss.rewards.map((reward, index) => ({
+      tier: index + 1,
+      amountRequired: reward.required,
+      unlocks: [reward.name],
+    }));
+    return createEntry(`BOSS_${boss.name.toUpperCase()}`, amount, {
+      id: `BOSS_${boss.name.toUpperCase()}`,
+      name: `${boss.name} Collection`,
+      category: 'OTHER',
+      maxTiers: tiers.length,
+      tiers,
+    });
   });
 }
 
-export function parseCollections(member: any): CollectionEntry[] {
-  const collections = member?.collection ?? {};
-
-  const entries = Object.entries(collections).map(([key, value]) => {
-    const amount = value as number;
-    const lookupKey = key.replace(/:.*/, '');
-    const category = getCollectionCategory(key);
-    const name = formatCollectionName(key);
-    const tiers = COLLECTION_TIERS[lookupKey] ?? [];
-
-    return createCollectionEntry(key, amount, category, name, tiers);
+export function parseCollections(member: unknown): CollectionEntry[] {
+  const memberRecord = record(member);
+  const profileAmounts = record(memberRecord?.collection) ?? {};
+  const allIds = new Set([...Object.keys(metadata), ...Object.keys(profileAmounts)]);
+  const entries = [...allIds].map((id) => {
+    const rawAmount = profileAmounts[id];
+    return createEntry(id, typeof rawAmount === 'number' ? rawAmount : 0, metadata[id]);
   });
 
-  return [...entries, ...parseBossCollectionEntries(member)].sort((a, b) => {
-    if (a.category === 'Boss' && b.category !== 'Boss') return -1;
-    if (b.category === 'Boss' && a.category !== 'Boss') return 1;
-    if (a.category !== b.category) return a.category.localeCompare(b.category);
-    return b.amount - a.amount;
-  });
+  return [...entries, ...bossEntries(member)];
 }

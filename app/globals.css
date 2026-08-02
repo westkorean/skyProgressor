@@ -1,1 +1,129 @@
+@import "@fontsource-variable/pixelify-sans";
 @import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  font-family: "Pixelify Sans Variable", ui-monospace, monospace;
+  cursor: url('/cursors/pixel-arrow.svg') 2 2, auto;
+}
+
+button,
+a,
+summary,
+[role='button'],
+input[type='submit'] {
+  cursor: url('/cursors/pixel-pointer.svg') 11 2, pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+::selection {
+  background: rgb(16 185 129 / 35%);
+  color: white;
+}
+
+.voxel-scene {
+  perspective: 1100px;
+  transform-style: preserve-3d;
+}
+
+.voxel-console {
+  --scanner-rotate-x: 1deg;
+  --scanner-rotate-y: -3deg;
+  position: relative;
+  z-index: 3;
+  transform: rotateX(var(--scanner-rotate-x)) rotateY(var(--scanner-rotate-y)) translateZ(12px);
+  transform-style: preserve-3d;
+  cursor: grab;
+  transition: transform 160ms cubic-bezier(.2,.8,.2,1), box-shadow 160ms ease;
+  will-change: transform;
+}
+
+.voxel-scene:hover .voxel-console {
+  transform: rotateX(var(--scanner-rotate-x)) rotateY(var(--scanner-rotate-y)) translateZ(20px) translateY(-3px);
+  box-shadow: 14px 18px 0 rgb(0 0 0 / 68%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voxel-console {
+    transition: none;
+  }
+}
+
+/* Give the major profile systems distinct visual landmarks without changing
+   their component layouts. */
+#overview > section { border-color: rgb(16 185 129 / 45%); }
+#progression > section { border-color: rgb(245 158 11 / 38%); }
+#stats > section { border-color: rgb(59 130 246 / 38%); }
+#pets > section { border-color: rgb(168 85 247 / 42%); }
+#gear > section { border-color: rgb(6 182 212 / 38%); }
+#dungeons > section { border-color: rgb(239 68 68 / 38%); }
+#collections > section { border-color: rgb(34 197 94 / 38%); }
+#completion > section { border-color: rgb(236 72 153 / 34%); }
+
+.theme-light {
+  background: #e9edf1;
+  color: #172033;
+}
+
+.theme-light .bg-neutral-950,
+.theme-light .bg-neutral-950\/90,
+.theme-light .bg-neutral-950\/95,
+.theme-light .bg-neutral-950\/60 {
+  background-color: rgb(248 250 252 / 96%);
+}
+
+.theme-light .bg-neutral-900,
+.theme-light .bg-neutral-900\/95,
+.theme-light .bg-neutral-900\/70,
+.theme-light .bg-neutral-900\/45 {
+  background-color: rgb(241 245 249 / 96%);
+}
+
+.theme-light .bg-neutral-800 { background-color: #e2e8f0; }
+.theme-light .border-neutral-800,
+.theme-light .border-neutral-700,
+.theme-light .border-neutral-600 { border-color: #b8c2d0; }
+.theme-light .text-neutral-100,
+.theme-light .text-neutral-200,
+.theme-light .text-neutral-300 { color: #172033; }
+.theme-light .text-neutral-400 { color: #475569; }
+.theme-light .text-neutral-500,
+.theme-light .text-neutral-600 { color: #64748b; }
+.theme-light input { color: #172033; }
+
+.navbar-gaussian-blur {
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  background: linear-gradient(to bottom, rgb(10 10 10 / 72%) 0%, rgb(10 10 10 / 38%) 58%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 100%);
+}
+
+.theme-light .navbar-gaussian-blur {
+  background: linear-gradient(to bottom, rgb(233 237 241 / 84%) 0%, rgb(233 237 241 / 44%) 58%, transparent 100%);
+}
+
+@media (max-width: 639px) {
+  .profile-dock { top: auto; bottom: 6rem; transform: none; }
+}
+
+@keyframes profile-loading-scan {
+  from { transform: translateX(-120%); }
+  to { transform: translateX(420%); }
+}
+
+.profile-loading-bar {
+  animation: profile-loading-scan 1.15s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-loading-bar { animation: none; width: 100%; }
+}

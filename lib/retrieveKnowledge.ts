@@ -1,31 +1,17 @@
-import { knowledgeBase } from "./knowledge";
+import { knowledgeBase, type KnowledgeCategory, type KnowledgeChunk } from './knowledge';
+import { rankKnowledge, selectKnowledgeByIds } from './scoreKnowledge';
 
+export interface KnowledgeRetrievalOptions {
+  categories?: readonly KnowledgeCategory[];
+  limit?: number;
+}
 
-export function retrieveKnowledge(query:string){
+export interface RetrievedKnowledge extends KnowledgeChunk { score: number }
 
-  const words = query
-    .toLowerCase()
-    .split(" ");
+export function retrieveKnowledge(query: string, options: KnowledgeRetrievalOptions = {}): RetrievedKnowledge[] {
+  return rankKnowledge(knowledgeBase, query, options);
+}
 
-
-  const results = knowledgeBase.map(entry => {
-
-    const score = entry.tags.filter(tag =>
-      words.includes(tag)
-    ).length;
-
-
-    return {
-      ...entry,
-      score
-    };
-
-  });
-
-
-  return results
-    .filter(r => r.score > 0)
-    .sort((a,b)=>b.score-a.score)
-    .slice(0,3);
-
+export function retrieveKnowledgeByIds(ids: readonly string[], limit = 5): RetrievedKnowledge[] {
+  return selectKnowledgeByIds(knowledgeBase, ids, limit);
 }

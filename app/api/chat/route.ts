@@ -1,6 +1,7 @@
-import { streamText, convertToModelMessages } from 'ai';
+import { streamText, convertToModelMessages, type UIMessage } from 'ai';
 import { createOpenAI } from '@ai-sdk/openai';
-import { retrieveKnowledge } from "@/lib/retrieveKnowledge";
+import { retrieveKnowledge, retrieveKnowledgeByIds } from '@/lib/retrieveKnowledge';
+import { recommendationKnowledgeReferences, summarizePlayerData } from '@/lib/chatContext';
 
 const groq = createOpenAI({
   apiKey: process.env.GROQ_API_KEY,
@@ -9,6 +10,14 @@ const groq = createOpenAI({
 
 // Simple memory cache (replace with Redis later)
 const wikiCache = new Map<string, string>();
+const MAX_WIKI_CACHE_ENTRIES = 100;
+const EXTERNAL_FETCH_TIMEOUT_MS = 5_000;
+
+type JsonRecord = Record<string, unknown>;
+const asRecord = (value: unknown): JsonRecord | null =>
+  value !== null && typeof value === 'object' && !Array.isArray(value)
+    ? (value as JsonRecord)
+    : null;
 
 function needsWikiSearch(message: string): boolean {
   const keywords = [
@@ -59,8 +68,10 @@ async function searchWiki(query: string): Promise<string | null> {
     const baseUrl = 'https://hypixel-skyblock.fandom.com/api.php';
 
     const searchRes = await fetch(
-      `${baseUrl}?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=1`
+      `${baseUrl}?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&srlimit=1`,
+      { signal: AbortSignal.timeout(EXTERNAL_FETCH_TIMEOUT_MS) }
     );
+    if (!searchRes.ok) return null;
 
     const searchData = await searchRes.json();
 
@@ -72,25 +83,32 @@ async function searchWiki(query: string): Promise<string | null> {
     const contentRes = await fetch(
       `${baseUrl}?action=query&prop=extracts&explaintext=true&titles=${encodeURIComponent(
         result.title
-      )}&format=json`
+      )}&format=json`,
+      { signal: AbortSignal.timeout(EXTERNAL_FETCH_TIMEOUT_MS) }
     );
+    if (!contentRes.ok) return null;
 
 
     const contentData = await contentRes.json();
 
     const pages = contentData?.query?.pages;
 
-    const page: any = pages ? Object.values(pages)[0] : null;
+    const page = pages ? asRecord(Object.values(pages)[0]) : null;
 
 
-    if (!page?.extract) return null;
+    const extract = page?.extract;
+    if (typeof extract !== 'string') return null;
 
 
     const content =
       `--- ${result.title} ---\n` +
-      page.extract.slice(0, 800);
+      extract.slice(0, 800);
 
 
+    if (wikiCache.size >= MAX_WIKI_CACHE_ENTRIES) {
+      const oldestKey = wikiCache.keys().next().value;
+      if (typeof oldestKey === 'string') wikiCache.delete(oldestKey);
+    }
     wikiCache.set(query, content);
 
     return content;
@@ -102,41 +120,43 @@ async function searchWiki(query: string): Promise<string | null> {
 }
 
 
-function summarizePlayerData(playerData: any) {
-  if (!playerData) return 'No player data available.';
-
-  return JSON.stringify({
-    skills: playerData.skills,
-    slayers: playerData.slayers,
-    catacombs: playerData.catacombs,
-    skyblockLevel: playerData.skyblockLevel,
-    pets: playerData.pets,
-    accessories: playerData.accessories,
-    dungeons: playerData.dungeons,
-    collections: playerData.collections,
-  }, null, 2);
-}
-
-
 export async function POST(req: Request) {
 
   try {
 
-    const { messages, playerData } = await req.json();
+    if (!process.env.GROQ_API_KEY) {
+      return new Response('Chat service is not configured.', { status: 503 });
+    }
+
+    const body = (await req.json()) as {
+      messages?: UIMessage[];
+      playerData?: unknown;
+    };
+    if (!body || typeof body !== 'object' || !Array.isArray(body.messages)) {
+      return new Response('Invalid chat request.', { status: 400 });
+    }
+    const messages = body.messages.slice(-20);
+    const playerData = body.playerData;
 
 
     const lastMessage = messages[messages.length - 1];
 
     const latestUserMessage =
-      lastMessage?.parts?.find((p: any) => p.type == 'text')?.text ?? '';
+      (lastMessage?.role === 'user'
+        ? lastMessage.parts?.find((part) => part.type === 'text')?.text
+        : '')?.slice(0, 4000).trim() ?? '';
+    if (!latestUserMessage) {
+      return new Response('A user message is required.', { status: 400 });
+    }
 
-    const knowledge = retrieveKnowledge(`
-    Question:
-    ${latestUserMessage}
-
-    Player:
-    ${summarizePlayerData(playerData)}
-    `);
+    const questionKnowledge = retrieveKnowledge(latestUserMessage, { limit: 5 });
+    const referencedKnowledge = retrieveKnowledgeByIds(
+      recommendationKnowledgeReferences(playerData),
+      5
+    );
+    const knowledge = [...referencedKnowledge, ...questionKnowledge]
+      .filter((chunk, index, chunks) => chunks.findIndex((candidate) => candidate.id === chunk.id) === index)
+      .slice(0, 7);
 
     const knowledgeContext = knowledge
       .map(k=>`
@@ -174,8 +194,16 @@ export async function POST(req: Request) {
 
       Your job is to give personalized advice based on the player's profile.
 
+      Progression priorities are determined only by the deterministic recommendation
+      engine in Player data. Explain those recommendations conversationally and in
+      their supplied order. Never create, remove, reorder, or assign priorities.
+      Treat progressionIssues as evidence and suggested actions, not as permission
+      to invent additional issues.
+
       Player data:
       ${summarizePlayerData(playerData)}
+
+      ${wikiContext ? `Retrieved wiki context:\n${wikiContext}` : ''}
 
 
       ${
@@ -219,9 +247,6 @@ export async function POST(req: Request) {
     `;
 
 
-    console.log("USER:", latestUserMessage);
-    console.log("KNOWLEDGE CONTEXT:", knowledgeContext);
-
     const result = streamText({
 
       model: groq('llama-3.3-70b-versatile'),
@@ -236,14 +261,8 @@ export async function POST(req: Request) {
     return result.toUIMessageStreamResponse();
 
 
-  } catch(err) {
-
-    console.error('Chat route error:', err);
-
-    return new Response(
-      'Error: ' + (err instanceof Error ? err.message : 'unknown'),
-      { status:500 }
-    );
+  } catch {
+    return new Response('Unable to process the chat request.', { status: 500 });
 
   }
 
