@@ -476,6 +476,13 @@ export default function Home() {
                 </form>
 
                 <div className="mt-5 flex flex-wrap gap-2 text-[11px] text-neutral-500">{['Deterministic priorities', 'Complete inventory', 'Profile-aware advisor'].map((feature) => <span key={feature} className="border border-neutral-700 bg-neutral-950 px-3 py-1.5 shadow-[2px_2px_0_#171717]">[+] {feature}</span>)}</div>
+                <div role="note" className="mt-5 max-w-xl border border-amber-700/80 bg-amber-950/30 px-4 py-3 text-xs leading-5 text-amber-200 shadow-[3px_3px_0_#451a03]">
+                  <span className="font-bold uppercase tracking-wider">Beta / in development:</span>{' '}
+                  You may encounter bugs or incomplete features. Please{' '}
+                  <a href="https://github.com/westkorean/skyProgressor/issues" target="_blank" rel="noopener noreferrer" className="font-bold underline decoration-amber-500 underline-offset-2 hover:text-amber-100 focus:outline-none focus:ring-2 focus:ring-amber-400">
+                    report bugs on GitHub
+                  </a>.
+                </div>
                 <button onClick={() => void handleSearch(DEFAULT_DEVELOPER_IGN)} disabled={loading} className="group mt-8 inline-flex items-center gap-3 border border-neutral-700 bg-neutral-950 px-4 py-3 text-left shadow-[4px_4px_0_#171717] transition hover:-translate-y-0.5 hover:border-emerald-600 disabled:opacity-50"><Image src={avatarUrl(DEFAULT_DEVELOPER_IGN)} alt="westkorean skin" width={36} height={36} className="[image-rendering:pixelated]" /><span><span className="block text-xs font-semibold text-neutral-200">Load westkorean</span><span className="block text-[10px] text-neutral-500">Developer profile / demo</span></span></button>
               </div>
 
