@@ -135,7 +135,12 @@ export async function POST(req: Request) {
     if (!body || typeof body !== 'object' || !Array.isArray(body.messages)) {
       return new Response('Invalid chat request.', { status: 400 });
     }
-    const messages = body.messages.slice(-20);
+    const messages = body.messages.slice(-8).map((message) => ({
+      ...message,
+      parts: message.parts.map((part) =>
+        part.type === 'text' ? { ...part, text: part.text.slice(0, 2_000) } : part
+      ),
+    }));
     const playerData = body.playerData;
 
 
@@ -251,6 +256,8 @@ export async function POST(req: Request) {
 
       model: groq('llama-3.3-70b-versatile'),
 
+      maxOutputTokens: 700,
+
       system: systemPrompt,
 
       messages: await convertToModelMessages(messages),
@@ -258,7 +265,19 @@ export async function POST(req: Request) {
     });
 
 
-    return result.toUIMessageStreamResponse();
+    return result.toUIMessageStreamResponse({
+      onError: (error) => {
+        console.error('Chat model stream failed:', error);
+        const message = error instanceof Error ? error.message.toLowerCase() : '';
+        if (message.includes('request too large') || message.includes('tokens per minute')) {
+          return 'This profile contains too much data for the chat service. Please try again.';
+        }
+        if (message.includes('rate limit') || message.includes('too many requests')) {
+          return 'The chat service is busy right now. Please try again in a moment.';
+        }
+        return 'The chat service could not generate a response. Please try again.';
+      },
+    });
 
 
   } catch {
