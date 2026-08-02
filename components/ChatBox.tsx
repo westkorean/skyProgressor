@@ -41,10 +41,16 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
   const [historicalMessages, setHistoricalMessages] = useState<UIMessage[]>([]);
   const hydratedKey = useRef<string | null>(null);
   const skipNextPersist = useRef(false);
+  const lastPersistedMessages = useRef<string | null>(null);
+
+  const transport = useMemo(
+    () => new DefaultChatTransport({ api: '/api/chat', body: { playerData } }),
+    [playerData]
+  );
 
   const { messages, setMessages, sendMessage, status, error } = useChat({
     id: `profile-${profileKey}`,
-    transport: new DefaultChatTransport({ api: '/api/chat', body: { playerData } }),
+    transport,
   });
   const isLoading = status === 'submitted' || status === 'streaming';
   const viewingCurrent = selectedKey === profileKey;
@@ -72,23 +78,29 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
     if (hydratedKey.current === profileKey) return;
     hydratedKey.current = profileKey;
     skipNextPersist.current = true;
-    setMessages(readMessages(profileKey));
+    const savedMessages = readMessages(profileKey);
+    lastPersistedMessages.current = JSON.stringify(savedMessages);
+    setMessages(savedMessages);
   }, [profileKey, setMessages]);
 
   useEffect(() => {
     if (hydratedKey.current !== profileKey) return;
+    if (isLoading) return;
     if (skipNextPersist.current) {
       skipNextPersist.current = false;
       return;
     }
     try {
-      localStorage.setItem(storageKey(profileKey), JSON.stringify(messages));
+      const serializedMessages = JSON.stringify(messages);
+      if (serializedMessages === lastPersistedMessages.current) return;
+      lastPersistedMessages.current = serializedMessages;
+      localStorage.setItem(storageKey(profileKey), serializedMessages);
       const entries = readIndex();
       const updated = [{ key: profileKey, label: profileLabel, updatedAt: Date.now() }, ...entries.filter((entry) => entry.key !== profileKey)].slice(0, MAX_HISTORIES);
       localStorage.setItem(HISTORY_INDEX_KEY, JSON.stringify(updated));
       setHistory(updated);
     } catch { /* Storage can be unavailable or full; chat remains usable in memory. */ }
-  }, [messages, profileKey, profileLabel]);
+  }, [messages, profileKey, profileLabel, isLoading]);
 
   const messageCount = useMemo(() => history.reduce((sum, entry) => sum + readMessages(entry.key).length, 0), [history]);
 

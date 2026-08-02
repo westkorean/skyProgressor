@@ -56,3 +56,28 @@ test('builds a bounded player summary and extracts engine references', () => {
   assert.equal(parsed.inventoryOwnership.items[0].skyblockId, 'ASPECT_OF_THE_END');
   assert.deepEqual(recommendationKnowledgeReferences(playerData), ['combat_progression', 'gear_upgrade_logic']);
 });
+
+test('keeps large inventory context below the model request limit', () => {
+  const items = Array.from({ length: 750 }, (_, index) => ({
+    section: 'enderChest',
+    slot: index,
+    skyblockId: `ITEM_${index}`,
+    name: `Item ${index}`,
+    lore: Array(12).fill('A long line of item lore that should not be sent to the model.'),
+  }));
+  const itemMetadata = Object.fromEntries(items.map((item) => [item.skyblockId, {
+    id: item.skyblockId,
+    name: item.name,
+    wikiSummary: 'A very long wiki summary that should not be included. '.repeat(20),
+    imageUrl: 'https://example.com/a-very-long-image-url.png',
+  }]));
+
+  const summary = summarizePlayerData({ inventory: { sections: {}, items }, itemMetadata });
+  const parsed = JSON.parse(summary) as { inventoryOwnership: { items: unknown[]; metadata: Record<string, unknown> } };
+
+  assert.equal(parsed.inventoryOwnership.items.length, 150);
+  assert.equal(Object.keys(parsed.inventoryOwnership.metadata).length, 100);
+  assert.equal(summary.includes('long line of item lore'), false);
+  assert.equal(summary.includes('very long wiki summary'), false);
+  assert.ok(summary.length <= 18_029);
+});
