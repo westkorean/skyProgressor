@@ -1,0 +1,6302 @@
+{
+  "metadata": {
+    "generatedAt": "2026-08-01T20:30:41.207Z",
+    "source": "https://api.hypixel.net/v2/resources/skyblock/items"
+  },
+  "items": {
+    "ABYSMAL_LASSO": {
+      "id": "ABYSMAL_LASSO",
+      "name": "Abysmal Lasso",
+      "category": "HUNTING",
+      "donationXp": 1
+    },
+    "ABYSSAL_BOOTS": {
+      "id": "ABYSSAL_BOOTS",
+      "name": "Abyssal Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ABYSSAL_CHESTPLATE": {
+      "id": "ABYSSAL_CHESTPLATE",
+      "name": "Abyssal Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ABYSSAL_HELMET": {
+      "id": "ABYSSAL_HELMET",
+      "name": "Abyssal Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ABYSSAL_LEGGINGS": {
+      "id": "ABYSSAL_LEGGINGS",
+      "name": "Abyssal Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ADAPTIVE_BELT": {
+      "id": "ADAPTIVE_BELT",
+      "name": "Adaptive Belt",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ADAPTIVE_BOOTS": {
+      "id": "ADAPTIVE_BOOTS",
+      "name": "Adaptive Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ADAPTIVE_CHESTPLATE": {
+      "id": "ADAPTIVE_CHESTPLATE",
+      "name": "Adaptive Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ADAPTIVE_HELMET": {
+      "id": "ADAPTIVE_HELMET",
+      "name": "Adaptive Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ADAPTIVE_LEGGINGS": {
+      "id": "ADAPTIVE_LEGGINGS",
+      "name": "Adaptive Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ADVANCED_GARDENING_AXE": {
+      "id": "ADVANCED_GARDENING_AXE",
+      "name": "Advanced Gardening Axe",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "ADVANCED_GARDENING_HOE": {
+      "id": "ADVANCED_GARDENING_HOE",
+      "name": "Advanced Gardening Hoe",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "ALCHEMISTS_STAFF": {
+      "id": "ALCHEMISTS_STAFF",
+      "name": "The Alchemist's Staff",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "ALERT_FLARE": {
+      "id": "ALERT_FLARE",
+      "name": "Alert Flare",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "AMBER_NECKLACE": {
+      "id": "AMBER_NECKLACE",
+      "name": "Amber Necklace",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "AMBER_POLISHED_DRILL_ENGINE": {
+      "id": "AMBER_POLISHED_DRILL_ENGINE",
+      "name": "Amber-Polished Drill Engine",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "AMETHYST_GAUNTLET": {
+      "id": "AMETHYST_GAUNTLET",
+      "name": "Amethyst Gauntlet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "ANCESTRAL_SPADE": {
+      "id": "ANCESTRAL_SPADE",
+      "name": "Ancestral Spade",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "ANCIENT_CLOAK": {
+      "id": "ANCIENT_CLOAK",
+      "name": "Ancient Cloak",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "ANGLER_BELT": {
+      "id": "ANGLER_BELT",
+      "name": "Angler Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_BOOTS": {
+      "id": "ANGLER_BOOTS",
+      "name": "Angler Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_BRACELET": {
+      "id": "ANGLER_BRACELET",
+      "name": "Angler Bracelet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_CHESTPLATE": {
+      "id": "ANGLER_CHESTPLATE",
+      "name": "Angler Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_CLOAK": {
+      "id": "ANGLER_CLOAK",
+      "name": "Angler Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_HELMET": {
+      "id": "ANGLER_HELMET",
+      "name": "Angler Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_LEGGINGS": {
+      "id": "ANGLER_LEGGINGS",
+      "name": "Angler Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANGLER_NECKLACE": {
+      "id": "ANGLER_NECKLACE",
+      "name": "Angler Necklace",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ANNIHILATION_CLOAK": {
+      "id": "ANNIHILATION_CLOAK",
+      "name": "Annihilation Cloak",
+      "category": "COMBAT",
+      "donationXp": 16
+    },
+    "APEX_PRAEDATOR": {
+      "id": "APEX_PRAEDATOR",
+      "name": "Savage Huntaxe - Praedator",
+      "category": "HUNTING",
+      "donationXp": 10
+    },
+    "AQUAMASTER_HYDROMAX": {
+      "id": "AQUAMASTER_HYDROMAX",
+      "name": "AquaMaster™ Hydromax",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "AQUAMASTER_X": {
+      "id": "AQUAMASTER_X",
+      "name": "AquaMaster™ X",
+      "category": "FARMING",
+      "donationXp": 6
+    },
+    "ARACHNE_BELT": {
+      "id": "ARACHNE_BELT",
+      "name": "Arachne's Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_BOOTS": {
+      "id": "ARACHNE_BOOTS",
+      "name": "Arachne's Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_CHESTPLATE": {
+      "id": "ARACHNE_CHESTPLATE",
+      "name": "Arachne's Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_CLOAK": {
+      "id": "ARACHNE_CLOAK",
+      "name": "Arachne's Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_GLOVES": {
+      "id": "ARACHNE_GLOVES",
+      "name": "Arachne's Gloves",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_HELMET": {
+      "id": "ARACHNE_HELMET",
+      "name": "Arachne's Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_LEGGINGS": {
+      "id": "ARACHNE_LEGGINGS",
+      "name": "Arachne's Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACHNE_NECKLACE": {
+      "id": "ARACHNE_NECKLACE",
+      "name": "Arachne's Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ARACK": {
+      "id": "ARACK",
+      "name": "Arack",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "ARCHAIC_SPADE": {
+      "id": "ARCHAIC_SPADE",
+      "name": "Archaic Spade",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "ARMADILLO_MASK": {
+      "id": "ARMADILLO_MASK",
+      "name": "Armadillo Mask",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "ARMOR_OF_YOG_BOOTS": {
+      "id": "ARMOR_OF_YOG_BOOTS",
+      "name": "Yog Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "ARMOR_OF_YOG_CHESTPLATE": {
+      "id": "ARMOR_OF_YOG_CHESTPLATE",
+      "name": "Yog Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "ARMOR_OF_YOG_HELMET": {
+      "id": "ARMOR_OF_YOG_HELMET",
+      "name": "Yog Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "ARMOR_OF_YOG_LEGGINGS": {
+      "id": "ARMOR_OF_YOG_LEGGINGS",
+      "name": "Yog Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "ARTISANAL_SHORTBOW": {
+      "id": "ARTISANAL_SHORTBOW",
+      "name": "Artisanal Shortbow",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "ASPECT_OF_THE_DRAGON": {
+      "id": "ASPECT_OF_THE_DRAGON",
+      "name": "Aspect of the Dragons",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "ASPECT_OF_THE_END": {
+      "id": "ASPECT_OF_THE_END",
+      "name": "Aspect of the End",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "ASPECT_OF_THE_JERRY": {
+      "id": "ASPECT_OF_THE_JERRY",
+      "name": "Aspect of the Jerry",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "ASPECT_OF_THE_VOID": {
+      "id": "ASPECT_OF_THE_VOID",
+      "name": "Aspect of the Void",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "ASTRAEA": {
+      "id": "ASTRAEA",
+      "name": "Astraea",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "ATOMINIZER": {
+      "id": "ATOMINIZER",
+      "name": "Atominizer",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "ATOMSPLIT_KATANA": {
+      "id": "ATOMSPLIT_KATANA",
+      "name": "Atomsplit Katana",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "AURORA_BOOTS": {
+      "id": "AURORA_BOOTS",
+      "name": "Aurora Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "AURORA_CHESTPLATE": {
+      "id": "AURORA_CHESTPLATE",
+      "name": "Aurora Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "AURORA_HELMET": {
+      "id": "AURORA_HELMET",
+      "name": "Aurora Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "AURORA_LEGGINGS": {
+      "id": "AURORA_LEGGINGS",
+      "name": "Aurora Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "AXE_OF_THE_SHREDDED": {
+      "id": "AXE_OF_THE_SHREDDED",
+      "name": "Halberd of the Shredded",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "BACKWATER_BELT": {
+      "id": "BACKWATER_BELT",
+      "name": "Backwater Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_BOOTS": {
+      "id": "BACKWATER_BOOTS",
+      "name": "Backwater Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_CHESTPLATE": {
+      "id": "BACKWATER_CHESTPLATE",
+      "name": "Backwater Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_CLOAK": {
+      "id": "BACKWATER_CLOAK",
+      "name": "Backwater Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_GLOVES": {
+      "id": "BACKWATER_GLOVES",
+      "name": "Backwater Gloves",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_HELMET": {
+      "id": "BACKWATER_HELMET",
+      "name": "Backwater Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_LEGGINGS": {
+      "id": "BACKWATER_LEGGINGS",
+      "name": "Backwater Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BACKWATER_NECKLACE": {
+      "id": "BACKWATER_NECKLACE",
+      "name": "Backwater Necklace",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BALLOON_SNAKE": {
+      "id": "BALLOON_SNAKE",
+      "name": "Balloon Snake",
+      "category": "DUNGEONEERING",
+      "donationXp": 4
+    },
+    "BANDAGED_MITHRIL_PICKAXE": {
+      "id": "BANDAGED_MITHRIL_PICKAXE",
+      "name": "Bandaged Mithril Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "BASIC_CHICKEN_AXE": {
+      "id": "BASIC_CHICKEN_AXE",
+      "name": "Basic Chicken Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BASIC_COW_AXE": {
+      "id": "BASIC_COW_AXE",
+      "name": "Basic Cow Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BASIC_FISHING_NET": {
+      "id": "BASIC_FISHING_NET",
+      "name": "Basic Fishing Net",
+      "category": "HUNTING",
+      "donationXp": 1
+    },
+    "BASIC_GARDENING_AXE": {
+      "id": "BASIC_GARDENING_AXE",
+      "name": "Basic Gardening Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "BASIC_GARDENING_HOE": {
+      "id": "BASIC_GARDENING_HOE",
+      "name": "Basic Gardening Hoe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "BASIC_MUSHROOM_COW_AXE": {
+      "id": "BASIC_MUSHROOM_COW_AXE",
+      "name": "Basic Mooshroom Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BASIC_PIG_AXE": {
+      "id": "BASIC_PIG_AXE",
+      "name": "Basic Pig Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BASIC_RABBIT_AXE": {
+      "id": "BASIC_RABBIT_AXE",
+      "name": "Basic Rabbit Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BASIC_SHEEP_AXE": {
+      "id": "BASIC_SHEEP_AXE",
+      "name": "Basic Sheep Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "BAT_PERSON_BOOTS": {
+      "id": "BAT_PERSON_BOOTS",
+      "name": "Bat Person Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BAT_PERSON_CHESTPLATE": {
+      "id": "BAT_PERSON_CHESTPLATE",
+      "name": "Bat Person Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BAT_PERSON_HELMET": {
+      "id": "BAT_PERSON_HELMET",
+      "name": "Bat Person Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BAT_PERSON_LEGGINGS": {
+      "id": "BAT_PERSON_LEGGINGS",
+      "name": "Bat Person Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BAT_WAND": {
+      "id": "BAT_WAND",
+      "name": "Spirit Sceptre",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "BEE_MASK": {
+      "id": "BEE_MASK",
+      "name": "Bee Mask",
+      "category": "FORAGING",
+      "donationXp": 4
+    },
+    "BERSERKER_BOOTS": {
+      "id": "BERSERKER_BOOTS",
+      "name": "Berserker Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BERSERKER_CHESTPLATE": {
+      "id": "BERSERKER_CHESTPLATE",
+      "name": "Berserker Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BERSERKER_HELMET": {
+      "id": "BERSERKER_HELMET",
+      "name": "Berserker Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BERSERKER_LEGGINGS": {
+      "id": "BERSERKER_LEGGINGS",
+      "name": "Berserker Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BIOHAZARD_BOOTS": {
+      "id": "BIOHAZARD_BOOTS",
+      "name": "Biohazard Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BIOHAZARD_HELMET": {
+      "id": "BIOHAZARD_HELMET",
+      "name": "Biohazard Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BIOHAZARD_LEGGINGS": {
+      "id": "BIOHAZARD_LEGGINGS",
+      "name": "Biohazard Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BIOHAZARD_SUIT": {
+      "id": "BIOHAZARD_SUIT",
+      "name": "Biohazard Suit",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BLADE_OF_THE_VOLCANO": {
+      "id": "BLADE_OF_THE_VOLCANO",
+      "name": "Blade of the Volcano",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "BLAZE_BELT": {
+      "id": "BLAZE_BELT",
+      "name": "Blaze Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BLAZE_BOOTS": {
+      "id": "BLAZE_BOOTS",
+      "name": "Blaze Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BLAZE_CHESTPLATE": {
+      "id": "BLAZE_CHESTPLATE",
+      "name": "Blaze Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BLAZE_HELMET": {
+      "id": "BLAZE_HELMET",
+      "name": "Blaze Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BLAZE_LEGGINGS": {
+      "id": "BLAZE_LEGGINGS",
+      "name": "Blaze Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BLAZETEKK_HAM_RADIO": {
+      "id": "BLAZETEKK_HAM_RADIO",
+      "name": "Blazetekk™ Ham Radio",
+      "category": "COMBAT",
+      "donationXp": 16
+    },
+    "BLOBFISH_HAT": {
+      "id": "BLOBFISH_HAT",
+      "name": "Blobfish Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "BLOSSOM_BELT": {
+      "id": "BLOSSOM_BELT",
+      "name": "Blossom Belt",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BLOSSOM_BRACELET": {
+      "id": "BLOSSOM_BRACELET",
+      "name": "Blossom Bracelet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BLOSSOM_CLOAK": {
+      "id": "BLOSSOM_CLOAK",
+      "name": "Blossom Cloak",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BLOSSOM_NECKLACE": {
+      "id": "BLOSSOM_NECKLACE",
+      "name": "Blossom Necklace",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "BONE_BOOMERANG": {
+      "id": "BONE_BOOMERANG",
+      "name": "Bonemerang",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "BONE_NECKLACE": {
+      "id": "BONE_NECKLACE",
+      "name": "Bone Necklace",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "BONE_REAVER": {
+      "id": "BONE_REAVER",
+      "name": "Bone Reaver",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "BONZO_MASK": {
+      "id": "BONZO_MASK",
+      "name": "Bonzo's Mask",
+      "category": "DUNGEONEERING",
+      "donationXp": 4
+    },
+    "BONZO_STAFF": {
+      "id": "BONZO_STAFF",
+      "name": "Bonzo's Staff",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "BOOTS_OF_THE_PACK": {
+      "id": "BOOTS_OF_THE_PACK",
+      "name": "Boots of the Pack",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "BOUNCY_BOOTS": {
+      "id": "BOUNCY_BOOTS",
+      "name": "Bouncy Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "BOUNCY_CHESTPLATE": {
+      "id": "BOUNCY_CHESTPLATE",
+      "name": "Bouncy Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "BOUNCY_HELMET": {
+      "id": "BOUNCY_HELMET",
+      "name": "Bouncy Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "BOUNCY_LEGGINGS": {
+      "id": "BOUNCY_LEGGINGS",
+      "name": "Bouncy Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "BOUQUET_OF_LIES": {
+      "id": "BOUQUET_OF_LIES",
+      "name": "Bouquet of Lies",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "BRONZE_HUNTER_BOOTS": {
+      "id": "BRONZE_HUNTER_BOOTS",
+      "name": "Bronze Hunter Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BRONZE_HUNTER_CHESTPLATE": {
+      "id": "BRONZE_HUNTER_CHESTPLATE",
+      "name": "Bronze Hunter Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BRONZE_HUNTER_HELMET": {
+      "id": "BRONZE_HUNTER_HELMET",
+      "name": "Bronze Hunter Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BRONZE_HUNTER_LEGGINGS": {
+      "id": "BRONZE_HUNTER_LEGGINGS",
+      "name": "Bronze Hunter Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "BURSTFIRE_DAGGER": {
+      "id": "BURSTFIRE_DAGGER",
+      "name": "Kindlebane Dagger",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "BURSTMAW_DAGGER": {
+      "id": "BURSTMAW_DAGGER",
+      "name": "Mawdredge Dagger",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "CACTUS_BOOTS": {
+      "id": "CACTUS_BOOTS",
+      "name": "Cactus Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CACTUS_CHESTPLATE": {
+      "id": "CACTUS_CHESTPLATE",
+      "name": "Cactus Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CACTUS_HELMET": {
+      "id": "CACTUS_HELMET",
+      "name": "Cactus Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CACTUS_KNIFE": {
+      "id": "CACTUS_KNIFE",
+      "name": "Cactus Knife Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "CACTUS_KNIFE_2": {
+      "id": "CACTUS_KNIFE_2",
+      "name": "Cactus Knife Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "CACTUS_KNIFE_3": {
+      "id": "CACTUS_KNIFE_3",
+      "name": "Cactus Knife Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "CACTUS_LEGGINGS": {
+      "id": "CACTUS_LEGGINGS",
+      "name": "Cactus Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CANOPY_BOOTS": {
+      "id": "CANOPY_BOOTS",
+      "name": "Canopy Sandals",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "CANOPY_CHESTPLATE": {
+      "id": "CANOPY_CHESTPLATE",
+      "name": "Canopy Shirt",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "CANOPY_HELMET": {
+      "id": "CANOPY_HELMET",
+      "name": "Canopy Mask",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "CANOPY_LEGGINGS": {
+      "id": "CANOPY_LEGGINGS",
+      "name": "Canopy Pants",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "CASHMERE_JACKET": {
+      "id": "CASHMERE_JACKET",
+      "name": "Cashmere Jacket",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CELESTE_BOOTS": {
+      "id": "CELESTE_BOOTS",
+      "name": "Celeste Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CELESTE_CHESTPLATE": {
+      "id": "CELESTE_CHESTPLATE",
+      "name": "Celeste Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CELESTE_HELMET": {
+      "id": "CELESTE_HELMET",
+      "name": "Celeste Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CELESTE_LEGGINGS": {
+      "id": "CELESTE_LEGGINGS",
+      "name": "Celeste Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CELESTE_WAND": {
+      "id": "CELESTE_WAND",
+      "name": "Celeste Wand",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "CHALLENGE_ROD": {
+      "id": "CHALLENGE_ROD",
+      "name": "Challenging Rod",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "CHALLENGER_BELT": {
+      "id": "CHALLENGER_BELT",
+      "name": "Challenger's Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_BOOTS": {
+      "id": "CHALLENGER_BOOTS",
+      "name": "Challenger's Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_BRACELET": {
+      "id": "CHALLENGER_BRACELET",
+      "name": "Challenger's Bracelet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_CHESTPLATE": {
+      "id": "CHALLENGER_CHESTPLATE",
+      "name": "Challenger's Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_CLOAK": {
+      "id": "CHALLENGER_CLOAK",
+      "name": "Challenger's Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_HELMET": {
+      "id": "CHALLENGER_HELMET",
+      "name": "Challenger's Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_LEGGINGS": {
+      "id": "CHALLENGER_LEGGINGS",
+      "name": "Challenger's Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHALLENGER_NECKLACE": {
+      "id": "CHALLENGER_NECKLACE",
+      "name": "Challenger's Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHAMP_ROD": {
+      "id": "CHAMP_ROD",
+      "name": "Rod of Champions",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "CHARLIE_TROUSERS": {
+      "id": "CHARLIE_TROUSERS",
+      "name": "Charlie's Trousers",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "CHARMINIZER": {
+      "id": "CHARMINIZER",
+      "name": "Charminizer",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "CHEAP_TUXEDO_BOOTS": {
+      "id": "CHEAP_TUXEDO_BOOTS",
+      "name": "Cheap Tuxedo Oxfords",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHEAP_TUXEDO_CHESTPLATE": {
+      "id": "CHEAP_TUXEDO_CHESTPLATE",
+      "name": "Cheap Tuxedo Jacket",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHEAP_TUXEDO_LEGGINGS": {
+      "id": "CHEAP_TUXEDO_LEGGINGS",
+      "name": "Cheap Tuxedo Pants",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHESTPLATE_OF_THE_PACK": {
+      "id": "CHESTPLATE_OF_THE_PACK",
+      "name": "Chestplate of the Pack",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CHICKEN_AXE": {
+      "id": "CHICKEN_AXE",
+      "name": "Advanced Chicken Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "CHICKEN_HEAD": {
+      "id": "CHICKEN_HEAD",
+      "name": "Chicken Hat",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "CHUM_SINKER": {
+      "id": "CHUM_SINKER",
+      "name": "Chum Sinker",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "CLAY_BRACELET": {
+      "id": "CLAY_BRACELET",
+      "name": "Clay Bracelet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "CLEAVER": {
+      "id": "CLEAVER",
+      "name": "Cleaver",
+      "category": "DUNGEONEERING",
+      "donationXp": 1
+    },
+    "CLOWNFISH_CLOAK": {
+      "id": "CLOWNFISH_CLOAK",
+      "name": "Tropical Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "CLOWNFISH_HAT": {
+      "id": "CLOWNFISH_HAT",
+      "name": "Tropical Fish Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "COCO_CHOPPER": {
+      "id": "COCO_CHOPPER",
+      "name": "Cocoa Chopper Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "COCO_CHOPPER_2": {
+      "id": "COCO_CHOPPER_2",
+      "name": "Cocoa Chopper Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "COCO_CHOPPER_3": {
+      "id": "COCO_CHOPPER_3",
+      "name": "Cocoa Chopper Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "COMMON_HOOK": {
+      "id": "COMMON_HOOK",
+      "name": "Common Hook",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "CONJURING_SWORD": {
+      "id": "CONJURING_SWORD",
+      "name": "Conjuring",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "COW_AXE": {
+      "id": "COW_AXE",
+      "name": "Advanced Cow Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "COW_HEAD": {
+      "id": "COW_HEAD",
+      "name": "Cow Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "CREEPER_HAT": {
+      "id": "CREEPER_HAT",
+      "name": "Creeper Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "CREEPER_LEGGINGS": {
+      "id": "CREEPER_LEGGINGS",
+      "name": "Creeper Pants",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRIMSON_BOOTS": {
+      "id": "CRIMSON_BOOTS",
+      "name": "Crimson Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRIMSON_CHESTPLATE": {
+      "id": "CRIMSON_CHESTPLATE",
+      "name": "Crimson Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRIMSON_HELMET": {
+      "id": "CRIMSON_HELMET",
+      "name": "Crimson Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRIMSON_LEGGINGS": {
+      "id": "CRIMSON_LEGGINGS",
+      "name": "Crimson Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CROPIE_BOOTS": {
+      "id": "CROPIE_BOOTS",
+      "name": "Cropie Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CROPIE_CHESTPLATE": {
+      "id": "CROPIE_CHESTPLATE",
+      "name": "Cropie Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CROPIE_HELMET": {
+      "id": "CROPIE_HELMET",
+      "name": "Cropie Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CROPIE_LEGGINGS": {
+      "id": "CROPIE_LEGGINGS",
+      "name": "Cropie Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "CROWN_OF_AVARICE": {
+      "id": "CROWN_OF_AVARICE",
+      "name": "Crown of Avarice",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "CROWN_OF_GREED": {
+      "id": "CROWN_OF_GREED",
+      "name": "Crown of Greed",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "CRYPT_BOW": {
+      "id": "CRYPT_BOW",
+      "name": "Soulstealer Bow",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "CRYPT_DREADLORD_SWORD": {
+      "id": "CRYPT_DREADLORD_SWORD",
+      "name": "Dreadlord Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "CRYSTAL_BOOTS": {
+      "id": "CRYSTAL_BOOTS",
+      "name": "Crystal Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRYSTAL_CHESTPLATE": {
+      "id": "CRYSTAL_CHESTPLATE",
+      "name": "Crystal Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRYSTAL_HELMET": {
+      "id": "CRYSTAL_HELMET",
+      "name": "Crystal Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRYSTAL_LEGGINGS": {
+      "id": "CRYSTAL_LEGGINGS",
+      "name": "Crystal Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "CRYSTALLIZED_HEART": {
+      "id": "CRYSTALLIZED_HEART",
+      "name": "Crystallized Heart",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "CURSUS_FERAE": {
+      "id": "CURSUS_FERAE",
+      "name": "Reinforced Huntaxe - Cursus",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "DAEDALUS_AXE": {
+      "id": "DAEDALUS_AXE",
+      "name": "Daedalus Blade",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "DARK_CLAYMORE": {
+      "id": "DARK_CLAYMORE",
+      "name": "Dark Claymore",
+      "category": "DUNGEONEERING",
+      "donationXp": 30
+    },
+    "DARK_GOGGLES": {
+      "id": "DARK_GOGGLES",
+      "name": "Dark Goggles",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "DAVIDS_CLOAK": {
+      "id": "DAVIDS_CLOAK",
+      "name": "David's Cloak",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "DEATH_BOW": {
+      "id": "DEATH_BOW",
+      "name": "Death Bow",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "DECENT_AXE": {
+      "id": "DECENT_AXE",
+      "name": "Decent Axe",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "DECENT_BOW": {
+      "id": "DECENT_BOW",
+      "name": "Decent Bow",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "DEIFIC_SPADE": {
+      "id": "DEIFIC_SPADE",
+      "name": "Deific Spade",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "DELIRIUM_NECKLACE": {
+      "id": "DELIRIUM_NECKLACE",
+      "name": "Delirium Necklace",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "DEMONLORD_GAUNTLET": {
+      "id": "DEMONLORD_GAUNTLET",
+      "name": "Demonslayer Gauntlet",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "DESTRUCTION_CLOAK": {
+      "id": "DESTRUCTION_CLOAK",
+      "name": "Destruction Cloak",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "DIAMOND_BONZO_HEAD": {
+      "id": "DIAMOND_BONZO_HEAD",
+      "name": "Diamond Bonzo Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_HUNTER_BOOTS": {
+      "id": "DIAMOND_HUNTER_BOOTS",
+      "name": "Diamond Hunter Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIAMOND_HUNTER_CHESTPLATE": {
+      "id": "DIAMOND_HUNTER_CHESTPLATE",
+      "name": "Diamond Hunter Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIAMOND_HUNTER_HELMET": {
+      "id": "DIAMOND_HUNTER_HELMET",
+      "name": "Diamond Hunter Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIAMOND_HUNTER_LEGGINGS": {
+      "id": "DIAMOND_HUNTER_LEGGINGS",
+      "name": "Diamond Hunter Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIAMOND_LIVID_HEAD": {
+      "id": "DIAMOND_LIVID_HEAD",
+      "name": "Diamond Livid Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_NECRON_HEAD": {
+      "id": "DIAMOND_NECRON_HEAD",
+      "name": "Diamond Necron Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_PROFESSOR_HEAD": {
+      "id": "DIAMOND_PROFESSOR_HEAD",
+      "name": "Diamond Professor Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_SADAN_HEAD": {
+      "id": "DIAMOND_SADAN_HEAD",
+      "name": "Diamond Sadan Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_SCARF_HEAD": {
+      "id": "DIAMOND_SCARF_HEAD",
+      "name": "Diamond Scarf Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIAMOND_THORN_HEAD": {
+      "id": "DIAMOND_THORN_HEAD",
+      "name": "Diamond Thorn Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "DIVAN_BOOTS": {
+      "id": "DIVAN_BOOTS",
+      "name": "Boots of Divan",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "DIVAN_CHESTPLATE": {
+      "id": "DIVAN_CHESTPLATE",
+      "name": "Chestplate of Divan",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "DIVAN_DRILL": {
+      "id": "DIVAN_DRILL",
+      "name": "Divan's Drill",
+      "category": "MINING",
+      "donationXp": 25
+    },
+    "DIVAN_HELMET": {
+      "id": "DIVAN_HELMET",
+      "name": "Helmet of Divan",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "DIVAN_LEGGINGS": {
+      "id": "DIVAN_LEGGINGS",
+      "name": "Leggings of Divan",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "DIVAN_PENDANT": {
+      "id": "DIVAN_PENDANT",
+      "name": "Pendant of Divan",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "DIVER_BOOTS": {
+      "id": "DIVER_BOOTS",
+      "name": "Diver's Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIVER_CHESTPLATE": {
+      "id": "DIVER_CHESTPLATE",
+      "name": "Diver's Shirt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIVER_HELMET": {
+      "id": "DIVER_HELMET",
+      "name": "Diver's Mask",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DIVER_LEGGINGS": {
+      "id": "DIVER_LEGGINGS",
+      "name": "Diver's Trunks",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "DOJO_BLACK_BELT": {
+      "id": "DOJO_BLACK_BELT",
+      "name": "Black Belt",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "DOJO_BLUE_BELT": {
+      "id": "DOJO_BLUE_BELT",
+      "name": "Blue Belt",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "DOJO_BROWN_BELT": {
+      "id": "DOJO_BROWN_BELT",
+      "name": "Brown Belt",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "DOJO_GREEN_BELT": {
+      "id": "DOJO_GREEN_BELT",
+      "name": "Green Belt",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "DOJO_WHITE_BELT": {
+      "id": "DOJO_WHITE_BELT",
+      "name": "White Belt",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "DOJO_YELLOW_BELT": {
+      "id": "DOJO_YELLOW_BELT",
+      "name": "§eYellow Belt",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "DRAGON_SHORTBOW": {
+      "id": "DRAGON_SHORTBOW",
+      "name": "Dragon Shortbow",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "DRAGONFADE_CLOAK": {
+      "id": "DRAGONFADE_CLOAK",
+      "name": "Dragonfade Cloak",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "DRAGONFUSE_GLOVE": {
+      "id": "DRAGONFUSE_GLOVE",
+      "name": "Dragonfuse Glove",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "DUNGEON_STONE": {
+      "id": "DUNGEON_STONE",
+      "name": "Dungeon Orb",
+      "category": "DUNGEONEERING",
+      "donationXp": 1
+    },
+    "DUNGEONBREAKER": {
+      "id": "DUNGEONBREAKER",
+      "name": "Dungeonbreaker",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "DWARVEN_HANDWARMERS": {
+      "id": "DWARVEN_HANDWARMERS",
+      "name": "Dwarven Handwarmers",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "EARTH_SHARD": {
+      "id": "EARTH_SHARD",
+      "name": "Earthen Blade",
+      "category": "DUNGEONEERING",
+      "donationXp": 4
+    },
+    "EDIBLE_MACE": {
+      "id": "EDIBLE_MACE",
+      "name": "Edible Mace",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "EFFICIENT_AXE": {
+      "id": "EFFICIENT_AXE",
+      "name": "Efficient Axe",
+      "category": "FORAGING",
+      "donationXp": 1
+    },
+    "ELEANOR_CAP": {
+      "id": "ELEANOR_CAP",
+      "name": "Eleanor's Cap",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEANOR_SLIPPERS": {
+      "id": "ELEANOR_SLIPPERS",
+      "name": "Eleanor's Slippers",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEANOR_TROUSERS": {
+      "id": "ELEANOR_TROUSERS",
+      "name": "Eleanor's Trousers",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEANOR_TUNIC": {
+      "id": "ELEANOR_TUNIC",
+      "name": "Eleanor's Tunic",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEGANT_TUXEDO_BOOTS": {
+      "id": "ELEGANT_TUXEDO_BOOTS",
+      "name": "Elegant Tuxedo Oxfords",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEGANT_TUXEDO_CHESTPLATE": {
+      "id": "ELEGANT_TUXEDO_CHESTPLATE",
+      "name": "Elegant Tuxedo Jacket",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ELEGANT_TUXEDO_LEGGINGS": {
+      "id": "ELEGANT_TUXEDO_LEGGINGS",
+      "name": "Elegant Tuxedo Pants",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "EMERALD_ARMOR_BOOTS": {
+      "id": "EMERALD_ARMOR_BOOTS",
+      "name": "Emerald Armor Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "EMERALD_ARMOR_CHESTPLATE": {
+      "id": "EMERALD_ARMOR_CHESTPLATE",
+      "name": "Emerald Armor Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "EMERALD_ARMOR_HELMET": {
+      "id": "EMERALD_ARMOR_HELMET",
+      "name": "Emerald Armor Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "EMERALD_ARMOR_LEGGINGS": {
+      "id": "EMERALD_ARMOR_LEGGINGS",
+      "name": "Emerald Armor Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "EMERALD_BLADE": {
+      "id": "EMERALD_BLADE",
+      "name": "Emerald Blade",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "ENCHANTED_JACK_O_LANTERN": {
+      "id": "ENCHANTED_JACK_O_LANTERN",
+      "name": "Lantern Helmet",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "ENCHANTED_TIME_CLOCK": {
+      "id": "ENCHANTED_TIME_CLOCK",
+      "name": "Enchanted Clock",
+      "category": "MINING",
+      "donationXp": 7
+    },
+    "END_BOOTS": {
+      "id": "END_BOOTS",
+      "name": "Ender Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "END_CHESTPLATE": {
+      "id": "END_CHESTPLATE",
+      "name": "Ender Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "END_HELMET": {
+      "id": "END_HELMET",
+      "name": "Ender Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "END_LEGGINGS": {
+      "id": "END_LEGGINGS",
+      "name": "Ender Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "END_STONE_BOW": {
+      "id": "END_STONE_BOW",
+      "name": "End Stone Bow",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "END_STONE_SWORD": {
+      "id": "END_STONE_SWORD",
+      "name": "End Stone Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "END_SWORD": {
+      "id": "END_SWORD",
+      "name": "End Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "ENDER_BOW": {
+      "id": "ENDER_BOW",
+      "name": "Ender Bow",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "ENDERMAN_MASK": {
+      "id": "ENDERMAN_MASK",
+      "name": "Enderman Mask",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "ENTANGLER_LASSO": {
+      "id": "ENTANGLER_LASSO",
+      "name": "Entangler Lasso",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "EVERSTRETCH_LASSO": {
+      "id": "EVERSTRETCH_LASSO",
+      "name": "Everstretch Lasso",
+      "category": "HUNTING",
+      "donationXp": 10
+    },
+    "EXPLOSIVE_BOW": {
+      "id": "EXPLOSIVE_BOW",
+      "name": "Explosive Bow",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "FAIRY_BOOTS": {
+      "id": "FAIRY_BOOTS",
+      "name": "Fairy's Galoshes",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FAIRY_CHESTPLATE": {
+      "id": "FAIRY_CHESTPLATE",
+      "name": "Fairy's Polo",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FAIRY_HELMET": {
+      "id": "FAIRY_HELMET",
+      "name": "Fairy's Fedora",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FAIRY_LEGGINGS": {
+      "id": "FAIRY_LEGGINGS",
+      "name": "Fairy's Trousers",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FALLEN_STAR_HAT": {
+      "id": "FALLEN_STAR_HAT",
+      "name": "Fallen Star Helmet",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "FALLEN_STAR_TRACKER": {
+      "id": "FALLEN_STAR_TRACKER",
+      "name": "Fallen Star Lozenge",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "FANCY_SWORD": {
+      "id": "FANCY_SWORD",
+      "name": "Fancy Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "FANCY_TUXEDO_BOOTS": {
+      "id": "FANCY_TUXEDO_BOOTS",
+      "name": "Fancy Tuxedo Oxfords",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FANCY_TUXEDO_CHESTPLATE": {
+      "id": "FANCY_TUXEDO_CHESTPLATE",
+      "name": "Fancy Tuxedo Jacket",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FANCY_TUXEDO_LEGGINGS": {
+      "id": "FANCY_TUXEDO_LEGGINGS",
+      "name": "Fancy Tuxedo Pants",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FARM_ARMOR_BOOTS": {
+      "id": "FARM_ARMOR_BOOTS",
+      "name": "Haymaker Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_ARMOR_CHESTPLATE": {
+      "id": "FARM_ARMOR_CHESTPLATE",
+      "name": "Haymaker Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_ARMOR_HELMET": {
+      "id": "FARM_ARMOR_HELMET",
+      "name": "Haymaker Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_ARMOR_LEGGINGS": {
+      "id": "FARM_ARMOR_LEGGINGS",
+      "name": "Haymaker Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_SUIT_BOOTS": {
+      "id": "FARM_SUIT_BOOTS",
+      "name": "Farmhand Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_SUIT_CHESTPLATE": {
+      "id": "FARM_SUIT_CHESTPLATE",
+      "name": "Farmhand Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_SUIT_HELMET": {
+      "id": "FARM_SUIT_HELMET",
+      "name": "Farmhand Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARM_SUIT_LEGGINGS": {
+      "id": "FARM_SUIT_LEGGINGS",
+      "name": "Farmhand Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FARMER_BOOTS": {
+      "id": "FARMER_BOOTS",
+      "name": "Farmer Boots",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "FEL_SWORD": {
+      "id": "FEL_SWORD",
+      "name": "Fel Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "FELTHORN_REAPER": {
+      "id": "FELTHORN_REAPER",
+      "name": "Felthorn Reaper",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "FERMENTO_BOOTS": {
+      "id": "FERMENTO_BOOTS",
+      "name": "Fermento Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FERMENTO_CHESTPLATE": {
+      "id": "FERMENTO_CHESTPLATE",
+      "name": "Fermento Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FERMENTO_HELMET": {
+      "id": "FERMENTO_HELMET",
+      "name": "Fermento Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FERMENTO_LEGGINGS": {
+      "id": "FERMENTO_LEGGINGS",
+      "name": "Fermento Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "FERVOR_BOOTS": {
+      "id": "FERVOR_BOOTS",
+      "name": "Fervor Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FERVOR_CHESTPLATE": {
+      "id": "FERVOR_CHESTPLATE",
+      "name": "Fervor Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FERVOR_HELMET": {
+      "id": "FERVOR_HELMET",
+      "name": "Fervor Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FERVOR_LEGGINGS": {
+      "id": "FERVOR_LEGGINGS",
+      "name": "Fervor Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FESTIVE_SINKER": {
+      "id": "FESTIVE_SINKER",
+      "name": "Festive Sinker",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "FIG_AXE": {
+      "id": "FIG_AXE",
+      "name": "Fig Hew",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "FIG_BOOTS": {
+      "id": "FIG_BOOTS",
+      "name": "Fig Striders",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "FIG_CHESTPLATE": {
+      "id": "FIG_CHESTPLATE",
+      "name": "Figmail",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "FIG_HELMET": {
+      "id": "FIG_HELMET",
+      "name": "Fig Cap",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "FIG_LEGGINGS": {
+      "id": "FIG_LEGGINGS",
+      "name": "Fig Trousers",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "FIGSTONE_AXE": {
+      "id": "FIGSTONE_AXE",
+      "name": "Figstone Splitter",
+      "category": "FORAGING",
+      "donationXp": 5
+    },
+    "FINAL_DESTINATION_BOOTS": {
+      "id": "FINAL_DESTINATION_BOOTS",
+      "name": "Final Destination Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FINAL_DESTINATION_CHESTPLATE": {
+      "id": "FINAL_DESTINATION_CHESTPLATE",
+      "name": "Final Destination Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FINAL_DESTINATION_HELMET": {
+      "id": "FINAL_DESTINATION_HELMET",
+      "name": "Final Destination Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FINAL_DESTINATION_LEGGINGS": {
+      "id": "FINAL_DESTINATION_LEGGINGS",
+      "name": "Final Destination Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FINWAVE_BELT": {
+      "id": "FINWAVE_BELT",
+      "name": "Finwave Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "FINWAVE_CLOAK": {
+      "id": "FINWAVE_CLOAK",
+      "name": "Finwave Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "FINWAVE_GLOVES": {
+      "id": "FINWAVE_GLOVES",
+      "name": "Finwave Gloves",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "FIRE_FREEZE_STAFF": {
+      "id": "FIRE_FREEZE_STAFF",
+      "name": "Fire Freeze Staff",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "FIRE_FURY_STAFF": {
+      "id": "FIRE_FURY_STAFF",
+      "name": "Fire Fury Staff",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "FIRE_VEIL_WAND": {
+      "id": "FIRE_VEIL_WAND",
+      "name": "Fire Veil Wand",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "FIREDUST_DAGGER": {
+      "id": "FIREDUST_DAGGER",
+      "name": "Firedust Dagger",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "FISH_HAT": {
+      "id": "FISH_HAT",
+      "name": "Fish Hat",
+      "category": "FISHING",
+      "donationXp": 1
+    },
+    "FLAME_BREAKER_BOOTS": {
+      "id": "FLAME_BREAKER_BOOTS",
+      "name": "Flamebreaker Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "FLAME_BREAKER_CHESTPLATE": {
+      "id": "FLAME_BREAKER_CHESTPLATE",
+      "name": "Flamebreaker Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "FLAME_BREAKER_HELMET": {
+      "id": "FLAME_BREAKER_HELMET",
+      "name": "Flamebreaker Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "FLAME_BREAKER_LEGGINGS": {
+      "id": "FLAME_BREAKER_LEGGINGS",
+      "name": "Flamebreaker Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "FLAMING_CHESTPLATE": {
+      "id": "FLAMING_CHESTPLATE",
+      "name": "Flaming Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "FLAMING_FIST": {
+      "id": "FLAMING_FIST",
+      "name": "Flaming Fist",
+      "category": "COMBAT",
+      "donationXp": 15
+    },
+    "FLAMING_FLAY": {
+      "id": "FLAMING_FLAY",
+      "name": "Flaming Flay",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "FLAMING_SWORD": {
+      "id": "FLAMING_SWORD",
+      "name": "Flaming Sword",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "FLINT_SHOVEL": {
+      "id": "FLINT_SHOVEL",
+      "name": "Flint Shovel",
+      "category": "MINING",
+      "donationXp": 1
+    },
+    "FLORID_ZOMBIE_SWORD": {
+      "id": "FLORID_ZOMBIE_SWORD",
+      "name": "Florid Zombie Sword",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "FLOWER_OF_TRUTH": {
+      "id": "FLOWER_OF_TRUTH",
+      "name": "Flower of Truth",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "FRACTURED_MITHRIL_PICKAXE": {
+      "id": "FRACTURED_MITHRIL_PICKAXE",
+      "name": "Fractured Mithril Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "FROG_MASK": {
+      "id": "FROG_MASK",
+      "name": "Frog Mask",
+      "category": "FORAGING",
+      "donationXp": 4
+    },
+    "FROGGLES": {
+      "id": "FROGGLES",
+      "name": "Froggles",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "FROGGLES_DIAMOND": {
+      "id": "FROGGLES_DIAMOND",
+      "name": "Diamond Froggles",
+      "category": "FISHING",
+      "donationXp": 10
+    },
+    "FROGGLES_GOLD": {
+      "id": "FROGGLES_GOLD",
+      "name": "Golden Froggles",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "FROGGLES_SILVER": {
+      "id": "FROGGLES_SILVER",
+      "name": "Silver Froggles",
+      "category": "FISHING",
+      "donationXp": 4
+    },
+    "FROZEN_AMULET": {
+      "id": "FROZEN_AMULET",
+      "name": "Frozen Amulet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "FROZEN_BLAZE_BOOTS": {
+      "id": "FROZEN_BLAZE_BOOTS",
+      "name": "Frozen Blaze Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FROZEN_BLAZE_CHESTPLATE": {
+      "id": "FROZEN_BLAZE_CHESTPLATE",
+      "name": "Frozen Blaze Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FROZEN_BLAZE_HELMET": {
+      "id": "FROZEN_BLAZE_HELMET",
+      "name": "Frozen Blaze Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FROZEN_BLAZE_LEGGINGS": {
+      "id": "FROZEN_BLAZE_LEGGINGS",
+      "name": "Frozen Blaze Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "FROZEN_SCYTHE": {
+      "id": "FROZEN_SCYTHE",
+      "name": "Frozen Scythe",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "FUNGI_CUTTER": {
+      "id": "FUNGI_CUTTER",
+      "name": "Fungi Cutter Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "FUNGI_CUTTER_2": {
+      "id": "FUNGI_CUTTER_2",
+      "name": "Fungi Cutter Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "FUNGI_CUTTER_3": {
+      "id": "FUNGI_CUTTER_3",
+      "name": "Fungi Cutter Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "GARDEN_SCYTHE": {
+      "id": "GARDEN_SCYTHE",
+      "name": "Garden Scythe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "GAUNTLET_OF_CONTAGION": {
+      "id": "GAUNTLET_OF_CONTAGION",
+      "name": "Gauntlet of Contagion",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "GEMSTONE_DRILL_1": {
+      "id": "GEMSTONE_DRILL_1",
+      "name": "Ruby Drill TX-15",
+      "category": "MINING",
+      "donationXp": 4
+    },
+    "GEMSTONE_DRILL_2": {
+      "id": "GEMSTONE_DRILL_2",
+      "name": "Gemstone Drill LT-522",
+      "category": "MINING",
+      "donationXp": 5
+    },
+    "GEMSTONE_DRILL_3": {
+      "id": "GEMSTONE_DRILL_3",
+      "name": "Topaz Drill KGR-12",
+      "category": "MINING",
+      "donationXp": 7
+    },
+    "GEMSTONE_DRILL_4": {
+      "id": "GEMSTONE_DRILL_4",
+      "name": "Jasper Drill X",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "GEMSTONE_FUEL_TANK": {
+      "id": "GEMSTONE_FUEL_TANK",
+      "name": "Gemstone Fuel Tank",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "GEMSTONE_GAUNTLET": {
+      "id": "GEMSTONE_GAUNTLET",
+      "name": "Gemstone Gauntlet",
+      "category": "MINING",
+      "donationXp": 8
+    },
+    "GHAST_CLOAK": {
+      "id": "GHAST_CLOAK",
+      "name": "Ghast Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GHOST_BOOTS": {
+      "id": "GHOST_BOOTS",
+      "name": "Ghostly Boots",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "GHOUL_BUSTER": {
+      "id": "GHOUL_BUSTER",
+      "name": "Ghoul Buster",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "GIANT_CLEAVER": {
+      "id": "GIANT_CLEAVER",
+      "name": "Giant Cleaver",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "GIANTS_SWORD": {
+      "id": "GIANTS_SWORD",
+      "name": "Giant's Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "GILLSPLASH_BELT": {
+      "id": "GILLSPLASH_BELT",
+      "name": "Gillsplash Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GILLSPLASH_CLOAK": {
+      "id": "GILLSPLASH_CLOAK",
+      "name": "Gillsplash Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GILLSPLASH_GLOVES": {
+      "id": "GILLSPLASH_GLOVES",
+      "name": "Gillsplash Gloves",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GLACIAL_SCYTHE": {
+      "id": "GLACIAL_SCYTHE",
+      "name": "Glacial Scythe",
+      "category": "COMBAT",
+      "donationXp": 9
+    },
+    "GLACITE_BOOTS": {
+      "id": "GLACITE_BOOTS",
+      "name": "Glacite Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLACITE_CHESTPLATE": {
+      "id": "GLACITE_CHESTPLATE",
+      "name": "Glacite Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLACITE_CHISEL": {
+      "id": "GLACITE_CHISEL",
+      "name": "Glacite-Plated Chisel",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "GLACITE_HELMET": {
+      "id": "GLACITE_HELMET",
+      "name": "Glacite Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLACITE_LANTERN": {
+      "id": "GLACITE_LANTERN",
+      "name": "Glacite Lantern",
+      "category": "MINING",
+      "donationXp": 8
+    },
+    "GLACITE_LEGGINGS": {
+      "id": "GLACITE_LEGGINGS",
+      "name": "Glacite Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLOOMLOCK_GRIMOIRE": {
+      "id": "GLOOMLOCK_GRIMOIRE",
+      "name": "Gloomlock Grimoire",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "GLOSSY_MINERAL_BOOTS": {
+      "id": "GLOSSY_MINERAL_BOOTS",
+      "name": "Glossy Mineral Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLOSSY_MINERAL_CHESTPLATE": {
+      "id": "GLOSSY_MINERAL_CHESTPLATE",
+      "name": "Glossy Mineral Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLOSSY_MINERAL_HELMET": {
+      "id": "GLOSSY_MINERAL_HELMET",
+      "name": "Glossy Mineral Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLOSSY_MINERAL_LEGGINGS": {
+      "id": "GLOSSY_MINERAL_LEGGINGS",
+      "name": "Glossy Mineral Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GLOWSTONE_GAUNTLET": {
+      "id": "GLOWSTONE_GAUNTLET",
+      "name": "Glowstone Gauntlet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GOBLIN_BOOTS": {
+      "id": "GOBLIN_BOOTS",
+      "name": "Goblin Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GOBLIN_CHESTPLATE": {
+      "id": "GOBLIN_CHESTPLATE",
+      "name": "Goblin Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GOBLIN_HELMET": {
+      "id": "GOBLIN_HELMET",
+      "name": "Goblin Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GOBLIN_LEGGINGS": {
+      "id": "GOBLIN_LEGGINGS",
+      "name": "Goblin Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "GOBLIN_OMELETTE": {
+      "id": "GOBLIN_OMELETTE",
+      "name": "Goblin Omelette",
+      "category": "MINING",
+      "donationXp": 4
+    },
+    "GOBLIN_OMELETTE_BLUE_CHEESE": {
+      "id": "GOBLIN_OMELETTE_BLUE_CHEESE",
+      "name": "Blue Cheese Goblin Omelette",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "GOBLIN_OMELETTE_PESTO": {
+      "id": "GOBLIN_OMELETTE_PESTO",
+      "name": "Pesto Goblin Omelette",
+      "category": "MINING",
+      "donationXp": 6
+    },
+    "GOBLIN_OMELETTE_SPICY": {
+      "id": "GOBLIN_OMELETTE_SPICY",
+      "name": "Spicy Goblin Omelette",
+      "category": "MINING",
+      "donationXp": 8
+    },
+    "GOBLIN_OMELETTE_SUNNY_SIDE": {
+      "id": "GOBLIN_OMELETTE_SUNNY_SIDE",
+      "name": "Sunny Side Goblin Omelette",
+      "category": "MINING",
+      "donationXp": 6
+    },
+    "GOLD_BONZO_HEAD": {
+      "id": "GOLD_BONZO_HEAD",
+      "name": "Golden Bonzo Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_HUNTER_BOOTS": {
+      "id": "GOLD_HUNTER_BOOTS",
+      "name": "Gold Hunter Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GOLD_HUNTER_CHESTPLATE": {
+      "id": "GOLD_HUNTER_CHESTPLATE",
+      "name": "Gold Hunter Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GOLD_HUNTER_HELMET": {
+      "id": "GOLD_HUNTER_HELMET",
+      "name": "Gold Hunter Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GOLD_HUNTER_LEGGINGS": {
+      "id": "GOLD_HUNTER_LEGGINGS",
+      "name": "Gold Hunter Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "GOLD_LIVID_HEAD": {
+      "id": "GOLD_LIVID_HEAD",
+      "name": "Golden Livid Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_NECRON_HEAD": {
+      "id": "GOLD_NECRON_HEAD",
+      "name": "Golden Necron Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_PROFESSOR_HEAD": {
+      "id": "GOLD_PROFESSOR_HEAD",
+      "name": "Golden Professor Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_SADAN_HEAD": {
+      "id": "GOLD_SADAN_HEAD",
+      "name": "Golden Sadan Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_SCARF_HEAD": {
+      "id": "GOLD_SCARF_HEAD",
+      "name": "Golden Scarf Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLD_THORN_HEAD": {
+      "id": "GOLD_THORN_HEAD",
+      "name": "Golden Thorn Head",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "GOLDEN_FLEECE": {
+      "id": "GOLDEN_FLEECE",
+      "name": "Golden Fleece",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "GOLEM_ARMOR_BOOTS": {
+      "id": "GOLEM_ARMOR_BOOTS",
+      "name": "Golem Armor Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GOLEM_ARMOR_CHESTPLATE": {
+      "id": "GOLEM_ARMOR_CHESTPLATE",
+      "name": "Golem Armor Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GOLEM_ARMOR_HELMET": {
+      "id": "GOLEM_ARMOR_HELMET",
+      "name": "Golem Armor Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GOLEM_ARMOR_LEGGINGS": {
+      "id": "GOLEM_ARMOR_LEGGINGS",
+      "name": "Golem Armor Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GOLEM_HAT": {
+      "id": "GOLEM_HAT",
+      "name": "Golem Hat",
+      "category": "MINING",
+      "donationXp": 1
+    },
+    "GOLEM_SWORD": {
+      "id": "GOLEM_SWORD",
+      "name": "Golem Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "GROWTH_BOOTS": {
+      "id": "GROWTH_BOOTS",
+      "name": "Boots of Growth",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GROWTH_CHESTPLATE": {
+      "id": "GROWTH_CHESTPLATE",
+      "name": "Chestplate of Growth",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GROWTH_HELMET": {
+      "id": "GROWTH_HELMET",
+      "name": "Helmet of Growth",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GROWTH_LEGGINGS": {
+      "id": "GROWTH_LEGGINGS",
+      "name": "Leggings of Growth",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GUARDIAN_CHESTPLATE": {
+      "id": "GUARDIAN_CHESTPLATE",
+      "name": "Guardian Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "GYROKINETIC_WAND": {
+      "id": "GYROKINETIC_WAND",
+      "name": "Gyrokinetic Wand",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "HARDENED_DIAMOND_BOOTS": {
+      "id": "HARDENED_DIAMOND_BOOTS",
+      "name": "Hardened Diamond Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HARDENED_DIAMOND_CHESTPLATE": {
+      "id": "HARDENED_DIAMOND_CHESTPLATE",
+      "name": "Hardened Diamond Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HARDENED_DIAMOND_HELMET": {
+      "id": "HARDENED_DIAMOND_HELMET",
+      "name": "Hardened Diamond Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HARDENED_DIAMOND_LEGGINGS": {
+      "id": "HARDENED_DIAMOND_LEGGINGS",
+      "name": "Hardened Diamond Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HEARTFIRE_DAGGER": {
+      "id": "HEARTFIRE_DAGGER",
+      "name": "Pyrochaos Dagger",
+      "category": "COMBAT",
+      "donationXp": 20
+    },
+    "HEARTMAW_DAGGER": {
+      "id": "HEARTMAW_DAGGER",
+      "name": "Deathripper Dagger",
+      "category": "COMBAT",
+      "donationXp": 20
+    },
+    "HEAT_BOOTS": {
+      "id": "HEAT_BOOTS",
+      "name": "Heat Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "HEAT_CHESTPLATE": {
+      "id": "HEAT_CHESTPLATE",
+      "name": "Heat Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "HEAT_HELMET": {
+      "id": "HEAT_HELMET",
+      "name": "Heat Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "HEAT_LEGGINGS": {
+      "id": "HEAT_LEGGINGS",
+      "name": "Heat Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "HEAVY_BOOTS": {
+      "id": "HEAVY_BOOTS",
+      "name": "Heavy Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "HEAVY_CHESTPLATE": {
+      "id": "HEAVY_CHESTPLATE",
+      "name": "Heavy Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "HEAVY_HELMET": {
+      "id": "HEAVY_HELMET",
+      "name": "Heavy Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "HEAVY_LEGGINGS": {
+      "id": "HEAVY_LEGGINGS",
+      "name": "Heavy Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "HELIANTHUS_BOOTS": {
+      "id": "HELIANTHUS_BOOTS",
+      "name": "Helianthus Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "HELIANTHUS_CHESTPLATE": {
+      "id": "HELIANTHUS_CHESTPLATE",
+      "name": "Helianthus Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "HELIANTHUS_HELMET": {
+      "id": "HELIANTHUS_HELMET",
+      "name": "Helianthus Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "HELIANTHUS_LEGGINGS": {
+      "id": "HELIANTHUS_LEGGINGS",
+      "name": "Helianthus Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "HELLFIRE_ROD": {
+      "id": "HELLFIRE_ROD",
+      "name": "Hellfire Rod",
+      "category": "FISHING",
+      "donationXp": 20
+    },
+    "HELLSTORM_STAFF": {
+      "id": "HELLSTORM_STAFF",
+      "name": "Hellstorm Wand",
+      "category": "COMBAT",
+      "donationXp": 20
+    },
+    "HELMET_OF_THE_PACK": {
+      "id": "HELMET_OF_THE_PACK",
+      "name": "Helmet of the Pack",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOE_OF_GREAT_TILLING": {
+      "id": "HOE_OF_GREAT_TILLING",
+      "name": "Hoe of Great Tilling",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "HOE_OF_GREATER_TILLING": {
+      "id": "HOE_OF_GREATER_TILLING",
+      "name": "Hoe of Greater Tilling",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "HOE_OF_GREATEST_TILLING": {
+      "id": "HOE_OF_GREATEST_TILLING",
+      "name": "Hoe of Greatest Tilling",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "HOLLOW_BOOTS": {
+      "id": "HOLLOW_BOOTS",
+      "name": "Hollow Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLLOW_CHESTPLATE": {
+      "id": "HOLLOW_CHESTPLATE",
+      "name": "Hollow Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLLOW_HELMET": {
+      "id": "HOLLOW_HELMET",
+      "name": "Hollow Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLLOW_LEGGINGS": {
+      "id": "HOLLOW_LEGGINGS",
+      "name": "Hollow Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLLOW_WAND": {
+      "id": "HOLLOW_WAND",
+      "name": "Hollow Wand",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "HOLY_DRAGON_BOOTS": {
+      "id": "HOLY_DRAGON_BOOTS",
+      "name": "Holy Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLY_DRAGON_CHESTPLATE": {
+      "id": "HOLY_DRAGON_CHESTPLATE",
+      "name": "Holy Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLY_DRAGON_HELMET": {
+      "id": "HOLY_DRAGON_HELMET",
+      "name": "Holy Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOLY_DRAGON_LEGGINGS": {
+      "id": "HOLY_DRAGON_LEGGINGS",
+      "name": "Holy Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "HOTSPOT_HOOK": {
+      "id": "HOTSPOT_HOOK",
+      "name": "Hotspot Hook",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "HOTSPOT_RADAR": {
+      "id": "HOTSPOT_RADAR",
+      "name": "Hotspot Radar",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "HOTSPOT_SINKER": {
+      "id": "HOTSPOT_SINKER",
+      "name": "Hotspot Sinker",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "HUNTER_KNIFE": {
+      "id": "HUNTER_KNIFE",
+      "name": "Hunter Knife",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "HURRICANE_BOW": {
+      "id": "HURRICANE_BOW",
+      "name": "Hurricane Bow",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "HYDRO_CAN_1000": {
+      "id": "HYDRO_CAN_1000",
+      "name": "HydroCan™ 1000",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "HYDRO_CAN_TURBO_2000": {
+      "id": "HYDRO_CAN_TURBO_2000",
+      "name": "HydroCan™ Turbo 2000",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "HYDRO_CAN_ULTRA_3000": {
+      "id": "HYDRO_CAN_ULTRA_3000",
+      "name": "HydroCan™ Ultra 3000",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "HYPER_CLEAVER": {
+      "id": "HYPER_CLEAVER",
+      "name": "Hyper Cleaver",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "HYPERION": {
+      "id": "HYPERION",
+      "name": "Hyperion",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "ICE_SPRAY_WAND": {
+      "id": "ICE_SPRAY_WAND",
+      "name": "Ice Spray Wand",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "ICHTHYIC_BELT": {
+      "id": "ICHTHYIC_BELT",
+      "name": "Ichthyic Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ICHTHYIC_CLOAK": {
+      "id": "ICHTHYIC_CLOAK",
+      "name": "Ichthyic Cloak",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ICHTHYIC_GLOVES": {
+      "id": "ICHTHYIC_GLOVES",
+      "name": "Ichthyic Gloves",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "ICY_SINKER": {
+      "id": "ICY_SINKER",
+      "name": "Icy Sinker",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "IMPLOSION_BELT": {
+      "id": "IMPLOSION_BELT",
+      "name": "Implosion Belt",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "INFERNO_ROD": {
+      "id": "INFERNO_ROD",
+      "name": "Inferno Rod",
+      "category": "FISHING",
+      "donationXp": 10
+    },
+    "INFINI_VACUUM": {
+      "id": "INFINI_VACUUM",
+      "name": "InfiniVacuum™",
+      "category": "FARMING",
+      "donationXp": 6
+    },
+    "INFINI_VACUUM_HOOVERIUS": {
+      "id": "INFINI_VACUUM_HOOVERIUS",
+      "name": "InfiniVacuum™ Hooverius",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "INFINITE_SPIRIT_LEAP": {
+      "id": "INFINITE_SPIRIT_LEAP",
+      "name": "Infinileap",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "INFINITE_SUPERBOOM_TNT": {
+      "id": "INFINITE_SUPERBOOM_TNT",
+      "name": "Infinityboom TNT",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "INK_WAND": {
+      "id": "INK_WAND",
+      "name": "Ink Wand",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "ITEM_SPIRIT_BOW": {
+      "id": "ITEM_SPIRIT_BOW",
+      "name": "Spirit Shortbow",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "JADE_BELT": {
+      "id": "JADE_BELT",
+      "name": "Jade Belt",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "JERRY_STAFF": {
+      "id": "JERRY_STAFF",
+      "name": "Jerry-chine Gun",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "JINGLE_BELLS": {
+      "id": "JINGLE_BELLS",
+      "name": "Jingle Bells",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "JUICY_SPRAYONATOR": {
+      "id": "JUICY_SPRAYONATOR",
+      "name": "Juicy Sprayonator",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "JUJU_SHORTBOW": {
+      "id": "JUJU_SHORTBOW",
+      "name": "Juju Shortbow",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "JUNGLE_AXE": {
+      "id": "JUNGLE_AXE",
+      "name": "Spruce Axe",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "JUNGLE_PICKAXE": {
+      "id": "JUNGLE_PICKAXE",
+      "name": "Jungle Pickaxe",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "JUNK_SINKER": {
+      "id": "JUNK_SINKER",
+      "name": "Junk Sinker",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "KALHUIKI_MASK": {
+      "id": "KALHUIKI_MASK",
+      "name": "Kalhuiki Mask",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "KELLY_TSHIRT": {
+      "id": "KELLY_TSHIRT",
+      "name": "Kelly's T-Shirt",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "KRAMPUS_HELMET": {
+      "id": "KRAMPUS_HELMET",
+      "name": "Krampus Helmet",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "LANTERN": {
+      "id": "LANTERN",
+      "name": "Dwarven Lantern",
+      "category": "MINING",
+      "donationXp": 1
+    },
+    "LAPIS_ARMOR_BOOTS": {
+      "id": "LAPIS_ARMOR_BOOTS",
+      "name": "Lapis Armor Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "LAPIS_ARMOR_CHESTPLATE": {
+      "id": "LAPIS_ARMOR_CHESTPLATE",
+      "name": "Lapis Armor Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "LAPIS_ARMOR_HELMET": {
+      "id": "LAPIS_ARMOR_HELMET",
+      "name": "Lapis Armor Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "LAPIS_ARMOR_LEGGINGS": {
+      "id": "LAPIS_ARMOR_LEGGINGS",
+      "name": "Lapis Armor Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "LAPIS_PICKAXE": {
+      "id": "LAPIS_PICKAXE",
+      "name": "Lapis Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "LARGE_SCAFFOLDING": {
+      "id": "LARGE_SCAFFOLDING",
+      "name": "Large Scaffolding",
+      "category": "FORAGING",
+      "donationXp": 4
+    },
+    "LAST_BREATH": {
+      "id": "LAST_BREATH",
+      "name": "Last Breath",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "LAVA_SHELL_NECKLACE": {
+      "id": "LAVA_SHELL_NECKLACE",
+      "name": "Lava Shell Necklace",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "LEAFLET_BOOTS": {
+      "id": "LEAFLET_BOOTS",
+      "name": "Leaflet Sandals",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "LEAFLET_CHESTPLATE": {
+      "id": "LEAFLET_CHESTPLATE",
+      "name": "Leaflet Tunic",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "LEAFLET_HELMET": {
+      "id": "LEAFLET_HELMET",
+      "name": "Leaflet Hat",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "LEAFLET_LEGGINGS": {
+      "id": "LEAFLET_LEGGINGS",
+      "name": "Leaflet Pants",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "LEAPING_SWORD": {
+      "id": "LEAPING_SWORD",
+      "name": "Leaping Sword",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "LEGEND_ROD": {
+      "id": "LEGEND_ROD",
+      "name": "Rod of Legends",
+      "category": "FISHING",
+      "donationXp": 5
+    },
+    "LEGGINGS_OF_THE_PACK": {
+      "id": "LEGGINGS_OF_THE_PACK",
+      "name": "Leggings of the Pack",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "LIVID_DAGGER": {
+      "id": "LIVID_DAGGER",
+      "name": "Livid Dagger",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "LOTUS_BELT": {
+      "id": "LOTUS_BELT",
+      "name": "Peony Belt",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "LOTUS_BRACELET": {
+      "id": "LOTUS_BRACELET",
+      "name": "Peony Bracelet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "LOTUS_CLOAK": {
+      "id": "LOTUS_CLOAK",
+      "name": "Peony Cloak",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "LOTUS_NECKLACE": {
+      "id": "LOTUS_NECKLACE",
+      "name": "Peony Necklace",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "LOTUS_SINKER": {
+      "id": "LOTUS_SINKER",
+      "name": "Lotus Sinker",
+      "category": "FISHING",
+      "donationXp": 4
+    },
+    "LUMINOUS_BRACELET": {
+      "id": "LUMINOUS_BRACELET",
+      "name": "Luminous Bracelet",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "MACHINE_GUN_BOW": {
+      "id": "MACHINE_GUN_BOW",
+      "name": "Machine Gun Shortbow",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "MAGMA_FISH_HAT": {
+      "id": "MAGMA_FISH_HAT",
+      "name": "Magmafish Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "MAGMA_LORD_BOOTS": {
+      "id": "MAGMA_LORD_BOOTS",
+      "name": "Magma Lord Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MAGMA_LORD_CHESTPLATE": {
+      "id": "MAGMA_LORD_CHESTPLATE",
+      "name": "Magma Lord Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MAGMA_LORD_GAUNTLET": {
+      "id": "MAGMA_LORD_GAUNTLET",
+      "name": "Magma Lord Necklace",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MAGMA_LORD_HELMET": {
+      "id": "MAGMA_LORD_HELMET",
+      "name": "Magma Lord Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MAGMA_LORD_LEGGINGS": {
+      "id": "MAGMA_LORD_LEGGINGS",
+      "name": "Magma Lord Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MAGMA_NECKLACE": {
+      "id": "MAGMA_NECKLACE",
+      "name": "Magma Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MAGMA_ROD": {
+      "id": "MAGMA_ROD",
+      "name": "Magma Rod",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "MANA_FLUX_POWER_ORB": {
+      "id": "MANA_FLUX_POWER_ORB",
+      "name": "Mana Flux Power Orb",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "MANGROVE_GRIPPERS": {
+      "id": "MANGROVE_GRIPPERS",
+      "name": "Mangrove Grippers",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "MANGROVE_LOCKET": {
+      "id": "MANGROVE_LOCKET",
+      "name": "Mangrove Locket",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "MANGROVE_VINE": {
+      "id": "MANGROVE_VINE",
+      "name": "Mangrove Vine",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "MANTICORE_CLAW": {
+      "id": "MANTICORE_CLAW",
+      "name": "Manticore Claw",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "MASTIFF_BOOTS": {
+      "id": "MASTIFF_BOOTS",
+      "name": "Mastiff Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MASTIFF_CHESTPLATE": {
+      "id": "MASTIFF_CHESTPLATE",
+      "name": "Mastiff Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MASTIFF_HELMET": {
+      "id": "MASTIFF_HELMET",
+      "name": "Mastiff Crown",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MASTIFF_LEGGINGS": {
+      "id": "MASTIFF_LEGGINGS",
+      "name": "Mastiff Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MAWDUST_DAGGER": {
+      "id": "MAWDUST_DAGGER",
+      "name": "Twilight Dagger",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "MEDIUM_FISHING_NET": {
+      "id": "MEDIUM_FISHING_NET",
+      "name": "Medium Fishing Net",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "MEDIUM_POCKET_BLACK_HOLE": {
+      "id": "MEDIUM_POCKET_BLACK_HOLE",
+      "name": "Medium Pocket Black Hole",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "MEDIUM_SCAFFOLDING": {
+      "id": "MEDIUM_SCAFFOLDING",
+      "name": "Medium Scaffolding",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "MELODY_SHOES": {
+      "id": "MELODY_SHOES",
+      "name": "Melody's Shoes",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "MELON_BOOTS": {
+      "id": "MELON_BOOTS",
+      "name": "Tater Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MELON_CHESTPLATE": {
+      "id": "MELON_CHESTPLATE",
+      "name": "Tater Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MELON_DICER": {
+      "id": "MELON_DICER",
+      "name": "Melon Dicer Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "MELON_DICER_2": {
+      "id": "MELON_DICER_2",
+      "name": "Melon Dicer Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "MELON_DICER_3": {
+      "id": "MELON_DICER_3",
+      "name": "Melon Dicer Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "MELON_HELMET": {
+      "id": "MELON_HELMET",
+      "name": "Tater Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MELON_LEGGINGS": {
+      "id": "MELON_LEGGINGS",
+      "name": "Tater Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MENDER_CROWN": {
+      "id": "MENDER_CROWN",
+      "name": "Mender Crown",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "MENDER_FEDORA": {
+      "id": "MENDER_FEDORA",
+      "name": "Mender Fedora",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "MENDER_HELMET": {
+      "id": "MENDER_HELMET",
+      "name": "Mender Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "MERCENARY_AXE": {
+      "id": "MERCENARY_AXE",
+      "name": "Mercenary Sword",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "MERCENARY_BOOTS": {
+      "id": "MERCENARY_BOOTS",
+      "name": "Mercenary Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MERCENARY_CHESTPLATE": {
+      "id": "MERCENARY_CHESTPLATE",
+      "name": "Mercenary Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MERCENARY_HELMET": {
+      "id": "MERCENARY_HELMET",
+      "name": "Mercenary Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MERCENARY_LEGGINGS": {
+      "id": "MERCENARY_LEGGINGS",
+      "name": "Mercenary Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "METAL_CHESTPLATE": {
+      "id": "METAL_CHESTPLATE",
+      "name": "Metal Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "MIDAS_STAFF": {
+      "id": "MIDAS_STAFF",
+      "name": "Midas Staff",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "MIDAS_SWORD": {
+      "id": "MIDAS_SWORD",
+      "name": "Midas' Sword",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "MINER_OUTFIT_BOOTS": {
+      "id": "MINER_OUTFIT_BOOTS",
+      "name": "Prospecting Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINER_OUTFIT_CHESTPLATE": {
+      "id": "MINER_OUTFIT_CHESTPLATE",
+      "name": "Prospecting Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINER_OUTFIT_HELMET": {
+      "id": "MINER_OUTFIT_HELMET",
+      "name": "Prospecting Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINER_OUTFIT_LEGGINGS": {
+      "id": "MINER_OUTFIT_LEGGINGS",
+      "name": "Prospecting Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINERAL_BOOTS": {
+      "id": "MINERAL_BOOTS",
+      "name": "Mineral Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINERAL_CHESTPLATE": {
+      "id": "MINERAL_CHESTPLATE",
+      "name": "Mineral Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINERAL_HELMET": {
+      "id": "MINERAL_HELMET",
+      "name": "Mineral Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MINERAL_LEGGINGS": {
+      "id": "MINERAL_LEGGINGS",
+      "name": "Mineral Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MITHRIL_BELT": {
+      "id": "MITHRIL_BELT",
+      "name": "Mithril Belt",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MITHRIL_CLOAK": {
+      "id": "MITHRIL_CLOAK",
+      "name": "Mithril Cloak",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MITHRIL_COAT": {
+      "id": "MITHRIL_COAT",
+      "name": "Mithril Coat",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "MITHRIL_DRILL_1": {
+      "id": "MITHRIL_DRILL_1",
+      "name": "Mithril Drill SX-R226",
+      "category": "MINING",
+      "donationXp": 6
+    },
+    "MITHRIL_DRILL_2": {
+      "id": "MITHRIL_DRILL_2",
+      "name": "Mithril Drill SX-R326",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "MITHRIL_DRILL_ENGINE": {
+      "id": "MITHRIL_DRILL_ENGINE",
+      "name": "Mithril-Plated Drill Engine",
+      "category": "MINING",
+      "donationXp": 4
+    },
+    "MITHRIL_FUEL_TANK": {
+      "id": "MITHRIL_FUEL_TANK",
+      "name": "Mithril-Infused Fuel Tank",
+      "category": "MINING",
+      "donationXp": 5
+    },
+    "MITHRIL_GAUNTLET": {
+      "id": "MITHRIL_GAUNTLET",
+      "name": "Mithril Gauntlet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MITHRIL_LANTERN": {
+      "id": "MITHRIL_LANTERN",
+      "name": "Mithril Lantern",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "MITHRIL_NECKLACE": {
+      "id": "MITHRIL_NECKLACE",
+      "name": "Mithril Necklace",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "MITHRIL_PICKAXE": {
+      "id": "MITHRIL_PICKAXE",
+      "name": "Mithril Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "MOBYS_SHEARS": {
+      "id": "MOBYS_SHEARS",
+      "name": "Moby's Shears",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "MOLE_HAT": {
+      "id": "MOLE_HAT",
+      "name": "Mole Hat",
+      "category": "FORAGING",
+      "donationXp": null
+    },
+    "MOLTEN_BELT": {
+      "id": "MOLTEN_BELT",
+      "name": "Molten Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MOLTEN_BRACELET": {
+      "id": "MOLTEN_BRACELET",
+      "name": "Molten Bracelet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MOLTEN_CLOAK": {
+      "id": "MOLTEN_CLOAK",
+      "name": "Molten Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MOLTEN_NECKLACE": {
+      "id": "MOLTEN_NECKLACE",
+      "name": "Molten Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MOODY_GRAPPLESHOT": {
+      "id": "MOODY_GRAPPLESHOT",
+      "name": "Moody Grappleshot",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "MOOGMA_LEGGINGS": {
+      "id": "MOOGMA_LEGGINGS",
+      "name": "Moogma Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "MOSQUITO_BOW": {
+      "id": "MOSQUITO_BOW",
+      "name": "Mosquito Shortbow",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "MUSHROOM_BOOTS": {
+      "id": "MUSHROOM_BOOTS",
+      "name": "Mushroom Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MUSHROOM_CHESTPLATE": {
+      "id": "MUSHROOM_CHESTPLATE",
+      "name": "Mushroom Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MUSHROOM_COW_AXE": {
+      "id": "MUSHROOM_COW_AXE",
+      "name": "Advanced Mooshroom Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "MUSHROOM_HELMET": {
+      "id": "MUSHROOM_HELMET",
+      "name": "Mushroom Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MUSHROOM_LEGGINGS": {
+      "id": "MUSHROOM_LEGGINGS",
+      "name": "Mushroom Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "MUSIC_PANTS": {
+      "id": "MUSIC_PANTS",
+      "name": "Stereo Pants",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "MYTHOS_BELT": {
+      "id": "MYTHOS_BELT",
+      "name": "Mythos Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_BOOTS": {
+      "id": "MYTHOS_BOOTS",
+      "name": "Mythos Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_BRACELET": {
+      "id": "MYTHOS_BRACELET",
+      "name": "Mythos Bracelet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_CHESTPLATE": {
+      "id": "MYTHOS_CHESTPLATE",
+      "name": "Mythos Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_CLOAK": {
+      "id": "MYTHOS_CLOAK",
+      "name": "Mythos Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_HELMET": {
+      "id": "MYTHOS_HELMET",
+      "name": "Mythos Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_LEGGINGS": {
+      "id": "MYTHOS_LEGGINGS",
+      "name": "Mythos Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "MYTHOS_NECKLACE": {
+      "id": "MYTHOS_NECKLACE",
+      "name": "Mythos Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "NECROMANCER_LORD_BOOTS": {
+      "id": "NECROMANCER_LORD_BOOTS",
+      "name": "Necromancer Lord Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "NECROMANCER_LORD_CHESTPLATE": {
+      "id": "NECROMANCER_LORD_CHESTPLATE",
+      "name": "Necromancer Lord Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "NECROMANCER_LORD_HELMET": {
+      "id": "NECROMANCER_LORD_HELMET",
+      "name": "Necromancer Lord Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "NECROMANCER_LORD_LEGGINGS": {
+      "id": "NECROMANCER_LORD_LEGGINGS",
+      "name": "Necromancer Lord Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "NECROMANCER_SWORD": {
+      "id": "NECROMANCER_SWORD",
+      "name": "Necromancer Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 7
+    },
+    "NECRON_BLADE": {
+      "id": "NECRON_BLADE",
+      "name": "Necron's Blade (Unrefined)",
+      "category": "DUNGEONEERING",
+      "donationXp": 20
+    },
+    "NEX_TITANUM": {
+      "id": "NEX_TITANUM",
+      "name": "Prime Huntaxe - Nex Titanum",
+      "category": "HUNTING",
+      "donationXp": 15
+    },
+    "NUTCRACKER_BOOTS": {
+      "id": "NUTCRACKER_BOOTS",
+      "name": "Nutcracker Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "NUTCRACKER_CHESTPLATE": {
+      "id": "NUTCRACKER_CHESTPLATE",
+      "name": "Nutcracker Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "NUTCRACKER_HELMET": {
+      "id": "NUTCRACKER_HELMET",
+      "name": "Nutcracker Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "NUTCRACKER_LEGGINGS": {
+      "id": "NUTCRACKER_LEGGINGS",
+      "name": "Nutcracker Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "OBSIDIAN_CHESTPLATE": {
+      "id": "OBSIDIAN_CHESTPLATE",
+      "name": "Obsidian Chestplate",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "OLD_DRAGON_BOOTS": {
+      "id": "OLD_DRAGON_BOOTS",
+      "name": "Old Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "OLD_DRAGON_CHESTPLATE": {
+      "id": "OLD_DRAGON_CHESTPLATE",
+      "name": "Old Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "OLD_DRAGON_HELMET": {
+      "id": "OLD_DRAGON_HELMET",
+      "name": "Old Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "OLD_DRAGON_LEGGINGS": {
+      "id": "OLD_DRAGON_LEGGINGS",
+      "name": "Old Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ORNATE_ZOMBIE_SWORD": {
+      "id": "ORNATE_ZOMBIE_SWORD",
+      "name": "Ornate Zombie Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "OVERFLUX_POWER_ORB": {
+      "id": "OVERFLUX_POWER_ORB",
+      "name": "Overflux Power Orb",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "OXFORD_SHOES": {
+      "id": "OXFORD_SHOES",
+      "name": "Oxford Shoes",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PARROT_MASK": {
+      "id": "PARROT_MASK",
+      "name": "Parrot Mask",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "PARTY_BELT": {
+      "id": "PARTY_BELT",
+      "name": "Party Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PARTY_CLOAK": {
+      "id": "PARTY_CLOAK",
+      "name": "Party Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PARTY_GLOVES": {
+      "id": "PARTY_GLOVES",
+      "name": "Party Gloves",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PARTY_HAT": {
+      "id": "PARTY_HAT",
+      "name": "Party Top Hat",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PARTY_NECKLACE": {
+      "id": "PARTY_NECKLACE",
+      "name": "Party Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PELT_BELT": {
+      "id": "PELT_BELT",
+      "name": "Pelt Belt",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "PERFECT_BOOTS_12": {
+      "id": "PERFECT_BOOTS_12",
+      "name": "Perfect Boots - Tier XII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_BOOTS_13": {
+      "id": "PERFECT_BOOTS_13",
+      "name": "Perfect Boots - Tier XIII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_CHESTPLATE_12": {
+      "id": "PERFECT_CHESTPLATE_12",
+      "name": "Perfect Chestplate - Tier XII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_CHESTPLATE_13": {
+      "id": "PERFECT_CHESTPLATE_13",
+      "name": "Perfect Chestplate - Tier XIII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_CHISEL": {
+      "id": "PERFECT_CHISEL",
+      "name": "Perfect Chisel",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "PERFECT_HELMET_12": {
+      "id": "PERFECT_HELMET_12",
+      "name": "Perfect Helmet - Tier XII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_HELMET_13": {
+      "id": "PERFECT_HELMET_13",
+      "name": "Perfect Helmet - Tier XIII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_LEGGINGS_12": {
+      "id": "PERFECT_LEGGINGS_12",
+      "name": "Perfect Leggings - Tier XII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECT_LEGGINGS_13": {
+      "id": "PERFECT_LEGGINGS_13",
+      "name": "Perfect Leggings - Tier XIII",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PERFECTLY_CUT_FUEL_TANK": {
+      "id": "PERFECTLY_CUT_FUEL_TANK",
+      "name": "Perfectly-Cut Fuel Tank",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "PEST_VEST": {
+      "id": "PEST_VEST",
+      "name": "Pest Vest",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "PESTHUNTERS_BELT": {
+      "id": "PESTHUNTERS_BELT",
+      "name": "Pesthunter's Belt",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PESTHUNTERS_CLOAK": {
+      "id": "PESTHUNTERS_CLOAK",
+      "name": "Pesthunter's Cloak",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PESTHUNTERS_GLOVES": {
+      "id": "PESTHUNTERS_GLOVES",
+      "name": "Pesthunter's Gloves",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PESTHUNTERS_NECKLACE": {
+      "id": "PESTHUNTERS_NECKLACE",
+      "name": "Pesthunter's Necklace",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PHANTOM_HOOK": {
+      "id": "PHANTOM_HOOK",
+      "name": "Spooky Hook",
+      "category": "FISHING",
+      "donationXp": 5
+    },
+    "PIG_AXE": {
+      "id": "PIG_AXE",
+      "name": "Advanced Pig Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "PIGMAN_SWORD": {
+      "id": "PIGMAN_SWORD",
+      "name": "Pigman Sword",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "PLANT_DIAGNOSTICS_TOOL": {
+      "id": "PLANT_DIAGNOSTICS_TOOL",
+      "name": "Plant Diagnostics Tool",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "PLASMAFLUX_POWER_ORB": {
+      "id": "PLASMAFLUX_POWER_ORB",
+      "name": "Plasmaflux Power Orb",
+      "category": "COMBAT",
+      "donationXp": 15
+    },
+    "POLISHED_TOPAZ_ROD": {
+      "id": "POLISHED_TOPAZ_ROD",
+      "name": "Topaz Rod",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "POOCH_SWORD": {
+      "id": "POOCH_SWORD",
+      "name": "Pooch Sword",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "POWER_WITHER_BOOTS": {
+      "id": "POWER_WITHER_BOOTS",
+      "name": "Necron's Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "POWER_WITHER_CHESTPLATE": {
+      "id": "POWER_WITHER_CHESTPLATE",
+      "name": "Necron's Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "POWER_WITHER_HELMET": {
+      "id": "POWER_WITHER_HELMET",
+      "name": "Necron's Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "POWER_WITHER_LEGGINGS": {
+      "id": "POWER_WITHER_LEGGINGS",
+      "name": "Necron's Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "PRECURSOR_EYE": {
+      "id": "PRECURSOR_EYE",
+      "name": "Precursor Eye",
+      "category": "DUNGEONEERING",
+      "donationXp": 12
+    },
+    "PRIMORDIAL_BOOTS": {
+      "id": "PRIMORDIAL_BOOTS",
+      "name": "Primordial Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PRIMORDIAL_CHESTPLATE": {
+      "id": "PRIMORDIAL_CHESTPLATE",
+      "name": "Primordial Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PRIMORDIAL_HELMET": {
+      "id": "PRIMORDIAL_HELMET",
+      "name": "Primordial Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PRIMORDIAL_LEGGINGS": {
+      "id": "PRIMORDIAL_LEGGINGS",
+      "name": "Primordial Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PRISMARINE_BLADE": {
+      "id": "PRISMARINE_BLADE",
+      "name": "Prismarine Blade",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "PRISMARINE_BOW": {
+      "id": "PRISMARINE_BOW",
+      "name": "Prismarine Bow",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "PRISMARINE_NECKLACE": {
+      "id": "PRISMARINE_NECKLACE",
+      "name": "Prismarine Necklace",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "PRISMARINE_SINKER": {
+      "id": "PRISMARINE_SINKER",
+      "name": "Prismarine Sinker",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "PROMISING_AXE": {
+      "id": "PROMISING_AXE",
+      "name": "Promising Axe",
+      "category": "FORAGING",
+      "donationXp": 1
+    },
+    "PROMISING_PICKAXE": {
+      "id": "PROMISING_PICKAXE",
+      "name": "Promising Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "PROMISING_SPADE": {
+      "id": "PROMISING_SPADE",
+      "name": "Promising Shovel",
+      "category": "MINING",
+      "donationXp": 1
+    },
+    "PROTECTOR_DRAGON_BOOTS": {
+      "id": "PROTECTOR_DRAGON_BOOTS",
+      "name": "Protector Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PROTECTOR_DRAGON_CHESTPLATE": {
+      "id": "PROTECTOR_DRAGON_CHESTPLATE",
+      "name": "Protector Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PROTECTOR_DRAGON_HELMET": {
+      "id": "PROTECTOR_DRAGON_HELMET",
+      "name": "Protector Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PROTECTOR_DRAGON_LEGGINGS": {
+      "id": "PROTECTOR_DRAGON_LEGGINGS",
+      "name": "Protector Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "PUDDLE_JUMPER_HOOK": {
+      "id": "PUDDLE_JUMPER_HOOK",
+      "name": "Puddle Jumper Hook",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "PUFFERFISH_HAT": {
+      "id": "PUFFERFISH_HAT",
+      "name": "Pufferfish Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "PUMPKIN_BOOTS": {
+      "id": "PUMPKIN_BOOTS",
+      "name": "Sprout Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PUMPKIN_CHESTPLATE": {
+      "id": "PUMPKIN_CHESTPLATE",
+      "name": "Sprout Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PUMPKIN_DICER": {
+      "id": "PUMPKIN_DICER",
+      "name": "Pumpkin Dicer Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "PUMPKIN_DICER_2": {
+      "id": "PUMPKIN_DICER_2",
+      "name": "Pumpkin Dicer Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "PUMPKIN_DICER_3": {
+      "id": "PUMPKIN_DICER_3",
+      "name": "Pumpkin Dicer Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "PUMPKIN_HELMET": {
+      "id": "PUMPKIN_HELMET",
+      "name": "Sprout Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "PUMPKIN_LAUNCHER": {
+      "id": "PUMPKIN_LAUNCHER",
+      "name": "Pumpkin Launcher",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "PUMPKIN_LEGGINGS": {
+      "id": "PUMPKIN_LEGGINGS",
+      "name": "Sprout Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "RABBIT_AXE": {
+      "id": "RABBIT_AXE",
+      "name": "Advanced Rabbit Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "RABBIT_BOOTS": {
+      "id": "RABBIT_BOOTS",
+      "name": "Rabbit Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "RABBIT_CHESTPLATE": {
+      "id": "RABBIT_CHESTPLATE",
+      "name": "Rabbit Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "RABBIT_HAT": {
+      "id": "RABBIT_HAT",
+      "name": "Rabbit Hat",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "RABBIT_HELMET": {
+      "id": "RABBIT_HELMET",
+      "name": "Rabbit Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "RABBIT_LEGGINGS": {
+      "id": "RABBIT_LEGGINGS",
+      "name": "Rabbit Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "RADIANT_POWER_ORB": {
+      "id": "RADIANT_POWER_ORB",
+      "name": "Radiant Power Orb",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "RAGNAROCK_AXE": {
+      "id": "RAGNAROCK_AXE",
+      "name": "Ragnarock",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "RAIDER_AXE": {
+      "id": "RAIDER_AXE",
+      "name": "Raider Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "RAMPART_BOOTS": {
+      "id": "RAMPART_BOOTS",
+      "name": "Rampart Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "RAMPART_CHESTPLATE": {
+      "id": "RAMPART_CHESTPLATE",
+      "name": "Rampart Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "RAMPART_HELMET": {
+      "id": "RAMPART_HELMET",
+      "name": "Rampart Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "RAMPART_LEGGINGS": {
+      "id": "RAMPART_LEGGINGS",
+      "name": "Rampart Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "RANCHERS_BOOTS": {
+      "id": "RANCHERS_BOOTS",
+      "name": "Rancher's Boots",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "REAPER_BOOTS": {
+      "id": "REAPER_BOOTS",
+      "name": "Reaper Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REAPER_CHESTPLATE": {
+      "id": "REAPER_CHESTPLATE",
+      "name": "Reaper Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REAPER_LEGGINGS": {
+      "id": "REAPER_LEGGINGS",
+      "name": "Reaper Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REAPER_MASK": {
+      "id": "REAPER_MASK",
+      "name": "Reaper Mask",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "REAPER_SCYTHE": {
+      "id": "REAPER_SCYTHE",
+      "name": "Reaper Scythe",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "REAPER_SWORD": {
+      "id": "REAPER_SWORD",
+      "name": "Reaper Falchion",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "RECLUSE_FANG": {
+      "id": "RECLUSE_FANG",
+      "name": "Recluse Fang",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "RED_SWEATER": {
+      "id": "RED_SWEATER",
+      "name": "Red Sweater",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "REFINED_MITHRIL_PICKAXE": {
+      "id": "REFINED_MITHRIL_PICKAXE",
+      "name": "Refined Mithril Pickaxe",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "REFINED_TITANIUM_PICKAXE": {
+      "id": "REFINED_TITANIUM_PICKAXE",
+      "name": "Polished Titanium Pickaxe",
+      "category": "MINING",
+      "donationXp": 4
+    },
+    "REINFORCED_CHISEL": {
+      "id": "REINFORCED_CHISEL",
+      "name": "Reinforced Chisel",
+      "category": "MINING",
+      "donationXp": 8
+    },
+    "REKINDLED_EMBER_BOOTS": {
+      "id": "REKINDLED_EMBER_BOOTS",
+      "name": "Rekindled Ember Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REKINDLED_EMBER_CHESTPLATE": {
+      "id": "REKINDLED_EMBER_CHESTPLATE",
+      "name": "Rekindled Ember Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REKINDLED_EMBER_HELMET": {
+      "id": "REKINDLED_EMBER_HELMET",
+      "name": "Rekindled Ember Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REKINDLED_EMBER_LEGGINGS": {
+      "id": "REKINDLED_EMBER_LEGGINGS",
+      "name": "Rekindled Ember Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "RETIA_BASICA": {
+      "id": "RETIA_BASICA",
+      "name": "Small Huntrap",
+      "category": "HUNTING",
+      "donationXp": 1
+    },
+    "RETIA_FORTA": {
+      "id": "RETIA_FORTA",
+      "name": "Greater Huntrap",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "RETIA_MELIORA": {
+      "id": "RETIA_MELIORA",
+      "name": "Medium Huntrap",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "RETIA_ROBUSTA": {
+      "id": "RETIA_ROBUSTA",
+      "name": "Large Huntrap",
+      "category": "HUNTING",
+      "donationXp": 3
+    },
+    "RETIA_SUPREMA": {
+      "id": "RETIA_SUPREMA",
+      "name": "Astral Huntrap",
+      "category": "HUNTING",
+      "donationXp": 5
+    },
+    "REVENANT_BOOTS": {
+      "id": "REVENANT_BOOTS",
+      "name": "Revenant Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REVENANT_CHESTPLATE": {
+      "id": "REVENANT_CHESTPLATE",
+      "name": "Revenant Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REVENANT_LEGGINGS": {
+      "id": "REVENANT_LEGGINGS",
+      "name": "Revenant Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "REVENANT_SWORD": {
+      "id": "REVENANT_SWORD",
+      "name": "Revenant Falchion",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "REVIVED_HEART": {
+      "id": "REVIVED_HEART",
+      "name": "Revived Heart",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "RIFT_NECKLACE_OUTSIDE": {
+      "id": "RIFT_NECKLACE_OUTSIDE",
+      "name": "%%light_purple%%Rift Necklace",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "ROD_OF_THE_SEA": {
+      "id": "ROD_OF_THE_SEA",
+      "name": "Rod of the Sea",
+      "category": "FISHING",
+      "donationXp": 8
+    },
+    "ROGUE_SWORD": {
+      "id": "ROGUE_SWORD",
+      "name": "Rogue Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "ROOKIE_AXE": {
+      "id": "ROOKIE_AXE",
+      "name": "Rookie Foraging Axe",
+      "category": "FORAGING",
+      "donationXp": 1
+    },
+    "ROOKIE_FARMING_AXE": {
+      "id": "ROOKIE_FARMING_AXE",
+      "name": "Rookie Farming Axe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "ROOKIE_HOE": {
+      "id": "ROOKIE_HOE",
+      "name": "Rookie Hoe",
+      "category": "FARMING",
+      "donationXp": 1
+    },
+    "ROOKIE_PICKAXE": {
+      "id": "ROOKIE_PICKAXE",
+      "name": "Rookie Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "ROSETTA_BOOTS": {
+      "id": "ROSETTA_BOOTS",
+      "name": "Rosetta's Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ROSETTA_CHESTPLATE": {
+      "id": "ROSETTA_CHESTPLATE",
+      "name": "Rosetta's Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ROSETTA_HELMET": {
+      "id": "ROSETTA_HELMET",
+      "name": "Rosetta's Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ROSETTA_LEGGINGS": {
+      "id": "ROSETTA_LEGGINGS",
+      "name": "Rosetta's Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ROTTEN_BOOTS": {
+      "id": "ROTTEN_BOOTS",
+      "name": "Rotten Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ROTTEN_CHESTPLATE": {
+      "id": "ROTTEN_CHESTPLATE",
+      "name": "Rotten Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ROTTEN_HELMET": {
+      "id": "ROTTEN_HELMET",
+      "name": "Rotten Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ROTTEN_LEGGINGS": {
+      "id": "ROTTEN_LEGGINGS",
+      "name": "Rotten Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ROYAL_PIGEON": {
+      "id": "ROYAL_PIGEON",
+      "name": "Royal Pigeon",
+      "category": "MINING",
+      "donationXp": 6
+    },
+    "RUBY_POLISHED_DRILL_ENGINE": {
+      "id": "RUBY_POLISHED_DRILL_ENGINE",
+      "name": "Ruby-Polished Drill Engine",
+      "category": "MINING",
+      "donationXp": 8
+    },
+    "RUNAANS_BOW": {
+      "id": "RUNAANS_BOW",
+      "name": "Runaan's Bow",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "RUNIC_STAFF": {
+      "id": "RUNIC_STAFF",
+      "name": "Aurora Staff",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "RUSTY_TITANIUM_PICKAXE": {
+      "id": "RUSTY_TITANIUM_PICKAXE",
+      "name": "Rusty Titanium Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "SALMON_BOOTS_NEW": {
+      "id": "SALMON_BOOTS_NEW",
+      "name": "Salmon Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SALMON_CHESTPLATE_NEW": {
+      "id": "SALMON_CHESTPLATE_NEW",
+      "name": "Salmon Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SALMON_HAT": {
+      "id": "SALMON_HAT",
+      "name": "Salmon Hat",
+      "category": "FISHING",
+      "donationXp": 1
+    },
+    "SALMON_HELMET_NEW": {
+      "id": "SALMON_HELMET_NEW",
+      "name": "Salmon Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SALMON_LEGGINGS_NEW": {
+      "id": "SALMON_LEGGINGS_NEW",
+      "name": "Salmon Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SALMON_MASK": {
+      "id": "SALMON_MASK",
+      "name": "Salmon Mask",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "SALTY_SPRAYONATOR": {
+      "id": "SALTY_SPRAYONATOR",
+      "name": "Salty Sprayonator",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "SAM_SCYTHE": {
+      "id": "SAM_SCYTHE",
+      "name": "Sam's Scythe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "SAPPHIRE_CLOAK": {
+      "id": "SAPPHIRE_CLOAK",
+      "name": "Sapphire Cloak",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "SAPPHIRE_POLISHED_DRILL_ENGINE": {
+      "id": "SAPPHIRE_POLISHED_DRILL_ENGINE",
+      "name": "Sapphire-Polished Drill Engine",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "SATIN_TROUSERS": {
+      "id": "SATIN_TROUSERS",
+      "name": "Satin Trousers",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SAVANA_BOW": {
+      "id": "SAVANA_BOW",
+      "name": "Savanna Bow",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SCORPION_BOW": {
+      "id": "SCORPION_BOW",
+      "name": "Spider Shortbow",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SCORPION_FOIL": {
+      "id": "SCORPION_FOIL",
+      "name": "Scorpion Foil",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "SCOURGE_CLOAK": {
+      "id": "SCOURGE_CLOAK",
+      "name": "Scourge Cloak",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "SCOVILLE_BELT": {
+      "id": "SCOVILLE_BELT",
+      "name": "Scoville Belt",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "SCULPTORS_AXE": {
+      "id": "SCULPTORS_AXE",
+      "name": "Sculptor's Axe",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "SCYLLA": {
+      "id": "SCYLLA",
+      "name": "Scylla",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "SECRET_TRACKER": {
+      "id": "SECRET_TRACKER",
+      "name": "Secret Tracker 3000",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "SERIOUSLY_DAMAGED_AXE": {
+      "id": "SERIOUSLY_DAMAGED_AXE",
+      "name": "Seriously Damaged Axe",
+      "category": "FORAGING",
+      "donationXp": 1
+    },
+    "SHADOW_ASSASSIN_BOOTS": {
+      "id": "SHADOW_ASSASSIN_BOOTS",
+      "name": "Shadow Assassin Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SHADOW_ASSASSIN_CHESTPLATE": {
+      "id": "SHADOW_ASSASSIN_CHESTPLATE",
+      "name": "Shadow Assassin Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SHADOW_ASSASSIN_CLOAK": {
+      "id": "SHADOW_ASSASSIN_CLOAK",
+      "name": "Shadow Assassin Cloak",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SHADOW_ASSASSIN_HELMET": {
+      "id": "SHADOW_ASSASSIN_HELMET",
+      "name": "Shadow Assassin Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SHADOW_ASSASSIN_LEGGINGS": {
+      "id": "SHADOW_ASSASSIN_LEGGINGS",
+      "name": "Shadow Assassin Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SHADOW_FURY": {
+      "id": "SHADOW_FURY",
+      "name": "Shadow Fury",
+      "category": "DUNGEONEERING",
+      "donationXp": 8
+    },
+    "SHADOW_GOGGLES": {
+      "id": "SHADOW_GOGGLES",
+      "name": "Shadow Goggles",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "SHAMAN_SWORD": {
+      "id": "SHAMAN_SWORD",
+      "name": "Shaman Sword",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SHARK_SCALE_BOOTS": {
+      "id": "SHARK_SCALE_BOOTS",
+      "name": "Shark Scale Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SHARK_SCALE_CHESTPLATE": {
+      "id": "SHARK_SCALE_CHESTPLATE",
+      "name": "Shark Scale Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SHARK_SCALE_HELMET": {
+      "id": "SHARK_SCALE_HELMET",
+      "name": "Shark Scale Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SHARK_SCALE_LEGGINGS": {
+      "id": "SHARK_SCALE_LEGGINGS",
+      "name": "Shark Scale Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SHEEP_AXE": {
+      "id": "SHEEP_AXE",
+      "name": "Advanced Sheep Axe",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "SHIMMERING_LIGHT_HOOD": {
+      "id": "SHIMMERING_LIGHT_HOOD",
+      "name": "Shimmering Light Hood",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SHIMMERING_LIGHT_SLIPPERS": {
+      "id": "SHIMMERING_LIGHT_SLIPPERS",
+      "name": "Shimmering Light Slippers",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SHIMMERING_LIGHT_TROUSERS": {
+      "id": "SHIMMERING_LIGHT_TROUSERS",
+      "name": "Shimmering Light Trousers",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SHIMMERING_LIGHT_TUNIC": {
+      "id": "SHIMMERING_LIGHT_TUNIC",
+      "name": "Shimmering Light Tunic",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SHREDDED_LINE": {
+      "id": "SHREDDED_LINE",
+      "name": "Shredded Line",
+      "category": "FISHING",
+      "donationXp": 7
+    },
+    "SHRIVELED_BRACELET": {
+      "id": "SHRIVELED_BRACELET",
+      "name": "Shriveled Bracelet",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "SILENT_DEATH": {
+      "id": "SILENT_DEATH",
+      "name": "Silent Death",
+      "category": "DUNGEONEERING",
+      "donationXp": 4
+    },
+    "SILK_EDGE_SWORD": {
+      "id": "SILK_EDGE_SWORD",
+      "name": "Silk-Edge Sword",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SILVA_DOMINUS": {
+      "id": "SILVA_DOMINUS",
+      "name": "Sharpened Huntaxe - Dominus",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "SILVER_HUNTER_BOOTS": {
+      "id": "SILVER_HUNTER_BOOTS",
+      "name": "Silver Hunter Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SILVER_HUNTER_CHESTPLATE": {
+      "id": "SILVER_HUNTER_CHESTPLATE",
+      "name": "Silver Hunter Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SILVER_HUNTER_HELMET": {
+      "id": "SILVER_HUNTER_HELMET",
+      "name": "Silver Hunter Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SILVER_HUNTER_LEGGINGS": {
+      "id": "SILVER_HUNTER_LEGGINGS",
+      "name": "Silver Hunter Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SINSEEKER_SCYTHE": {
+      "id": "SINSEEKER_SCYTHE",
+      "name": "§4Sin§5seeker Scythe",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "SKELETON_GRUNT_BOOTS": {
+      "id": "SKELETON_GRUNT_BOOTS",
+      "name": "Skeleton Grunt Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_GRUNT_CHESTPLATE": {
+      "id": "SKELETON_GRUNT_CHESTPLATE",
+      "name": "Skeleton Grunt Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_GRUNT_HELMET": {
+      "id": "SKELETON_GRUNT_HELMET",
+      "name": "Skeleton Grunt Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_GRUNT_LEGGINGS": {
+      "id": "SKELETON_GRUNT_LEGGINGS",
+      "name": "Skeleton Grunt Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_HAT": {
+      "id": "SKELETON_HAT",
+      "name": "Skeleton Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "SKELETON_HELMET": {
+      "id": "SKELETON_HELMET",
+      "name": "Skeleton's Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SKELETON_LORD_BOOTS": {
+      "id": "SKELETON_LORD_BOOTS",
+      "name": "Skeleton Lord Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_LORD_CHESTPLATE": {
+      "id": "SKELETON_LORD_CHESTPLATE",
+      "name": "Skeleton Lord Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_LORD_HELMET": {
+      "id": "SKELETON_LORD_HELMET",
+      "name": "Skeleton Lord Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_LORD_LEGGINGS": {
+      "id": "SKELETON_LORD_LEGGINGS",
+      "name": "Skeleton Lord Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_MASTER_BOOTS": {
+      "id": "SKELETON_MASTER_BOOTS",
+      "name": "Skeleton Master Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_MASTER_CHESTPLATE": {
+      "id": "SKELETON_MASTER_CHESTPLATE",
+      "name": "Skeleton Master Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_MASTER_HELMET": {
+      "id": "SKELETON_MASTER_HELMET",
+      "name": "Skeleton Master Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_MASTER_LEGGINGS": {
+      "id": "SKELETON_MASTER_LEGGINGS",
+      "name": "Skeleton Master Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_SOLDIER_BOOTS": {
+      "id": "SKELETON_SOLDIER_BOOTS",
+      "name": "Skeleton Soldier Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_SOLDIER_CHESTPLATE": {
+      "id": "SKELETON_SOLDIER_CHESTPLATE",
+      "name": "Skeleton Soldier Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_SOLDIER_HELMET": {
+      "id": "SKELETON_SOLDIER_HELMET",
+      "name": "Skeleton Soldier Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETON_SOLDIER_LEGGINGS": {
+      "id": "SKELETON_SOLDIER_LEGGINGS",
+      "name": "Skeleton Soldier Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETOR_BOOTS": {
+      "id": "SKELETOR_BOOTS",
+      "name": "Skeletor Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETOR_CHESTPLATE": {
+      "id": "SKELETOR_CHESTPLATE",
+      "name": "Skeletor Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETOR_HELMET": {
+      "id": "SKELETOR_HELMET",
+      "name": "Skeletor Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKELETOR_LEGGINGS": {
+      "id": "SKELETOR_LEGGINGS",
+      "name": "Skeletor Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SKYMART_HYPER_VACUUM": {
+      "id": "SKYMART_HYPER_VACUUM",
+      "name": "SkyMart Hyper Vacuum",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "SKYMART_TURBO_VACUUM": {
+      "id": "SKYMART_TURBO_VACUUM",
+      "name": "SkyMart Turbo Vacuum",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "SKYMART_VACUUM": {
+      "id": "SKYMART_VACUUM",
+      "name": "SkyMart Vacuum",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "SLIME_BOW": {
+      "id": "SLIME_BOW",
+      "name": "Slime Bow",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SLIME_HAT": {
+      "id": "SLIME_HAT",
+      "name": "Slime Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "SLUG_BOOTS": {
+      "id": "SLUG_BOOTS",
+      "name": "Slug Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SMALL_POCKET_BLACK_HOLE": {
+      "id": "SMALL_POCKET_BLACK_HOLE",
+      "name": "Small Pocket Black Hole",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "SNIPER_BOW": {
+      "id": "SNIPER_BOW",
+      "name": "Sniper Bow",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "SNIPER_HELMET": {
+      "id": "SNIPER_HELMET",
+      "name": "Sniper Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "SNORKELING_BOOTS": {
+      "id": "SNORKELING_BOOTS",
+      "name": "Snorkeling Shoes",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SNORKELING_CHESTPLATE": {
+      "id": "SNORKELING_CHESTPLATE",
+      "name": "Snorkeling Vest",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SNORKELING_HELMET": {
+      "id": "SNORKELING_HELMET",
+      "name": "Snorkeling Visor",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SNORKELING_LEGGINGS": {
+      "id": "SNORKELING_LEGGINGS",
+      "name": "Snorkeling Pants",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SNOW_BLASTER": {
+      "id": "SNOW_BLASTER",
+      "name": "Frosty the Snow Blaster",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "SNOW_CANNON": {
+      "id": "SNOW_CANNON",
+      "name": "Frosty the Snow Cannon",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "SNOW_HOWITZER": {
+      "id": "SNOW_HOWITZER",
+      "name": "Frosty the Howitzer",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SNOW_SUIT_BOOTS": {
+      "id": "SNOW_SUIT_BOOTS",
+      "name": "Snow Suit Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SNOW_SUIT_CHESTPLATE": {
+      "id": "SNOW_SUIT_CHESTPLATE",
+      "name": "Snow Suit Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SNOW_SUIT_HELMET": {
+      "id": "SNOW_SUIT_HELMET",
+      "name": "Snow Suit Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SNOW_SUIT_LEGGINGS": {
+      "id": "SNOW_SUIT_LEGGINGS",
+      "name": "Snow Suit Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SNOWMAN_MASK": {
+      "id": "SNOWMAN_MASK",
+      "name": "Snowman Mask",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SORROW_BOOTS": {
+      "id": "SORROW_BOOTS",
+      "name": "Sorrow Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "SORROW_CHESTPLATE": {
+      "id": "SORROW_CHESTPLATE",
+      "name": "Sorrow Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "SORROW_HELMET": {
+      "id": "SORROW_HELMET",
+      "name": "Sorrow Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "SORROW_LEGGINGS": {
+      "id": "SORROW_LEGGINGS",
+      "name": "Sorrow Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "SOS_FLARE": {
+      "id": "SOS_FLARE",
+      "name": "SOS Flare",
+      "category": "COMBAT",
+      "donationXp": 25
+    },
+    "SOUL_ESOWARD": {
+      "id": "SOUL_ESOWARD",
+      "name": "Soul Esoward",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "SOUL_WHIP": {
+      "id": "SOUL_WHIP",
+      "name": "Soul Whip",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "SOULS_REBOUND": {
+      "id": "SOULS_REBOUND",
+      "name": "Souls Rebound",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SOULWEAVER_GLOVES": {
+      "id": "SOULWEAVER_GLOVES",
+      "name": "Soulweaver Gloves",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "SPEED_WITHER_BOOTS": {
+      "id": "SPEED_WITHER_BOOTS",
+      "name": "Maxor's Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SPEED_WITHER_CHESTPLATE": {
+      "id": "SPEED_WITHER_CHESTPLATE",
+      "name": "Maxor's Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SPEED_WITHER_HELMET": {
+      "id": "SPEED_WITHER_HELMET",
+      "name": "Maxor's Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SPEED_WITHER_LEGGINGS": {
+      "id": "SPEED_WITHER_LEGGINGS",
+      "name": "Maxor's Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SPEEDSTER_BOOTS": {
+      "id": "SPEEDSTER_BOOTS",
+      "name": "Speedster Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SPEEDSTER_CHESTPLATE": {
+      "id": "SPEEDSTER_CHESTPLATE",
+      "name": "Speedster Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SPEEDSTER_HELMET": {
+      "id": "SPEEDSTER_HELMET",
+      "name": "Speedster Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SPEEDSTER_LEGGINGS": {
+      "id": "SPEEDSTER_LEGGINGS",
+      "name": "Speedster Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SPEEDY_LINE": {
+      "id": "SPEEDY_LINE",
+      "name": "Speedy Line",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "SPIDER_BOOTS": {
+      "id": "SPIDER_BOOTS",
+      "name": "Spider's Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SPIDER_HAT": {
+      "id": "SPIDER_HAT",
+      "name": "Spider Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "SPIDER_QUEENS_STINGER": {
+      "id": "SPIDER_QUEENS_STINGER",
+      "name": "Spider Queen's Stinger",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SPIDER_SWORD": {
+      "id": "SPIDER_SWORD",
+      "name": "Spider Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "SPIRIT_MASK": {
+      "id": "SPIRIT_MASK",
+      "name": "Spirit Mask",
+      "category": "DUNGEONEERING",
+      "donationXp": 10
+    },
+    "SPIRIT_SWORD": {
+      "id": "SPIRIT_SWORD",
+      "name": "Spirit Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 7
+    },
+    "SPONGE_BELT": {
+      "id": "SPONGE_BELT",
+      "name": "Sponge Belt",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SPONGE_BOOTS": {
+      "id": "SPONGE_BOOTS",
+      "name": "Sponge Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SPONGE_CHESTPLATE": {
+      "id": "SPONGE_CHESTPLATE",
+      "name": "Sponge Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SPONGE_HELMET": {
+      "id": "SPONGE_HELMET",
+      "name": "Sponge Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SPONGE_LEGGINGS": {
+      "id": "SPONGE_LEGGINGS",
+      "name": "Sponge Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "SPONGE_SINKER": {
+      "id": "SPONGE_SINKER",
+      "name": "Sponge Sinker",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "SPOOKY_BOOTS": {
+      "id": "SPOOKY_BOOTS",
+      "name": "Spooky Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SPOOKY_CHESTPLATE": {
+      "id": "SPOOKY_CHESTPLATE",
+      "name": "Spooky Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SPOOKY_HELMET": {
+      "id": "SPOOKY_HELMET",
+      "name": "Spooky Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SPOOKY_LEGGINGS": {
+      "id": "SPOOKY_LEGGINGS",
+      "name": "Spooky Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SPORE_HARVESTER": {
+      "id": "SPORE_HARVESTER",
+      "name": "Spore Harvester",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "SPRAYONATOR": {
+      "id": "SPRAYONATOR",
+      "name": "Sprayonator",
+      "category": "FARMING",
+      "donationXp": 2
+    },
+    "SQUASH_BOOTS": {
+      "id": "SQUASH_BOOTS",
+      "name": "Squash Boots",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SQUASH_CHESTPLATE": {
+      "id": "SQUASH_CHESTPLATE",
+      "name": "Squash Chestplate",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SQUASH_HELMET": {
+      "id": "SQUASH_HELMET",
+      "name": "Squash Helmet",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SQUASH_LEGGINGS": {
+      "id": "SQUASH_LEGGINGS",
+      "name": "Squash Leggings",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "SQUEAKY_MOUSEMAT": {
+      "id": "SQUEAKY_MOUSEMAT",
+      "name": "Squeaky Mousemat",
+      "category": "FARMING",
+      "donationXp": 6
+    },
+    "SQUID_BOOTS": {
+      "id": "SQUID_BOOTS",
+      "name": "Squid Boots",
+      "category": "FISHING",
+      "donationXp": 2
+    },
+    "SQUID_HAT": {
+      "id": "SQUID_HAT",
+      "name": "Squid Hat",
+      "category": "FISHING",
+      "donationXp": 1
+    },
+    "SQUIRE_BOOTS": {
+      "id": "SQUIRE_BOOTS",
+      "name": "Squire Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SQUIRE_CHESTPLATE": {
+      "id": "SQUIRE_CHESTPLATE",
+      "name": "Squire Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SQUIRE_HELMET": {
+      "id": "SQUIRE_HELMET",
+      "name": "Squire Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SQUIRE_LEGGINGS": {
+      "id": "SQUIRE_LEGGINGS",
+      "name": "Squire Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SQUIRE_SWORD": {
+      "id": "SQUIRE_SWORD",
+      "name": "Squire Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "STAFF_OF_THE_VOLCANO": {
+      "id": "STAFF_OF_THE_VOLCANO",
+      "name": "Staff of the Volcano",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "STARFALL_SEASONING": {
+      "id": "STARFALL_SEASONING",
+      "name": "Starfall Seasoning",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "STARLIGHT_BOOTS": {
+      "id": "STARLIGHT_BOOTS",
+      "name": "Starlight Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STARLIGHT_CHESTPLATE": {
+      "id": "STARLIGHT_CHESTPLATE",
+      "name": "Starlight Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STARLIGHT_HELMET": {
+      "id": "STARLIGHT_HELMET",
+      "name": "Starlight Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STARLIGHT_LEGGINGS": {
+      "id": "STARLIGHT_LEGGINGS",
+      "name": "Starlight Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STARLIGHT_WAND": {
+      "id": "STARLIGHT_WAND",
+      "name": "Starlight Wand",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "STARTER_LAVA_ROD": {
+      "id": "STARTER_LAVA_ROD",
+      "name": "Starter Lava Rod",
+      "category": "FISHING",
+      "donationXp": 4
+    },
+    "STEEL_CHESTPLATE": {
+      "id": "STEEL_CHESTPLATE",
+      "name": "Steel Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "STING": {
+      "id": "STING",
+      "name": "Sting",
+      "category": "COMBAT",
+      "donationXp": 10
+    },
+    "STINGY_SINKER": {
+      "id": "STINGY_SINKER",
+      "name": "Stingy Sinker",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "STONE_BLADE": {
+      "id": "STONE_BLADE",
+      "name": "Adaptive Blade",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "STONE_CHESTPLATE": {
+      "id": "STONE_CHESTPLATE",
+      "name": "Stone Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "STONK_PICKAXE": {
+      "id": "STONK_PICKAXE",
+      "name": "Stonk",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "STRONG_DRAGON_BOOTS": {
+      "id": "STRONG_DRAGON_BOOTS",
+      "name": "Strong Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STRONG_DRAGON_CHESTPLATE": {
+      "id": "STRONG_DRAGON_CHESTPLATE",
+      "name": "Strong Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STRONG_DRAGON_HELMET": {
+      "id": "STRONG_DRAGON_HELMET",
+      "name": "Strong Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "STRONG_DRAGON_LEGGINGS": {
+      "id": "STRONG_DRAGON_LEGGINGS",
+      "name": "Strong Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SULPHUR_BOW": {
+      "id": "SULPHUR_BOW",
+      "name": "Sulphur Bow",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SUMMONING_RING": {
+      "id": "SUMMONING_RING",
+      "name": "Summoning Ring",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "SUNFLOWER_HEAD": {
+      "id": "SUNFLOWER_HEAD",
+      "name": "Sunflower Head",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "SUPER_CLEAVER": {
+      "id": "SUPER_CLEAVER",
+      "name": "Super Cleaver",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "SUPER_HEAVY_BOOTS": {
+      "id": "SUPER_HEAVY_BOOTS",
+      "name": "Super Heavy Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SUPER_HEAVY_CHESTPLATE": {
+      "id": "SUPER_HEAVY_CHESTPLATE",
+      "name": "Super Heavy Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SUPER_HEAVY_HELMET": {
+      "id": "SUPER_HEAVY_HELMET",
+      "name": "Super Heavy Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SUPER_HEAVY_LEGGINGS": {
+      "id": "SUPER_HEAVY_LEGGINGS",
+      "name": "Super Heavy Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "SUPER_UNDEAD_BOW": {
+      "id": "SUPER_UNDEAD_BOW",
+      "name": "Super Undead Bow",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "SUPERIOR_DRAGON_BOOTS": {
+      "id": "SUPERIOR_DRAGON_BOOTS",
+      "name": "Superior Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SUPERIOR_DRAGON_CHESTPLATE": {
+      "id": "SUPERIOR_DRAGON_CHESTPLATE",
+      "name": "Superior Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SUPERIOR_DRAGON_HELMET": {
+      "id": "SUPERIOR_DRAGON_HELMET",
+      "name": "Superior Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SUPERIOR_DRAGON_LEGGINGS": {
+      "id": "SUPERIOR_DRAGON_LEGGINGS",
+      "name": "Superior Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "SWEET_AXE": {
+      "id": "SWEET_AXE",
+      "name": "Sweet Axe",
+      "category": "FORAGING",
+      "donationXp": 2
+    },
+    "SWORD_OF_BAD_HEALTH": {
+      "id": "SWORD_OF_BAD_HEALTH",
+      "name": "Sword of Bad Health",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SWORD_OF_REVELATIONS": {
+      "id": "SWORD_OF_REVELATIONS",
+      "name": "Sword of Revelations",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "SYNTHESIZER_V1": {
+      "id": "SYNTHESIZER_V1",
+      "name": "Synthesizer v1",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "SYNTHESIZER_V2": {
+      "id": "SYNTHESIZER_V2",
+      "name": "Synthesizer v2",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "SYNTHESIZER_V3": {
+      "id": "SYNTHESIZER_V3",
+      "name": "Synthesizer v3",
+      "category": "COMBAT",
+      "donationXp": 15
+    },
+    "TACTICAL_INSERTION": {
+      "id": "TACTICAL_INSERTION",
+      "name": "Tactical Insertion",
+      "category": "COMBAT",
+      "donationXp": 14
+    },
+    "TACTICIAN_SWORD": {
+      "id": "TACTICIAN_SWORD",
+      "name": "Tactician's Sword",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "TALBOTS_THEODOLITE": {
+      "id": "TALBOTS_THEODOLITE",
+      "name": "Talbot's Theodolite",
+      "category": "HUNTING",
+      "donationXp": 4
+    },
+    "TANK_MINER_BOOTS": {
+      "id": "TANK_MINER_BOOTS",
+      "name": "Miner Boots",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TANK_MINER_CHESTPLATE": {
+      "id": "TANK_MINER_CHESTPLATE",
+      "name": "Miner Chestplate",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TANK_MINER_HELMET": {
+      "id": "TANK_MINER_HELMET",
+      "name": "Miner Helmet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TANK_MINER_LEGGINGS": {
+      "id": "TANK_MINER_LEGGINGS",
+      "name": "Miner Leggings",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TANK_WITHER_BOOTS": {
+      "id": "TANK_WITHER_BOOTS",
+      "name": "Goldor's Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "TANK_WITHER_CHESTPLATE": {
+      "id": "TANK_WITHER_CHESTPLATE",
+      "name": "Goldor's Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "TANK_WITHER_HELMET": {
+      "id": "TANK_WITHER_HELMET",
+      "name": "Goldor's Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "TANK_WITHER_LEGGINGS": {
+      "id": "TANK_WITHER_LEGGINGS",
+      "name": "Goldor's Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "TARANTULA_BOOTS": {
+      "id": "TARANTULA_BOOTS",
+      "name": "Tarantula Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TARANTULA_CHESTPLATE": {
+      "id": "TARANTULA_CHESTPLATE",
+      "name": "Tarantula Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TARANTULA_FANG": {
+      "id": "TARANTULA_FANG",
+      "name": "Tarantula Fang",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "TARANTULA_HELMET": {
+      "id": "TARANTULA_HELMET",
+      "name": "Tarantula Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TARANTULA_LEGGINGS": {
+      "id": "TARANTULA_LEGGINGS",
+      "name": "Tarantula Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TAURUS_HELMET": {
+      "id": "TAURUS_HELMET",
+      "name": "Taurus Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "TERA_SHELL_NECKLACE": {
+      "id": "TERA_SHELL_NECKLACE",
+      "name": "Tera Shell Necklace",
+      "category": "FISHING",
+      "donationXp": 8
+    },
+    "TERMINATOR": {
+      "id": "TERMINATOR",
+      "name": "Terminator",
+      "category": "COMBAT",
+      "donationXp": 18
+    },
+    "TERROR_BOOTS": {
+      "id": "TERROR_BOOTS",
+      "name": "Terror Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TERROR_CHESTPLATE": {
+      "id": "TERROR_CHESTPLATE",
+      "name": "Terror Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TERROR_HELMET": {
+      "id": "TERROR_HELMET",
+      "name": "Terror Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "TERROR_LEGGINGS": {
+      "id": "TERROR_LEGGINGS",
+      "name": "Terror Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "THE_PRIMORDIAL": {
+      "id": "THE_PRIMORDIAL",
+      "name": "The Primordial",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "THEORETICAL_HOE_CANE_1": {
+      "id": "THEORETICAL_HOE_CANE_1",
+      "name": "Turing Sugar Cane Cutter Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_CANE_2": {
+      "id": "THEORETICAL_HOE_CANE_2",
+      "name": "Turing Sugar Cane Cutter Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_CANE_3": {
+      "id": "THEORETICAL_HOE_CANE_3",
+      "name": "Turing Sugar Cane Cutter Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_CARROT_1": {
+      "id": "THEORETICAL_HOE_CARROT_1",
+      "name": "Gauss Carrot Shovel Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_CARROT_2": {
+      "id": "THEORETICAL_HOE_CARROT_2",
+      "name": "Gauss Carrot Shovel Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_CARROT_3": {
+      "id": "THEORETICAL_HOE_CARROT_3",
+      "name": "Gauss Carrot Shovel Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_POTATO_1": {
+      "id": "THEORETICAL_HOE_POTATO_1",
+      "name": "Pythagorean Potato Shovel Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_POTATO_2": {
+      "id": "THEORETICAL_HOE_POTATO_2",
+      "name": "Pythagorean Potato Shovel Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_POTATO_3": {
+      "id": "THEORETICAL_HOE_POTATO_3",
+      "name": "Pythagorean Potato Shovel Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_SUNFLOWER_1": {
+      "id": "THEORETICAL_HOE_SUNFLOWER_1",
+      "name": "Eclipse Sickle Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_SUNFLOWER_2": {
+      "id": "THEORETICAL_HOE_SUNFLOWER_2",
+      "name": "Eclipse Sickle Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_SUNFLOWER_3": {
+      "id": "THEORETICAL_HOE_SUNFLOWER_3",
+      "name": "Eclipse Sickle Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_WARTS_1": {
+      "id": "THEORETICAL_HOE_WARTS_1",
+      "name": "Newton Nether Wart Cutter Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_WARTS_2": {
+      "id": "THEORETICAL_HOE_WARTS_2",
+      "name": "Newton Nether Wart Cutter Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_WARTS_3": {
+      "id": "THEORETICAL_HOE_WARTS_3",
+      "name": "Newton Nether Wart Cutter Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_WHEAT_1": {
+      "id": "THEORETICAL_HOE_WHEAT_1",
+      "name": "Euclid's Wheat Sickle Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_WHEAT_2": {
+      "id": "THEORETICAL_HOE_WHEAT_2",
+      "name": "Euclid's Wheat Sickle Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_WHEAT_3": {
+      "id": "THEORETICAL_HOE_WHEAT_3",
+      "name": "Euclid's Wheat Sickle Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THEORETICAL_HOE_WILD_ROSE_1": {
+      "id": "THEORETICAL_HOE_WILD_ROSE_1",
+      "name": "Wild Rose Cutter Mk. I",
+      "category": "FARMING",
+      "donationXp": 4
+    },
+    "THEORETICAL_HOE_WILD_ROSE_2": {
+      "id": "THEORETICAL_HOE_WILD_ROSE_2",
+      "name": "Wild Rose Cutter Mk. II",
+      "category": "FARMING",
+      "donationXp": 5
+    },
+    "THEORETICAL_HOE_WILD_ROSE_3": {
+      "id": "THEORETICAL_HOE_WILD_ROSE_3",
+      "name": "Wild Rose Cutter Mk. III",
+      "category": "FARMING",
+      "donationXp": 8
+    },
+    "THERMODYNAMIC_BOOTS": {
+      "id": "THERMODYNAMIC_BOOTS",
+      "name": "Thermodynamic Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "THERMODYNAMIC_CHESTPLATE": {
+      "id": "THERMODYNAMIC_CHESTPLATE",
+      "name": "Thermodynamic Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "THERMODYNAMIC_HELMET": {
+      "id": "THERMODYNAMIC_HELMET",
+      "name": "Thermodynamic Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "THERMODYNAMIC_LEGGINGS": {
+      "id": "THERMODYNAMIC_LEGGINGS",
+      "name": "Thermodynamic Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "THORNLEAF_SCYTHE": {
+      "id": "THORNLEAF_SCYTHE",
+      "name": "Thornleaf Scythe",
+      "category": "FARMING",
+      "donationXp": 3
+    },
+    "THORNS_BOOTS": {
+      "id": "THORNS_BOOTS",
+      "name": "Spirit Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "THUNDER_BOOTS": {
+      "id": "THUNDER_BOOTS",
+      "name": "Thunder Boots",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "THUNDER_CHESTPLATE": {
+      "id": "THUNDER_CHESTPLATE",
+      "name": "Thunder Chestplate",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "THUNDER_HELMET": {
+      "id": "THUNDER_HELMET",
+      "name": "Thunder Helmet",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "THUNDER_LEGGINGS": {
+      "id": "THUNDER_LEGGINGS",
+      "name": "Thunder Leggings",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "THUNDERBOLT_NECKLACE": {
+      "id": "THUNDERBOLT_NECKLACE",
+      "name": "Thunderbolt Necklace",
+      "category": "FISHING",
+      "donationXp": null
+    },
+    "TIKI_MASK": {
+      "id": "TIKI_MASK",
+      "name": "Tiki Mask",
+      "category": "FISHING",
+      "donationXp": 10
+    },
+    "TINY_SCAFFOLDING": {
+      "id": "TINY_SCAFFOLDING",
+      "name": "Tiny Scaffolding",
+      "category": "FORAGING",
+      "donationXp": 1
+    },
+    "TITAN_LINE": {
+      "id": "TITAN_LINE",
+      "name": "Titan Line",
+      "category": "FISHING",
+      "donationXp": 8
+    },
+    "TITANIUM_BELT": {
+      "id": "TITANIUM_BELT",
+      "name": "Titanium Belt",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TITANIUM_CLOAK": {
+      "id": "TITANIUM_CLOAK",
+      "name": "Titanium Cloak",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TITANIUM_DRILL_1": {
+      "id": "TITANIUM_DRILL_1",
+      "name": "Titanium Drill DR-X355",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "TITANIUM_DRILL_2": {
+      "id": "TITANIUM_DRILL_2",
+      "name": "Titanium Drill DR-X455",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "TITANIUM_DRILL_3": {
+      "id": "TITANIUM_DRILL_3",
+      "name": "Titanium Drill DR-X555",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "TITANIUM_DRILL_4": {
+      "id": "TITANIUM_DRILL_4",
+      "name": "Titanium Drill DR-X655",
+      "category": "MINING",
+      "donationXp": 20
+    },
+    "TITANIUM_DRILL_ENGINE": {
+      "id": "TITANIUM_DRILL_ENGINE",
+      "name": "Titanium-Plated Drill Engine",
+      "category": "MINING",
+      "donationXp": 6
+    },
+    "TITANIUM_FUEL_TANK": {
+      "id": "TITANIUM_FUEL_TANK",
+      "name": "Titanium-Infused Fuel Tank",
+      "category": "MINING",
+      "donationXp": 7
+    },
+    "TITANIUM_GAUNTLET": {
+      "id": "TITANIUM_GAUNTLET",
+      "name": "Titanium Gauntlet",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TITANIUM_LANTERN": {
+      "id": "TITANIUM_LANTERN",
+      "name": "Titanium Lantern",
+      "category": "MINING",
+      "donationXp": 5
+    },
+    "TITANIUM_NECKLACE": {
+      "id": "TITANIUM_NECKLACE",
+      "name": "Titanium Necklace",
+      "category": "MINING",
+      "donationXp": null
+    },
+    "TITANIUM_PICKAXE": {
+      "id": "TITANIUM_PICKAXE",
+      "name": "Titanium Pickaxe",
+      "category": "MINING",
+      "donationXp": 3
+    },
+    "TORMENTOR": {
+      "id": "TORMENTOR",
+      "name": "Tormentor",
+      "category": "COMBAT",
+      "donationXp": 20
+    },
+    "TOTEM_OF_CORRUPTION": {
+      "id": "TOTEM_OF_CORRUPTION",
+      "name": "Totem of Corruption",
+      "category": "FISHING",
+      "donationXp": 3
+    },
+    "TREASURE_HOOK": {
+      "id": "TREASURE_HOOK",
+      "name": "Treasure Hook",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "TREECAPITATOR_AXE": {
+      "id": "TREECAPITATOR_AXE",
+      "name": "Treecapitator",
+      "category": "FORAGING",
+      "donationXp": 4
+    },
+    "TRIBAL_SPEAR": {
+      "id": "TRIBAL_SPEAR",
+      "name": "Tribal Spear",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "TROPHY_LINE": {
+      "id": "TROPHY_LINE",
+      "name": "Trophy Line",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "TUNGSTEN_KEYCHAIN": {
+      "id": "TUNGSTEN_KEYCHAIN",
+      "name": "Tungsten Regulator",
+      "category": "MINING",
+      "donationXp": 10
+    },
+    "TURBO_FISHING_NET": {
+      "id": "TURBO_FISHING_NET",
+      "name": "Turbo Fishing Net",
+      "category": "HUNTING",
+      "donationXp": 7
+    },
+    "UMBERELLA": {
+      "id": "UMBERELLA",
+      "name": "Umberella",
+      "category": "FISHING",
+      "donationXp": 6
+    },
+    "UNDEAD_BOW": {
+      "id": "UNDEAD_BOW",
+      "name": "Undead Bow",
+      "category": "DUNGEONEERING",
+      "donationXp": 2
+    },
+    "UNDEAD_SWORD": {
+      "id": "UNDEAD_SWORD",
+      "name": "Undead Sword",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "UNSTABLE_DRAGON_BOOTS": {
+      "id": "UNSTABLE_DRAGON_BOOTS",
+      "name": "Unstable Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "UNSTABLE_DRAGON_CHESTPLATE": {
+      "id": "UNSTABLE_DRAGON_CHESTPLATE",
+      "name": "Unstable Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "UNSTABLE_DRAGON_HELMET": {
+      "id": "UNSTABLE_DRAGON_HELMET",
+      "name": "Unstable Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "UNSTABLE_DRAGON_LEGGINGS": {
+      "id": "UNSTABLE_DRAGON_LEGGINGS",
+      "name": "Unstable Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "VALKYRIE": {
+      "id": "VALKYRIE",
+      "name": "Valkyrie",
+      "category": "DUNGEONEERING",
+      "donationXp": 5
+    },
+    "VAMPIRE_MASK": {
+      "id": "VAMPIRE_MASK",
+      "name": "Vampire Mask",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "VAMPIRE_WITCH_MASK": {
+      "id": "VAMPIRE_WITCH_MASK",
+      "name": "Vampire Witch Mask",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "VANQUISHED_BLAZE_BELT": {
+      "id": "VANQUISHED_BLAZE_BELT",
+      "name": "Vanquished Blaze Belt",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "VANQUISHED_GHAST_CLOAK": {
+      "id": "VANQUISHED_GHAST_CLOAK",
+      "name": "Vanquished Ghast Cloak",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "VANQUISHED_GLOWSTONE_GAUNTLET": {
+      "id": "VANQUISHED_GLOWSTONE_GAUNTLET",
+      "name": "Vanquished Glowstone Gauntlet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "VANQUISHED_MAGMA_NECKLACE": {
+      "id": "VANQUISHED_MAGMA_NECKLACE",
+      "name": "Vanquished Magma Necklace",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "VELVET_TOP_HAT": {
+      "id": "VELVET_TOP_HAT",
+      "name": "Velvet Top Hat",
+      "category": "FARMING",
+      "donationXp": null
+    },
+    "VENATOR_GENESIS": {
+      "id": "VENATOR_GENESIS",
+      "name": "Worn Huntaxe - Genesis",
+      "category": "HUNTING",
+      "donationXp": 1
+    },
+    "VENOMS_TOUCH": {
+      "id": "VENOMS_TOUCH",
+      "name": "Venom's Touch",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "VINERIP_LASSO": {
+      "id": "VINERIP_LASSO",
+      "name": "Vinerip Lasso",
+      "category": "HUNTING",
+      "donationXp": 2
+    },
+    "VOID_SWORD": {
+      "id": "VOID_SWORD",
+      "name": "Void Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "VOIDEDGE_KATANA": {
+      "id": "VOIDEDGE_KATANA",
+      "name": "Voidedge Katana",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "VOIDWALKER_KATANA": {
+      "id": "VOIDWALKER_KATANA",
+      "name": "Voidwalker Katana",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "VOODOO_DOLL": {
+      "id": "VOODOO_DOLL",
+      "name": "Voodoo Doll",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "VOODOO_DOLL_WILTED": {
+      "id": "VOODOO_DOLL_WILTED",
+      "name": "Jinxed Voodoo Doll",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "VORPAL_KATANA": {
+      "id": "VORPAL_KATANA",
+      "name": "Vorpal Katana",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "WAND_OF_ATONEMENT": {
+      "id": "WAND_OF_ATONEMENT",
+      "name": "Wand of Atonement",
+      "category": "COMBAT",
+      "donationXp": 8
+    },
+    "WAND_OF_HEALING": {
+      "id": "WAND_OF_HEALING",
+      "name": "Wand of Healing",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "WAND_OF_MENDING": {
+      "id": "WAND_OF_MENDING",
+      "name": "Wand of Mending",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "WAND_OF_RESTORATION": {
+      "id": "WAND_OF_RESTORATION",
+      "name": "Wand of Restoration",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "WAND_OF_STRENGTH": {
+      "id": "WAND_OF_STRENGTH",
+      "name": "Wand of Strength",
+      "category": "COMBAT",
+      "donationXp": 6
+    },
+    "WARDEN_HELMET": {
+      "id": "WARDEN_HELMET",
+      "name": "Warden Helmet",
+      "category": "COMBAT",
+      "donationXp": 12
+    },
+    "WARNING_FLARE": {
+      "id": "WARNING_FLARE",
+      "name": "Warning Flare",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "WATER_HYDRA_HEAD": {
+      "id": "WATER_HYDRA_HEAD",
+      "name": "Water Hydra Head",
+      "category": "FISHING",
+      "donationXp": 4
+    },
+    "WEIRD_TUBA": {
+      "id": "WEIRD_TUBA",
+      "name": "Weird Tuba",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "WEIRDER_TUBA": {
+      "id": "WEIRDER_TUBA",
+      "name": "Weirder Tuba",
+      "category": "COMBAT",
+      "donationXp": 5
+    },
+    "WEREWOLF_BOOTS": {
+      "id": "WEREWOLF_BOOTS",
+      "name": "Werewolf Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WEREWOLF_CHESTPLATE": {
+      "id": "WEREWOLF_CHESTPLATE",
+      "name": "Werewolf Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WEREWOLF_HELMET": {
+      "id": "WEREWOLF_HELMET",
+      "name": "Werewolf Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WEREWOLF_LEGGINGS": {
+      "id": "WEREWOLF_LEGGINGS",
+      "name": "Werewolf Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WILL_O_WISP": {
+      "id": "WILL_O_WISP",
+      "name": "Will-o'-wisp",
+      "category": "MINING",
+      "donationXp": 15
+    },
+    "WISE_DRAGON_BOOTS": {
+      "id": "WISE_DRAGON_BOOTS",
+      "name": "Wise Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WISE_DRAGON_CHESTPLATE": {
+      "id": "WISE_DRAGON_CHESTPLATE",
+      "name": "Wise Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WISE_DRAGON_HELMET": {
+      "id": "WISE_DRAGON_HELMET",
+      "name": "Wise Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WISE_DRAGON_LEGGINGS": {
+      "id": "WISE_DRAGON_LEGGINGS",
+      "name": "Wise Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "WISE_WITHER_BOOTS": {
+      "id": "WISE_WITHER_BOOTS",
+      "name": "Storm's Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WISE_WITHER_CHESTPLATE": {
+      "id": "WISE_WITHER_CHESTPLATE",
+      "name": "Storm's Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WISE_WITHER_HELMET": {
+      "id": "WISE_WITHER_HELMET",
+      "name": "Storm's Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WISE_WITHER_LEGGINGS": {
+      "id": "WISE_WITHER_LEGGINGS",
+      "name": "Storm's Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WITCH_MASK": {
+      "id": "WITCH_MASK",
+      "name": "Witch Mask",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "WITHER_BOOTS": {
+      "id": "WITHER_BOOTS",
+      "name": "Wither Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WITHER_BOW": {
+      "id": "WITHER_BOW",
+      "name": "Wither Bow",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "WITHER_CHESTPLATE": {
+      "id": "WITHER_CHESTPLATE",
+      "name": "Wither Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WITHER_CLOAK": {
+      "id": "WITHER_CLOAK",
+      "name": "Wither Cloak Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 7
+    },
+    "WITHER_GOGGLES": {
+      "id": "WITHER_GOGGLES",
+      "name": "Wither Goggles",
+      "category": "DUNGEONEERING",
+      "donationXp": 6
+    },
+    "WITHER_HELMET": {
+      "id": "WITHER_HELMET",
+      "name": "Wither Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "WITHER_LEGGINGS": {
+      "id": "WITHER_LEGGINGS",
+      "name": "Wither Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "YETI_SWORD": {
+      "id": "YETI_SWORD",
+      "name": "Yeti Sword",
+      "category": "COMBAT",
+      "donationXp": 7
+    },
+    "YOUNG_DRAGON_BOOTS": {
+      "id": "YOUNG_DRAGON_BOOTS",
+      "name": "Young Dragon Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "YOUNG_DRAGON_CHESTPLATE": {
+      "id": "YOUNG_DRAGON_CHESTPLATE",
+      "name": "Young Dragon Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "YOUNG_DRAGON_HELMET": {
+      "id": "YOUNG_DRAGON_HELMET",
+      "name": "Young Dragon Helmet",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "YOUNG_DRAGON_LEGGINGS": {
+      "id": "YOUNG_DRAGON_LEGGINGS",
+      "name": "Young Dragon Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ZOMBIE_BOOTS": {
+      "id": "ZOMBIE_BOOTS",
+      "name": "Zombie Boots",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ZOMBIE_CHESTPLATE": {
+      "id": "ZOMBIE_CHESTPLATE",
+      "name": "Zombie Chestplate",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ZOMBIE_COMMANDER_BOOTS": {
+      "id": "ZOMBIE_COMMANDER_BOOTS",
+      "name": "Zombie Commander Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_COMMANDER_CHESTPLATE": {
+      "id": "ZOMBIE_COMMANDER_CHESTPLATE",
+      "name": "Zombie Commander Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_COMMANDER_HELMET": {
+      "id": "ZOMBIE_COMMANDER_HELMET",
+      "name": "Zombie Commander Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_COMMANDER_LEGGINGS": {
+      "id": "ZOMBIE_COMMANDER_LEGGINGS",
+      "name": "Zombie Commander Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_COMMANDER_WHIP": {
+      "id": "ZOMBIE_COMMANDER_WHIP",
+      "name": "Zombie Commander Whip",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "ZOMBIE_HAT": {
+      "id": "ZOMBIE_HAT",
+      "name": "Zombie Hat",
+      "category": "COMBAT",
+      "donationXp": 1
+    },
+    "ZOMBIE_HEART": {
+      "id": "ZOMBIE_HEART",
+      "name": "Zombie's Heart",
+      "category": "COMBAT",
+      "donationXp": 3
+    },
+    "ZOMBIE_KNIGHT_BOOTS": {
+      "id": "ZOMBIE_KNIGHT_BOOTS",
+      "name": "Zombie Knight Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_KNIGHT_CHESTPLATE": {
+      "id": "ZOMBIE_KNIGHT_CHESTPLATE",
+      "name": "Zombie Knight Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_KNIGHT_HELMET": {
+      "id": "ZOMBIE_KNIGHT_HELMET",
+      "name": "Zombie Knight Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_KNIGHT_LEGGINGS": {
+      "id": "ZOMBIE_KNIGHT_LEGGINGS",
+      "name": "Zombie Knight Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_KNIGHT_SWORD": {
+      "id": "ZOMBIE_KNIGHT_SWORD",
+      "name": "Zombie Knight Sword",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "ZOMBIE_LEGGINGS": {
+      "id": "ZOMBIE_LEGGINGS",
+      "name": "Zombie Leggings",
+      "category": "COMBAT",
+      "donationXp": null
+    },
+    "ZOMBIE_LORD_BOOTS": {
+      "id": "ZOMBIE_LORD_BOOTS",
+      "name": "Zombie Lord Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_LORD_CHESTPLATE": {
+      "id": "ZOMBIE_LORD_CHESTPLATE",
+      "name": "Zombie Lord Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_LORD_HELMET": {
+      "id": "ZOMBIE_LORD_HELMET",
+      "name": "Zombie Lord Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_LORD_LEGGINGS": {
+      "id": "ZOMBIE_LORD_LEGGINGS",
+      "name": "Zombie Lord Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_MASK": {
+      "id": "ZOMBIE_MASK",
+      "name": "Zombie Mask",
+      "category": "COMBAT",
+      "donationXp": 2
+    },
+    "ZOMBIE_PICKAXE": {
+      "id": "ZOMBIE_PICKAXE",
+      "name": "Zombie Pickaxe",
+      "category": "MINING",
+      "donationXp": 2
+    },
+    "ZOMBIE_SOLDIER_BOOTS": {
+      "id": "ZOMBIE_SOLDIER_BOOTS",
+      "name": "Zombie Soldier Boots",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_SOLDIER_CHESTPLATE": {
+      "id": "ZOMBIE_SOLDIER_CHESTPLATE",
+      "name": "Zombie Soldier Chestplate",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_SOLDIER_CUTLASS": {
+      "id": "ZOMBIE_SOLDIER_CUTLASS",
+      "name": "Zombie Soldier Cutlass",
+      "category": "DUNGEONEERING",
+      "donationXp": 3
+    },
+    "ZOMBIE_SOLDIER_HELMET": {
+      "id": "ZOMBIE_SOLDIER_HELMET",
+      "name": "Zombie Soldier Helmet",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_SOLDIER_LEGGINGS": {
+      "id": "ZOMBIE_SOLDIER_LEGGINGS",
+      "name": "Zombie Soldier Leggings",
+      "category": "DUNGEONEERING",
+      "donationXp": null
+    },
+    "ZOMBIE_SWORD": {
+      "id": "ZOMBIE_SWORD",
+      "name": "Zombie Sword",
+      "category": "COMBAT",
+      "donationXp": 4
+    },
+    "ZORROS_CAPE": {
+      "id": "ZORROS_CAPE",
+      "name": "Zorro's Cape",
+      "category": "FARMING",
+      "donationXp": 15
+    }
+  }
+}

@@ -12,6 +12,7 @@ type GeneratedTextureEntry = {
 
 type GeneratedSkinEntry = GeneratedTextureEntry & {
   petType?: unknown;
+  displayName?: unknown;
 };
 
 const HASH_PATTERN = /^[a-f0-9]{32,64}$/i;
@@ -77,6 +78,26 @@ export function getPetTextureHash(
     return (
       verifiedHash(generatedDefault?.textureHash) ?? verifiedHash(entry.default)
     );
+  } catch {
+    return null;
+  }
+}
+
+export function getPetSkinDisplayName(skinId?: string | null): string | null {
+  try {
+    const normalized = normalizeId(skinId);
+    if (!normalized) return null;
+    for (const candidate of skinIdCandidates(normalized)) {
+      const entry = (generatedTextures.skins as Record<string, GeneratedSkinEntry>)[candidate];
+      if (typeof entry?.displayName === 'string' && entry.displayName.trim()) {
+        return entry.displayName.trim();
+      }
+    }
+    return normalized
+      .replace(/^PET_SKIN_/, '')
+      .split('_')
+      .map((word) => word.charAt(0) + word.slice(1).toLowerCase())
+      .join(' ');
   } catch {
     return null;
   }

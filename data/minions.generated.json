@@ -1,0 +1,314 @@
+{
+  "metadata": {
+    "generatedAt": "2026-08-01T20:25:54.013Z",
+    "source": "https://api.hypixel.net/v2/resources/skyblock/items",
+    "note": "The official resource exposes generator identity and tier, but no recipe costs."
+  },
+  "families": {
+    "ACACIA": {
+      "id": "ACACIA",
+      "name": "Acacia",
+      "maxTier": 11
+    },
+    "BIRCH": {
+      "id": "BIRCH",
+      "name": "Birch",
+      "maxTier": 11
+    },
+    "BLAZE": {
+      "id": "BLAZE",
+      "name": "Blaze",
+      "maxTier": 12
+    },
+    "CACTUS": {
+      "id": "CACTUS",
+      "name": "Cactus",
+      "maxTier": 12
+    },
+    "CARROT": {
+      "id": "CARROT",
+      "name": "Carrot",
+      "maxTier": 12
+    },
+    "CAVESPIDER": {
+      "id": "CAVESPIDER",
+      "name": "Cave Spider",
+      "maxTier": 11
+    },
+    "CHICKEN": {
+      "id": "CHICKEN",
+      "name": "Chicken",
+      "maxTier": 12
+    },
+    "CLAY": {
+      "id": "CLAY",
+      "name": "Clay",
+      "maxTier": 12
+    },
+    "COAL": {
+      "id": "COAL",
+      "name": "Coal",
+      "maxTier": 12
+    },
+    "COBBLESTONE": {
+      "id": "COBBLESTONE",
+      "name": "Cobblestone",
+      "maxTier": 12
+    },
+    "COCOA": {
+      "id": "COCOA",
+      "name": "Cocoa Beans",
+      "maxTier": 12
+    },
+    "COW": {
+      "id": "COW",
+      "name": "Cow",
+      "maxTier": 12
+    },
+    "CREEPER": {
+      "id": "CREEPER",
+      "name": "Creeper",
+      "maxTier": 11
+    },
+    "DARK_OAK": {
+      "id": "DARK_OAK",
+      "name": "Dark Oak",
+      "maxTier": 11
+    },
+    "DIAMOND": {
+      "id": "DIAMOND",
+      "name": "Diamond",
+      "maxTier": 12
+    },
+    "EMERALD": {
+      "id": "EMERALD",
+      "name": "Emerald",
+      "maxTier": 12
+    },
+    "ENDER_STONE": {
+      "id": "ENDER_STONE",
+      "name": "End Stone",
+      "maxTier": 11
+    },
+    "ENDERMAN": {
+      "id": "ENDERMAN",
+      "name": "Enderman",
+      "maxTier": 11
+    },
+    "FISHING": {
+      "id": "FISHING",
+      "name": "Fishing",
+      "maxTier": 12
+    },
+    "FLOWER": {
+      "id": "FLOWER",
+      "name": "Flower",
+      "maxTier": 12
+    },
+    "GHAST": {
+      "id": "GHAST",
+      "name": "Ghast",
+      "maxTier": 12
+    },
+    "GLOWSTONE": {
+      "id": "GLOWSTONE",
+      "name": "Glowstone",
+      "maxTier": 12
+    },
+    "GOLD": {
+      "id": "GOLD",
+      "name": "Gold",
+      "maxTier": 12
+    },
+    "GRAVEL": {
+      "id": "GRAVEL",
+      "name": "Gravel",
+      "maxTier": 11
+    },
+    "HARD_STONE": {
+      "id": "HARD_STONE",
+      "name": "Hard Stone",
+      "maxTier": 12
+    },
+    "ICE": {
+      "id": "ICE",
+      "name": "Ice",
+      "maxTier": 12
+    },
+    "INFERNO": {
+      "id": "INFERNO",
+      "name": "Inferno",
+      "maxTier": 11
+    },
+    "IRON": {
+      "id": "IRON",
+      "name": "Iron",
+      "maxTier": 12
+    },
+    "JUNGLE": {
+      "id": "JUNGLE",
+      "name": "Jungle",
+      "maxTier": 11
+    },
+    "LAPIS": {
+      "id": "LAPIS",
+      "name": "Lapis",
+      "maxTier": 12
+    },
+    "LILY_PAD": {
+      "id": "LILY_PAD",
+      "name": "Lily Pad",
+      "maxTier": 12
+    },
+    "MAGMA_CUBE": {
+      "id": "MAGMA_CUBE",
+      "name": "Magma Cube",
+      "maxTier": 12
+    },
+    "MELON": {
+      "id": "MELON",
+      "name": "Melon",
+      "maxTier": 12
+    },
+    "MITHRIL": {
+      "id": "MITHRIL",
+      "name": "Mithril",
+      "maxTier": 12
+    },
+    "MUSHROOM": {
+      "id": "MUSHROOM",
+      "name": "Mushroom",
+      "maxTier": 12
+    },
+    "MYCELIUM": {
+      "id": "MYCELIUM",
+      "name": "Mycelium",
+      "maxTier": 12
+    },
+    "NETHER_WARTS": {
+      "id": "NETHER_WARTS",
+      "name": "Nether Wart",
+      "maxTier": 12
+    },
+    "OAK": {
+      "id": "OAK",
+      "name": "Oak",
+      "maxTier": 11
+    },
+    "OBSIDIAN": {
+      "id": "OBSIDIAN",
+      "name": "Obsidian",
+      "maxTier": 12
+    },
+    "PIG": {
+      "id": "PIG",
+      "name": "Pig",
+      "maxTier": 12
+    },
+    "POTATO": {
+      "id": "POTATO",
+      "name": "Potato",
+      "maxTier": 12
+    },
+    "PUMPKIN": {
+      "id": "PUMPKIN",
+      "name": "Pumpkin",
+      "maxTier": 12
+    },
+    "QUARTZ": {
+      "id": "QUARTZ",
+      "name": "Quartz",
+      "maxTier": 12
+    },
+    "RABBIT": {
+      "id": "RABBIT",
+      "name": "Rabbit",
+      "maxTier": 12
+    },
+    "RED_SAND": {
+      "id": "RED_SAND",
+      "name": "Red Sand",
+      "maxTier": 12
+    },
+    "REDSTONE": {
+      "id": "REDSTONE",
+      "name": "Redstone",
+      "maxTier": 12
+    },
+    "REVENANT": {
+      "id": "REVENANT",
+      "name": "Revenant",
+      "maxTier": 12
+    },
+    "SAND": {
+      "id": "SAND",
+      "name": "Sand",
+      "maxTier": 11
+    },
+    "SHEEP": {
+      "id": "SHEEP",
+      "name": "Sheep",
+      "maxTier": 12
+    },
+    "SKELETON": {
+      "id": "SKELETON",
+      "name": "Skeleton",
+      "maxTier": 11
+    },
+    "SLIME": {
+      "id": "SLIME",
+      "name": "Slime",
+      "maxTier": 11
+    },
+    "SNOW": {
+      "id": "SNOW",
+      "name": "Snow",
+      "maxTier": 12
+    },
+    "SPIDER": {
+      "id": "SPIDER",
+      "name": "Spider",
+      "maxTier": 11
+    },
+    "SPRUCE": {
+      "id": "SPRUCE",
+      "name": "Spruce",
+      "maxTier": 11
+    },
+    "SUGAR_CANE": {
+      "id": "SUGAR_CANE",
+      "name": "Sugar Cane",
+      "maxTier": 12
+    },
+    "SUNFLOWER": {
+      "id": "SUNFLOWER",
+      "name": "Sunflower",
+      "maxTier": 12
+    },
+    "TARANTULA": {
+      "id": "TARANTULA",
+      "name": "Tarantula",
+      "maxTier": 12
+    },
+    "VAMPIRE": {
+      "id": "VAMPIRE",
+      "name": "Vampire",
+      "maxTier": 11
+    },
+    "VOIDLING": {
+      "id": "VOIDLING",
+      "name": "Voidling",
+      "maxTier": 11
+    },
+    "WHEAT": {
+      "id": "WHEAT",
+      "name": "Wheat",
+      "maxTier": 12
+    },
+    "ZOMBIE": {
+      "id": "ZOMBIE",
+      "name": "Zombie",
+      "maxTier": 11
+    }
+  }
+}

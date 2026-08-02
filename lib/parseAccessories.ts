@@ -7,19 +7,23 @@ export interface AccessoriesData {
 }
 
 
-export function parseAccessories(member:any):AccessoriesData {
+function record(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : null;
+}
+
+export function parseAccessories(member: unknown):AccessoriesData {
+
+const storage = record(record(member)?.accessory_bag_storage);
 
 
 return {
 
 magicalPower:
-member?.accessory_bag_storage
-?.highest_magical_power ?? 0,
+typeof storage?.highest_magical_power === 'number' ? storage.highest_magical_power : 0,
 
 
 bagUpgrades:
-member?.accessory_bag_storage
-?.bag_upgrades_purchased ?? 0
+typeof storage?.bag_upgrades_purchased === 'number' ? storage.bag_upgrades_purchased : 0
 
 
 };

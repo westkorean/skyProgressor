@@ -1,0 +1,58 @@
+[
+  {
+    "id": "dungeon_setup_archer",
+    "topic": "Common Archer dungeon setups",
+    "content": "Treat owned gear as evidence, not a mandatory shopping list. Common normal-floor Archer progression uses a shortbow with a damage-oriented dungeon armor set: early dungeonized Dragon armor, then Shadow Assassin (often with a temporary Zombie Knight chestplate), then Necron armor; Juju Shortbow and later Terminator are common weapon steps. Check floor, Catacombs, Slayer, and item-use requirements before suggesting a change.",
+    "tags": ["dungeons", "archer", "shadow assassin", "necron", "juju", "terminator", "shortbow"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://hypixel.net/threads/a-guide-to-archer-class-f1-to-f7.6089924/", "https://wiki.hypixel.net/Shadow_Assassin_Armor", "https://wiki.hypixel.net/Necron%27s_Armor", "https://wiki.hypixel.net/Juju_Shortbow", "https://wiki.hypixel.net/Terminator"]
+  },
+  {
+    "id": "dungeon_setup_mage",
+    "topic": "Common Mage dungeon setups",
+    "content": "Common Mage setups prioritize Intelligence, ability damage, and enough effective health for the selected floor. Frequently discussed progression moves from early Dreadlord Sword or Bonzo's Staff options into Spirit Sceptre, with dungeon armor progressing through suitable Wise or Zombie Soldier pieces toward Necromancer Lord and Storm armor. Hyperion-class weapons are a late expensive step, not a default recommendation.",
+    "tags": ["dungeons", "mage", "intelligence", "spirit sceptre", "storm", "hyperion", "necromancer lord"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://hypixel.net/threads/what-dungeon-class-to-choose-for-each-game-stage.5858449/", "https://wiki.hypixel.net/Spirit_Sceptre", "https://wiki.hypixel.net/Storm%27s_Armor", "https://wiki.hypixel.net/Hyperion"]
+  },
+  {
+    "id": "dungeon_setup_berserk",
+    "topic": "Common Berserk dungeon setups",
+    "content": "Common Berserk progression favors a dungeonized melee weapon, damage armor, and sufficient sustain. Shadow Assassin is a recognizable mid-progression set after Floor 5; Necron armor and stronger melee or clearing weapons are later options. Evaluate an owned complete starred set before recommending replacement, and do not classify gear as weak merely because it is stored in a wardrobe.",
+    "tags": ["dungeons", "berserk", "shadow assassin", "necron", "melee", "sustain"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://hypixel.net/threads/what-dungeon-class-to-choose-for-each-game-stage.5858449/", "https://wiki.hypixel.net/Shadow_Assassin_Armor", "https://wiki.hypixel.net/Necron%27s_Armor"]
+  },
+  {
+    "id": "dungeon_setup_support",
+    "topic": "Common Tank and Healer dungeon setups",
+    "content": "Tank and Healer recommendations must account for party role and floor rather than damage alone. Tank commonly values effective health and may keep a separate clearing set and boss set. Healer values survivability and healing tools while often borrowing a damage-class clearing setup. Never recommend replacing a specialized stored set without checking the full wardrobe and storage inventory.",
+    "tags": ["dungeons", "tank", "healer", "effective health", "healing", "boss set", "clear set"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://wiki.hypixel.net/Dungeon_Class", "https://hypixel.net/threads/what-is-a-good-class-to-start-with-to-get-into-high-floor-dungeons.6015950/"]
+  },
+  {
+    "id": "mining_setup_pattern",
+    "topic": "Mining setup evaluation",
+    "content": "Mining recommendations should evaluate the target activity separately: gemstone mining, glacite tunnels, commissions, and powder grinding can require different tools, armor, pets, HotM perks, and powder. Check the player's complete owned inventory before treating a currently unequipped mining set as missing.",
+    "tags": ["mining", "hotm", "powder", "gemstone", "commissions", "glacite"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://wiki.hypixel.net/Heart_of_the_Mountain", "https://wiki.hypixel.net/Mining"]
+  },
+  {
+    "id": "farming_setup_pattern",
+    "topic": "Farming setup evaluation",
+    "content": "Farming setups are crop-specific. Evaluate the matching farming tool, armor, pet, equipment, reforges, upgrades, and Garden progression together. A stored crop tool or armor set counts as owned evidence even when it is not active.",
+    "tags": ["farming", "garden", "crop", "tool", "armor", "pet"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://wiki.hypixel.net/Farming", "https://wiki.hypixel.net/The_Garden"]
+  },
+  {
+    "id": "slayer_setup_pattern",
+    "topic": "Slayer setup evaluation",
+    "content": "Slayer gear is boss-specific. Evaluate owned weapons, armor, healing or utility items, pets, accessories, and the reliably completable boss tier before recommending purchases. Do not infer that a Slayer setup is missing only because it is stored in an Ender Chest or main inventory.",
+    "tags": ["slayer", "revenant", "tarantula", "sven", "voidgloom", "inferno", "riftstalker"],
+    "reviewedAt": "2026-08-01",
+    "sources": ["https://wiki.hypixel.net/Slayer"]
+  }
+]

@@ -44,6 +44,14 @@ export interface SkyblockLevelProgress {
   currentXp: number;
 }
 
+function record(value: unknown): Record<string, unknown> | null {
+  return value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : null;
+}
+
+function number(value: unknown): number {
+  return typeof value === 'number' && Number.isFinite(value) ? Math.max(0, value) : 0;
+}
+
 function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   let level = 0;
   for (let i = 1; i <= maxLevel; i++) {
@@ -70,15 +78,15 @@ function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
   return { level, xpForNextLevel: nextThreshold, progressPercent };
 }
 
-export function parseSkills(member: any): SkillProgress[] {
-  const experience = member?.player_data?.experience ?? {};
+export function parseSkills(member: unknown): SkillProgress[] {
+  const experience = record(record(record(member)?.player_data)?.experience) ?? {};
   const skillKeys = Object.keys(experience).filter((key) =>
     key.startsWith('SKILL_')
   );
 
   return skillKeys.map((key) => {
     const skillName = key.replace('SKILL_', '').toLowerCase();
-    const xp = experience[key];
+    const xp = number(experience[key]);
     const maxLevel = SKILL_MAX_LEVELS[skillName] ?? 50;
     const { level, xpForNextLevel, progressPercent } = calculateLevel(
       xp,
@@ -96,11 +104,11 @@ export function parseSkills(member: any): SkillProgress[] {
   });
 }
 
-export function parseSlayers(member: any): SlayerProgress[] {
-  const bosses = member?.slayer?.slayer_bosses ?? {};
+export function parseSlayers(member: unknown): SlayerProgress[] {
+  const bosses = record(record(record(member)?.slayer)?.slayer_bosses) ?? {};
 
   return Object.keys(bosses).map((slayerName) => {
-    const xp = bosses[slayerName]?.xp ?? 0;
+    const xp = number(record(bosses[slayerName])?.xp);
     const { level, xpForNextLevel, progressPercent } = calculateLevel(
       xp,
       SLAYER_XP_TABLE,
@@ -117,8 +125,9 @@ export function parseSlayers(member: any): SlayerProgress[] {
   });
 }
 
-export function parseCatacombs(member: any): CatacombsProgress {
-  const xp = member?.dungeons?.dungeon_types?.catacombs?.experience ?? 0;
+export function parseCatacombs(member: unknown): CatacombsProgress {
+  const dungeonTypes = record(record(record(member)?.dungeons)?.dungeon_types);
+  const xp = number(record(dungeonTypes?.catacombs)?.experience);
   const { level, xpForNextLevel, progressPercent } = calculateLevel(
     xp,
     CATACOMBS_XP_TABLE,
@@ -128,8 +137,8 @@ export function parseCatacombs(member: any): CatacombsProgress {
   return { level, currentXp: xp, xpForNextLevel, progressPercent };
 }
 
-export function parseFairySouls(member: any): FairySoulProgress {
-  const collected = member?.fairy_soul?.total_collected ?? 0;
+export function parseFairySouls(member: unknown): FairySoulProgress {
+  const collected = number(record(record(member)?.fairy_soul)?.total_collected);
   const progressPercent = Math.min(
     100,
     Math.round((collected / TOTAL_FAIRY_SOULS) * 100)
@@ -143,8 +152,8 @@ export function parseFairySouls(member: any): FairySoulProgress {
   };
 }
 
-export function parseSkyblockLevel(member: any): SkyblockLevelProgress {
-  const xp = member?.leveling?.experience ?? 0;
+export function parseSkyblockLevel(member: unknown): SkyblockLevelProgress {
+  const xp = number(record(record(member)?.leveling)?.experience);
   const level = Math.floor(xp / 100);
   const progressPercent = Math.round(xp % 100);
 
