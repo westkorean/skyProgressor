@@ -1,5 +1,5 @@
-import generatedCollections from '@/data/collections.generated.json';
-import { BOSS_COLLECTIONS } from './collectionData';
+import generatedCollections from '../data/collections.generated.json' with { type: 'json' };
+import { BOSS_COLLECTIONS } from './collectionData.ts';
 
 export const COLLECTION_CATEGORY_ORDER = [
   'Farming',

@@ -1,60 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import type {
-  SkillProgress,
-  SlayerProgress,
-  CatacombsProgress,
-  FairySoulProgress,
-  SkyblockLevelProgress,
-} from '@/lib/parseProfile';
-import type { PetProgress } from '@/lib/parsePets';
-import type { ProfileOverviewData } from '@/components/ProfileOverviewCard';
-import type { CollectionEntry } from '@/lib/parseCollections';
-import type { ProgressionIssue, ProgressionRecommendation } from '@/lib/recommendationEngine';
-import type { MinionProgress } from '@/lib/parseMinions';
-import type { BestiaryProgress } from '@/lib/parseBestiary';
-import type { MuseumProgress } from '@/lib/parseMuseum';
-import type { DungeonProgress } from '@/lib/parseDungeons';
-import type { InventoryData } from '@/lib/parseInventory';
-import type { Suggestion } from '@/lib/getSuggestions';
+import dynamic from 'next/dynamic';
 import type { OwnedItemMetadata } from '@/lib/ownedItemMetadata';
+import { marketPriceFor, petMarketKey } from '@/lib/marketPrices';
+import { estimateRecipeCost } from '@/lib/itemPricing';
+import { validateIgn } from '@/lib/ignValidation';
+import type { GardenProgress } from '@/lib/parseGarden';
+import type { ProfileViewModel, SkyBlockProfile } from '@/lib/profileViewModel';
+import { fetchGardenPayload, fetchMemberName, fetchSkyBlockProfiles, resolveMinecraftUuid } from '@/lib/skyblockProfileApi';
+import { minecraftAvatarUrl } from '@/lib/avatar';
+import ProfileContextControls from '@/components/ProfileContextControls';
 
-type CoopMember = { uuid: string; name: string };
-
-type ResultData = {
-  skills: SkillProgress[];
-  slayers: SlayerProgress[];
-  catacombs: CatacombsProgress;
-  fairySouls: FairySoulProgress;
-  suggestions: Suggestion[];
-  skyblockLevel: SkyblockLevelProgress;
-  levelRecommendations: LevelRecommendation[];
-  pets: PetProgress[];
-  accessories: { magicalPower: number; bagUpgrades: number };
-  dungeons: DungeonProgress;
-  inventory: InventoryData;
-  collections: CollectionEntry[];
-  profileName: string;
-  coopMembers: CoopMember[];
-  overview: ProfileOverviewData;
-  recommendations: ProgressionRecommendation[];
-  progressionIssues: ProgressionIssue[];
-  minions: MinionProgress;
-  bestiary: BestiaryProgress;
-  museum: MuseumProgress;
-  itemMetadata: Record<string, OwnedItemMetadata>;
-};
-
-type Profile = {
-  profile_id: string;
-  cute_name: string;
-  selected?: boolean;
-  game_mode?: string;
-  members?: Record<string, unknown>;
-};
-
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import SkillBar from '@/components/SkillBar';
 import MainMenuResources from '@/components/MainMenuResources';
 import SuggestionCard from '@/components/SuggestionCard';
@@ -69,10 +27,8 @@ import {
 import { getTopSuggestions } from '@/lib/getSuggestions';
 import {
   getSkyblockLevelRecommendations,
-  type LevelRecommendation,
 } from '@/lib/getSkyblockLevelRecommendations';
 import SkyblockLevelCard from '@/components/SkyblockLevelCard';
-import ChatBox from '@/components/ChatBox';
 import { parsePets } from '@/lib/parsePets';
 import { parseAccessories } from '@/lib/parseAccessories';
 import { parseInventory } from '@/lib/parseInventory';
@@ -81,25 +37,60 @@ import { getPetSkinDisplayName, getPetTextureHash } from '@/lib/petTextures';
 import { getPetItemMetadata } from '@/lib/petItems';
 import ProfileOverviewCard from '@/components/ProfileOverviewCard';
 import { parseProfileEconomy } from '@/lib/parseProfileOverview';
-import CollectionsSection from '@/components/CollectionsSection';
 import { getProgressionIssues, getProgressionRecommendations } from '@/lib/recommendationEngine';
 import { parseMinions } from '@/lib/parseMinions';
-import MinionProgressSection from '@/components/MinionProgressSection';
 import { parseBestiary } from '@/lib/parseBestiary';
-import BestiarySection from '@/components/BestiarySection';
 import { parseMuseum } from '@/lib/parseMuseum';
-import MuseumSection from '@/components/MuseumSection';
-import { parseBazaarPrices } from '@/lib/itemPricing';
-import DungeonsSection from '@/components/DungeonsSection';
-import EquipmentSection from '@/components/EquipmentSection';
-import ProgressionRecommendationsSection from '@/components/ProgressionRecommendationsSection';
-import InventoryStorageSection from '@/components/InventoryStorageSection';
+import type { PricingSnapshot } from '@/lib/pricing';
+import { priceAccessoryOpportunities } from '@/lib/pricing';
 import { createInventoryOwnershipSummary, inventoryMetadataKey } from '@/lib/inventoryContext';
+import { parseHOTM } from '@/lib/parseHOTM';
+import { parseHOTF } from '@/lib/parseHOTF';
+import { parseGarden } from '@/lib/parseGarden';
+import { parseRift } from '@/lib/parseRift';
+import { parseCrimson } from '@/lib/parseCrimson';
+import { parseFishing } from '@/lib/parseFishing';
+import { calculateProgressionScore } from '@/lib/progressionScore';
+import { generateDeterministicRecommendations } from '@/lib/recommendations';
+import { createProgressionRoadmap } from '@/lib/progressionRoadmap';
+import { createProgressPlanner } from '@/lib/progressPlanner';
+import { calculateNetworth, parseSkyhelperNetworth } from '@/lib/calculateNetworth';
+import { hashPlayerProfile } from '@/lib/evaluation';
+import type { SimulatedPetTier } from '@/lib/simulation';
+import { generateSkyProgressorAchievements } from '@/lib/skyProgressorAchievements';
+import { buildComparisonProfile, type ComparisonCandidate } from '@/lib/profileComparisonData';
+import { memoizeProfileParser } from '@/lib/profileParseCache';
 
-const avatarUrl = (username?: string | null, size = 40) =>
-  username && username.trim()
-    ? `https://minotar.net/helm/${encodeURIComponent(username)}/${size}.png`
-    : '/images/pet-placeholder.svg';
+const ChatBox = dynamic(() => import('@/components/ChatBox'));
+const CollectionsSection = dynamic(() => import('@/components/CollectionsSection'));
+const MinionProgressSection = dynamic(() => import('@/components/MinionProgressSection'));
+const BestiarySection = dynamic(() => import('@/components/BestiarySection'));
+const MuseumSection = dynamic(() => import('@/components/MuseumSection'));
+const DungeonsSection = dynamic(() => import('@/components/DungeonsSection'));
+const EquipmentSection = dynamic(() => import('@/components/EquipmentSection'));
+const ProgressionRecommendationsSection = dynamic(() => import('@/components/ProgressionRecommendationsSection'));
+const InventoryStorageSection = dynamic(() => import('@/components/InventoryStorageSection'));
+const RecommendationSimulator = dynamic(() => import('@/components/RecommendationSimulator'));
+const ProgressPlanner = dynamic(() => import('@/components/ProgressPlanner'));
+const SkyProgressorAchievements = dynamic(() => import('@/components/SkyProgressorAchievements'));
+const HOTMCard = dynamic(() => import('@/components/HOTMCard'));
+const HOTFCard = dynamic(() => import('@/components/HOTFCard'));
+const GardenCard = dynamic(() => import('@/components/GardenCard'));
+const RiftCard = dynamic(() => import('@/components/RiftCard'));
+const CrimsonCard = dynamic(() => import('@/components/CrimsonCard'));
+const FishingCard = dynamic(() => import('@/components/FishingCard'));
+const AccessoriesCard = dynamic(() => import('@/components/AccessoriesCard'));
+const ProgressionScoreCard = dynamic(() => import('@/components/ProgressionScoreCard'));
+const ProgressionRoadmap = dynamic(() => import('@/components/ProgressionRoadmap'));
+const ProfileSnapshots = dynamic(() => import('@/components/ProfileSnapshots'));
+const ProfileComparisonCard = dynamic(() => import('@/components/ProfileComparisonCard'));
+
+const parseSkillsCached = memoizeProfileParser(parseSkills);
+const parseSlayersCached = memoizeProfileParser(parseSlayers);
+const parseCollectionsCached = memoizeProfileParser(parseCollections);
+const parsePetsCached = memoizeProfileParser(parsePets);
+const parseHOTMCached = memoizeProfileParser(parseHOTM);
+const parseHOTFCached = memoizeProfileParser(parseHOTF);
 
 const formatDisplayName = (value?: string | null) =>
   String(value ?? '')
@@ -113,17 +104,15 @@ const getPetHeadSrc = (petType: string, skinId?: string | null) => {
   return '/images/pet-placeholder.svg';
 };
 
-type UuidResponse = { id?: string; error?: string };
-type ProfilesResponse = { success?: boolean; cause?: string; profiles?: Profile[] | null };
-
 export default function Home() {
   const [ign, setIgn] = useState('');
+  const [loadingIgn, setLoadingIgn] = useState<string | null>(null);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [result, setResult] = useState<ResultData | null>(null);
+  const [result, setResult] = useState<ProfileViewModel | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [profiles, setProfiles] = useState<Profile[]>([]);
+  const [profiles, setProfiles] = useState<SkyBlockProfile[]>([]);
   const [uuid, setUuid] = useState<string | null>(null);
   const searchIdRef = useRef(0);
   const requestAbortRef = useRef<AbortController | null>(null);
@@ -137,53 +126,49 @@ export default function Home() {
     if (savedTheme === 'light') setTheme('light');
   }, []);
 
-  const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
+  const [currentProfile, setCurrentProfile] = useState<SkyBlockProfile | null>(null);
   const [viewingUuid, setViewingUuid] = useState<string | null>(null);
+  const [comparisonCandidates, setComparisonCandidates] = useState<ComparisonCandidate[]>([]);
 
   const DEFAULT_DEVELOPER_IGN = 'westkorean';
+  const ignValidation = validateIgn(ign);
 
   const handleSearch = async (searchIgn?: string) => {
-    const ignToUse = searchIgn ?? ign;
+    const requestedIgn = validateIgn(searchIgn ?? ign);
+    if (!requestedIgn.valid) {
+      setError(requestedIgn.message ?? 'Enter a valid Minecraft username.');
+      return;
+    }
+    const ignToUse = requestedIgn.normalized;
     requestAbortRef.current?.abort();
     const controller = new AbortController();
     requestAbortRef.current = controller;
     const currentSearchId = ++searchIdRef.current;
     setLoading(true);
+    setLoadingIgn(ignToUse);
     setError(null);
     setResult(null);
     setProfiles([]);
     setUuid(null);
     setCurrentProfile(null);
     setViewingUuid(null);
+    setComparisonCandidates([]);
 
     try {
-      const uuidRes = await fetch(
-        `/api/uuid?ign=${encodeURIComponent(ignToUse)}`,
-        { signal: controller.signal }
-      );
-      const uuidData = (await uuidRes.json()) as UuidResponse;
-      if (!uuidRes.ok || !uuidData.id) throw new Error(uuidData.error ?? 'Unable to resolve username');
-
-      const profileRes = await fetch(`/api/profile?uuid=${uuidData.id}`, {
-        signal: controller.signal,
-      });
-      const profileData = (await profileRes.json()) as ProfilesResponse;
-
-      if (!profileData.success) {
-        throw new Error(profileData.cause || 'Failed to fetch profile');
-      }
+      const playerUuid = await resolveMinecraftUuid(ignToUse, controller.signal);
+      const availableProfiles = await fetchSkyBlockProfiles(playerUuid, controller.signal);
 
       // Hypixel returns profiles: null specifically when there's no data
       // (either no SkyBlock profiles exist, or API access is off)
-      if (!profileData.profiles || profileData.profiles.length == 0) {
+      if (availableProfiles.length === 0) {
         throw new Error(
           `No profile available for ${ignToUse}. They may not play SkyBlock, or their API access may be turned off (SkyBlock Menu → Settings → API Settings).`
         );
       }
 
       // Filter to only profiles where THIS player has member data
-      const validProfiles = profileData.profiles.filter(
-        (profile) => profile.members?.[uuidData.id!] !== undefined
+      const validProfiles = availableProfiles.filter(
+        (profile) => profile.members?.[playerUuid] !== undefined
       );
 
       validProfiles.sort((a, b) =>
@@ -192,18 +177,18 @@ export default function Home() {
 
       if (validProfiles.length == 0) {
         throw new Error(
-          `Could not find SkyBlock data for ${ign} on any profile.`
+          `Could not find SkyBlock data for ${ignToUse} on any profile.`
         );
       }
 
       setProfiles(validProfiles);
-      setUuid(uuidData.id);
+      setUuid(playerUuid);
 
       // Default to the selected one, or first available
       const defaultProfile =
         validProfiles.find((profile) => profile.selected) ?? validProfiles[0];
 
-      await loadProfile(defaultProfile, uuidData.id, currentSearchId, controller.signal);
+      await loadProfile(defaultProfile, playerUuid, currentSearchId, controller.signal);
     } catch (err) {
       if (controller.signal.aborted) return;
       if (currentSearchId != searchIdRef.current) return;
@@ -211,13 +196,14 @@ export default function Home() {
     } finally {
       if (currentSearchId == searchIdRef.current) {
         setLoading(false);
+        setLoadingIgn(null);
         if (requestAbortRef.current === controller) requestAbortRef.current = null;
       }
     }
   };
 
   const loadProfile = async (
-    profile: Profile,
+    profile: SkyBlockProfile,
     playerUuid: string,
     searchId?: number,
     signal?: AbortSignal
@@ -225,8 +211,8 @@ export default function Home() {
     const profileMembers = profile.members ?? {};
     const member = profileMembers[playerUuid];
 
-    const skills = parseSkills(member);
-    const slayers = parseSlayers(member);
+    const skills = parseSkillsCached(member);
+    const slayers = parseSlayersCached(member);
     const catacombs = parseCatacombs(member);
     const fairySouls = parseFairySouls(member);
     const suggestions = getTopSuggestions(skills, slayers, catacombs);
@@ -235,23 +221,31 @@ export default function Home() {
       member,
       slayers
     );
-    const pets = parsePets(member);
-    const accessories = parseAccessories(member);
+    const pets = parsePetsCached(member);
     const inventory = await parseInventory(member);
+    let accessories = parseAccessories(member, inventory);
     const inventoryOwnership = createInventoryOwnershipSummary(inventory);
     const dungeons = parseDungeons(member);
-    const collections = parseCollections(member);
+    const collections = parseCollectionsCached(member);
     const economy = parseProfileEconomy(member, profile);
     const bestiary = parseBestiary(member);
+    const hotm = parseHOTMCached(member);
+    const hotf = parseHOTFCached(member);
+    const rift = parseRift(member);
+    const crimson = parseCrimson(member);
+    const fishing = parseFishing(member, skills, collections);
     let itemMetadata: Record<string, OwnedItemMetadata> = {};
     let museumPayload: unknown = null;
-    let bazaarPayload: unknown = null;
+    let gardenPayload: unknown = null;
+    let pricingSnapshot: PricingSnapshot = { marketPrices: {}, bazaarPrices: {}, cachedAt: '', expiresAt: '', stale: true };
     try {
-      const [museumResponse, bazaarResponse] = await Promise.all([
+      const [museumResponse, gardenResponse, pricingResponse] = await Promise.all([
         fetch(`/api/museum?profile=${encodeURIComponent(profile.profile_id)}`, { signal }),
-        fetch('/api/bazaar', { signal }),
+        fetch(`/api/garden?profile=${encodeURIComponent(profile.profile_id)}`, { signal }),
+        fetch('/api/pricing', { signal }),
       ]);
-      [museumPayload, bazaarPayload] = await Promise.all([museumResponse.json(), bazaarResponse.json()]);
+      [museumPayload, gardenPayload] = await Promise.all([museumResponse.json(), gardenResponse.json()]);
+      if (pricingResponse.ok) pricingSnapshot = await pricingResponse.json() as PricingSnapshot;
     } catch {
       if (signal?.aborted) return;
       museumPayload = null;
@@ -275,9 +269,60 @@ export default function Home() {
     } catch {
       if (signal?.aborted) return;
     }
-    const bazaarPrices = parseBazaarPrices(bazaarPayload);
+    const marketPrices = pricingSnapshot.marketPrices;
+    const bazaarPrices = pricingSnapshot.bazaarPrices;
+    accessories = { ...accessories, opportunities: priceAccessoryOpportunities(accessories.opportunities, marketPrices, bazaarPrices) };
+    itemMetadata = Object.fromEntries(Object.entries(itemMetadata).map(([id, metadata]) => {
+      const market = marketPriceFor(id, marketPrices, metadata.npcSellPrice);
+      const rawCraftCost = estimateRecipeCost(id, bazaarPrices);
+      return [id, {
+        ...metadata,
+        marketPrice: rawCraftCost ?? market?.unitPrice ?? null,
+        marketPriceSource: rawCraftCost !== null ? 'craft' as const : market?.source ?? null,
+        rawCraftCost,
+        lowestBinPrice: market?.lowestBinPrice ?? null,
+        recentMedianPrice: market?.recentMedianPrice ?? null,
+      }];
+    }));
+    const localNetworth = calculateNetworth({
+      purse: economy.purse,
+      bank: economy.bank,
+      inventoryItems: inventoryOwnership.items,
+      itemMetadata,
+      pets,
+      marketPrices,
+    });
+    let networth = localNetworth;
+    try {
+      const networthResponse = await fetch('/api/networth', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        signal,
+        body: JSON.stringify({ member, museum: museumPayload, playerUuid, bank: economy.bank }),
+      });
+      if (networthResponse.ok) {
+        networth = parseSkyhelperNetworth(await networthResponse.json()) ?? localNetworth;
+      }
+    } catch {
+      if (signal?.aborted) return;
+    }
     const minions = parseMinions(profile, bazaarPrices);
-    const museum = parseMuseum(museumPayload, playerUuid, bazaarPrices);
+    const museum = parseMuseum(museumPayload, playerUuid, bazaarPrices, marketPrices);
+    const garden = parseGarden(gardenPayload, member);
+    const scoreInput = { skills, slayers, catacombs, collections, pets, accessories, hotm, hotf, garden, fishing, crimson, rift };
+    const progressionScore = calculateProgressionScore(scoreInput);
+    const deterministicRecommendations = generateDeterministicRecommendations(scoreInput);
+    const roadmap = createProgressionRoadmap(deterministicRecommendations);
+    const planner = createProgressPlanner({ hotm, magicalPower: accessories.magicalPower, ownedItemIds: inventoryOwnership.items.flatMap((item) => item.skyblockId ? [item.skyblockId] : []), marketPrices, bazaarPrices, recommendations: deterministicRecommendations });
+    const achievements = generateSkyProgressorAchievements({
+      uniqueAccessoryCount: new Set(inventoryOwnership.items.filter((item) => item.section === 'accessoryBag').flatMap((item) => item.skyblockId ? [item.skyblockId] : [])).size,
+      magicalPower: accessories.magicalPower,
+      catacombsLevel: catacombs.level,
+      farmingLevel: skills.find((skill) => skill.skill.toLowerCase() === 'farming')?.level ?? 0,
+      gardenLevel: garden.level,
+      gardenMaxLevel: garden.maxLevel,
+      collections,
+    });
     const recommendationProfile = {
       skills,
       slayers,
@@ -296,24 +341,26 @@ export default function Home() {
     const progressionIssues = getProgressionIssues(recommendationProfile);
 
     const memberUuids = Object.keys(profileMembers);
-    const memberNames = await Promise.all(
-      memberUuids.map(async (mUuid) => {
-        try {
-          const res = await fetch(`/api/username?uuid=${mUuid}`, { signal });
-          if (signal?.aborted) return { uuid: mUuid, name: 'Unavailable' };
-          const data = await res.json();
-          return { uuid: mUuid, name: data.name ?? 'Unavailable' };
-        } catch {
-          return { uuid: mUuid, name: 'Unavailable' };
-        }
-      })
-    );
+    const memberNames = await Promise.all(memberUuids.map((memberUuid) => fetchMemberName(memberUuid, signal)));
+
+    const otherGardens = new Map<string, GardenProgress>();
+    await Promise.all(profiles.filter(candidate => candidate.profile_id !== profile.profile_id).map(async candidate => {
+      try {
+        const payload = await fetchGardenPayload(candidate.profile_id, signal);
+        otherGardens.set(candidate.profile_id, parseGarden(payload));
+      } catch { otherGardens.set(candidate.profile_id, parseGarden(null)); }
+    }));
+    const comparisonOptions: ComparisonCandidate[] = [
+      ...memberNames.map((profileMember) => ({ id: `${profile.profile_id}:${profileMember.uuid}`, label: `${profile.cute_name} · ${profileMember.name}`, data: buildComparisonProfile(profileMembers[profileMember.uuid], garden) })),
+      ...profiles.filter((candidate) => candidate.profile_id !== profile.profile_id && candidate.members?.[playerUuid]).map((candidate) => ({ id: `${candidate.profile_id}:${playerUuid}`, label: `${candidate.cute_name} · same account`, data: buildComparisonProfile(candidate.members?.[playerUuid], otherGardens.get(candidate.profile_id) ?? parseGarden(null)) })),
+    ];
 
     if (signal?.aborted) return;
     if (searchId != undefined && searchId != searchIdRef.current) return;
 
     setCurrentProfile(profile);
     setViewingUuid(playerUuid);
+    setComparisonCandidates(comparisonOptions);
 
     setResult({
       skills,
@@ -339,6 +386,7 @@ export default function Home() {
         skyblockLevel: skyblockLevel.level,
         purse: economy.purse,
         bank: economy.bank,
+        networth,
         magicalPower: accessories.magicalPower,
         skillAverage:
           skills.length > 0
@@ -364,10 +412,34 @@ export default function Home() {
       bestiary,
       museum,
       itemMetadata,
+      marketPrices,
+      hotm,
+      hotf,
+      garden,
+      rift,
+      crimson,
+      fishing,
+      progressionScore,
+      deterministicRecommendations,
+      roadmap,
+      planner,
+      achievements,
     });
   };
 
-  const selectProfile = async (profile: Profile, targetUuid: string) => {
+  const lookupComparisonProfile = async (comparisonIgn: string): Promise<ComparisonCandidate> => {
+    const comparedUuid = await resolveMinecraftUuid(comparisonIgn);
+    const comparedProfiles = await fetchSkyBlockProfiles(comparedUuid);
+    if (comparedProfiles.length === 0) throw new Error('No public SkyBlock profile found.');
+    const selected = comparedProfiles.find(candidate => candidate.selected && candidate.members?.[comparedUuid]) ?? comparedProfiles.find(candidate => candidate.members?.[comparedUuid]);
+    if (!selected) throw new Error('This player has no accessible member data.');
+    const comparedMember = selected.members?.[comparedUuid];
+    let comparedGarden = parseGarden(null);
+    try { comparedGarden = parseGarden(await fetchGardenPayload(selected.profile_id)); } catch { comparedGarden = parseGarden(null); }
+    return { id:`external:${selected.profile_id}:${comparedUuid}`, label:`${comparisonIgn} · ${selected.cute_name}`, data: buildComparisonProfile(comparedMember, comparedGarden) };
+  };
+
+  const selectProfile = async (profile: SkyBlockProfile, targetUuid: string) => {
     requestAbortRef.current?.abort();
     const controller = new AbortController();
     requestAbortRef.current = controller;
@@ -383,6 +455,7 @@ export default function Home() {
     } finally {
       if (operationId === searchIdRef.current) {
         setLoading(false);
+        setLoadingIgn(null);
         if (requestAbortRef.current === controller) requestAbortRef.current = null;
       }
     }
@@ -407,12 +480,43 @@ export default function Home() {
     event.currentTarget.style.removeProperty('--scanner-rotate-y');
   };
 
+  const recommendationProfileHash = useMemo(() => result ? hashPlayerProfile({
+    profileName: result.profileName,
+    skyblockLevel: result.skyblockLevel,
+    skills: result.skills,
+    slayers: result.slayers,
+    accessories: result.accessories,
+    hotm: result.hotm,
+    garden: result.garden,
+  }) : '', [result]);
+
+  const advisorPlayerData = useMemo(() => result ? {
+    pets: result.pets,
+    recommendations: result.deterministicRecommendations,
+    planner: result.planner,
+    progressionScore: result.progressionScore,
+    profileSummary: {
+      skyblockLevel: result.skyblockLevel,
+      skills: result.skills,
+      slayers: result.slayers,
+      catacombs: result.catacombs,
+      accessories: result.accessories,
+      hotm: result.hotm,
+      hotf: result.hotf,
+      garden: result.garden,
+      fishing: result.fishing,
+      crimson: result.crimson,
+      rift: result.rift,
+    },
+  } : null, [result]);
+
   const returnHome = () => {
     requestAbortRef.current?.abort();
     setResult(null);
     setProfiles([]);
     setCurrentProfile(null);
     setViewingUuid(null);
+    setComparisonCandidates([]);
     setUuid(null);
     setError(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -438,7 +542,7 @@ export default function Home() {
               ))}
             </div>
             <div className="text-sm font-black uppercase tracking-[0.18em] text-emerald-300">Scanning profile</div>
-            <div className="mt-2 truncate text-xs text-neutral-400">{ign.trim() || result?.overview.ign || 'SkyBlock player'}</div>
+            <div className="mt-2 truncate text-xs text-neutral-400">{loadingIgn ?? result?.overview.ign ?? 'SkyBlock player'}</div>
             <div className="mt-5 h-2 overflow-hidden border border-neutral-700 bg-neutral-950">
               <div className="profile-loading-bar h-full w-1/3 bg-emerald-500" />
             </div>
@@ -471,9 +575,10 @@ export default function Home() {
                 <p className="mt-5 max-w-xl text-sm leading-6 text-neutral-400 sm:text-base">Open the whole profile—not just the equipped set. Compare storage, wardrobe, pets, dungeons, collections, and practical next steps.</p>
 
                 <form onSubmit={(event) => { event.preventDefault(); void handleSearch(); }} className="mt-8 flex max-w-xl flex-col gap-2 border-2 border-neutral-600 bg-neutral-950 p-2 shadow-[5px_5px_0_#262626] sm:flex-row">
-                  <div className="flex min-w-0 flex-1 items-center gap-3 px-3"><span aria-hidden="true" className="font-mono text-xs text-emerald-400">[IGN]</span><input value={ign} onChange={(event) => setIgn(event.target.value)} placeholder="Minecraft username" aria-label="Minecraft username" className="min-w-0 flex-1 bg-transparent py-3 text-sm outline-none placeholder:text-neutral-600" /></div>
-                  <button type="submit" disabled={loading || !ign.trim()} className="border border-emerald-400 bg-emerald-600 px-6 py-3 text-sm font-bold shadow-[inset_0_-4px_0_#047857,3px_3px_0_#052e16] transition hover:bg-emerald-500 active:translate-x-0.5 active:translate-y-0.5 active:shadow-[inset_0_-2px_0_#047857,1px_1px_0_#052e16] disabled:cursor-wait disabled:opacity-50">{loading ? 'SCANNING...' : 'SCAN PROFILE'}</button>
+                  <div className="flex min-w-0 flex-1 items-center gap-3 px-3"><span aria-hidden="true" className="font-mono text-xs text-emerald-400">[IGN]</span><input value={ign} onChange={(event) => setIgn(event.target.value)} placeholder="Minecraft username" aria-label="Minecraft username" aria-invalid={ign.length > 0 && !ignValidation.valid} aria-describedby="ign-validation" className="min-w-0 flex-1 bg-transparent py-3 text-sm outline-none placeholder:text-neutral-600" /></div>
+                  <button type="submit" disabled={loading || !ignValidation.valid} className="border border-emerald-400 bg-emerald-600 px-6 py-3 text-sm font-bold shadow-[inset_0_-4px_0_#047857,3px_3px_0_#052e16] transition hover:bg-emerald-500 active:translate-x-0.5 active:translate-y-0.5 active:shadow-[inset_0_-2px_0_#047857,1px_1px_0_#052e16] disabled:cursor-not-allowed disabled:opacity-50">{loading ? 'SCANNING...' : 'SCAN PROFILE'}</button>
                 </form>
+                <p id="ign-validation" aria-live="polite" className={`mt-2 min-h-4 text-xs ${ignValidation.message ? 'text-amber-300' : 'text-neutral-600'}`}>{ignValidation.message ?? (ignValidation.valid ? 'Minecraft username ready.' : 'Enter 3–16 letters, numbers, or underscores.')}</p>
 
                 <div className="mt-5 flex flex-wrap gap-2 text-[11px] text-neutral-500">{['Deterministic priorities', 'Complete inventory', 'Profile-aware advisor'].map((feature) => <span key={feature} className="border border-neutral-700 bg-neutral-950 px-3 py-1.5 shadow-[2px_2px_0_#171717]">[+] {feature}</span>)}</div>
                 <div role="note" className="mt-5 max-w-xl border border-amber-700/80 bg-amber-950/30 px-4 py-3 text-xs leading-5 text-amber-200 shadow-[3px_3px_0_#451a03]">
@@ -483,7 +588,7 @@ export default function Home() {
                     report bugs on GitHub
                   </a>.
                 </div>
-                <button onClick={() => void handleSearch(DEFAULT_DEVELOPER_IGN)} disabled={loading} className="group mt-8 inline-flex items-center gap-3 border border-neutral-700 bg-neutral-950 px-4 py-3 text-left shadow-[4px_4px_0_#171717] transition hover:-translate-y-0.5 hover:border-emerald-600 disabled:opacity-50"><Image src={avatarUrl(DEFAULT_DEVELOPER_IGN)} alt="westkorean skin" width={36} height={36} className="[image-rendering:pixelated]" /><span><span className="block text-xs font-semibold text-neutral-200">Load westkorean</span><span className="block text-[10px] text-neutral-500">Developer profile / demo</span></span></button>
+                <button onClick={() => { setIgn(DEFAULT_DEVELOPER_IGN); void handleSearch(DEFAULT_DEVELOPER_IGN); }} disabled={loading} className="group mt-8 inline-flex items-center gap-3 border border-neutral-700 bg-neutral-950 px-4 py-3 text-left shadow-[4px_4px_0_#171717] transition hover:-translate-y-0.5 hover:border-emerald-600 disabled:opacity-50"><Image src={minecraftAvatarUrl(DEFAULT_DEVELOPER_IGN)} alt="westkorean skin" width={36} height={36} className="[image-rendering:pixelated]" /><span><span className="block text-xs font-semibold text-neutral-200">Load westkorean</span><span className="block text-[10px] text-neutral-500">Developer profile / demo</span></span></button>
               </div>
 
               <div aria-hidden="true" className="voxel-scene relative mx-auto w-full max-w-sm py-6">
@@ -494,7 +599,7 @@ export default function Home() {
                 >
                   <div className="mb-3 flex items-center justify-between border-b-2 border-neutral-700 pb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-neutral-500"><span>Profile scanner</span><span className="text-emerald-400">Ready</span></div>
                   <div className="flex items-center gap-3 border border-neutral-700 bg-neutral-950 p-3">
-                    <div className="border-2 border-neutral-600 bg-neutral-800 p-1 shadow-[3px_3px_0_#262626]"><Image src={avatarUrl(DEFAULT_DEVELOPER_IGN, 64)} alt="" width={56} height={56} className="[image-rendering:pixelated]" /></div>
+                    <div className="border-2 border-neutral-600 bg-neutral-800 p-1 shadow-[3px_3px_0_#262626]"><Image src={minecraftAvatarUrl(DEFAULT_DEVELOPER_IGN, 64)} alt="" width={56} height={56} className="[image-rendering:pixelated]" /></div>
                     <div className="min-w-0 font-mono"><div className="truncate text-sm font-bold text-white">{ign.trim() || 'PLAYER_NAME'}</div><div className="mt-1 text-[10px] text-emerald-400">API LINK: STANDBY</div><div className="text-[10px] text-neutral-600">PROFILE: AUTO-DETECT</div></div>
                   </div>
                   <div className="mt-3 grid grid-cols-3 gap-2">
@@ -515,8 +620,8 @@ export default function Home() {
           <header className="fixed left-1/2 top-3 z-[60] flex w-[calc(100%-1.5rem)] max-w-5xl -translate-x-1/2 flex-col gap-3 border-2 border-neutral-700 bg-neutral-900/95 p-3 shadow-[5px_5px_0_#050505] backdrop-blur sm:flex-row sm:items-center">
             <button type="button" onClick={returnHome} aria-label="Return to SkyProgressor main menu" className="px-2 text-left transition hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500"><div className="font-black tracking-tight">Sky<span className="text-emerald-400">Progressor</span></div><div className="text-[10px] text-neutral-500">Return to main menu</div></button>
             <form onSubmit={(event) => { event.preventDefault(); void handleSearch(); }} className="flex min-w-0 flex-1 gap-2">
-              <input value={ign} onChange={(event) => setIgn(event.target.value)} placeholder="Search another IGN" className="min-w-0 flex-1 border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm outline-none focus:border-emerald-500" />
-              <button type="submit" disabled={loading || !ign.trim()} className="border border-emerald-500 bg-emerald-700 px-4 py-2 text-sm font-bold shadow-[inset_0_-3px_0_#065f46] hover:bg-emerald-600 disabled:opacity-50">{loading ? 'Loading…' : 'Search'}</button>
+              <input value={ign} onChange={(event) => setIgn(event.target.value)} placeholder="Search another IGN" aria-invalid={ign.length > 0 && !ignValidation.valid} title={ignValidation.message ?? undefined} className="min-w-0 flex-1 border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm outline-none focus:border-emerald-500" />
+              <button type="submit" disabled={loading || !ignValidation.valid} className="border border-emerald-500 bg-emerald-700 px-4 py-2 text-sm font-bold shadow-[inset_0_-3px_0_#065f46] hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-50">{loading ? 'Loading…' : 'Search'}</button>
             </form>
             <div className="flex gap-2">
               <button type="button" onClick={toggleTheme} className="flex h-9 items-center gap-2 border border-neutral-700 bg-neutral-950 px-3 text-xs text-neutral-300 hover:border-emerald-500" aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>{theme === 'dark' ? '☀ Light' : '☾ Dark'}</button>
@@ -527,75 +632,15 @@ export default function Home() {
           </>
         )}
 
-        {profiles.length > 0 && (
-          <div className="flex gap-2 mb-6 items-center">
-            <span className="text-neutral-500 text-sm">Profile:</span>
-            {profiles.map((p) => (
-              <button
-                key={p.profile_id}
-                onClick={() => { if (uuid) void selectProfile(p, uuid); }}
-                disabled={profiles.length == 1 || loading}
-                className={`px-3 py-1 rounded-lg text-sm border ${
-                  result?.profileName == p.cute_name
-                    ? 'bg-emerald-600 border-emerald-500'
-                    : 'bg-neutral-900 border-neutral-700'
-                } ${profiles.length == 1 ? 'cursor-default' : 'hover:border-neutral-500'}`}
-              >
-                {p.cute_name} {p.game_mode ? `(${p.game_mode})` : ''}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {result && viewingUuid && (
-          <div className="flex items-center gap-3 mb-6">
-            <Image
-              src={avatarUrl(
-                result?.coopMembers.find((m) => m.uuid === viewingUuid)?.name
-              )}
-              alt="Current player skin"
-              width={40}
-              height={40}
-              className="rounded-lg border border-neutral-700"
-            />
-            <div>
-              <div className="text-neutral-500 text-xs uppercase tracking-wide">
-                Current Player
-              </div>
-              <div className="font-semibold">
-                {result.coopMembers.find((m) => m.uuid === viewingUuid)
-                  ?.name ?? 'Unknown'}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {result?.coopMembers && result.coopMembers.length > 1 && (
-          <div className="mb-6">
-            <span className="text-neutral-500 text-sm mr-2">Co-op:</span>
-            {result.coopMembers.map((m: CoopMember) => (
-              <button
-                key={m.uuid}
-                onClick={() => viewMember(m.uuid)}
-                disabled={loading}
-                className={`inline-flex items-center rounded-lg px-3 py-1 text-sm mr-2 mb-2 border ${
-                  viewingUuid == m.uuid
-                    ? 'bg-emerald-600 border-emerald-500'
-                    : 'bg-neutral-900 border-neutral-700 hover:border-neutral-500'
-                } disabled:cursor-wait disabled:opacity-60`}
-              >
-                <Image
-                  src={avatarUrl(m.name)}
-                  alt={`${m.name} skin`}
-                  width={24}
-                  height={24}
-                  className="rounded-full border border-neutral-800 mr-2"
-                />
-                {m.name}
-              </button>
-            ))}
-          </div>
-        )}
+        <ProfileContextControls
+          profiles={profiles}
+          activeProfileName={result?.profileName ?? null}
+          members={result?.coopMembers ?? []}
+          viewingUuid={viewingUuid}
+          loading={loading}
+          onSelectProfile={(profile) => { if (uuid) void selectProfile(profile, uuid); }}
+          onSelectMember={viewMember}
+        />
 
         {error && <p className="text-red-400">{error}</p>}
 
@@ -606,7 +651,7 @@ export default function Home() {
               <div className="px-2 py-2 text-[10px] font-bold uppercase tracking-[.18em] text-emerald-400">Profile menu</div>
               {[
                 ['overview', 'Overview'], ['progression', 'Next Steps'], ['stats', 'Stats'],
-                ['pets', 'Pets'], ['gear', 'Gear & Storage'], ['dungeons', 'Dungeons'], ['collections', 'Collections'], ['completion', 'Completion'],
+                ['pets', 'Pets'], ['mining', 'Mining & Garden'], ['fishing', 'Fishing'], ['islands', 'Islands'], ['gear', 'Gear & Storage'], ['dungeons', 'Dungeons'], ['collections', 'Collections'], ['completion', 'Completion'],
               ].map(([target, label]) => <a key={target} href={`#${target}`} className="block rounded-lg px-3 py-2 text-sm text-neutral-400 transition hover:bg-emerald-600/15 hover:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-500">{label}</a>)}
               <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="mt-2 w-full border-t border-neutral-800 px-3 py-3 text-left text-xs font-semibold text-neutral-400 hover:text-white">↑ Return to top</button>
             </div>
@@ -615,9 +660,23 @@ export default function Home() {
 
         {result && <div id="overview" className="scroll-mt-28"><ProfileOverviewCard overview={result.overview} /></div>}
 
+        {result && <ProgressionScoreCard progress={result.progressionScore} />}
+        {result && <SkyProgressorAchievements summary={result.achievements} />}
+        {result && <ProgressPlanner planner={result.planner} />}
+        {result && <ProgressionRoadmap roadmap={result.roadmap} />}
+        {result && <ProfileComparisonCard candidates={comparisonCandidates} onLookup={lookupComparisonProfile} />}
+
         <div id="progression" className="scroll-mt-24">
-        {result?.recommendations && (
-          <ProgressionRecommendationsSection recommendations={result.recommendations} />
+        {result && (
+          <ProgressionRecommendationsSection recommendations={result.deterministicRecommendations} profileHash={recommendationProfileHash} />
+        )}
+
+        {result && (
+          <RecommendationSimulator profile={{
+            magicalPower: result.accessories.magicalPower,
+            skills: { foraging: result.skills.find((skill) => skill.skill.toLowerCase() === 'foraging')?.level ?? 0 },
+            pets: result.pets.flatMap((pet) => ['COMMON', 'UNCOMMON', 'RARE', 'EPIC', 'LEGENDARY', 'MYTHIC'].includes(pet.tier) ? [{ type: pet.type, tier: pet.tier as SimulatedPetTier, level: pet.level }] : []),
+          }} />
         )}
 
         {result?.suggestions && (
@@ -644,24 +703,14 @@ export default function Home() {
             profileKey={`${viewingUuid}:${result.profileName}`}
             profileLabel={`${result.overview.ign} · ${result.profileName}`}
             onVisitProfile={(profileIgn) => { setIgn(profileIgn); void handleSearch(profileIgn); }}
-            playerData={{
-              skyblockLevel: result.skyblockLevel,
-              skills: result.skills,
-              slayers: result.slayers,
-              catacombs: result.catacombs,
-              fairySouls: result.fairySouls,
-              pets: result.pets,
-              accessories: result.accessories,
-              dungeons: result.dungeons,
-              collections: result.collections?.slice(0, 15),
-              recommendations: result.recommendations,
-              progressionIssues: result.progressionIssues,
-              inventory: createInventoryOwnershipSummary(result.inventory),
-              itemMetadata: result.itemMetadata,
-            }}
+            playerData={advisorPlayerData}
           />
         )}
         </div>
+
+        <div id="mining" className="scroll-mt-24">{result && <><HOTMCard progress={result.hotm} /><HOTFCard progress={result.hotf} /><GardenCard progress={result.garden} /></>}</div>
+        <div id="fishing" className="scroll-mt-24">{result && <FishingCard progress={result.fishing} />}</div>
+        <div id="islands" className="scroll-mt-24">{result && <><CrimsonCard progress={result.crimson} /><RiftCard progress={result.rift} /></>}</div>
 
         <div id="stats" className="mb-8 grid scroll-mt-24 gap-6 lg:grid-cols-2 [&>section]:mb-0 [&>section]:h-full">
         {result?.skills && (
@@ -788,6 +837,7 @@ export default function Home() {
                       <div className="mt-2 text-[11px] text-neutral-200">
                         XP: {Math.round(p.exp).toLocaleString()}
                       </div>
+                      {(() => { const price = marketPriceFor(petMarketKey(p.type, p.tier), result.marketPrices); return <div className="mt-1 text-[11px] text-amber-300">{price ? `${Math.round(price.unitPrice).toLocaleString()} coins · ${price.source === 'auction-median' ? 'recent median' : price.source === 'auction-bin' ? 'lowest BIN' : price.source}` : 'Market price unavailable'}</div>; })()}
                       <div className={`mt-1 text-[11px] ${p.active ? 'text-emerald-400' : 'text-neutral-400'}`}>
                         Status: {p.active ? 'Active' : 'Inactive'}
                       </div>
@@ -806,6 +856,7 @@ export default function Home() {
                               />
                             )}
                             <span>{petItem?.name ?? formatDisplayName(p.heldItem)}</span>
+                            {(() => { const price = marketPriceFor(p.heldItem, result.marketPrices); return price ? <span className="text-amber-300">· {Math.round(price.unitPrice).toLocaleString()} coins</span> : null; })()}
                           </div>
                         );
                       })()}
@@ -832,29 +883,7 @@ export default function Home() {
 
         {result?.inventory && <InventoryStorageSection inventory={result.inventory} metadata={result.itemMetadata} />}
 
-        {result?.accessories && (
-          <section className="mb-8 bg-neutral-900 border border-neutral-800 rounded-xl p-5">
-            <h2 className="text-xl font-semibold mb-4">Accessories</h2>
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <div className="text-neutral-500 text-xs uppercase">
-                  Magical Power
-                </div>
-                <div className="font-medium">
-                  {result.accessories.magicalPower.toLocaleString()}
-                </div>
-              </div>
-              <div>
-                <div className="text-neutral-500 text-xs uppercase">
-                  Bag Upgrades
-                </div>
-                <div className="font-medium">
-                  {result.accessories.bagUpgrades}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
+        {result?.accessories && <AccessoriesCard data={result.accessories} prices={result.marketPrices} />}
         </div>
 
         <div id="dungeons" className="scroll-mt-24">{result?.dungeons && <DungeonsSection progress={result.dungeons} />}</div>
@@ -869,6 +898,7 @@ export default function Home() {
           {result?.minions && <MinionProgressSection progress={result.minions} />}
           {result?.bestiary && <BestiarySection progress={result.bestiary} />}
           {result?.museum && <MuseumSection progress={result.museum} />}
+          {result && <ProfileSnapshots profileKey={`${viewingUuid}:${result.profileName}`} parsedProfile={result} />}
         </div>
       </div>
     </main>

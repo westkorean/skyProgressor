@@ -1,4 +1,4 @@
-import recipeData from '@/data/itemRecipes.generated.json';
+import recipeData from '../data/itemRecipes.generated.json' with { type: 'json' };
 export type BazaarPrices = Record<string, number>;
 const recipes = recipeData.recipes as Record<string, { ingredients: Record<string, number> }>;
 

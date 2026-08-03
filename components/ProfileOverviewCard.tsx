@@ -15,6 +15,19 @@ export type ProfileOverviewData = {
   skyblockLevel: number;
   purse: number | null;
   bank: number | null;
+  networth: {
+    source: 'skyhelper' | 'local-fallback';
+    total: number;
+    liquid: number;
+    inventory: number;
+    pets: number;
+    soulboundItems: number;
+    pricedInventorySlots: number;
+    unpricedInventorySlots: number;
+    pricedPets: number;
+    unpricedPets: number;
+    pricedSoulboundSlots: number;
+  };
   magicalPower: number;
   skillAverage: number;
   catacombsLevel: number;
@@ -78,6 +91,40 @@ export default function ProfileOverviewCard({
             <div className="font-medium text-neutral-200">{overview.profileName}</div>
             <div className="text-neutral-500">{displayMode(overview.gameMode)}</div>
           </div>
+        </div>
+      </div>
+
+      <div className="border-b border-neutral-800 bg-neutral-950/40 p-5">
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <div className="text-[11px] uppercase tracking-wide text-amber-400">
+              Estimated Net Worth
+            </div>
+            <div className="mt-1 text-2xl font-semibold text-white">
+              {coins(overview.networth.total)}
+            </div>
+          </div>
+          <div className="grid grid-cols-4 gap-x-5 gap-y-1 text-right text-xs">
+            <span className="text-neutral-500">Liquid</span>
+            <span className="text-neutral-500">Items</span>
+            <span className="text-neutral-500">Soulbound</span>
+            <span className="text-neutral-500">Pets</span>
+            <span className="text-neutral-200">{compactNumber(overview.networth.liquid)}</span>
+            <span className="text-neutral-200">{compactNumber(overview.networth.inventory)}</span>
+            <span className="text-neutral-200">{compactNumber(overview.networth.soulboundItems)}</span>
+            <span className="text-neutral-200">{compactNumber(overview.networth.pets)}</span>
+          </div>
+        </div>
+        <div className="mt-3 text-xs text-neutral-500">
+          {overview.networth.source === 'skyhelper'
+            ? 'Full SkyCrypt-compatible valuation includes storage, bags, sacks, essence, museum contents, item upgrades, and soulbound value.'
+            : <>Valued {overview.networth.pricedInventorySlots.toLocaleString()} item slots and {overview.networth.pricedPets.toLocaleString()} pets. Soulbound value is included in Items and the total.</>}
+          {overview.networth.source === 'local-fallback' && (overview.networth.unpricedInventorySlots > 0 || overview.networth.unpricedPets > 0) && (
+            <span className="text-amber-300">
+              {' '}Missing prices for {overview.networth.unpricedInventorySlots.toLocaleString()} item slots and{' '}
+              {overview.networth.unpricedPets.toLocaleString()} pets; the estimate may be low.
+            </span>
+          )}
         </div>
       </div>
 

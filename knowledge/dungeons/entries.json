@@ -1,0 +1,14 @@
+[
+  {
+    "id": "dungeons.build-consistent-setup",
+    "category": "dungeons",
+    "title": "Use a complete class-appropriate Dungeon setup",
+    "summary": "Dungeon performance depends on class role, gear readiness, survivability, and repeatable floor completion.",
+    "recommendation": "Prioritize a coherent starred setup for one class before pushing floors that cannot be cleared consistently.",
+    "requirements": ["Catacombs access", "A selected Dungeon class"],
+    "tags": ["dungeons", "catacombs", "gear", "class"],
+    "source": { "title": "Dungeons — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Dungeons" },
+    "lastVerified": "2026-08-02",
+    "confidence": 92
+  }
+]

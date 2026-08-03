@@ -1,0 +1,14 @@
+[
+  {
+    "id": "pets.match-pet-to-activity",
+    "category": "pets",
+    "title": "Match the active pet to the current activity",
+    "summary": "Pet perks and stats are activity-specific, so an active pet should support the content currently being played.",
+    "recommendation": "Select a pet whose perks directly support the intended activity, then level it before buying marginal alternatives.",
+    "requirements": ["An owned or obtainable pet relevant to the activity"],
+    "tags": ["pets", "active-pet", "levels", "progression"],
+    "source": { "title": "Pets — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Pets" },
+    "lastVerified": "2026-08-02",
+    "confidence": 95
+  }
+]

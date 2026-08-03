@@ -45,6 +45,7 @@ function EquipmentItemCard({ slot, metadata, section }: { slot: EquipmentSlot; m
             <h3 className="font-semibold text-neutral-100">{item.displayName || titleCase(item.skyblockId ?? 'Unknown item')}</h3>
           </div>
           <div className="mt-1 text-xs text-neutral-400">{item.rarity ?? 'Unknown rarity'}</div>
+          <div className="mt-2 space-y-0.5 text-xs"><div className="text-amber-300">Primary value: {enriched?.marketPrice == null ? 'Unavailable' : `${Math.round(enriched.marketPrice * Math.max(1, item.count ?? 1)).toLocaleString()} coins`}</div><div className="text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'Not craftable / recipe unavailable' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`}</div><div className="text-neutral-500">Lowest BIN: {enriched?.lowestBinPrice == null ? 'Unavailable' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}</div>{enriched?.recentMedianPrice != null && <div className="text-neutral-500">Recent median: {Math.round(enriched.recentMedianPrice).toLocaleString()} coins</div>}</div>
           <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-xs">
             <span className="text-neutral-500">Stars</span><span>{item.stars || 'None'}</span>
             <span className="text-neutral-500">Reforge</span><span>{item.reforge ? titleCase(item.reforge) : 'None'}</span>

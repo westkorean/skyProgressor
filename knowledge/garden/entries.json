@@ -1,0 +1,14 @@
+[
+  {
+    "id": "garden.advance-milestones-and-visitors",
+    "category": "garden",
+    "title": "Advance Garden XP through milestones and visitors",
+    "summary": "Garden XP is obtained from visitor offers and crop milestones, and Garden levels unlock additional progression.",
+    "recommendation": "Progress accessible crop milestones and accept worthwhile visitor offers while building farms for newly unlocked crops.",
+    "requirements": ["SkyBlock Level 5", "Garden access through Sam"],
+    "tags": ["garden", "garden-xp", "visitors", "crop-milestones"],
+    "source": { "title": "Garden — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Garden" },
+    "lastVerified": "2026-08-02",
+    "confidence": 98
+  }
+]

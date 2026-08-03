@@ -1,0 +1,14 @@
+[
+  {
+    "id": "farming.improve-fortune-with-progression",
+    "category": "farming",
+    "title": "Improve Farming Fortune alongside crop progression",
+    "summary": "Farming progression combines skill levels, crop-specific upgrades, suitable tools, and Farming Fortune.",
+    "recommendation": "Match the tool and upgrades to the crop being farmed, then improve fortune when the upgrade benefits repeated farming activity.",
+    "requirements": ["Access to a farmable crop", "A crop-appropriate tool"],
+    "tags": ["farming", "fortune", "crops", "tools"],
+    "source": { "title": "Farming — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Farming" },
+    "lastVerified": "2026-08-02",
+    "confidence": 94
+  }
+]

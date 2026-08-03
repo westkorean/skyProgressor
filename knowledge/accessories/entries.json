@@ -1,0 +1,14 @@
+[
+  {
+    "id": "accessories.increase-magical-power",
+    "category": "accessories",
+    "title": "Increase Magical Power with unique accessories",
+    "summary": "Unique accessories in the Accessory Bag contribute Magical Power according to their rarity.",
+    "recommendation": "Prioritize missing accessory families and efficient rarity upgrades, then select an accessory power appropriate for the activity.",
+    "requirements": ["Accessory Bag access", "Unique accessories that are not already represented by their family"],
+    "tags": ["accessories", "magical-power", "rarity", "power"],
+    "source": { "title": "Accessories — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Accessories" },
+    "lastVerified": "2026-08-02",
+    "confidence": 98
+  }
+]

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { fetchUpstreamJson } from '../lib/fetchUpstreamJson.ts';
+import { clearUpstreamJsonCache, fetchUpstreamJson, fetchUpstreamJsonCached } from '../lib/fetchUpstreamJson.ts';
 
 test('returns upstream status and parsed JSON', async (context) => {
   const originalFetch = globalThis.fetch;
@@ -32,4 +32,26 @@ test('rejects invalid upstream JSON', async (context) => {
     fetchUpstreamJson('https://example.invalid'),
     /Upstream returned invalid JSON/
   );
+});
+
+test('cached upstream reads coalesce concurrent calls and reuse fresh data', async (context) => {
+  const originalFetch = globalThis.fetch;
+  context.after(() => { globalThis.fetch = originalFetch; clearUpstreamJsonCache(); });
+  clearUpstreamJsonCache();
+  let calls = 0;
+  globalThis.fetch = async () => {
+    calls += 1;
+    await Promise.resolve();
+    return new Response(JSON.stringify({ calls }), { status: 200 });
+  };
+
+  const [first, second] = await Promise.all([
+    fetchUpstreamJsonCached('https://example.invalid/cached'),
+    fetchUpstreamJsonCached('https://example.invalid/cached'),
+  ]);
+  const third = await fetchUpstreamJsonCached('https://example.invalid/cached');
+
+  assert.equal(calls, 1);
+  assert.deepEqual(first, second);
+  assert.deepEqual(second, third);
 });
