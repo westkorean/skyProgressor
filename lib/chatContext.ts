@@ -1,5 +1,6 @@
 type JsonRecord = Record<string, unknown>;
 const MAX_PLAYER_SUMMARY_CHARACTERS = 18_000;
+const MAX_COMPACT_SUMMARY_CHARACTERS = 8_000;
 
 const record = (value: unknown): JsonRecord | null =>
   value !== null && typeof value === 'object' && !Array.isArray(value)
@@ -64,6 +65,21 @@ export function recommendationKnowledgeReferences(playerData: unknown): string[]
 export function summarizePlayerData(playerData: unknown): string {
   const data = record(playerData);
   if (!data) return 'No player data available.';
+
+  // The client sends a deliberately compact, already-parsed profile summary.
+  // Deterministic recommendations are the only progression decisions exposed
+  // to the model; raw inventories and the raw Hypixel member are excluded.
+  if (record(data.profileSummary)) {
+    const compact = {
+      profileSummary: data.profileSummary,
+      progressionScore: data.progressionScore,
+      rankedRecommendations: array(data.recommendations, 12),
+    };
+    const serialized = JSON.stringify(compact);
+    return serialized.length <= MAX_COMPACT_SUMMARY_CHARACTERS
+      ? serialized
+      : `${serialized.slice(0, MAX_COMPACT_SUMMARY_CHARACTERS)} [profile summary truncated]`;
+  }
 
   const pets = array(data.pets, 60)
     .map(petSummary)

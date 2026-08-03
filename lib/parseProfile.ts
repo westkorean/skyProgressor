@@ -5,8 +5,8 @@ import {
   CATACOMBS_MAX_LEVEL,
   SLAYER_XP_TABLE,
   TOTAL_FAIRY_SOULS,
-} from './xpTables';
-export { parseCollections } from './parseCollections';
+} from './xpTables.ts';
+export { parseCollections } from './parseCollections.ts';
 
 export interface SkillProgress {
   skill: string;

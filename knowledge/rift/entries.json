@@ -1,0 +1,14 @@
+[
+  {
+    "id": "rift.follow-area-unlocks",
+    "category": "rift",
+    "title": "Advance the Rift through area unlocks",
+    "summary": "Rift progression is gated by its own time, currencies, equipment, objectives, and area access.",
+    "recommendation": "Complete the current area's important unlocks and time improvements before moving to objectives in later areas.",
+    "requirements": ["Rift access", "Enough Rift Time to complete the selected objective"],
+    "tags": ["rift", "areas", "rift-time", "unlocks"],
+    "source": { "title": "Rift Dimension — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Rift" },
+    "lastVerified": "2026-08-02",
+    "confidence": 93
+  }
+]

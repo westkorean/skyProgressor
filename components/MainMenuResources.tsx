@@ -1,5 +1,5 @@
 const sites = [
-  { name: 'Official Hypixel Wiki', description: 'Authoritative mechanics, requirements, and item data.', href: 'https://wiki.hypixel.net/' },
+  { name: 'Hypixel SkyBlock Wiki', description: 'Community-maintained mechanics, requirements, and item data.', href: 'https://hypixel-skyblock.fandom.com/wiki/Hypixel_SkyBlock_Wiki' },
   { name: 'SkyCrypt', description: 'Detailed public profile viewer and progression reference.', href: 'https://sky.shiiyu.moe/' },
   { name: 'Coflnet', description: 'Auction, bazaar, price history, and market tools.', href: 'https://sky.coflnet.com/' },
   { name: 'NotEnoughUpdates', description: 'Popular open-source SkyBlock utility mod.', href: 'https://github.com/NotEnoughUpdates/NotEnoughUpdates' },
@@ -10,7 +10,7 @@ const creators = [
   { name: 'Toadstar0', focus: 'Guides and profile progression', href: 'https://www.youtube.com/@Toadstar0' },
   { name: 'ZachPlaysAN', focus: 'Ironman progression', href: 'https://www.youtube.com/@ZachPlaysAN' },
   { name: 'Derailious', focus: 'News, updates, and guides', href: 'https://www.youtube.com/@Derailious' },
-  { name: 'Refraction', focus: 'Endgame and classic SkyBlock videos', href: 'https://www.youtube.com/@Refraction' },
+  { name: 'fear5s', focus: 'Short-form SkyBlock progression and community videos', href: 'https://www.youtube.com/@fear5s' },
 ];
 
 export default function MainMenuResources() {

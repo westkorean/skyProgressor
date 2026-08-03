@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { fetchUpstreamJson } from '@/lib/fetchUpstreamJson';
+import { fetchUpstreamJsonCached } from '@/lib/fetchUpstreamJson';
 
 export async function GET(request: NextRequest) {
   
@@ -15,11 +15,12 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const result = await fetchUpstreamJson(
+    const result = await fetchUpstreamJsonCached(
       `https://api.hypixel.net/v2/skyblock/profiles?uuid=${encodeURIComponent(uuid)}`,
-      { headers: { 'API-Key': apiKey } }
+      { headers: { 'API-Key': apiKey } },
+      30_000
     );
-    return NextResponse.json(result.data, { status: result.status });
+    return NextResponse.json(result.data, { status: result.status, headers: { 'Cache-Control': 'private, max-age=30, stale-while-revalidate=30' } });
   } catch {
     return NextResponse.json({ error: 'Hypixel profile service is unavailable' }, { status: 502 });
   }

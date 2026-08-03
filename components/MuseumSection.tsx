@@ -13,7 +13,7 @@ export default function MuseumSection({ progress }: { progress: MuseumProgress }
       </div>
       <h3 className="font-semibold text-sm mb-2">Donated items</h3><p className="text-xs text-neutral-400 max-h-24 overflow-y-auto">{progress.donatedItems.length ? progress.donatedItems.map((item) => item.name).join(', ') : 'None'}</p>
       <h3 className="font-semibold text-sm mt-4 mb-2">Missing donations</h3><p className="text-xs text-neutral-400 max-h-24 overflow-y-auto">{progress.missingDonations.length ? progress.missingDonations.map((item) => item.name).join(', ') : 'None'}</p>
-      <h3 className="font-semibold text-sm mt-4 mb-1">Cheapest next donation</h3>{progress.cheapestNextDonation ? <p className="text-xs text-neutral-300">{progress.cheapestNextDonation.name} · approximately {Math.round(progress.cheapestNextDonation.estimatedCost).toLocaleString()} coins in Bazaar ingredients</p> : <p className="text-xs text-neutral-500">No missing donation has a fully Bazaar-priceable verified recipe.</p>}
+      <h3 className="font-semibold text-sm mt-4 mb-1">Cheapest next donation</h3>{progress.cheapestNextDonation ? <p className="text-xs text-neutral-300">{progress.cheapestNextDonation.name} · approximately {Math.round(progress.cheapestNextDonation.estimatedCost).toLocaleString()} coins via {progress.cheapestNextDonation.priceSource}</p> : <p className="text-xs text-neutral-500">No missing donation has a current Bazaar, craft, or Auction estimate.</p>}
     </>}
   </section>;
 }

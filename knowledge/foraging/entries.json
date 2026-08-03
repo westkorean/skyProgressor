@@ -1,0 +1,14 @@
+[
+  {
+    "id": "foraging.follow-current-progression",
+    "category": "foraging",
+    "title": "Follow current Foraging progression",
+    "summary": "Foraging progression is based on earning Foraging XP and improving tools, fortune, and access to relevant content.",
+    "recommendation": "Use the highest accessible Foraging activity that can be performed efficiently, and upgrade tools only when the next activity requires them.",
+    "requirements": ["Access to a Foraging area", "A usable axe or Foraging tool"],
+    "tags": ["foraging", "skill", "tools", "progression"],
+    "source": { "title": "Foraging — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Foraging" },
+    "lastVerified": "2026-08-02",
+    "confidence": 90
+  }
+]

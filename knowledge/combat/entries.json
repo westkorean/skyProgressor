@@ -1,0 +1,14 @@
+[
+  {
+    "id": "combat.raise-core-level",
+    "category": "combat",
+    "title": "Build Combat levels through appropriate encounters",
+    "summary": "Combat is a core skill whose levels increase damage against monsters and unlock combat content.",
+    "recommendation": "Choose repeatable combat content the player can clear consistently, then increase difficulty as survivability and damage improve.",
+    "requirements": ["Access to combat content appropriate for the player's current level"],
+    "tags": ["combat", "skill", "damage", "progression"],
+    "source": { "title": "Combat — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Combat" },
+    "lastVerified": "2026-08-02",
+    "confidence": 98
+  }
+]

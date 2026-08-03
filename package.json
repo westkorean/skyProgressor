@@ -15,7 +15,8 @@
     "update:bestiary": "tsx scripts/updateBestiary.ts",
     "update:museum": "tsx scripts/updateMuseumCatalog.ts",
     "update:item-recipes": "tsx scripts/updateItemRecipes.ts",
-    "validate:data": "node --no-warnings --experimental-strip-types scripts/validateGeneratedData.ts"
+    "validate:data": "node --no-warnings --experimental-strip-types scripts/validateGeneratedData.ts",
+    "validate:knowledge": "node --no-warnings --experimental-strip-types scripts/validateKnowledge.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.20",
@@ -30,7 +31,8 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
-    "sharp": "^0.35.0"
+    "sharp": "^0.35.0",
+    "skyhelper-networth": "^2.8.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.3",

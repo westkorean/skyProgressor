@@ -1,0 +1,14 @@
+[
+  {
+    "id": "mining.use-commissions-for-progression",
+    "category": "mining",
+    "title": "Use commissions to advance Mining systems",
+    "summary": "Commissions provide structured Mining objectives and contribute to Heart of the Mountain progression.",
+    "recommendation": "Complete accessible commissions consistently before investing heavily in specialized Mining setups.",
+    "requirements": ["Access to the Dwarven Mines", "Commission access"],
+    "tags": ["mining", "commissions", "dwarven-mines", "progression"],
+    "source": { "title": "Dwarven Mines — Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Dwarven_Mines" },
+    "lastVerified": "2026-08-02",
+    "confidence": 98
+  }
+]

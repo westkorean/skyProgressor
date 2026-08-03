@@ -1,5 +1,8 @@
-import generated from '@/data/museum.generated.json';
-import { estimateRecipeCost, type BazaarPrices } from './itemPricing';
+import generated from '../data/museum.generated.json' with { type: 'json' };
+import type { BazaarPrices } from './itemPricing';
+import { bestAcquisitionPrice } from './pricing/opportunities.ts';
+import type { MarketPrices } from './marketPrices.ts';
+import { asRecord } from './parserUtils.ts';
 
 export interface MuseumDonation { id: string; name: string; category: string | null; donationXp: number | null }
 export interface MuseumProgress {
@@ -8,14 +11,14 @@ export interface MuseumProgress {
   missingDonations: MuseumDonation[];
   museumValue: number | null;
   skyblockXp: number;
-  cheapestNextDonation: (MuseumDonation & { estimatedCost: number }) | null;
+  cheapestNextDonation: (MuseumDonation & { estimatedCost: number; priceSource: string }) | null;
   pricingAvailable: boolean;
 }
 
 const catalog = generated.items as Record<string, MuseumDonation>;
-const record = (value: unknown): Record<string, unknown> | null => value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : null;
+const record = asRecord;
 
-export function parseMuseum(payload: unknown, playerUuid: string, prices: BazaarPrices = {}): MuseumProgress {
+export function parseMuseum(payload: unknown, playerUuid: string, prices: BazaarPrices = {}, marketPrices: MarketPrices = {}): MuseumProgress {
   const root = record(payload);
   const profile = record(root?.profile);
   const normalized = playerUuid.replaceAll('-', '');
@@ -31,8 +34,8 @@ export function parseMuseum(payload: unknown, playerUuid: string, prices: Bazaar
   const donatedItems = [...donatedIds].map((id) => catalog[id] ?? { id, name: id, category: null, donationXp: null });
   const missingDonations = Object.values(catalog).filter((item) => !donatedIds.has(item.id));
   const pricedMissing = missingDonations.flatMap((item) => {
-    const estimatedCost = estimateRecipeCost(item.id, prices);
-    return estimatedCost === null ? [] : [{ ...item, estimatedCost }];
+    const acquisition = bestAcquisitionPrice(item.id, marketPrices, prices);
+    return acquisition === null ? [] : [{ ...item, estimatedCost: acquisition.price, priceSource: acquisition.source ?? 'unknown' }];
   }).sort((a, b) => a.estimatedCost - b.estimatedCost || a.name.localeCompare(b.name));
   return {
     available: true,
@@ -41,6 +44,6 @@ export function parseMuseum(payload: unknown, playerUuid: string, prices: Bazaar
     museumValue: typeof member.value === 'number' && Number.isFinite(member.value) ? member.value : null,
     skyblockXp: donatedItems.reduce((sum, item) => sum + (item.donationXp ?? 0), 0),
     cheapestNextDonation: pricedMissing[0] ?? null,
-    pricingAvailable: Object.keys(prices).length > 0,
+    pricingAvailable: Object.keys(prices).length > 0 || Object.keys(marketPrices).length > 0,
   };
 }

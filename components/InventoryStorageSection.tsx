@@ -38,6 +38,8 @@ function ItemSlot({ item, section, metadata }: { item: InventoryItem; section: I
           <span>Slot {item.slot ?? item.index}</span>
           {item.stars > 0 && <span>{item.stars} stars</span>}
         </div>
+        <div className="mt-1 text-xs text-amber-300">Primary value: {enriched?.marketPrice == null ? 'Unavailable' : `${Math.round(enriched.marketPrice * Math.max(1, item.count ?? 1)).toLocaleString()} coins${(item.count ?? 1) > 1 ? ` (${Math.round(enriched.marketPrice).toLocaleString()} each)` : ''}`}</div>
+        <div className="text-[11px] text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'N/A' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`} · Lowest BIN: {enriched?.lowestBinPrice == null ? 'N/A' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}{enriched?.recentMedianPrice != null ? ` · Median: ${Math.round(enriched.recentMedianPrice).toLocaleString()} coins` : ''}</div>
         {item.reforge && <div className="mt-1 text-xs text-neutral-400">Reforge: {item.reforge}</div>}
         {item.enchantments.length > 0 && <div className="mt-1 text-xs text-neutral-500">Enchantments: {item.enchantments.map((value) => `${value.id} ${value.level}`).join(', ')}</div>}
         {item.lore.length > 0 && <div className="mt-2 max-h-52 overflow-hidden whitespace-pre-line border-t border-neutral-800 pt-2 text-xs text-neutral-400">{item.lore.join('\n')}</div>}

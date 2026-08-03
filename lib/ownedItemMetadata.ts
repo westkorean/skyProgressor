@@ -22,6 +22,11 @@ export interface OwnedItemMetadata {
   wikiUrl: string | null;
   wikiSummary: string | null;
   imageUrl: string | null;
+  marketPrice: number | null;
+  marketPriceSource: 'bazaar' | 'craft' | 'auction-median' | 'auction-bin' | 'npc' | null;
+  rawCraftCost: number | null;
+  lowestBinPrice: number | null;
+  recentMedianPrice: number | null;
   sources: Array<'hypixel-api' | 'hypixel-fandom'>;
 }
 
@@ -211,6 +216,11 @@ export async function enrichOwnedItems(lookups: readonly OwnedItemLookup[]): Pro
       imageUrl: typeof page?.resolvedImageUrl === 'string'
         ? page.resolvedImageUrl
         : typeof page?.thumbnail?.source === 'string' ? page.thumbnail.source : null,
+      marketPrice: null,
+      marketPriceSource: null,
+      rawCraftCost: null,
+      lowestBinPrice: null,
+      recentMedianPrice: null,
       sources: [...(item ? ['hypixel-api' as const] : []), ...(page ? ['hypixel-fandom' as const] : [])],
     };
     cacheValue(entry.lookup.id, metadata);

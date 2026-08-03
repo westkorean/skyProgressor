@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { fetchUpstreamJson } from '@/lib/fetchUpstreamJson';
+import { fetchUpstreamJsonCached } from '@/lib/fetchUpstreamJson';
 
 export async function GET(request: NextRequest) {
   const uuid = request.nextUrl.searchParams.get('uuid');
@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const result = await fetchUpstreamJson(`https://sessionserver.mojang.com/session/minecraft/profile/${encodeURIComponent(uuid)}`);
+    const result = await fetchUpstreamJsonCached(`https://sessionserver.mojang.com/session/minecraft/profile/${encodeURIComponent(uuid)}`, {}, 300_000);
     if (!result.ok) {
       return NextResponse.json(
         { error: result.status === 404 || result.status === 204 ? 'Player not found' : 'Mojang session service is unavailable' },
@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
     const name = result.data && typeof result.data === 'object' && !Array.isArray(result.data) && typeof (result.data as Record<string, unknown>).name === 'string'
       ? (result.data as Record<string, unknown>).name
       : null;
-    return NextResponse.json({ name });
+    return NextResponse.json({ name }, { headers: { 'Cache-Control': 'private, max-age=300, stale-while-revalidate=300' } });
   } catch {
     return NextResponse.json({ error: 'Mojang session service is unavailable' }, { status: 502 });
   }
