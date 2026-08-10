@@ -2,7 +2,7 @@ import type { SimulationChange, SimulationImpact, SimulationProfile, SimulationR
 
 const clamp = (value: number, minimum: number, maximum: number) => Math.max(minimum, Math.min(maximum, Number.isFinite(value) ? value : minimum));
 const level = (value: number, maximum: number) => Math.floor(clamp(value, 0, maximum));
-const clone = (profile: SimulationProfile): SimulationProfile => ({ magicalPower: Math.max(0, profile.magicalPower), skills: { ...profile.skills }, pets: profile.pets.map((pet) => ({ ...pet })) });
+const clone = (profile: SimulationProfile): SimulationProfile => ({ magicalPower: Math.max(0, profile.magicalPower), skills: { ...profile.skills }, skillCaps: profile.skillCaps ? Object.fromEntries(Object.entries(profile.skillCaps).map(([skill, caps]) => [skill, caps ? { ...caps } : caps])) : undefined, pets: profile.pets.map((pet) => ({ ...pet })) });
 const impact = (id: string, label: string, before: number, after: number, unit: string, certainty: SimulationImpact['certainty']): SimulationImpact => ({ id, label, before, after, delta: after - before, unit, certainty });
 
 // Formula published for accessory Power stat scaling. The selected Power still determines actual stats.
@@ -29,12 +29,29 @@ function simulateMagicalPower(original: SimulationProfile, change: Extract<Simul
 
 function simulateSkill(original: SimulationProfile, change: Extract<SimulationChange, { type: 'set-skill-level' }>): SimulationResult {
   const simulated = clone(original);
-  const before = level(original.skills[change.skill], 50);
-  const after = level(change.target, 50);
+  const caps = original.skillCaps?.[change.skill];
+  const absoluteCap = Math.max(1, caps?.absolute ?? 50);
+  const currentCap = Math.min(absoluteCap, Math.max(1, caps?.current ?? absoluteCap));
+  const before = level(original.skills[change.skill] ?? 0, currentCap);
+  const after = level(change.target, absoluteCap);
   simulated.skills[change.skill] = Math.max(before, after);
-  const finalLevel = simulated.skills[change.skill];
-  const unlocks: SimulationUnlock[] = FORAGING_UNLOCKS.filter((entry) => entry.level <= finalLevel).map((entry) => ({ id: entry.id, title: entry.title, requirement: `Foraging ${entry.level}`, newlyUnlocked: before < entry.level && finalLevel >= entry.level }));
-  return { applied: finalLevel > before, title: `Simulate Foraging ${finalLevel}`, summary: finalLevel > before ? `The simulated increase adds ${(finalLevel - before) * 4} base Foraging Fortune from skill levels.` : 'The target does not exceed the current Foraging level.', originalProfile: clone(original), simulatedProfile: simulated, change, impacts: [impact('foraging-level', 'Foraging level', before, finalLevel, 'levels', 'exact'), impact('foraging-fortune', 'Base Foraging Fortune from levels', before * 4, finalLevel * 4, 'fortune', 'exact')], unlocks, warnings: ['Only level-gated content represented in the simulator catalog is shown. Collection and quest unlocks are not inferred.'] };
+  const finalLevel = simulated.skills[change.skill] ?? before;
+  const skillName = change.skill.replace(/_/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const isForaging = change.skill.toLowerCase() === 'foraging';
+  const unlocks: SimulationUnlock[] = isForaging ? FORAGING_UNLOCKS.filter((entry) => entry.level <= finalLevel).map((entry) => ({ id: entry.id, title: entry.title, requirement: `Foraging ${entry.level}`, newlyUnlocked: before < entry.level && finalLevel >= entry.level })) : [];
+  const impacts = [impact(`${change.skill}-level`, `${skillName} level`, before, finalLevel, 'levels', 'exact')];
+  if (isForaging) impacts.push(impact('foraging-fortune', 'Base Foraging Fortune from levels', before * 4, finalLevel * 4, 'fortune', 'exact'));
+  const requiresCapUpgrade = finalLevel > currentCap;
+  const summary = finalLevel <= before
+    ? `The target does not exceed the current ${skillName} level.`
+    : isForaging
+      ? `The simulated increase adds ${(finalLevel - before) * 4} base Foraging Fortune from skill levels.`
+      : `Previewing ${skillName} ${before} to ${finalLevel} from this profile's current data.`;
+  const warnings = [
+    ...(requiresCapUpgrade ? [`This profile is currently capped at ${currentCap}; reaching ${finalLevel} requires purchasing or unlocking the available cap upgrades.`] : []),
+    'Only level effects represented in the simulator catalog are shown; XP, time, cost, and unlisted unlocks are not inferred.',
+  ];
+  return { applied: finalLevel > before, title: `Simulate ${skillName} ${finalLevel}`, summary, originalProfile: clone(original), simulatedProfile: simulated, change, impacts, unlocks, warnings };
 }
 
 function simulatePet(original: SimulationProfile, change: Extract<SimulationChange, { type: 'acquire-pet' }>): SimulationResult {

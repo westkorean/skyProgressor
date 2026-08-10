@@ -1,4 +1,4 @@
-export type SimulatedSkill = 'foraging';
+export type SimulatedSkill = string;
 export type SimulatedPetTier = 'COMMON' | 'UNCOMMON' | 'RARE' | 'EPIC' | 'LEGENDARY' | 'MYTHIC';
 
 export interface SimulationPet {
@@ -9,7 +9,8 @@ export interface SimulationPet {
 
 export interface SimulationProfile {
   magicalPower: number;
-  skills: Record<SimulatedSkill, number>;
+  skills: Partial<Record<SimulatedSkill, number>>;
+  skillCaps?: Partial<Record<SimulatedSkill, { current: number; absolute: number }>>;
   pets: SimulationPet[];
 }
 

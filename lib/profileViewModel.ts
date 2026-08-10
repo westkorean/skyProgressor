@@ -34,6 +34,8 @@ import type { MarketPrices } from './marketPrices.ts';
 export interface CoopMember {
   uuid: string;
   name: string;
+  status: 'active' | 'former';
+  departedAt: number | null;
 }
 
 export interface SkyBlockProfile {
@@ -45,6 +47,7 @@ export interface SkyBlockProfile {
 }
 
 export interface ProfileViewModel {
+  profileScopeKey: string;
   skills: SkillProgress[];
   slayers: SlayerProgress[];
   catacombs: CatacombsProgress;

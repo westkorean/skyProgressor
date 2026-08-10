@@ -1,6 +1,8 @@
 export type ProfileOverviewMember = {
   uuid: string;
   name: string;
+  status: 'active' | 'former';
+  departedAt: number | null;
 };
 
 export type ProfileOverviewPet = {
@@ -143,10 +145,10 @@ export default function ProfileOverviewCard({
 
       <div className="border-t border-neutral-800 p-4">
         <div className="mb-2 text-[11px] uppercase tracking-wide text-neutral-500">
-          Profile Members
+          Active Co-op Members
         </div>
         <div className="flex flex-wrap gap-2">
-          {overview.members.map((member) => (
+          {overview.members.filter(member => member.status === 'active' && member.name !== overview.ign).map((member) => (
             <span
               key={member.uuid}
               className="rounded-md border border-neutral-700 bg-neutral-950 px-2.5 py-1 text-xs text-neutral-300"
@@ -154,7 +156,9 @@ export default function ProfileOverviewCard({
               {member.name}
             </span>
           ))}
+          {!overview.members.some(member => member.status === 'active' && member.name !== overview.ign) && <span className="text-xs text-neutral-600">No other active co-op members.</span>}
         </div>
+        {overview.members.some(member => member.status === 'former') && <><div className="mb-2 mt-4 text-[11px] uppercase tracking-wide text-neutral-600">Former Co-op Members</div><div className="flex flex-wrap gap-2">{overview.members.filter(member => member.status === 'former').map(member => <span key={member.uuid} className="rounded-md border border-red-900/60 bg-red-950/20 px-2.5 py-1 text-xs text-red-300">{member.name}{member.departedAt ? ` · left ${new Date(member.departedAt).toLocaleDateString()}` : ''}</span>)}</div></>}
       </div>
     </section>
   );

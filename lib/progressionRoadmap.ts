@@ -38,6 +38,23 @@ const TRACKS: ReadonlyArray<{ id: RoadmapTrackId; name: string; description: str
   { id: 'completion', name: 'Completion', description: 'Collections and broad completion goals.', categories: ['collections'] },
 ];
 
+function recommendationProgress(recommendation: DeterministicRecommendation, index: number): number {
+  const explicit = recommendation.evidence.find(entry => entry.label.toLowerCase() === 'progress')?.value;
+  if (typeof explicit === 'string') {
+    const parsed = Number.parseFloat(explicit);
+    if (Number.isFinite(parsed)) return Math.max(0, Math.min(100, parsed));
+  }
+  const baseline = recommendation.evidence.find(entry => entry.label.toLowerCase() === 'baseline')?.value;
+  const current = recommendation.evidence.find(entry => entry.label.toLowerCase() !== 'baseline' && typeof entry.value === 'number')?.value;
+  if (typeof baseline === 'number' && typeof current === 'number' && baseline > 0) return Math.max(0, Math.min(100, Math.round(current / baseline * 100)));
+  const level = recommendation.evidence.find(entry => entry.label.toLowerCase().includes('level') || ['hotm', 'hotf', 'catacombs'].includes(entry.label.toLowerCase()))?.value;
+  if (typeof level === 'number') {
+    const target = recommendation.category === 'hotm' ? 7 : recommendation.category === 'hotf' ? 7 : recommendation.category === 'dungeons' ? 50 : 60;
+    return Math.max(0, Math.min(100, Math.round(level / target * 100)));
+  }
+  return Math.max(5, Math.min(90, 100 - recommendation.priority + index * 3));
+}
+
 const goalFromRecommendation = (recommendation: DeterministicRecommendation, index: number): RoadmapGoal => ({
   id: recommendation.id,
   category: recommendation.category,
@@ -47,7 +64,7 @@ const goalFromRecommendation = (recommendation: DeterministicRecommendation, ind
   estimatedCost: recommendation.category === 'accessories' ? 'Unknown — pricing not enabled' : 'No fixed coin cost',
   expectedBenefit: recommendation.suggestedAction,
   recommendedActivity: recommendation.suggestedAction,
-  progressPercent: Math.max(5, Math.min(90, 100 - recommendation.priority + index * 3)),
+  progressPercent: recommendationProgress(recommendation, index),
 });
 
 const sequence = (goals: RoadmapGoal[]) => ({ current: goals[0] ?? null, next: goals[1] ?? null, future: goals.slice(2) });

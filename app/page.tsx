@@ -92,6 +92,9 @@ const parsePetsCached = memoizeProfileParser(parsePets);
 const parseHOTMCached = memoizeProfileParser(parseHOTM);
 const parseHOTFCached = memoizeProfileParser(parseHOTF);
 
+const objectRecord = (value: unknown): Record<string, unknown> | null =>
+  value !== null && typeof value === 'object' && !Array.isArray(value) ? value as Record<string, unknown> : null;
+
 const formatDisplayName = (value?: string | null) =>
   String(value ?? '')
     .replace(/_/g, ' ')
@@ -125,6 +128,16 @@ export default function Home() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     if (savedTheme === 'light') setTheme('light');
   }, []);
+
+  useEffect(() => {
+    const icon = document.querySelector<HTMLLinkElement>('#skyprogressor-tab-icon');
+    if (!icon) return;
+    const playerName = result?.overview.ign;
+    icon.href = playerName && playerName !== 'Unknown'
+      ? minecraftAvatarUrl(playerName, 32)
+      : '/site-icon.svg';
+    icon.type = playerName && playerName !== 'Unknown' ? 'image/png' : 'image/svg+xml';
+  }, [result?.overview.ign]);
 
   const [currentProfile, setCurrentProfile] = useState<SkyBlockProfile | null>(null);
   const [viewingUuid, setViewingUuid] = useState<string | null>(null);
@@ -341,7 +354,15 @@ export default function Home() {
     const progressionIssues = getProgressionIssues(recommendationProfile);
 
     const memberUuids = Object.keys(profileMembers);
-    const memberNames = await Promise.all(memberUuids.map((memberUuid) => fetchMemberName(memberUuid, signal)));
+    const memberNames = await Promise.all(memberUuids.map(async (memberUuid) => {
+      const named = await fetchMemberName(memberUuid, signal);
+      const deletionNotice = objectRecord(objectRecord(objectRecord(profileMembers[memberUuid])?.profile)?.deletion_notice);
+      return {
+        ...named,
+        status: deletionNotice ? 'former' as const : 'active' as const,
+        departedAt: typeof deletionNotice?.timestamp === 'number' ? deletionNotice.timestamp : null,
+      };
+    }));
 
     const otherGardens = new Map<string, GardenProgress>();
     await Promise.all(profiles.filter(candidate => candidate.profile_id !== profile.profile_id).map(async candidate => {
@@ -363,6 +384,7 @@ export default function Home() {
     setComparisonCandidates(comparisonOptions);
 
     setResult({
+      profileScopeKey: `${profile.profile_id}:${playerUuid}`,
       skills,
       slayers,
       catacombs,
@@ -661,9 +683,9 @@ export default function Home() {
         {result && <div id="overview" className="scroll-mt-28"><ProfileOverviewCard overview={result.overview} /></div>}
 
         {result && <ProgressionScoreCard progress={result.progressionScore} />}
-        {result && <SkyProgressorAchievements summary={result.achievements} />}
-        {result && <ProgressPlanner planner={result.planner} />}
-        {result && <ProgressionRoadmap roadmap={result.roadmap} />}
+        {result && <SkyProgressorAchievements key={`achievements:${result.profileScopeKey}`} summary={result.achievements} />}
+        {result && <ProgressPlanner key={`planner:${result.profileScopeKey}`} planner={result.planner} />}
+        {result && <ProgressionRoadmap key={`roadmap:${result.profileScopeKey}`} roadmap={result.roadmap} />}
         {result && <ProfileComparisonCard candidates={comparisonCandidates} onLookup={lookupComparisonProfile} />}
 
         <div id="progression" className="scroll-mt-24">
@@ -672,9 +694,10 @@ export default function Home() {
         )}
 
         {result && (
-          <RecommendationSimulator profile={{
+          <RecommendationSimulator key={`simulator:${result.profileScopeKey}`} profile={{
             magicalPower: result.accessories.magicalPower,
-            skills: { foraging: result.skills.find((skill) => skill.skill.toLowerCase() === 'foraging')?.level ?? 0 },
+            skills: Object.fromEntries(result.skills.map((skill) => [skill.skill.toLowerCase(), skill.level])),
+            skillCaps: Object.fromEntries(result.skills.map((skill) => [skill.skill.toLowerCase(), { current: skill.maxLevel ?? skill.absoluteMaxLevel ?? 50, absolute: skill.absoluteMaxLevel ?? skill.maxLevel ?? 50 }])),
             pets: result.pets.flatMap((pet) => ['COMMON', 'UNCOMMON', 'RARE', 'EPIC', 'LEGENDARY', 'MYTHIC'].includes(pet.tier) ? [{ type: pet.type, tier: pet.tier as SimulatedPetTier, level: pet.level }] : []),
           }} />
         )}
@@ -777,8 +800,38 @@ export default function Home() {
                 {result.pets.length} total
               </span>
             </div>
+            {(() => {
+              const activePet = result.pets.find((pet) => pet.active);
+              if (!activePet) return (
+                <div className="mb-5 flex min-h-24 items-center justify-center rounded-xl border border-dashed border-neutral-700 bg-neutral-950/60 px-4 text-center">
+                  <div><div className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Active Pet</div><div className="mt-1 text-sm text-neutral-400">No pet is currently equipped</div></div>
+                </div>
+              );
+              const heldItem = activePet.heldItem ? getPetItemMetadata(activePet.heldItem) : null;
+              return (
+                <div className="relative mb-5 overflow-hidden rounded-xl border border-emerald-400/70 bg-gradient-to-r from-emerald-950/55 via-neutral-950 to-neutral-950 p-4 shadow-[0_0_24px_rgba(16,185,129,0.18)]">
+                  <div className="absolute right-3 top-3 rounded-full border border-emerald-400/50 bg-emerald-500/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-300">Equipped</div>
+                  <div className="flex items-center gap-4 pr-20">
+                    <div className="relative flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border-2 border-emerald-300/70" style={{ backgroundColor: activePet.tierColor, boxShadow: `0 0 18px ${activePet.tierColor}aa` }}>
+                      <Image src={getPetHeadSrc(activePet.type, activePet.skinId)} alt={`${activePet.displayName} active pet head`} width={72} height={72} unoptimized className="h-[4.25rem] w-[4.25rem] object-contain" />
+                      <span className="absolute -bottom-2 rounded-full border border-emerald-400/60 bg-neutral-950 px-2 py-0.5 text-[10px] font-bold text-emerald-300">ACTIVE</span>
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] font-semibold uppercase tracking-[0.2em] text-emerald-400">Active Pet Slot</div>
+                      <h3 className="mt-1 truncate text-lg font-semibold text-white">{activePet.displayName}</h3>
+                      <div className="mt-1 flex flex-wrap gap-x-3 gap-y-1 text-xs text-neutral-400"><span>Level {activePet.level}</span><span style={{ color: activePet.tierColor }}>{formatDisplayName(activePet.tier)}</span><span>{Math.round(activePet.exp).toLocaleString()} XP</span></div>
+                      <div className="mt-2 flex items-center gap-1.5 text-xs text-neutral-300">
+                        {heldItem?.imageUrl && <Image src={heldItem.imageUrl} alt="" width={20} height={20} unoptimized className="h-5 w-5 object-contain [image-rendering:pixelated]" />}
+                        <span>Held item: {activePet.heldItem ? heldItem?.name ?? formatDisplayName(activePet.heldItem) : 'None'}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+            <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-500">Other Pets · {result.pets.filter((pet) => !pet.active).length}</div>
             <div className="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-1">
-              {result.pets.map((p, i) => (
+              {result.pets.filter((pet) => !pet.active).map((p, i) => (
                 <div
                   key={i}
                   className="group relative aspect-square overflow-visible rounded-3xl p-1"
@@ -837,7 +890,7 @@ export default function Home() {
                       <div className="mt-2 text-[11px] text-neutral-200">
                         XP: {Math.round(p.exp).toLocaleString()}
                       </div>
-                      {(() => { const price = marketPriceFor(petMarketKey(p.type, p.tier), result.marketPrices); return <div className="mt-1 text-[11px] text-amber-300">{price ? `${Math.round(price.unitPrice).toLocaleString()} coins · ${price.source === 'auction-median' ? 'recent median' : price.source === 'auction-bin' ? 'lowest BIN' : price.source}` : 'Market price unavailable'}</div>; })()}
+                      {(() => { const price = marketPriceFor(petMarketKey(p.type, p.tier), result.marketPrices); return <div className="mt-1 text-[11px] text-amber-300">{price ? `${Math.round(price.unitPrice).toLocaleString()} coins · ${price.source === 'auction-bin' ? 'lowest BIN' : price.source}` : 'Market price unavailable'}</div>; })()}
                       <div className={`mt-1 text-[11px] ${p.active ? 'text-emerald-400' : 'text-neutral-400'}`}>
                         Status: {p.active ? 'Active' : 'Inactive'}
                       </div>

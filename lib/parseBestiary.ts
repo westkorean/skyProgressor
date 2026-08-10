@@ -6,6 +6,7 @@ export interface BestiaryFamilyProgress {
   categoryName: string;
   name: string;
   mobIds?: string[];
+  texture?: string | null;
   kills: number;
   tier: number;
   maxTier: number;
@@ -27,7 +28,7 @@ export interface BestiaryProgress {
   closestMilestone: BestiaryFamilyProgress | null;
 }
 
-type FamilyMetadata = { name: string; cap: number; mobs: string[]; bracket: number };
+type FamilyMetadata = { name: string; cap: number; mobs: string[]; bracket: number; texture?: string };
 type CategoryMetadata = { name: string; mobs: FamilyMetadata[] };
 const categories = generated.categories as Record<string, CategoryMetadata>;
 const brackets = generated.brackets as Record<string, number[]>;
@@ -70,6 +71,7 @@ export function parseBestiary(member: unknown): BestiaryProgress {
         categoryName: category.name,
         name: cleanDisplayName(family.name),
         mobIds: [...family.mobs],
+        texture: typeof family.texture === 'string' ? family.texture : null,
         kills: totalKills,
         tier,
         maxTier: thresholds.length,

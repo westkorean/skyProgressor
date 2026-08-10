@@ -24,6 +24,8 @@ export default function ProfileContextControls({
   onSelectMember,
 }: ProfileContextControlsProps) {
   const currentMember = members.find((member) => member.uuid === viewingUuid);
+  const activeCoopMembers = members.filter((member) => member.status === 'active' && member.uuid !== viewingUuid);
+  const formerMembers = members.filter((member) => member.status === 'former');
   return (
     <>
       {profiles.length > 0 && (
@@ -45,14 +47,14 @@ export default function ProfileContextControls({
       {currentMember && (
         <div className="mb-6 flex items-center gap-3">
           <Image src={minecraftAvatarUrl(currentMember.name)} alt="Current player skin" width={40} height={40} className="rounded-lg border border-neutral-700" />
-          <div><div className="text-xs uppercase tracking-wide text-neutral-500">Current Player</div><div className="font-semibold">{currentMember.name}</div></div>
+          <div><div className="text-xs uppercase tracking-wide text-neutral-500">{currentMember.status === 'former' ? 'Former Member Profile' : 'Current Player'}</div><div className="font-semibold">{currentMember.name}</div></div>
         </div>
       )}
 
-      {members.length > 1 && (
+      {activeCoopMembers.length > 0 && (
         <div className="mb-6">
           <span className="mr-2 text-sm text-neutral-500">Co-op:</span>
-          {members.map((member) => (
+          {activeCoopMembers.map((member) => (
             <button
               key={member.uuid}
               onClick={() => onSelectMember(member.uuid)}
@@ -65,6 +67,8 @@ export default function ProfileContextControls({
           ))}
         </div>
       )}
+
+      {formerMembers.length > 0 && <div className="mb-6"><span className="mr-2 text-sm text-neutral-600">Former co-op:</span>{formerMembers.map(member => <button key={member.uuid} onClick={() => onSelectMember(member.uuid)} disabled={loading} className={`mr-2 mb-2 inline-flex items-center rounded-lg border px-3 py-1 text-sm ${viewingUuid === member.uuid ? 'border-red-500 bg-red-800/70' : 'border-red-900/60 bg-red-950/20 text-red-300 hover:border-red-700'} disabled:cursor-wait disabled:opacity-60`}><Image src={minecraftAvatarUrl(member.name)} alt={`${member.name} skin`} width={24} height={24} className="mr-2 rounded-full border border-red-950" />{member.name}</button>)}</div>}
 
     </>
   );

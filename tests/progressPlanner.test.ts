@@ -5,7 +5,7 @@ import { parseHOTM } from '../lib/parseHOTM.ts';
 
 test('planner creates the deterministic mining dependency sequence with profile-derived progress and cost', () => {
   const hotm = parseHOTM({ mining_core: { experience: 302_040, nodes: {}, powder_spent_mithril: 600_000, powder_spent_gemstone: 400_000 } });
-  const prices = Object.fromEntries(['DIVAN_HELMET', 'DIVAN_CHESTPLATE', 'DIVAN_LEGGINGS', 'DIVAN_BOOTS'].map((id) => [id, { unitPrice: 10_000_000, source: 'auction-median' as const }]));
+  const prices = Object.fromEntries(['DIVAN_HELMET', 'DIVAN_CHESTPLATE', 'DIVAN_LEGGINGS', 'DIVAN_BOOTS'].map((id) => [id, { unitPrice: 10_000_000, source: 'auction-bin' as const }]));
   const planner = createProgressPlanner({ hotm, magicalPower: 500, ownedItemIds: [], marketPrices: prices, bazaarPrices: {}, recommendations: [] });
   assert.deepEqual(planner.goals.slice(0, 4).map((goal) => goal.title), ['Reach HOTM 7', 'Upgrade Mining Fortune', 'Unlock Divan Armor', 'Establish Gemstone Mining']);
   assert.deepEqual(planner.goals[2].prerequisites, ['Reach HOTM 7', 'Upgrade Mining Fortune']);

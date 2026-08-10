@@ -1,6 +1,7 @@
 import {
   SKILL_XP_TABLE,
   SKILL_MAX_LEVELS,
+  SKILL_BASE_LEVEL_CAPS,
   CATACOMBS_XP_TABLE,
   CATACOMBS_MAX_LEVEL,
   SLAYER_XP_TABLE,
@@ -14,6 +15,11 @@ export interface SkillProgress {
   currentXp: number;
   xpForNextLevel: number | null;
   progressPercent: number;
+  maxLevel?: number;
+  absoluteMaxLevel?: number;
+  overflowXp?: number;
+  overflowLevel?: number;
+  capUpgradeCount?: number;
 }
 
 export interface SlayerProgress {
@@ -79,7 +85,18 @@ function calculateLevel(xp: number, xpTable: number[], maxLevel: number) {
 }
 
 export function parseSkills(member: unknown): SkillProgress[] {
-  const experience = record(record(record(member)?.player_data)?.experience) ?? {};
+  const memberRecord = record(member);
+  const experience = record(record(memberRecord?.player_data)?.experience) ?? {};
+  const farmingUpgrades = Math.min(10, number(record(record(memberRecord?.jacobs_contest)?.perks)?.farming_level_cap));
+  const sacrificedPets = record(record(memberRecord?.pets_data)?.pet_care)?.pet_types_sacrificed;
+  const tamingUpgrades = Math.min(10, new Set(Array.isArray(sacrificedPets) ? sacrificedPets.filter((pet): pet is string => typeof pet === 'string') : []).size);
+  const collections = record(memberRecord?.collection) ?? {};
+  const collectionForagingUpgrades = Number(number(collections.FIG_LOG) >= 150_000) + Number(number(collections.MANGROVE_LOG) >= 150_000);
+  const foragingCore = record(memberRecord?.foraging_core);
+  const rawForagingCap = number(foragingCore?.foraging_level_cap ?? foragingCore?.level_cap);
+  const foragingUpgrades = rawForagingCap > 0
+    ? Math.min(4, rawForagingCap >= 50 ? rawForagingCap - 50 : rawForagingCap)
+    : collectionForagingUpgrades;
   const skillKeys = Object.keys(experience).filter((key) =>
     key.startsWith('SKILL_')
   );
@@ -87,12 +104,17 @@ export function parseSkills(member: unknown): SkillProgress[] {
   return skillKeys.map((key) => {
     const skillName = key.replace('SKILL_', '').toLowerCase();
     const xp = number(experience[key]);
-    const maxLevel = SKILL_MAX_LEVELS[skillName] ?? 50;
+    const absoluteMaxLevel = SKILL_MAX_LEVELS[skillName] ?? 50;
+    const baseLevelCap = SKILL_BASE_LEVEL_CAPS[skillName] ?? absoluteMaxLevel;
+    const capUpgradeCount = skillName === 'farming' ? farmingUpgrades : skillName === 'taming' ? tamingUpgrades : skillName === 'foraging' ? foragingUpgrades : 0;
+    const maxLevel = Math.min(absoluteMaxLevel, baseLevelCap + capUpgradeCount);
     const { level, xpForNextLevel, progressPercent } = calculateLevel(
       xp,
       SKILL_XP_TABLE,
       maxLevel
     );
+    const overflowLevel = calculateLevel(xp, SKILL_XP_TABLE, absoluteMaxLevel).level;
+    const overflowXp = Math.max(0, xp - (SKILL_XP_TABLE[maxLevel] ?? 0));
 
     return {
       skill: skillName,
@@ -100,6 +122,11 @@ export function parseSkills(member: unknown): SkillProgress[] {
       currentXp: xp,
       xpForNextLevel,
       progressPercent,
+      maxLevel,
+      absoluteMaxLevel,
+      overflowXp,
+      overflowLevel,
+      capUpgradeCount,
     };
   });
 }

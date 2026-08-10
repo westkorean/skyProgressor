@@ -35,7 +35,7 @@ export async function fetchGardenPayload(profileId: string, signal?: AbortSignal
   return response.json();
 }
 
-export async function fetchMemberName(uuid: string, signal?: AbortSignal): Promise<CoopMember> {
+export async function fetchMemberName(uuid: string, signal?: AbortSignal): Promise<Pick<CoopMember, 'uuid' | 'name'>> {
   try {
     const response = await fetch(`/api/username?uuid=${encodeURIComponent(uuid)}`, { signal });
     const payload = await readJson<{ name?: string }>(response);

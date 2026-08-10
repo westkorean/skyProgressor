@@ -11,18 +11,27 @@ export const SKILL_XP_TABLE: number[] = [
   85472425, 91572425, 97972425, 104672425, 111672425
 ];
 
+/** Highest level currently obtainable after every cap upgrade. */
 export const SKILL_MAX_LEVELS: Record<string, number> = {
   mining: 60,
   combat: 60,
   farming: 60,
-  foraging: 50,
+  foraging: 54,
   fishing: 50,
   enchanting: 60,
   alchemy: 50,
-  taming: 50,
+  taming: 60,
   carpentry: 50,
   runecrafting: 25,
   social: 25,
+};
+
+/** Caps before profile-specific upgrades are purchased or unlocked. */
+export const SKILL_BASE_LEVEL_CAPS: Record<string, number> = {
+  ...SKILL_MAX_LEVELS,
+  farming: 50,
+  foraging: 50,
+  taming: 50,
 };
 
 export const SLAYER_XP_TABLE: number[] = [
