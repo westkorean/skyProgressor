@@ -197,7 +197,7 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
           </div>
         )}
         {!showChatHint && <div className="pointer-events-none absolute bottom-full right-0 mb-2 whitespace-nowrap rounded-lg border border-neutral-700 bg-neutral-950 px-3 py-2 text-xs text-neutral-300 opacity-0 shadow-lg transition group-hover:opacity-100">Ask SkyProgressor</div>}
-        <button type="button" onClick={toggleChat} aria-expanded={open} aria-label={open ? 'Close SkyProgressor chat' : 'Open SkyProgressor chat'} className={`flex h-14 w-14 items-center justify-center rounded-full border border-emerald-400/60 bg-emerald-600 text-2xl shadow-[0_0_28px_rgba(16,185,129,0.35)] transition hover:scale-105 hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 ${showChatHint && !open ? 'animate-bounce' : ''}`}>{open ? '×' : '✦'}</button>
+        <button type="button" onClick={toggleChat} aria-expanded={open} aria-label={open ? 'Close SkyProgressor chat' : 'Open SkyProgressor chat'} className={`grid h-14 w-14 place-items-center rounded-full border border-emerald-400/60 bg-emerald-600 text-2xl shadow-[0_0_28px_rgba(16,185,129,0.35)] transition hover:scale-105 hover:bg-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-300 ${showChatHint && !open ? 'animate-bounce' : ''}`}><span aria-hidden="true" className="block translate-y-px leading-none">{open ? '×' : '✦'}</span></button>
       </div>
     </>
   );

@@ -2,17 +2,14 @@ import type { BestiaryFamilyProgress, BestiaryProgress } from '@/lib/parseBestia
 import PixelLock from './PixelLock';
 import Image from 'next/image';
 
-const mobHeads: Array<[string, string]> = [
-  ['cave_spider', 'MHF_CaveSpider'], ['magma_cube', 'MHF_LavaSlime'], ['zombie', 'MHF_Zombie'],
-  ['skeleton', 'MHF_Skeleton'], ['creeper', 'MHF_Creeper'], ['enderman', 'MHF_Enderman'],
-  ['spider', 'MHF_Spider'], ['blaze', 'MHF_Blaze'], ['slime', 'MHF_Slime'], ['silverfish', 'MHF_Silverfish'],
-  ['cow', 'MHF_Cow'], ['pig', 'MHF_Pig'], ['sheep', 'MHF_Sheep'], ['chicken', 'MHF_Chicken'], ['wolf', 'MHF_Wolf'],
-];
-
 function mobIcon(family: BestiaryFamilyProgress): string | null {
-  const ids = (family.mobIds ?? []).join(' ').toLowerCase();
-  const account = mobHeads.find(([token]) => ids.includes(token))?.[1];
-  return account ? `https://mc-heads.net/head/${account}/64` : null;
+  const texture = family.texture;
+  if (!texture) return null;
+  const head = /^\/head\/([a-f0-9]+)$/i.exec(texture)?.[1];
+  if (head) return `https://mc-heads.net/head/${head}/64`;
+  const item = /^\/item\/(.+)$/i.exec(texture)?.[1];
+  if (item) return `https://sky.shiiyu.moe/api/item/${encodeURIComponent(item)}`;
+  return null;
 }
 
 export default function BestiarySection({ progress }: { progress: BestiaryProgress }) {

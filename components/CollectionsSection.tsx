@@ -90,14 +90,16 @@ export default function CollectionsSection({ collections }: { collections: Colle
             </button>
             {!isCollapsed && (
               <div className="grid gap-3 p-3 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((entry) => (
-                  <article data-item-slot key={entry.rawKey} className="rounded-lg border border-neutral-700 bg-neutral-800/70 p-3">
+                {items.map((entry) => {
+                  const maxed = entry.maxTier !== null && entry.tier !== null && entry.tier >= entry.maxTier;
+                  return (
+                  <article data-item-slot key={entry.rawKey} className={`rounded-lg border p-3 ${maxed ? 'skill-true-max-glow border-amber-300/80 bg-amber-950/25' : 'border-neutral-700 bg-neutral-800/70'}`}>
                     <div className="flex items-start gap-3">
                       <CollectionItemImage collectionId={entry.rawKey} name={entry.name} />
                       <div className="min-w-0 flex-1">
                         <div className="flex items-start justify-between gap-2">
-                          <div className="font-semibold text-sm text-neutral-100">{entry.name}</div>
-                          <div className="whitespace-nowrap text-[11px] text-neutral-400">
+                          <div className={`font-semibold text-sm ${maxed ? 'text-amber-200' : 'text-neutral-100'}`}>{entry.name}</div>
+                          <div className={`whitespace-nowrap text-[11px] ${maxed ? 'font-bold text-amber-300' : 'text-neutral-400'}`}>
                             {entry.tier && entry.maxTier
                               ? `Tier ${entry.tier} / ${entry.maxTier}`
                               : 'Unknown Tier Data'}
@@ -111,11 +113,11 @@ export default function CollectionsSection({ collections }: { collections: Colle
                       <span>{entry.progressPercent}%</span>
                     </div>
                     <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-neutral-950">
-                      <div className="h-full rounded-full bg-emerald-500" style={{ width: `${entry.progressPercent}%` }} />
+                      <div className={`h-full rounded-full ${maxed ? 'bg-gradient-to-r from-amber-500 via-yellow-200 to-amber-400 shadow-[0_0_12px_#fbbf24]' : 'bg-emerald-500'}`} style={{ width: `${entry.progressPercent}%` }} />
                     </div>
                     <div className="mt-2 text-xs text-neutral-500">
                       {entry.remaining === null
-                        ? entry.maxTier ? 'Maximum tier reached' : 'Remaining unavailable'
+                        ? entry.maxTier ? <span className={maxed ? 'font-semibold text-amber-300' : ''}>Maximum tier reached</span> : 'Remaining unavailable'
                         : `${entry.remaining.toLocaleString()} remaining to next tier`}
                     </div>
                     {entry.nextReward && (
@@ -124,7 +126,8 @@ export default function CollectionsSection({ collections }: { collections: Colle
                       </div>
                     )}
                   </article>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>

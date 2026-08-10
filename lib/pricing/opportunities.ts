@@ -8,7 +8,7 @@ export function bestAcquisitionPrice(id: string, marketPrices: MarketPrices, baz
   const market = marketPriceFor(id, marketPrices);
   const candidates = [
     craft === null ? null : { price: craft, source: 'craft' as const },
-    market ? { price: market.unitPrice, source: market.source === 'bazaar' ? 'bazaar' as const : market.source } : null,
+    market && market.source !== 'auction-median' ? { price: market.unitPrice, source: market.source === 'bazaar' ? 'bazaar' as const : market.source } : null,
   ].filter((value): value is NonNullable<typeof value> => value !== null && Number.isFinite(value.price) && value.price >= 0);
   return candidates.sort((a, b) => a.price - b.price)[0] ?? null;
 }

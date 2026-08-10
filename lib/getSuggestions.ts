@@ -25,6 +25,16 @@ export function getTopSuggestions(
         progressPercent: s.progressPercent,
         message: `${capitalize(s.skill)} is ${s.progressPercent}% to Level ${s.level + 1}`,
       });
+    } else if (s.maxLevel != null && s.absoluteMaxLevel != null && s.maxLevel < s.absoluteMaxLevel) {
+      suggestions.push({
+        category: 'skill',
+        name: s.skill,
+        level: s.level,
+        progressPercent: 100,
+        message: s.overflowXp
+          ? `${capitalize(s.skill)} has ${s.overflowXp.toLocaleString()} overflow XP banked — raise its Level ${s.maxLevel} cap`
+          : `${capitalize(s.skill)} reached its current Level ${s.maxLevel} cap — upgrades can raise it to ${s.absoluteMaxLevel}`,
+      });
     }
   });
 

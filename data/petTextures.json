@@ -216,6 +216,10 @@
       "PET_SKIN_MONKEY_SUNGLASSES": "ccb5de94f814069b317b318abbe0d000d51dfe9258bbe9e9e87ca7f57ff45df9"
     }
   },
+  "MOSQUITO": {
+    "default": "52a9fe05bc663efcd12e56a3ccc5ec035bf577b78708548b6f4ffcf1d30eccfe",
+    "skins": {}
+  },
   "MOOSHROOM_COW": {
     "default": "2b52841f2fd589e0bc84cbabf9e1c27cb70cac98f8d6b3dd065e55a4dcb70d77",
     "skins": {}

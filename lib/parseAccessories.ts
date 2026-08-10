@@ -1,4 +1,5 @@
 import type { InventoryData, InventoryItem, SkyBlockRarity } from './parseInventory';
+import { displayItemId } from './itemPresentation.ts';
 
 export interface AccessorySummaryItem { id: string; name: string; rarity: SkyBlockRarity | null; count: number; recombobulated: boolean; enrichment: string | null; family: string }
 export interface AccessoryOpportunity { id: string; itemId: string | null; title: string; reason: string; estimatedPrice: number | null; priceSource: 'craft' | 'bazaar' | 'auction-median' | 'auction-bin' | 'npc' | null }
@@ -26,7 +27,7 @@ export function parseAccessories(member: unknown, inventory?: InventoryData): Ac
     const enrichment = /talisman_enrichment[^A-Z0-9]+([A-Z_]+)/i.exec(text)?.[1] ?? null;
     const existing = counts.get(item.skyblockId);
     if (existing) existing.count += item.count ?? 1;
-    else counts.set(item.skyblockId, { id: item.skyblockId, name: item.displayName ?? item.skyblockId.replace(/_/g, ' '), rarity: item.rarity, count: item.count ?? 1, recombobulated: /rarity_upgrades[^0-9]+[1-9]/i.test(text), enrichment, family: family(item.skyblockId) });
+    else counts.set(item.skyblockId, { id: item.skyblockId, name: item.displayName ?? displayItemId(item.skyblockId), rarity: item.rarity, count: item.count ?? 1, recombobulated: /rarity_upgrades[^0-9]+[1-9]/i.test(text), enrichment, family: family(item.skyblockId) });
   }
   const all = [...counts.values()];
   const owned = new Set(all.map((item) => item.id));
@@ -35,7 +36,7 @@ export function parseAccessories(member: unknown, inventory?: InventoryData): Ac
   const duplicates = all.filter((item) => item.count > 1);
   const upgrades: AccessoryOpportunity[] = all.flatMap((item) => {
     const next = ACCESSORY_UPGRADES[item.id];
-    return next && !owned.has(next) ? [{ id: `upgrade-${next}`, itemId: next, title: `Upgrade to ${next.replace(/_/g, ' ')}`, reason: `The owned ${item.name} has a higher family tier available.`, estimatedPrice: null, priceSource: null }] : [];
+    return next && !owned.has(next) ? [{ id: `upgrade-${next}`, itemId: next, title: `Upgrade to ${displayItemId(next)}`, reason: `The owned ${item.name} has a higher family tier available.`, estimatedPrice: null, priceSource: null }] : [];
   });
   return {
     available: storage !== null || Boolean(inventory?.accessoryBag.available),

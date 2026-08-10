@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getPricingSnapshot } from '@/lib/pricing/service';
 
 const NETWORTH_TTL_MS = 60_000;
 const MAX_NETWORTH_ENTRIES = 50;
@@ -58,15 +57,13 @@ export async function POST(request: NextRequest) {
     let requestPromise = networthRequests.get(cacheKey);
     if (!requestPromise) {
       requestPromise = (async () => {
-        const [{ ProfileNetworthCalculator }, skyhelperPrices, pricing] = await Promise.all([
+        const [{ ProfileNetworthCalculator }, skyhelperPrices] = await Promise.all([
           import('skyhelper-networth'),
           cachedSkyhelperPrices(),
-          getPricingSnapshot(),
         ]);
-        const cachedMarketPrices = Object.fromEntries(Object.entries(pricing.marketPrices).map(([id, value]) => [id, value.unitPrice]));
         const calculator = new ProfileNetworthCalculator(member, museumMember, bank);
         return calculator.getNetworth({
-          prices: { ...skyhelperPrices, ...cachedMarketPrices },
+          prices: skyhelperPrices,
           cachePrices: true,
           onlyNetworth: false,
           includeItemData: false,

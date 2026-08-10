@@ -6,6 +6,7 @@ import type { OwnedItemMetadata } from '@/lib/ownedItemMetadata';
 import PixelLock from '@/components/PixelLock';
 import { inventoryMetadataKey } from '@/lib/inventoryContext';
 import InventoryItemImage from '@/components/InventoryItemImage';
+import { displayItemId, isMaxedEnchantment, RARITY_BORDER, RARITY_TEXT } from '@/lib/itemPresentation';
 
 type StorageGroup = { label: string; section: InventorySection };
 
@@ -15,7 +16,7 @@ function occupied(items: readonly InventoryItem[]): InventoryItem[] {
 
 function itemName(item: InventoryItem): string {
   if (item.displayName) return item.displayName;
-  if (item.skyblockId) return item.skyblockId.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (value) => value.toUpperCase());
+  if (item.skyblockId) return displayItemId(item.skyblockId);
   return 'Unknown item';
 }
 
@@ -28,20 +29,21 @@ function ItemSlot({ item, section, metadata }: { item: InventoryItem; section: I
   const name = enriched?.name ?? itemName(item);
 
   return (
-    <article data-item-slot tabIndex={0} className="group relative flex aspect-square min-h-16 items-center justify-center rounded-lg border border-neutral-700 bg-neutral-900 p-2 outline-none hover:z-30 hover:border-emerald-500/70 hover:bg-neutral-800 focus:z-30 focus:border-emerald-500/70">
+    <article data-item-slot tabIndex={0} className={`group relative flex aspect-square min-h-16 items-center justify-center rounded-lg border bg-neutral-900 p-2 outline-none hover:z-30 hover:border-emerald-500/70 hover:bg-neutral-800 focus:z-30 focus:border-emerald-500/70 ${item.rarity ? RARITY_BORDER[item.rarity] : 'border-neutral-700'}`}>
+      {item.rarity && <span aria-hidden="true" className={`absolute left-1 top-1 text-[7px] ${RARITY_TEXT[item.rarity]}`}>◆</span>}
       <InventoryItemImage item={item} metadata={enriched} />
       {(item.count ?? 1) > 1 && <span className="absolute bottom-1 right-1 text-[10px] font-bold text-white drop-shadow">{item.count}</span>}
       <div className="pointer-events-none absolute bottom-[calc(100%+0.5rem)] left-1/2 z-40 hidden w-72 -translate-x-1/2 rounded-lg border border-neutral-700 bg-neutral-950 p-3 text-left shadow-2xl group-hover:block group-focus:block">
         <div className="text-sm font-semibold text-neutral-100">{name}</div>
         <div className="mt-1 flex flex-wrap gap-x-3 text-[11px] text-neutral-400">
-          {item.rarity && <span>{item.rarity}</span>}
+          {item.rarity && <span className={RARITY_TEXT[item.rarity]}>{item.rarity}</span>}
           <span>Slot {item.slot ?? item.index}</span>
           {item.stars > 0 && <span>{item.stars} stars</span>}
         </div>
         <div className="mt-1 text-xs text-amber-300">Primary value: {enriched?.marketPrice == null ? 'Unavailable' : `${Math.round(enriched.marketPrice * Math.max(1, item.count ?? 1)).toLocaleString()} coins${(item.count ?? 1) > 1 ? ` (${Math.round(enriched.marketPrice).toLocaleString()} each)` : ''}`}</div>
-        <div className="text-[11px] text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'N/A' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`} · Lowest BIN: {enriched?.lowestBinPrice == null ? 'N/A' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}{enriched?.recentMedianPrice != null ? ` · Median: ${Math.round(enriched.recentMedianPrice).toLocaleString()} coins` : ''}</div>
+        <div className="text-[11px] text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'N/A' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`} · Lowest BIN: {enriched?.lowestBinPrice == null ? 'N/A' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}</div>
         {item.reforge && <div className="mt-1 text-xs text-neutral-400">Reforge: {item.reforge}</div>}
-        {item.enchantments.length > 0 && <div className="mt-1 text-xs text-neutral-500">Enchantments: {item.enchantments.map((value) => `${value.id} ${value.level}`).join(', ')}</div>}
+        {item.enchantments.length > 0 && <div className="mt-1 flex flex-wrap gap-x-1 text-xs text-neutral-500">Enchantments: {item.enchantments.map((value) => <span key={value.id} className={isMaxedEnchantment(value) ? 'max-enchantment-glow rounded px-1' : ''}>{displayItemId(value.id)} {value.level}</span>)}</div>}
         {item.lore.length > 0 && <div className="mt-2 max-h-52 overflow-hidden whitespace-pre-line border-t border-neutral-800 pt-2 text-xs text-neutral-400">{item.lore.join('\n')}</div>}
         {enriched?.wikiSummary && <p className="mt-2 line-clamp-3 text-xs text-neutral-500">{enriched.wikiSummary}</p>}
       </div>
@@ -54,10 +56,10 @@ function EmptySlot({ slot }: { slot: number }) {
   return <div aria-label={`Empty slot ${slot}`} className="aspect-square min-h-12 rounded-md border border-neutral-800 bg-neutral-900/45 shadow-[inset_1px_1px_0_rgba(255,255,255,0.04)]" />;
 }
 
-function InGameStorageGrid({ items, section, metadata }: { items: InventoryItem[]; section: InventorySection; metadata: Record<string, OwnedItemMetadata> }) {
-  const bySlot = new Map(items.map((item) => [item.slot ?? item.index, item]));
-  const highestSlot = Math.max(-1, ...groupSlots(section).map((item) => item.slot ?? item.index));
-  const minimumSlots = section.name === 'inventory' ? 36 : 9;
+function InGameStorageGrid({ items, section, metadata, slotOffset = 0, minimumSlots: requestedMinimum }: { items: InventoryItem[]; section: InventorySection; metadata: Record<string, OwnedItemMetadata>; slotOffset?: number; minimumSlots?: number }) {
+  const bySlot = new Map(items.map((item) => [(item.slot ?? item.index) - slotOffset, item]));
+  const highestSlot = Math.max(-1, ...items.map((item) => (item.slot ?? item.index) - slotOffset));
+  const minimumSlots = requestedMinimum ?? (section.name === 'inventory' ? 36 : 9);
   const slotCount = Math.max(minimumSlots, Math.ceil((highestSlot + 1) / 9) * 9);
   const naturalOrder = Array.from({ length: slotCount }, (_, slot) => slot);
   const displayOrder = section.name === 'inventory' && slotCount >= 36
@@ -68,9 +70,9 @@ function InGameStorageGrid({ items, section, metadata }: { items: InventoryItem[
     <div className="mx-auto grid max-w-3xl grid-cols-9 gap-1.5 rounded-xl border-2 border-neutral-700 bg-neutral-950 p-2.5 shadow-[inset_0_0_0_2px_rgba(255,255,255,0.025)]">
       {displayOrder.map((slot, displayIndex) => {
         const item = bySlot.get(slot);
-        const hotbarStart = section.name === 'inventory' && displayIndex === 27;
+        const hotbarRow = section.name === 'inventory' && displayIndex >= 27 && displayIndex < 36;
         return (
-          <div key={slot} className={hotbarStart ? 'mt-2' : ''}>
+          <div key={slot} className={hotbarRow ? 'mt-2' : ''}>
             {item ? <ItemSlot item={item} section={section} metadata={metadata} /> : <EmptySlot slot={slot} />}
           </div>
         );
@@ -79,14 +81,29 @@ function InGameStorageGrid({ items, section, metadata }: { items: InventoryItem[
   );
 }
 
+function EnderChestPages({ items, section, metadata }: { items: InventoryItem[]; section: InventorySection; metadata: Record<string, OwnedItemMetadata> }) {
+  const highestSlot = Math.max(0, ...groupSlots(section).map(item => item.slot ?? item.index));
+  const pageCount = Math.max(1, Math.ceil((highestSlot + 1) / 45));
+  return <div className="space-y-2">{Array.from({ length: pageCount }, (_, page) => {
+    const start = page * 45;
+    const pageItems = items.filter(item => (item.slot ?? item.index) >= start && (item.slot ?? item.index) < start + 45);
+    return <details key={page} className="rounded-lg border border-neutral-800 bg-neutral-900/50" open={page === 0}>
+      <summary className="flex cursor-pointer list-none justify-between p-3 text-sm"><span>Ender Chest Page {page + 1}</span><span className="text-neutral-500">{pageItems.length} items</span></summary>
+      <div className="border-t border-neutral-800 p-3"><InGameStorageGrid items={pageItems} section={section} metadata={metadata} slotOffset={start} minimumSlots={45} /></div>
+    </details>;
+  })}</div>;
+}
+
 function groupSlots(section: InventorySection): InventoryItem[] {
   return occupied(section.items);
 }
 
 const WARDROBE_SLOT_LABELS = ['Helmet', 'Chestplate', 'Leggings', 'Boots'] as const;
+const EQUIPMENT_WARDROBE_SLOT_LABELS = ['Necklace', 'Cloak', 'Belt', 'Gloves'] as const;
 
-function WardrobeSets({ items, section, metadata }: { items: InventoryItem[]; section: InventorySection; metadata: Record<string, OwnedItemMetadata> }) {
+function LoadoutSets({ items, section, metadata, labels, title }: { items: InventoryItem[]; section: InventorySection; metadata: Record<string, OwnedItemMetadata>; labels: readonly string[]; title: string }) {
   const sets = new Map<number, Map<number, InventoryItem>>();
+  for (let setIndex = 0; setIndex < (section.loadoutCount ?? 0); setIndex += 1) sets.set(setIndex, new Map());
   for (const item of items) {
     const position = item.slot ?? item.index;
     const setIndex = Math.floor(position / 4);
@@ -100,9 +117,9 @@ function WardrobeSets({ items, section, metadata }: { items: InventoryItem[]; se
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       {[...sets.entries()].sort(([left], [right]) => left - right).map(([setIndex, set]) => (
         <section key={setIndex} className="rounded-lg border border-neutral-800 bg-neutral-900/70 p-3">
-          <h4 className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-400">Armor Set {setIndex + 1}</h4>
+          <h4 className="mb-2 flex justify-between text-xs font-semibold uppercase tracking-wide text-neutral-400"><span>{title} {setIndex + 1}</span>{section.selectedSlot === setIndex && <span className="text-emerald-400">Active</span>}</h4>
           <div className="grid grid-cols-4 gap-2">
-            {WARDROBE_SLOT_LABELS.map((label, pieceIndex) => {
+            {labels.map((label, pieceIndex) => {
               const item = set.get(pieceIndex);
               return item ? (
                 <div key={label} className="min-w-0">
@@ -147,7 +164,11 @@ function StorageGroupView({ group, query, metadata }: { group: StorageGroup; que
         ) : items.length === 0 ? (
           <p className="text-sm text-neutral-500">{query ? 'No matching items.' : 'No occupied slots.'}</p>
         ) : group.section.name === 'wardrobe' ? (
-          <WardrobeSets items={items} section={group.section} metadata={metadata} />
+          <LoadoutSets items={items} section={group.section} metadata={metadata} labels={WARDROBE_SLOT_LABELS} title="Armor Set" />
+        ) : group.section.name === 'equipmentWardrobe' ? (
+          <LoadoutSets items={items} section={group.section} metadata={metadata} labels={EQUIPMENT_WARDROBE_SLOT_LABELS} title="Equipment Set" />
+        ) : group.section.name === 'enderChest' ? (
+          <EnderChestPages items={items} section={group.section} metadata={metadata} />
         ) : ['inventory', 'enderChest', 'accessoryBag'].includes(group.section.name) ? (
           <InGameStorageGrid items={items} section={group.section} metadata={metadata} />
         ) : (
@@ -166,6 +187,7 @@ export default function InventoryStorageSection({ inventory, metadata }: { inven
   const groups: StorageGroup[] = [
     { label: 'Active Armor', section: inventory.armor },
     { label: 'Active Equipment', section: inventory.equipment },
+    { label: 'Equipment Wardrobes', section: inventory.equipmentWardrobe },
     { label: 'Main Inventory', section: inventory.inventory },
     { label: 'Ender Chest', section: inventory.enderChest },
     { label: 'Wardrobe', section: inventory.wardrobe },

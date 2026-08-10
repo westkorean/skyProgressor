@@ -3,6 +3,7 @@ import { parse, type Compound, type NBT, type Tags, TagType } from 'prismarine-n
 export type InventorySectionName =
   | 'armor'
   | 'equipment'
+  | 'equipmentWardrobe'
   | 'inventory'
   | 'enderChest'
   | 'wardrobe'
@@ -51,11 +52,14 @@ export interface InventorySection {
   nbt: NBT | null;
   items: InventoryItem[];
   error: string | null;
+  selectedSlot?: number | null;
+  loadoutCount?: number;
 }
 
 export interface InventoryData {
   armor: InventorySection;
   equipment: InventorySection;
+  equipmentWardrobe: InventorySection;
   inventory: InventorySection;
   enderChest: InventorySection;
   wardrobe: InventorySection;
@@ -67,6 +71,7 @@ type UnknownRecord = Record<string, unknown>;
 const SECTION_PATHS: Record<InventorySectionName, readonly (readonly string[])[]> = {
   armor: [['inventory', 'inv_armor'], ['inv_armor']],
   equipment: [['inventory', 'equipment_contents'], ['equipment_contents'], ['equippment_contents']],
+  equipmentWardrobe: [['loadout', 'equipment']],
   inventory: [['inventory', 'inv_contents'], ['inv_contents']],
   enderChest: [['inventory', 'ender_chest_contents'], ['ender_chest_contents']],
   wardrobe: [['inventory', 'wardrobe_contents'], ['wardrobe_contents']],
@@ -287,6 +292,7 @@ function emptySection(
     nbt: null,
     items: [],
     error,
+    selectedSlot: null,
   };
 }
 
@@ -403,16 +409,53 @@ async function decodeWardrobe(member: unknown): Promise<InventorySection> {
   };
 }
 
+async function decodeEquipmentWardrobe(member: unknown): Promise<InventorySection> {
+  const equipment = record(valueAtPath(member, ['loadout', 'equipment']));
+  const sets = Object.entries(equipment ?? {})
+    .filter(([key]) => /^\d+$/.test(key))
+    .sort(([left], [right]) => Number(left) - Number(right));
+  if (!equipment || sets.length === 0) return emptySection('equipmentWardrobe', 'loadout.equipment', null);
+
+  const decoded: InventoryItem[] = [];
+  const errors: string[] = [];
+  let suppliedBlobs = 0;
+  for (const [setKey, rawSet] of sets) {
+    const setIndex = Math.max(0, Number(setKey) - 1);
+    const set = record(rawSet);
+    if (!set) continue;
+    for (let pieceIndex = 0; pieceIndex < 4; pieceIndex += 1) {
+      const container = record(set[`EQUIPMENT_SLOT_${pieceIndex + 1}`]);
+      if (typeof container?.data !== 'string' || !container.data.trim()) continue;
+      suppliedBlobs += 1;
+      const syntheticMember = { equipment_contents: { data: container.data } };
+      const section = await decodeSection(syntheticMember, 'equipment');
+      if (section.error) {
+        errors.push(`set ${setIndex + 1} slot ${pieceIndex + 1}: ${section.error}`);
+        continue;
+      }
+      for (const item of section.items) decoded.push({ ...item, index: setIndex * 4 + pieceIndex, slot: setIndex * 4 + pieceIndex });
+    }
+  }
+  return {
+    name: 'equipmentWardrobe', sourcePath: 'loadout.equipment', available: true,
+    encodedData: null, nbt: null, items: decoded,
+    error: suppliedBlobs > 0 && decoded.length === 0 && errors.length > 0 ? errors.join('; ') : null,
+    selectedSlot: typeof equipment.equipped_set === 'number' ? Math.max(0, equipment.equipped_set - 1) : null,
+    loadoutCount: sets.length,
+  };
+}
+
 export async function parseInventory(member: unknown): Promise<InventoryData> {
-  const [armor, equipment, inventory, enderChest, wardrobe, accessoryBag] =
+  const [armor, equipment, equipmentWardrobe, inventory, enderChest, wardrobe, accessoryBag] =
     await Promise.all([
       decodeSection(member, 'armor'),
       decodeSection(member, 'equipment'),
+      decodeEquipmentWardrobe(member),
       decodeSection(member, 'inventory'),
       decodeSection(member, 'enderChest'),
       decodeWardrobe(member),
       decodeSection(member, 'accessoryBag'),
     ]);
 
-  return { armor, equipment, inventory, enderChest, wardrobe, accessoryBag };
+  return { armor, equipment, equipmentWardrobe, inventory, enderChest, wardrobe, accessoryBag };
 }

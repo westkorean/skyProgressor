@@ -23,9 +23,9 @@ test('pricing cache serves stale data when refresh fails', async () => {
   assert.equal(grace.value, 25); assert.equal(grace.stale, true); assert.equal(retried, false);
 });
 
-test('acquisition pricing selects the cheapest craft, Bazaar, or Auction path', () => {
+test('acquisition pricing selects craft, Bazaar, or lowest BIN and rejects median-only prices', () => {
   assert.deepEqual(bestAcquisitionPrice('ENCHANTED_DIAMOND', { ENCHANTED_DIAMOND: { unitPrice: 200, source: 'bazaar' } }, { ENCHANTED_DIAMOND: 150 }), { price: 150, source: 'craft' });
-  assert.deepEqual(bestAcquisitionPrice('AUCTION_ITEM', { AUCTION_ITEM: { unitPrice: 500, source: 'auction-median' } }, {}), { price: 500, source: 'auction-median' });
+  assert.equal(bestAcquisitionPrice('AUCTION_ITEM', { AUCTION_ITEM: { unitPrice: 500, source: 'auction-median' } }, {}), null);
 });
 
 test('accessory opportunities are priced and sorted cheapest first', () => {

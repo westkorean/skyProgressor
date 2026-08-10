@@ -13,7 +13,6 @@ Unresolved records: 41
 - pet: Bingo Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Bingo_Pet)
 - pet: Rat Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Rat_Pet)
 - pet: Tarantula Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Tarantula_Pet)
-- pet: Mosquito Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Mosquito_Pet)
 - pet: Reindeer Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Reindeer_Pet)
 - pet: Slug Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Slug_Pet)
 - pet: Snowman Pet — File page has no verified HeadRender hash (https://hypixel-skyblock.fandom.com/wiki/Snowman_Pet)

@@ -21,7 +21,8 @@ export function parseAuctionPrices(payload: unknown): MarketPrices {
     const median = price(row?.recent);
     if (median === null) continue;
     const normalized = id.toUpperCase();
-    result[normalized] = { unitPrice: median, source: 'auction-median', recentMedianPrice: median, lowestBinPrice: result[normalized]?.lowestBinPrice };
+    const lowestBin = result[normalized];
+    if (lowestBin) result[normalized] = { ...lowestBin, recentMedianPrice: median };
   }
   return result;
 }

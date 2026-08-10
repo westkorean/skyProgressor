@@ -3,6 +3,7 @@ import type { OwnedItemMetadata } from '@/lib/ownedItemMetadata';
 import { inventoryMetadataKey } from '@/lib/inventoryContext';
 import InventoryItemImage from '@/components/InventoryItemImage';
 import PixelLock from '@/components/PixelLock';
+import { isMaxedEnchantment, RARITY_BORDER, RARITY_TEXT } from '@/lib/itemPresentation';
 
 type EquipmentSlot = {
   label: string;
@@ -34,7 +35,7 @@ function EquipmentItemCard({ slot, metadata, section }: { slot: EquipmentSlot; m
   const enriched = item ? metadata[inventoryMetadataKey({ section, slot: item.slot ?? item.index, skyblockId: item.skyblockId })] : undefined;
 
   return (
-    <article data-item-slot={item ? true : undefined} className="rounded-xl border border-neutral-800 bg-neutral-950 p-4 min-h-44">
+    <article data-item-slot={item ? true : undefined} className={`rounded-xl border bg-neutral-950 p-4 min-h-44 ${item?.rarity ? RARITY_BORDER[item.rarity] : 'border-neutral-800'}`}>
       <div className="text-xs uppercase tracking-wide text-neutral-500">{slot.label}</div>
       {!item ? (
         <div className="mt-3 text-sm text-neutral-600">Empty</div>
@@ -44,8 +45,8 @@ function EquipmentItemCard({ slot, metadata, section }: { slot: EquipmentSlot; m
             <InventoryItemImage item={item} metadata={enriched} className="h-14 w-14 shrink-0" />
             <h3 className="font-semibold text-neutral-100">{item.displayName || titleCase(item.skyblockId ?? 'Unknown item')}</h3>
           </div>
-          <div className="mt-1 text-xs text-neutral-400">{item.rarity ?? 'Unknown rarity'}</div>
-          <div className="mt-2 space-y-0.5 text-xs"><div className="text-amber-300">Primary value: {enriched?.marketPrice == null ? 'Unavailable' : `${Math.round(enriched.marketPrice * Math.max(1, item.count ?? 1)).toLocaleString()} coins`}</div><div className="text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'Not craftable / recipe unavailable' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`}</div><div className="text-neutral-500">Lowest BIN: {enriched?.lowestBinPrice == null ? 'Unavailable' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}</div>{enriched?.recentMedianPrice != null && <div className="text-neutral-500">Recent median: {Math.round(enriched.recentMedianPrice).toLocaleString()} coins</div>}</div>
+          <div className={`mt-1 text-xs ${item.rarity ? RARITY_TEXT[item.rarity] : 'text-neutral-400'}`}>{item.rarity ?? 'Unknown rarity'}</div>
+          <div className="mt-2 space-y-0.5 text-xs"><div className="text-amber-300">Primary value: {enriched?.marketPrice == null ? 'Unavailable' : `${Math.round(enriched.marketPrice * Math.max(1, item.count ?? 1)).toLocaleString()} coins`}</div><div className="text-neutral-500">Raw craft: {enriched?.rawCraftCost == null ? 'Not craftable / recipe unavailable' : `${Math.round(enriched.rawCraftCost).toLocaleString()} coins`}</div><div className="text-neutral-500">Lowest BIN: {enriched?.lowestBinPrice == null ? 'Unavailable' : `${Math.round(enriched.lowestBinPrice).toLocaleString()} coins`}</div></div>
           <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1 text-xs">
             <span className="text-neutral-500">Stars</span><span>{item.stars || 'None'}</span>
             <span className="text-neutral-500">Reforge</span><span>{item.reforge ? titleCase(item.reforge) : 'None'}</span>
@@ -59,7 +60,7 @@ function EquipmentItemCard({ slot, metadata, section }: { slot: EquipmentSlot; m
             <summary className="cursor-pointer text-neutral-400 hover:text-neutral-200">Enchantments ({item.enchantments.length})</summary>
             <div className="mt-2 space-y-1 text-neutral-300">
               {item.enchantments.length
-                ? item.enchantments.map((enchantment) => <div key={enchantment.id}>{titleCase(enchantment.id)} {enchantment.level}</div>)
+                ? item.enchantments.map((enchantment) => <div className={isMaxedEnchantment(enchantment) ? 'max-enchantment-glow rounded px-1' : ''} key={enchantment.id}>{titleCase(enchantment.id)} {enchantment.level}</div>)
                 : <div>None</div>}
             </div>
           </details>

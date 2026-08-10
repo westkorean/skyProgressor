@@ -35,7 +35,7 @@ function isOccupied(item: InventoryItem): boolean {
 
 export function createInventoryOwnershipSummary(inventory: InventoryData): InventoryOwnershipSummary {
   const sectionNames: InventorySectionName[] = [
-    'armor', 'equipment', 'inventory', 'enderChest', 'wardrobe', 'accessoryBag',
+    'armor', 'equipment', 'equipmentWardrobe', 'inventory', 'enderChest', 'wardrobe', 'accessoryBag',
   ];
   const items: InventoryOwnershipItem[] = [];
   const sections = {} as Record<InventorySectionName, InventoryOwnershipSection>;
