@@ -1,0 +1,16 @@
+[
+  {
+    "id": "slayers.lowest-feasible-slayer",
+    "category": "slayers",
+    "title": "Lowest Feasible Slayer First",
+    "summary": "Slayer recommendations are most reliable when gated by combat level, gear, completion stage, and boss-specific requirements.",
+    "recommendation": "Recommend the lowest under-leveled feasible Slayer before expensive or high-risk Slayer grinds.",
+    "requirements": ["Combat readiness", "Appropriate weapon and armor"],
+    "relatedSystems": ["combat", "economy"],
+    "tags": ["slayer", "combat", "readiness"],
+    "sources": [{ "title": "Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Main_Page" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

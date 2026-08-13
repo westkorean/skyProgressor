@@ -1,4 +1,4 @@
-import type { ManagedKnowledgeCategory, ManagedKnowledgeEntry } from '../../knowledge/schema.ts';
+import type { ManagedKnowledgeCategory, ManagedKnowledgeEntry, PatchKnowledgeEntry } from '../../knowledge/schema.ts';
 
 export type RelevantSystem = ManagedKnowledgeCategory;
 
@@ -18,6 +18,7 @@ export interface RetrievalTokenMetrics {
 export interface RetrievalPipelineResult {
   systems: RelevantSystem[];
   knowledge: ManagedKnowledgeEntry[];
+  patches: PatchKnowledgeEntry[];
   profileEvidence: RetrievedProfileEvidence[];
   context: string;
   tokenMetrics: RetrievalTokenMetrics;

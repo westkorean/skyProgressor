@@ -56,6 +56,7 @@ import { createProgressionRoadmap } from '@/lib/progressionRoadmap';
 import { createProgressPlanner } from '@/lib/progressPlanner';
 import { calculateNetworth, parseSkyhelperNetworth } from '@/lib/calculateNetworth';
 import { hashPlayerProfile } from '@/lib/evaluation';
+import { createDerivedSnapshot } from '@/lib/profileSnapshots';
 import type { SimulatedPetTier } from '@/lib/simulation';
 import { generateSkyProgressorAchievements } from '@/lib/skyProgressorAchievements';
 import { buildComparisonProfile, type ComparisonCandidate } from '@/lib/profileComparisonData';
@@ -383,7 +384,7 @@ export default function Home() {
     setViewingUuid(playerUuid);
     setComparisonCandidates(comparisonOptions);
 
-    setResult({
+    const viewModel: ProfileViewModel = {
       profileScopeKey: `${profile.profile_id}:${playerUuid}`,
       skills,
       slayers,
@@ -446,7 +447,30 @@ export default function Home() {
       roadmap,
       planner,
       achievements,
-    });
+    };
+
+    try {
+      const historyResponse = await fetch('/api/profile-history', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        signal,
+        body: JSON.stringify(createDerivedSnapshot(viewModel.profileScopeKey, viewModel)),
+      });
+      if (historyResponse.ok) {
+        viewModel.history = await historyResponse.json() as ProfileViewModel['history'];
+      }
+    } catch {
+      if (signal?.aborted) return;
+    }
+
+    const skyhelperTopPercent = viewModel.overview.networth.skyhelperTopPercent;
+    viewModel.overview = {
+      ...viewModel.overview,
+      networthTopPercent: skyhelperTopPercent ?? viewModel.history?.networthTopPercent ?? null,
+      networthRankSource: skyhelperTopPercent !== null ? 'skyhelper' : viewModel.history?.networthTopPercent !== null && viewModel.history?.networthTopPercent !== undefined ? 'local-saved' : null,
+    };
+
+    setResult(viewModel);
   };
 
   const lookupComparisonProfile = async (comparisonIgn: string): Promise<ComparisonCandidate> => {
@@ -695,11 +719,12 @@ export default function Home() {
 
         {result && (
           <RecommendationSimulator key={`simulator:${result.profileScopeKey}`} profile={{
+            skyblockLevel: result.skyblockLevel.level,
             magicalPower: result.accessories.magicalPower,
             skills: Object.fromEntries(result.skills.map((skill) => [skill.skill.toLowerCase(), skill.level])),
             skillCaps: Object.fromEntries(result.skills.map((skill) => [skill.skill.toLowerCase(), { current: skill.maxLevel ?? skill.absoluteMaxLevel ?? 50, absolute: skill.absoluteMaxLevel ?? skill.maxLevel ?? 50 }])),
             pets: result.pets.flatMap((pet) => ['COMMON', 'UNCOMMON', 'RARE', 'EPIC', 'LEGENDARY', 'MYTHIC'].includes(pet.tier) ? [{ type: pet.type, tier: pet.tier as SimulatedPetTier, level: pet.level }] : []),
-          }} />
+          }} profileKey={result.profileScopeKey} profileLabel={`${result.overview.ign} - ${result.profileName}`} />
         )}
 
         {result?.suggestions && (
@@ -951,7 +976,7 @@ export default function Home() {
           {result?.minions && <MinionProgressSection progress={result.minions} />}
           {result?.bestiary && <BestiarySection progress={result.bestiary} />}
           {result?.museum && <MuseumSection progress={result.museum} />}
-          {result && <ProfileSnapshots profileKey={`${viewingUuid}:${result.profileName}`} parsedProfile={result} />}
+          {result && <ProfileSnapshots profileKey={`${viewingUuid}:${result.profileName}`} parsedProfile={result} history={result.history} />}
         </div>
       </div>
     </main>

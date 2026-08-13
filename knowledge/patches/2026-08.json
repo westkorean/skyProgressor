@@ -1,0 +1,151 @@
+[
+  {
+    "id": "patch.2026-08-05-august-5-skyblock-patch-notes-2",
+    "date": "2026-08-05",
+    "patchVersion": "Minor Patch",
+    "title": "[August 5] SkyBlock Patch Notes #2",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/august-5-skyblock-patch-notes-2.6136123/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [August 5] SkyBlock Patch Notes #2."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [August 5] SkyBlock Patch Notes #2.",
+        "reason": "Detected from official patch index on 2026-08-05.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-08-05-august-5-skyblock-patch-notes",
+    "date": "2026-08-05",
+    "patchVersion": "Minor Patch",
+    "title": "[August 5] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/august-5-skyblock-patch-notes.6136018/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [August 5] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [August 5] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-08-05.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-08-06-august-6-0-27-hotfixes-healing-revamp-adjustments",
+    "date": "2026-08-06",
+    "patchVersion": "0.27",
+    "title": "[August 6] 0.27 Hotfixes & Healing Revamp Adjustments",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/august-6-0-27-hotfixes-healing-revamp-adjustments.6135988/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "hotf recommendations may need review against [August 6] 0.27 Hotfixes & Healing Revamp Adjustments."
+    ],
+    "metaImpact": [
+      "[August 6] 0.27 Hotfixes & Healing Revamp Adjustments may affect current meta recommendations."
+    ],
+    "itemChanges": [],
+    "newSystems": [
+      "[August 6] 0.27 Hotfixes & Healing Revamp Adjustments"
+    ],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "hotf",
+        "change": "Review hotf recommendations against [August 6] 0.27 Hotfixes & Healing Revamp Adjustments.",
+        "reason": "Detected from official patch index on 2026-08-06.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-08-11-august-11-skyblock-patch-notes-2",
+    "date": "2026-08-11",
+    "patchVersion": "Minor Patch",
+    "title": "[August 11] SkyBlock Patch Notes 2",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/august-11-skyblock-patch-notes-2.6139315/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [August 11] SkyBlock Patch Notes 2."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [August 11] SkyBlock Patch Notes 2.",
+        "reason": "Detected from official patch index on 2026-08-11.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-08-11-august-11-skyblock-patch-notes",
+    "date": "2026-08-11",
+    "patchVersion": "Minor Patch",
+    "title": "[August 11] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/august-11-skyblock-patch-notes.6139155/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [August 11] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [August 11] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-08-11.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

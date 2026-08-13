@@ -1,0 +1,16 @@
+[
+  {
+    "id": "hotf.forest-tree-gating",
+    "category": "hotf",
+    "title": "Heart of the Forest Tree Gating",
+    "summary": "Heart of the Forest progression is tied to Foraging island progression, Forest Whispers, selected tree slots, and connected unlock paths.",
+    "recommendation": "Explain locked HOTF perks as pathing or currency gaps instead of treating missing nodes as API failure.",
+    "requirements": ["Heart of the Forest unlocked"],
+    "relatedSystems": ["foraging"],
+    "tags": ["hotf", "foraging", "tree"],
+    "sources": [{ "title": "Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

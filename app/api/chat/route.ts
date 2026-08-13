@@ -25,6 +25,7 @@ export async function POST(req: Request) {
     console.info('[retrieval]', {
       systems: retrieval.systems,
       knowledgeIds: retrieval.knowledge.map((entry) => entry.id),
+      patchIds: retrieval.patches.map((entry) => entry.id),
       tokensBefore: retrieval.tokenMetrics.before,
       tokensAfter: retrieval.tokenMetrics.after,
       reductionPercent: retrieval.tokenMetrics.reductionPercent,
@@ -39,6 +40,8 @@ Progression priorities come only from rankedRecommendations. Explain them in the
 deterministicPlannerGoals is the only allowed source for a progression plan. You may explain its sequence, prerequisites, costs, timing, rewards, and progress, but never add, remove, reorder, or generate planner goals.
 
 The localKnowledge array contains only entries selected for the relevant systems. Follow its requirements and recommendations, prefer higher-confidence entries, and name the source title when attribution is useful. Do not claim access to any other knowledge database.
+
+patchHistory contains relevant historical patch summaries and extracted meta changes. Use it to explain why older advice may be outdated or why a recommendation changed over time. Do not treat manually-review-required patch summaries as final if they conflict with higher-confidence current knowledge.
 
 Retrieved context:
 ${retrieval.context}

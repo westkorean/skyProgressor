@@ -9,6 +9,7 @@ export interface SimulationPet {
 
 export interface SimulationProfile {
   magicalPower: number;
+  skyblockLevel?: number;
   skills: Partial<Record<SimulatedSkill, number>>;
   skillCaps?: Partial<Record<SimulatedSkill, { current: number; absolute: number }>>;
   pets: SimulationPet[];
@@ -17,7 +18,8 @@ export interface SimulationProfile {
 export type SimulationChange =
   | { type: 'set-magical-power'; target: number }
   | { type: 'set-skill-level'; skill: SimulatedSkill; target: number }
-  | { type: 'acquire-pet'; petType: 'ELEPHANT'; tier: SimulatedPetTier; level: number };
+  | { type: 'set-skyblock-level'; target: number }
+  | { type: 'acquire-pet'; petType: string; tier: SimulatedPetTier; level: number };
 
 export interface SimulationImpact {
   id: string;

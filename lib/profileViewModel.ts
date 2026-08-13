@@ -30,6 +30,7 @@ import type { SkyProgressorAchievementSummary } from './skyProgressorAchievement
 import type { Suggestion } from './getSuggestions.ts';
 import type { LevelRecommendation } from './getSkyblockLevelRecommendations.ts';
 import type { MarketPrices } from './marketPrices.ts';
+import type { DerivedProfileSnapshot } from './userProgressDatabase.ts';
 
 export interface CoopMember {
   uuid: string;
@@ -81,4 +82,8 @@ export interface ProfileViewModel {
   roadmap: ProgressionRoadmap;
   planner: ProgressPlanner;
   achievements: SkyProgressorAchievementSummary;
+  history?: {
+    snapshots: DerivedProfileSnapshot[];
+    networthTopPercent: number | null;
+  };
 }

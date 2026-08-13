@@ -36,6 +36,7 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
   const [open, setOpen] = useState(false);
   const [showChatHint, setShowChatHint] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
+  const [confirmClearHistory, setConfirmClearHistory] = useState(false);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [selectedKey, setSelectedKey] = useState(profileKey);
   const [historicalMessages, setHistoricalMessages] = useState<UIMessage[]>([]);
@@ -107,6 +108,7 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
   const selectHistory = (entry: HistoryEntry) => {
     setSelectedKey(entry.key);
     setHistoricalMessages(entry.key === profileKey ? [] : readMessages(entry.key));
+    setConfirmClearHistory(false);
     setShowHistory(false);
   };
 
@@ -122,10 +124,31 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
     setOpen((value) => !value);
   };
 
+  const clearChatHistory = () => {
+    if (!confirmClearHistory) {
+      setConfirmClearHistory(true);
+      return;
+    }
+    try {
+      for (const entry of readIndex()) localStorage.removeItem(storageKey(entry.key));
+      localStorage.removeItem(HISTORY_INDEX_KEY);
+      localStorage.removeItem(storageKey(profileKey));
+    } catch { /* Browser storage can be unavailable; the in-memory chat is still cleared. */ }
+    setHistory([]);
+    setHistoricalMessages([]);
+    setMessages([]);
+    lastPersistedMessages.current = '[]';
+    setSelectedKey(profileKey);
+    setConfirmClearHistory(false);
+    setShowHistory(false);
+  };
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (!viewingCurrent || !input.trim() || isLoading) return;
-    void sendMessage({ text: input.trim() });
+    const text = input.trim();
+    void fetch('/api/advisor-input', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ profileKey, profileLabel, kind: 'chat', text }) }).catch(() => undefined);
+    void sendMessage({ text });
     setInput('');
   };
 
@@ -138,6 +161,13 @@ export default function ChatBox({ playerData, profileKey, profileLabel, onVisitP
               <div className="mb-3 flex items-center justify-between">
                 <div><div className="text-sm font-semibold">Profile chats</div><div className="text-[10px] text-neutral-500">{messageCount} saved messages</div></div>
                 <button type="button" onClick={() => setShowHistory(false)} className="rounded p-1 text-neutral-500 hover:bg-neutral-800 hover:text-white" aria-label="Close history">×</button>
+              </div>
+              <div className="mb-3 rounded-lg border border-neutral-800 bg-neutral-900 p-2">
+                {confirmClearHistory && <p className="mb-2 text-[11px] leading-4 text-amber-300">This permanently clears saved AI chat history on this browser. Profile snapshots and progression history are not affected.</p>}
+                <div className="flex gap-2">
+                  <button type="button" onClick={clearChatHistory} disabled={history.length === 0 && messages.length === 0} className={`flex-1 rounded border px-2 py-1.5 text-xs disabled:opacity-40 ${confirmClearHistory ? 'border-red-500 bg-red-950/40 text-red-200 hover:bg-red-900/50' : 'border-neutral-700 text-neutral-400 hover:border-red-600 hover:text-red-300'}`}>{confirmClearHistory ? 'Confirm clear' : 'Clear history'}</button>
+                  {confirmClearHistory && <button type="button" onClick={() => setConfirmClearHistory(false)} className="rounded border border-neutral-700 px-2 py-1.5 text-xs text-neutral-400 hover:text-white">Cancel</button>}
+                </div>
               </div>
               <div className="space-y-1 overflow-y-auto">
                 {history.map((entry) => {

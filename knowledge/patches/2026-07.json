@@ -1,0 +1,89 @@
+[
+  {
+    "id": "patch.2026-07-03-july-3-skyblock-patch-notes",
+    "date": "2026-07-03",
+    "patchVersion": "Minor Patch",
+    "title": "[July 3] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/july-3-skyblock-patch-notes.6118613/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [July 3] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [July 3] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-07-03.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-07-04-july-4-skyblock-patch-notes",
+    "date": "2026-07-04",
+    "patchVersion": "Minor Patch",
+    "title": "[July 4] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/july-4-skyblock-patch-notes.6119223/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [July 4] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [July 4] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-07-04.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-07-13-july-13-skyblock-patch-notes",
+    "date": "2026-07-13",
+    "patchVersion": "Minor Patch",
+    "title": "[July 13] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/july-13-skyblock-patch-notes.6124368/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [July 13] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [July 13] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-07-13.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

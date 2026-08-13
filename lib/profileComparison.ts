@@ -66,7 +66,7 @@ export function compareProfiles(leftLabel: string, left: unknown, rightLabel: st
   const leftHotm = rec(leftProfile.hotm); const rightHotm = rec(rightProfile.hotm);
   metric('Mining', 'HOTM Level', number(leftHotm.level), number(rightHotm.level), ' level');
   metric('Mining', 'Powder Spent', number(leftHotm.totalPowderSpent), number(rightHotm.totalPowderSpent));
-  metric('Mining', 'Peak of the Mountain', number(leftHotm.peakOfTheMountainLevel), number(rightHotm.peakOfTheMountainLevel), ' level');
+  metric('Mining', 'Core of the Mountain', number(leftHotm.coreOfTheMountainLevel), number(rightHotm.coreOfTheMountainLevel), ' level');
   const leftHotf = rec(leftProfile.hotf); const rightHotf = rec(rightProfile.hotf);
   metric('Foraging', 'HOTF Level', number(leftHotf.level), number(rightHotf.level), ' level');
   metric('Foraging', 'Forest Whispers Spent', number(leftHotf.forestWhispersSpent), number(rightHotf.forestWhispersSpent));

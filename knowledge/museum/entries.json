@@ -1,0 +1,16 @@
+[
+  {
+    "id": "museum.cheapest-meaningful-donations",
+    "category": "museum",
+    "title": "Museum Donation Prioritization",
+    "summary": "Museum value and rewards are best improved through missing donations that are affordable and meaningful for the profile.",
+    "recommendation": "Recommend the cheapest missing donation only when it improves museum progress or unlocks a relevant reward.",
+    "requirements": ["Museum access"],
+    "relatedSystems": ["economy", "collections"],
+    "tags": ["museum", "donations", "completion"],
+    "sources": [{ "title": "Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Main_Page" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "patch.2025-12-15-greenhouse",
+    "date": "2025-12-15",
+    "patchVersion": "0.24",
+    "title": "The Greenhouse",
+    "source": { "title": "Official Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" },
+    "majorAdditions": ["Greenhouse plot", "New crops", "Farming Tool revamp", "Chip system", "New Garden visitors"],
+    "majorRemovals": [],
+    "balanceChanges": ["Farming tool and Garden progression assumptions changed."],
+    "progressionImpact": ["Farming recommendations should account for Greenhouse, chips, new crops, and visitor progression."],
+    "metaImpact": ["Pre-Greenhouse crop and farming-tool advice may be incomplete for current profiles."],
+    "itemChanges": ["Farming tools changed through the revamp."],
+    "newSystems": ["Greenhouse", "Chip system"],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "farming",
+        "change": "Farming progression should include Greenhouse and chip/tool context.",
+        "previousMeta": "Garden-only crop milestone and tool advice.",
+        "currentMeta": "Garden plus Greenhouse, chips, revamped tools, and expanded visitors.",
+        "reason": "Patch 0.24 introduced The Greenhouse.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

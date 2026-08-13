@@ -2,14 +2,28 @@ import PixelLock from './PixelLock';
 import type { HOTMProgress } from '@/lib/parseHOTM';
 
 const label = (value: string) => value.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
 export default function HOTMCard({ progress }: { progress: HOTMProgress }) {
-  if (!progress.available) return <section className="mb-8 rounded-xl border border-neutral-800 bg-neutral-900 p-5"><h2 className="mb-3 text-xl font-semibold">Heart of the Mountain</h2><div className="flex items-center gap-3 text-sm text-neutral-400"><PixelLock reason="Enable profile API access in Hypixel SkyBlock settings, then refresh." />HOTM data is unavailable.</div></section>;
-  return <section className="mb-8 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
-    <div className="mb-2 flex items-baseline justify-between"><div><h2 className="text-xl font-semibold">Heart of the Mountain</h2><p className="text-xs text-neutral-500">{progress.currentXp.toLocaleString()} XP · {progress.xpToNextLevel === null ? 'Maximum level' : `${progress.xpToNextLevel.toLocaleString()} XP remaining`}</p></div><span className="text-amber-300">Level {progress.level} / {progress.maxLevel}</span></div>
-    <div className="mb-5 h-3 overflow-hidden rounded-full bg-neutral-800"><div className="h-full bg-amber-500" style={{ width: `${progress.progressPercent}%` }} /></div>
-    <div className="mb-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">{Object.entries(progress.powder).map(([type, powder]) => <div key={type} className="rounded-lg border border-neutral-800 bg-neutral-950 p-3"><div className="text-xs text-neutral-500">{label(type)} Powder</div><div>{powder.available.toLocaleString()}</div><div className="text-[11px] text-neutral-500">{powder.total.toLocaleString()} total</div></div>)}<div className="rounded-lg border border-neutral-800 bg-neutral-950 p-3"><div className="text-xs text-neutral-500">Powder Spent</div><div>{progress.totalPowderSpent.toLocaleString()}</div><div className="text-[11px] text-neutral-500">Peak {progress.peakOfTheMountainLevel} · {progress.pickaxeAbility ? label(progress.pickaxeAbility) : 'No ability selected'}</div></div></div>
-    <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-400">Mining tree</h3>
-    <div className="mb-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4"><div>Mining Speed <b className="block text-emerald-300">{progress.miningSpeed}</b></div><div>Mining Fortune <b className="block text-emerald-300">{progress.miningFortune}</b></div><div>Speed Boost <b className="block text-emerald-300">{progress.miningSpeedBoost}</b></div><div>Daily Powder <b className="block text-emerald-300">{progress.dailyPowder}</b></div></div>
-    <div className="grid gap-2 md:grid-cols-2">{progress.perks.map(perk => <article key={perk.id} className={`rounded-lg border bg-neutral-950 p-3 ${perk.enabled ? 'border-neutral-800' : 'border-red-900/60 opacity-70'}`}><div className="flex justify-between gap-3"><span className="font-medium">{perk.name}</span><span className="shrink-0 text-sm text-amber-300">{perk.level}{perk.maxLevel === null ? '' : ` / ${perk.maxLevel}`}</span></div><p className="mt-1 text-xs text-neutral-400">{perk.description}</p><p className="mt-2 text-[11px] text-neutral-500">{perk.costToNextLevel === null ? (perk.maxLevel === perk.level ? 'Maxed' : 'Next cost unavailable') : `Next: ${perk.costToNextLevel.toLocaleString()} ${perk.powder} powder`}{!perk.enabled && ' · Disabled'}</p></article>)}</div>
-  </section>;
+  if (!progress.available) {
+    return <section className="mb-8 rounded-xl border border-neutral-800 bg-neutral-900 p-5"><h2 className="mb-3 text-xl font-semibold">Heart of the Mountain</h2><div className="flex items-center gap-3 text-sm text-neutral-400"><PixelLock reason="Enable profile API access in Hypixel SkyBlock settings, then refresh." />HOTM data is unavailable.</div></section>;
+  }
+
+  return (
+    <section className="mb-8 rounded-xl border border-neutral-800 bg-neutral-900 p-5">
+      <div className="mb-2 flex items-baseline justify-between">
+        <div><h2 className="text-xl font-semibold">Heart of the Mountain</h2><p className="text-xs text-neutral-500">{progress.currentXp.toLocaleString()} XP - {progress.xpToNextLevel === null ? 'Maximum level' : `${progress.xpToNextLevel.toLocaleString()} XP remaining`}</p></div>
+        <span className="text-amber-300">Level {progress.level} / {progress.maxLevel}</span>
+      </div>
+      <div className="mb-5 h-3 overflow-hidden rounded-full bg-neutral-800"><div className="h-full bg-amber-500" style={{ width: `${progress.progressPercent}%` }} /></div>
+      <div className="mb-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
+        {Object.entries(progress.powder).map(([type, powder]) => <div key={type} className="rounded-lg border border-neutral-800 bg-neutral-950 p-3"><div className="text-xs text-neutral-500">{label(type)} Powder</div><div>{powder.available.toLocaleString()}</div><div className="text-[11px] text-neutral-500">{powder.total.toLocaleString()} total</div></div>)}
+        <div className="rounded-lg border border-neutral-800 bg-neutral-950 p-3"><div className="text-xs text-neutral-500">Powder Spent</div><div>{progress.totalPowderSpent.toLocaleString()}</div><div className="text-[11px] text-neutral-500">Core {progress.coreOfTheMountainLevel} - {progress.pickaxeAbility ? label(progress.pickaxeAbility) : 'No ability selected'}</div></div>
+      </div>
+      <div className="mb-5 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4"><div>Mining Speed <b className="block text-emerald-300">{progress.miningSpeed}</b></div><div>Mining Fortune <b className="block text-emerald-300">{progress.miningFortune}</b></div><div>Speed Boost <b className="block text-emerald-300">{progress.miningSpeedBoost}</b></div><div>Daily Powder <b className="block text-emerald-300">{progress.dailyPowder}</b></div></div>
+      <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-neutral-400">Perks</h3>
+      <div className="grid gap-2 md:grid-cols-2">
+        {progress.perks.map((perk) => <article key={perk.id} className={`rounded-lg border bg-neutral-950 p-3 ${perk.level > 0 ? 'border-neutral-800' : 'border-neutral-900 opacity-70'}`}><div className="flex justify-between gap-3"><span className="font-medium">{perk.name}</span><span className="shrink-0 text-sm text-amber-300">{perk.level}{perk.maxLevel === null ? '' : ` / ${perk.maxLevel}`}</span></div><p className="mt-1 text-xs text-neutral-400">{perk.description}</p><p className="mt-2 text-[11px] text-neutral-500">{perk.costToNextLevel === null ? (perk.maxLevel === perk.level ? 'Maxed' : 'Next cost unavailable') : `Next: ${perk.costToNextLevel.toLocaleString()} ${perk.powder ?? 'powder'}`}{perk.level > 0 && !perk.enabled && ' - Purchased but disabled'}</p></article>)}
+      </div>
+    </section>
+  );
 }

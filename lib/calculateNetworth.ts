@@ -4,6 +4,7 @@ import type { PetProgress } from './parsePets.ts';
 
 export interface NetworthBreakdown {
   source: 'skyhelper' | 'local-fallback';
+  skyhelperTopPercent: number | null;
   total: number;
   liquid: number;
   inventory: number;
@@ -28,6 +29,37 @@ function record(value: unknown): Record<string, unknown> | null {
   return value !== null && typeof value === 'object' && !Array.isArray(value)
     ? value as Record<string, unknown>
     : null;
+}
+
+function percentValue(value: unknown): number | null {
+  if (typeof value !== 'number' || !Number.isFinite(value)) return null;
+  if (value <= 0) return null;
+  if (value <= 1) return Math.round(value * 1000) / 10;
+  if (value <= 100) return Math.round(value * 10) / 10;
+  return null;
+}
+
+function extractSkyhelperTopPercent(payload: unknown): number | null {
+  const root = record(payload);
+  if (!root) return null;
+  const directKeys = [
+    'topPercent',
+    'top_percentage',
+    'networthTopPercent',
+    'networth_top_percent',
+    'percentile',
+    'percentage',
+  ];
+  for (const key of directKeys) {
+    const value = percentValue(root[key]);
+    if (value !== null) return value;
+  }
+  for (const key of ['rank', 'ranking', 'leaderboard', 'position']) {
+    const nested = record(root[key]);
+    const nestedPercent = percentValue(nested?.topPercent ?? nested?.top_percentage ?? nested?.percentile ?? nested?.percentage);
+    if (nestedPercent !== null) return nestedPercent;
+  }
+  return null;
 }
 
 /** Converts the same complete SkyHelper result used by SkyCrypt into our UI shape. */
@@ -60,7 +92,7 @@ export function parseSkyhelperNetworth(payload: unknown): NetworthBreakdown | nu
   const purse = safeCoins(root?.purse as number | null);
   const bank = safeCoins(root?.bank as number | null) + safeCoins(root?.personalBank as number | null);
   return {
-    source: 'skyhelper', total, liquid: purse + bank, inventory, pets, soulboundItems,
+    source: 'skyhelper', skyhelperTopPercent: extractSkyhelperTopPercent(root), total, liquid: purse + bank, inventory, pets, soulboundItems,
     purse, bank, pricedInventorySlots, unpricedInventorySlots: 0, pricedPets,
     unpricedPets: 0, pricedSoulboundSlots: 0,
   };
@@ -122,6 +154,7 @@ export function calculateNetworth(input: NetworthInput): NetworthBreakdown {
   const liquid = purse + bank;
   return {
     source: 'local-fallback',
+    skyhelperTopPercent: null,
     total: liquid + inventory + pets,
     liquid,
     inventory,

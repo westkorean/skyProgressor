@@ -2,6 +2,7 @@ import { managedKnowledgeCatalog } from '../../knowledge/catalog.ts';
 import { constructRetrievalContext } from './constructContext.ts';
 import { determineRelevantSystems } from './determineSystems.ts';
 import { retrieveLocalKnowledge } from './retrieveLocalKnowledge.ts';
+import { retrievePatchHistory } from './retrievePatchHistory.ts';
 import { retrieveProfileEvidence } from './retrieveProfileEvidence.ts';
 import type { RetrievalPipelineResult } from './types.ts';
 
@@ -11,6 +12,7 @@ export const estimateTokenCount = (value: string): number => Math.ceil(value.len
 export function runRetrievalPipeline(question: string, playerData: unknown): RetrievalPipelineResult {
   const systems = determineRelevantSystems(question, playerData);
   const knowledge = retrieveLocalKnowledge(question, systems);
+  const patches = retrievePatchHistory(question, systems);
   const profileEvidence = retrieveProfileEvidence(playerData, systems);
   const data = record(playerData);
   const recommendations = Array.isArray(data?.recommendations)
@@ -24,8 +26,8 @@ export function runRetrievalPipeline(question: string, playerData: unknown): Ret
     const category = record(value)?.category;
     return typeof category === 'string' && systems.some((system) => category === system || (category === 'slayers' && system === 'combat') || (category === 'hotf' && system === 'foraging'));
   }) : [];
-  const context = constructRetrievalContext(question, systems, knowledge, profileEvidence, recommendations, plannerGoals);
-  const before = estimateTokenCount(JSON.stringify({ knowledge: managedKnowledgeCatalog, profile: playerData }));
+  const context = constructRetrievalContext(question, systems, knowledge, patches, profileEvidence, recommendations, plannerGoals);
+  const before = estimateTokenCount(JSON.stringify({ knowledge: managedKnowledgeCatalog, patches: 'all patch history excluded from prompts unless relevant', profile: playerData }));
   const after = estimateTokenCount(context);
-  return { systems, knowledge, profileEvidence, context, tokenMetrics: { before, after, saved: Math.max(0, before - after), reductionPercent: before > 0 ? Math.max(0, Math.round((1 - after / before) * 100)) : 0 } };
+  return { systems, knowledge, patches, profileEvidence, context, tokenMetrics: { before, after, saved: Math.max(0, before - after), reductionPercent: before > 0 ? Math.max(0, Math.round((1 - after / before) * 100)) : 0 } };
 }

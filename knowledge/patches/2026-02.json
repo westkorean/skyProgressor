@@ -1,0 +1,28 @@
+[
+  {
+    "id": "patch.2026-02-24-hub-revamp",
+    "date": "2026-02-24",
+    "patchVersion": "0.24.2",
+    "title": "Hub Revamp, Year of the Witch, and Museum Restructure",
+    "source": { "title": "Official Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" },
+    "majorAdditions": ["Hub Revamp", "Year of the Witch", "Frozen Corpse RNG Meter", "Frozen Corpse Milestones"],
+    "majorRemovals": ["Stranded end-of-life progression support"],
+    "balanceChanges": ["Museum and hub access assumptions changed."],
+    "progressionImpact": ["Museum recommendations should account for the restructure and avoid stale donation assumptions."],
+    "metaImpact": ["Pre-0.24.2 Museum advice may need review before being used as current guidance."],
+    "itemChanges": [],
+    "newSystems": ["Frozen Corpse RNG Meter", "Frozen Corpse Milestones"],
+    "removedMechanics": ["Stranded EOL"],
+    "extractedKnowledge": [
+      {
+        "topic": "museum",
+        "change": "Museum advice must be verified against the post-restructure state.",
+        "previousMeta": "Older Museum reward and donation assumptions.",
+        "currentMeta": "Post-0.24.2 Museum restructure recommendations.",
+        "reason": "Patch 0.24.2 restructured Museum-related progression.",
+        "confidence": "Medium"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]
