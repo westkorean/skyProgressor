@@ -42,3 +42,6 @@ next-env.d.ts
 
 
 /types/
+
+# local user progression/advisor storage
+/data/userProgressDatabase.local.json

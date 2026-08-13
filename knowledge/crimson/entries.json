@@ -1,0 +1,16 @@
+[
+  {
+    "id": "crimson.reputation-before-kuudra",
+    "category": "crimson",
+    "title": "Crimson Isle Reputation Gating",
+    "summary": "Crimson Isle recommendations depend on faction reputation, Kuudra readiness, trophy fish progress, and combat survivability.",
+    "recommendation": "Gate Kuudra and high-cost Crimson Isle advice behind reputation, combat setup, and profile readiness evidence.",
+    "requirements": ["Crimson Isle access", "Faction progression"],
+    "relatedSystems": ["combat", "fishing", "economy"],
+    "tags": ["crimson", "kuudra", "reputation"],
+    "sources": [{ "title": "Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

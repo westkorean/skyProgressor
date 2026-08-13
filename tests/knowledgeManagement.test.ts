@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { managedKnowledgeCatalog } from '../knowledge/catalog.ts';
 import { KNOWLEDGE_CATEGORIES, type ManagedKnowledgeCategory } from '../knowledge/schema.ts';
-import { validateKnowledgeCatalog, validateKnowledgeEntry } from '../knowledge/validation.ts';
+import { validateKnowledgeCatalog, validateKnowledgeEntry, validatePatchKnowledgeCatalog } from '../knowledge/validation.ts';
+import { patchKnowledgeCatalog } from '../knowledge/patches/catalog.ts';
 
 test('managed knowledge catalog has valid entries in every required category', () => {
   assert.equal(managedKnowledgeCatalog.length >= KNOWLEDGE_CATEGORIES.length, true);
@@ -28,4 +29,11 @@ test('catalog validation detects duplicate IDs without accepting duplicate entri
   const result = validateKnowledgeCatalog(files);
   assert.equal(result.valid, false);
   assert.match(result.issues.map((issue) => issue.message).join(' '), /Duplicate ID/);
+});
+
+test('patch knowledge catalog validates structured chronological patch entries', () => {
+  const result = validatePatchKnowledgeCatalog(patchKnowledgeCatalog);
+  assert.equal(result.valid, true);
+  assert.ok(result.entries.length >= 4);
+  assert.ok(result.entries.every((entry) => entry.extractedKnowledge.length > 0));
 });

@@ -2,7 +2,7 @@ import type { SimulationChange, SimulationImpact, SimulationProfile, SimulationR
 
 const clamp = (value: number, minimum: number, maximum: number) => Math.max(minimum, Math.min(maximum, Number.isFinite(value) ? value : minimum));
 const level = (value: number, maximum: number) => Math.floor(clamp(value, 0, maximum));
-const clone = (profile: SimulationProfile): SimulationProfile => ({ magicalPower: Math.max(0, profile.magicalPower), skills: { ...profile.skills }, skillCaps: profile.skillCaps ? Object.fromEntries(Object.entries(profile.skillCaps).map(([skill, caps]) => [skill, caps ? { ...caps } : caps])) : undefined, pets: profile.pets.map((pet) => ({ ...pet })) });
+const clone = (profile: SimulationProfile): SimulationProfile => ({ magicalPower: Math.max(0, profile.magicalPower), skyblockLevel: profile.skyblockLevel, skills: { ...profile.skills }, skillCaps: profile.skillCaps ? Object.fromEntries(Object.entries(profile.skillCaps).map(([skill, caps]) => [skill, caps ? { ...caps } : caps])) : undefined, pets: profile.pets.map((pet) => ({ ...pet })) });
 const impact = (id: string, label: string, before: number, after: number, unit: string, certainty: SimulationImpact['certainty']): SimulationImpact => ({ id, label, before, after, delta: after - before, unit, certainty });
 
 // Formula published for accessory Power stat scaling. The selected Power still determines actual stats.
@@ -54,20 +54,40 @@ function simulateSkill(original: SimulationProfile, change: Extract<SimulationCh
   return { applied: finalLevel > before, title: `Simulate ${skillName} ${finalLevel}`, summary, originalProfile: clone(original), simulatedProfile: simulated, change, impacts, unlocks, warnings };
 }
 
+const PET_EFFECTS: Record<string, { label: string; unit: string; perLevel: number; certainty: SimulationImpact['certainty']; summary: string }> = {
+  ELEPHANT: { label: 'Active Elephant Farming Fortune', unit: 'fortune', perLevel: 1.5, certainty: 'exact', summary: 'Trunk Efficiency adds Farming Fortune while the pet is active.' },
+  RABBIT: { label: 'Rabbit farming XP bonus', unit: '%', perLevel: 0.3, certainty: 'estimate', summary: 'Rabbit is useful when the goal is farming XP rather than crop drops.' },
+  SILVERFISH: { label: 'Silverfish mining XP bonus', unit: '%', perLevel: 0.3, certainty: 'estimate', summary: 'Silverfish helps mining XP progression when it is active.' },
+  MONKEY: { label: 'Monkey foraging efficiency', unit: 'score', perLevel: 1, certainty: 'estimate', summary: 'Monkey improves foraging flow, especially when paired with the right axe setup.' },
+  ARMADILLO: { label: 'Armadillo mining mobility value', unit: 'score', perLevel: 1, certainty: 'estimate', summary: 'Armadillo is mainly a route and movement pet, so this is a qualitative progression value.' },
+};
+
+function simulateSkyblockLevel(original: SimulationProfile, change: Extract<SimulationChange, { type: 'set-skyblock-level' }>): SimulationResult {
+  const simulated = clone(original);
+  const before = Math.max(0, original.skyblockLevel ?? 0);
+  const after = Math.floor(clamp(change.target, before, 500));
+  simulated.skyblockLevel = after;
+  return { applied: after > before, title: `Simulate SkyBlock Level ${after}`, summary: after > before ? `This previews ${after - before} SkyBlock levels of account-wide progression.` : 'The target does not exceed the current SkyBlock level.', originalProfile: clone(original), simulatedProfile: simulated, change, impacts: [impact('skyblock-level', 'SkyBlock Level', before, after, 'levels', 'exact'), impact('health-progress', 'Approximate profile stat growth', before * 5, after * 5, 'score', 'estimate')], unlocks: [], warnings: ['SkyBlock XP sources are broad; use the roadmap and missing sections to decide which tasks supply the levels.'] };
+}
+
 function simulatePet(original: SimulationProfile, change: Extract<SimulationChange, { type: 'acquire-pet' }>): SimulationResult {
   const simulated = clone(original);
+  const petType = change.petType.toUpperCase();
   const petLevel = Math.max(1, level(change.level, 100));
-  const existing = original.pets.filter((pet) => pet.type.toUpperCase() === change.petType).sort((a, b) => b.level - a.level)[0];
-  const existingFortune = existing?.tier === 'LEGENDARY' ? clamp(existing.level, 1, 100) * 1.5 : 0;
-  const simulatedFortune = change.tier === 'LEGENDARY' ? Math.max(existingFortune, petLevel * 1.5) : existingFortune;
+  const effect = PET_EFFECTS[petType] ?? { label: `${petType.replace(/_/g, ' ')} pet level`, unit: 'levels', perLevel: 1, certainty: 'estimate' as const, summary: 'This pet is tracked as a general progression upgrade.' };
+  const existing = original.pets.filter((pet) => pet.type.toUpperCase() === petType).sort((a, b) => b.level - a.level)[0];
+  const existingValue = existing ? clamp(existing.level, 1, 100) * effect.perLevel : 0;
+  const simulatedValue = Math.max(existingValue, petLevel * effect.perLevel);
   const applied = !existing || existing.tier !== change.tier || existing.level < petLevel;
-  if (applied) simulated.pets.push({ type: change.petType, tier: change.tier, level: petLevel });
-  return { applied, title: `Simulate ${change.tier} Elephant`, summary: change.tier === 'LEGENDARY' ? `At level ${petLevel}, Trunk Efficiency provides ${petLevel * 1.5} Farming Fortune while the pet is active.` : 'Trunk Efficiency is a Legendary Elephant perk, so no Farming Fortune is added for this rarity.', originalProfile: clone(original), simulatedProfile: simulated, change, impacts: [impact('elephant-fortune', 'Active Elephant Farming Fortune', existingFortune, simulatedFortune, 'fortune', 'exact')], unlocks: change.tier === 'LEGENDARY' ? [{ id: 'trunk-efficiency', title: 'Trunk Efficiency perk', requirement: 'Legendary Elephant', newlyUnlocked: existingFortune === 0 }] : [], warnings: ['Pet benefits apply only while the Elephant is active.', 'This simulation excludes pet purchase price and leveling time.'] };
+  if (applied) simulated.pets.push({ type: petType, tier: change.tier, level: petLevel });
+  const unlockTitle = petType === 'ELEPHANT' && change.tier === 'LEGENDARY' ? 'Trunk Efficiency perk' : `${petType.replace(/_/g, ' ')} pet`;
+  return { applied, title: `Simulate ${change.tier} ${petType.replace(/_/g, ' ')}`, summary: `${effect.summary} Target level: ${petLevel}.`, originalProfile: clone(original), simulatedProfile: simulated, change, impacts: [impact(`${petType.toLowerCase()}-value`, effect.label, existingValue, simulatedValue, effect.unit, effect.certainty)], unlocks: [{ id: `${petType.toLowerCase()}-pet`, title: unlockTitle, requirement: `${change.tier} level ${petLevel}`, newlyUnlocked: !existing }], warnings: ['Pet benefits apply only when the pet is active or when its passive perk is relevant.', 'This simulation excludes purchase price, leveling time, and profile-specific pet item choices.'] };
 }
 
 export function simulateProfileChange(profile: SimulationProfile, change: SimulationChange): SimulationResult {
   const original = clone(profile);
   if (change.type === 'set-magical-power') return simulateMagicalPower(original, change);
   if (change.type === 'set-skill-level') return simulateSkill(original, change);
+  if (change.type === 'set-skyblock-level') return simulateSkyblockLevel(original, change);
   return simulatePet(original, change);
 }

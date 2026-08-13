@@ -16,7 +16,8 @@
     "update:museum": "tsx scripts/updateMuseumCatalog.ts",
     "update:item-recipes": "tsx scripts/updateItemRecipes.ts",
     "validate:data": "node --no-warnings --experimental-strip-types scripts/validateGeneratedData.ts",
-    "validate:knowledge": "node --no-warnings --experimental-strip-types scripts/validateKnowledge.ts"
+    "validate:knowledge": "node --no-warnings --experimental-strip-types scripts/validateKnowledge.ts",
+    "update:knowledge": "node --no-warnings --experimental-strip-types scripts/updateKnowledge.ts"
   },
   "dependencies": {
     "@ai-sdk/openai": "^4.0.20",

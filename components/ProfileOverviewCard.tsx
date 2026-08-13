@@ -19,6 +19,7 @@ export type ProfileOverviewData = {
   bank: number | null;
   networth: {
     source: 'skyhelper' | 'local-fallback';
+    skyhelperTopPercent: number | null;
     total: number;
     liquid: number;
     inventory: number;
@@ -30,6 +31,8 @@ export type ProfileOverviewData = {
     unpricedPets: number;
     pricedSoulboundSlots: number;
   };
+  networthTopPercent?: number | null;
+  networthRankSource?: 'skyhelper' | 'local-saved' | null;
   magicalPower: number;
   skillAverage: number;
   catacombsLevel: number;
@@ -104,6 +107,13 @@ export default function ProfileOverviewCard({
             </div>
             <div className="mt-1 text-2xl font-semibold text-white">
               {coins(overview.networth.total)}
+            </div>
+            <div className="mt-1 text-xs text-amber-200">
+              {overview.networthTopPercent == null
+                ? 'Top rank learns from saved local snapshots'
+                : overview.networthRankSource === 'skyhelper'
+                  ? `Top ${overview.networthTopPercent}% of all SkyHelper net worth records`
+                  : `Top ${overview.networthTopPercent}% of saved net worth snapshots`}
             </div>
           </div>
           <div className="grid grid-cols-4 gap-x-5 gap-y-1 text-right text-xs">

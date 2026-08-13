@@ -1,0 +1,28 @@
+[
+  {
+    "id": "patch.2025-06-23-foraging-update",
+    "date": "2025-06-23",
+    "patchVersion": "0.23",
+    "title": "The Foraging Update",
+    "source": { "title": "Official Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" },
+    "majorAdditions": ["Galatea foraging content", "Modern Foraging progression hooks", "Heart of the Forest related progression"],
+    "majorRemovals": [],
+    "balanceChanges": ["Foraging progression shifted away from older island-only grinding assumptions."],
+    "progressionImpact": ["Foraging advice should prioritize current Galatea progression when the profile has access."],
+    "metaImpact": ["Old Dark Oak-only style recommendations are historical and should not be presented as the current default."],
+    "itemChanges": [],
+    "newSystems": ["Heart of the Forest"],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "foraging",
+        "change": "Current Foraging progression should consider Galatea and HOTF instead of legacy tree-only routes.",
+        "previousMeta": "Legacy public-island tree grinding recommendations.",
+        "currentMeta": "Galatea and Heart of the Forest progression when available.",
+        "reason": "Patch 0.23 introduced the Foraging update.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

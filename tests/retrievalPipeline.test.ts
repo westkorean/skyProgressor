@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { determineRelevantSystems, retrieveLocalKnowledge, runRetrievalPipeline } from '../lib/retrieval/index.ts';
+import { determineRelevantSystems, retrieveLocalKnowledge, retrievePatchHistory, runRetrievalPipeline } from '../lib/retrieval/index.ts';
 
 const playerData = {
   profileSummary: {
@@ -30,10 +30,17 @@ test('local retrieval returns entries only from selected systems', () => {
 test('pipeline constructs bounded relevant context and measures token reduction', () => {
   const result = runRetrievalPipeline('What should I do with HOTM powder?', playerData);
   assert.ok(result.knowledge.every((entry) => result.systems.includes(entry.category)));
+  assert.ok(Array.isArray(result.patches));
   assert.ok(result.profileEvidence.some((entry) => entry.label === 'HOTM level' && entry.value === 6));
   assert.ok(result.context.includes('missing-hotm-progression'));
   assert.equal(result.context.includes('garden.advance-milestones-and-visitors'), false);
   assert.ok(result.tokenMetrics.before > result.tokenMetrics.after);
   assert.equal(result.tokenMetrics.saved, result.tokenMetrics.before - result.tokenMetrics.after);
   assert.ok(result.tokenMetrics.reductionPercent > 0);
+});
+
+test('patch retrieval returns relevant historical meta context without full patch database', () => {
+  const patches = retrievePatchHistory('Is old foraging advice still good after Galatea?', ['foraging', 'hotf']);
+  assert.ok(patches.length > 0);
+  assert.ok(patches.some((patch) => patch.extractedKnowledge.some((change) => change.topic === 'foraging' || change.topic === 'hotf')));
 });

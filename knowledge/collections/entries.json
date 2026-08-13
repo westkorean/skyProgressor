@@ -1,0 +1,16 @@
+[
+  {
+    "id": "collections.progression-unlocks",
+    "category": "collections",
+    "title": "Collection Unlocks",
+    "summary": "Collections unlock recipes, minion progress, and account utility, but not every nearby collection tier is equally valuable.",
+    "recommendation": "Prefer collection work that unlocks a recipe, minion tier, or item directly relevant to the player's current goal.",
+    "requirements": [],
+    "relatedSystems": ["farming", "mining", "fishing", "combat"],
+    "tags": ["collections", "recipes", "minions"],
+    "sources": [{ "title": "Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Main_Page" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

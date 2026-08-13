@@ -1,0 +1,70 @@
+[
+  {
+    "id": "patch.2026-05-11-may-11-skyblock-patch-notes",
+    "date": "2026-05-11",
+    "patchVersion": "Minor Patch",
+    "title": "[May 11] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/may-11-skyblock-patch-notes.6096789/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [May 11] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [May 11] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-05-11.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-05-26-lotus-atoll",
+    "date": "2026-05-26",
+    "patchVersion": "0.25",
+    "title": "Lotus Atoll",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/forums/skyblock-patch-notes.158/"
+    },
+    "majorAdditions": [
+      "Lotus Atoll fishing content"
+    ],
+    "majorRemovals": [],
+    "balanceChanges": [
+      "Fishing progression gained new island-specific context."
+    ],
+    "progressionImpact": [
+      "Fishing recommendations should consider Lotus Atoll progression rather than only older fishing islands and trophy goals."
+    ],
+    "metaImpact": [
+      "Pre-Lotus fishing guidance may be stale for players with access to the new island."
+    ],
+    "itemChanges": [],
+    "newSystems": [
+      "Lotus Atoll"
+    ],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "fishing",
+        "change": "Current fishing progression should include Lotus Atoll access and objectives.",
+        "previousMeta": "Generic fishing and trophy fish progression.",
+        "currentMeta": "Lotus Atoll-aware fishing progression.",
+        "reason": "Patch 0.25 introduced Lotus Atoll.",
+        "confidence": "Medium"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "fishing.lotus-atoll-progression",
+    "category": "fishing",
+    "title": "Fishing Island Progression",
+    "summary": "Fishing recommendations should consider dedicated island progression, trophy objectives, gear requirements, and whether the profile has unlocked the relevant content.",
+    "recommendation": "Prioritize accessible fishing milestones and gear upgrades before suggesting expensive late-game setups.",
+    "requirements": [],
+    "relatedSystems": ["economy", "collections"],
+    "tags": ["fishing", "progression", "gear"],
+    "sources": [{ "title": "Hypixel SkyBlock Versions", "url": "https://wiki.hypixel.net/SkyBlock_Versions" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "Medium"
+  }
+]

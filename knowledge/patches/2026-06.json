@@ -1,0 +1,95 @@
+[
+  {
+    "id": "patch.2026-06-01-june-1-skyblock-patch-notes",
+    "date": "2026-06-01",
+    "patchVersion": "Minor Patch",
+    "title": "[June 1] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/june-1-skyblock-patch-notes.6104669/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [June 1] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [June 1] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-06-01.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-06-19-june-19-skyblock-patch-notes",
+    "date": "2026-06-19",
+    "patchVersion": "Minor Patch",
+    "title": "[June 19] SkyBlock Patch Notes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/june-19-skyblock-patch-notes.6112344/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [],
+    "progressionImpact": [
+      "combat recommendations may need review against [June 19] SkyBlock Patch Notes."
+    ],
+    "metaImpact": [],
+    "itemChanges": [],
+    "newSystems": [],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [June 19] SkyBlock Patch Notes.",
+        "reason": "Detected from official patch index on 2026-06-19.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  },
+  {
+    "id": "patch.2026-06-24-june-24-skyblock-resource-pack-loadouts-and-healing-revamp-changes",
+    "date": "2026-06-24",
+    "patchVersion": "Minor Patch",
+    "title": "[June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes",
+    "source": {
+      "title": "Hypixel SkyBlock Patch Notes Forum",
+      "url": "https://hypixel.net/threads/june-24-skyblock-resource-pack-loadouts-and-healing-revamp-changes.6114518/"
+    },
+    "majorAdditions": [],
+    "majorRemovals": [],
+    "balanceChanges": [
+      "[June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes"
+    ],
+    "progressionImpact": [
+      "combat recommendations may need review against [June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes."
+    ],
+    "metaImpact": [
+      "[June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes may affect current meta recommendations."
+    ],
+    "itemChanges": [],
+    "newSystems": [
+      "[June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes"
+    ],
+    "removedMechanics": [],
+    "extractedKnowledge": [
+      {
+        "topic": "combat",
+        "change": "Review combat recommendations against [June 24] SkyBlock Resource Pack, Loadouts, and Healing Revamp Changes.",
+        "reason": "Detected from official patch index on 2026-06-24.",
+        "confidence": "High"
+      }
+    ],
+    "manualReviewRequired": true
+  }
+]

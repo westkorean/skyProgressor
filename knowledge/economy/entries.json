@@ -1,0 +1,16 @@
+[
+  {
+    "id": "economy.price-source-safety",
+    "category": "economy",
+    "title": "Price Source Safety",
+    "summary": "Economy recommendations should distinguish Bazaar, lowest BIN, craft cost, NPC sell value, and unavailable prices.",
+    "recommendation": "Do not recommend purchases or flips unless the price source is explicit and recent enough for the decision.",
+    "requirements": ["Current market snapshot"],
+    "relatedSystems": ["accessories", "museum", "pets"],
+    "tags": ["economy", "prices", "networth"],
+    "sources": [{ "title": "Hypixel SkyBlock Wiki", "url": "https://wiki.hypixel.net/Main_Page" }],
+    "patchVersion": "current",
+    "lastVerified": "2026-08-13",
+    "confidence": "High"
+  }
+]
