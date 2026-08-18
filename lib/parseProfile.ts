@@ -93,13 +93,19 @@ export function parseSkills(member: unknown): SkillProgress[] {
   const collections = record(memberRecord?.collection) ?? {};
   const collectionForagingUpgrades = Number(number(collections.FIG_LOG) >= 150_000) + Number(number(collections.MANGROVE_LOG) >= 150_000);
   const foragingCore = record(memberRecord?.foraging_core);
-  const rawForagingCap = number(foragingCore?.foraging_level_cap ?? foragingCore?.level_cap);
+  const rawForagingCap = number(
+    foragingCore?.foraging_level_cap
+      ?? foragingCore?.level_cap
+      ?? experience.SKILL_FORAGING_EXTRA_LEVEL_CAP,
+  );
   const foragingUpgrades = rawForagingCap > 0
     ? Math.min(4, rawForagingCap >= 50 ? rawForagingCap - 50 : rawForagingCap)
     : collectionForagingUpgrades;
-  const skillKeys = Object.keys(experience).filter((key) =>
-    key.startsWith('SKILL_')
-  );
+  const skillKeys = Object.keys(experience).filter((key) => {
+    if (!key.startsWith('SKILL_')) return false;
+    const skillName = key.slice('SKILL_'.length).toLowerCase();
+    return Object.hasOwn(SKILL_MAX_LEVELS, skillName);
+  });
 
   return skillKeys.map((key) => {
     const skillName = key.replace('SKILL_', '').toLowerCase();

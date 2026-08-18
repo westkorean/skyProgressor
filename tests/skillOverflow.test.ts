@@ -45,3 +45,18 @@ test('recognizes current foraging collection cap upgrades', () => {
   assert.equal(foraging.absoluteMaxLevel, 54);
   assert.equal(foraging.overflowLevel, 53);
 });
+
+test('uses the foraging cap metadata without displaying it as a skill', () => {
+  const parsed = parseSkills({
+    player_data: {
+      experience: {
+        SKILL_FORAGING: SKILL_XP_TABLE[53],
+        SKILL_FORAGING_EXTRA_LEVEL_CAP: 2,
+      },
+    },
+  });
+
+  assert.deepEqual(parsed.map((entry) => entry.skill), ['foraging']);
+  assert.equal(parsed[0]?.maxLevel, 52);
+  assert.equal(parsed[0]?.level, 52);
+});
