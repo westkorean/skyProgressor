@@ -27,7 +27,7 @@ export interface ProgressPlanner {
   completedGoals: number;
   overallProgressPercent: number;
   cheapestProgressionGoal: { id: string; title: string; estimatedCostCoins: number } | null;
-  generatedBy: 'deterministic-progress-planner';
+  generatedBy: 'deterministic-progress-planner' | 'ai-progress-planner';
 }
 
 export interface ProgressPlannerInput {
@@ -43,6 +43,7 @@ type GoalSeed = Omit<ProgressPlannerGoal, 'status' | 'prerequisites'>;
 
 const clamp = (value: number) => Math.max(0, Math.min(100, Math.round(Number.isFinite(value) ? value : 0)));
 const DIVAN_ARMOR = ['DIVAN_HELMET', 'DIVAN_CHESTPLATE', 'DIVAN_LEGGINGS', 'DIVAN_BOOTS'] as const;
+const PLANNER_CATEGORIES: readonly DeterministicRecommendationCategory[] = ['accessories', 'pets', 'hotm', 'hotf', 'collections', 'dungeons', 'garden', 'fishing', 'crimson', 'rift', 'skills', 'slayers'];
 
 function coinEstimate(ids: readonly string[], marketPrices: MarketPrices, bazaarPrices: BazaarPrices): { label: string; coins: number | null } {
   if (ids.length === 0) return { label: 'Complete', coins: 0 };
@@ -109,4 +110,56 @@ export function createProgressPlanner(input: ProgressPlannerInput): ProgressPlan
   }));
   const cheapest = goals.filter((goal) => goal.status !== 'completed' && goal.status !== 'locked' && goal.estimatedCostCoins !== null).sort((a, b) => (a.estimatedCostCoins ?? 0) - (b.estimatedCostCoins ?? 0))[0];
   return { goals, currentGoalId: current?.id ?? null, completedGoals: completed.size, overallProgressPercent: goals.length ? clamp(goals.reduce((sum, goal) => sum + goal.progressPercent, 0) / goals.length) : 100, cheapestProgressionGoal: cheapest ? { id: cheapest.id, title: cheapest.title, estimatedCostCoins: cheapest.estimatedCostCoins ?? 0 } : null, generatedBy: 'deterministic-progress-planner' };
+}
+
+export interface CuratedGoalInput {
+  category: DeterministicRecommendationCategory;
+  title: string;
+  reason: string;
+  estimatedTime: string;
+  estimatedCost: string;
+  expectedReward: string;
+  progressPercent: number;
+  prerequisiteGoalNumbers: number[];
+}
+
+/** Converts untrusted model output into a safe, dependency-ordered planner. */
+export function createCuratedProgressPlanner(value: unknown): ProgressPlanner {
+  if (!Array.isArray(value)) throw new Error('The advisor did not return a goal list.');
+  const rawGoals = value.slice(0, 8);
+  if (rawGoals.length < 3) throw new Error('The advisor returned too few usable goals.');
+  const clean = (text: unknown, fallback: string) => typeof text === 'string' && text.trim() ? text.trim().slice(0, 240) : fallback;
+  const goals: ProgressPlannerGoal[] = rawGoals.map((raw, index) => {
+    const goal = raw !== null && typeof raw === 'object' ? raw as Partial<CuratedGoalInput> : {};
+    const category = typeof goal.category === 'string' && PLANNER_CATEGORIES.includes(goal.category as DeterministicRecommendationCategory) ? goal.category as DeterministicRecommendationCategory : 'skills';
+    const prerequisiteIndexes = Array.isArray(goal.prerequisiteGoalNumbers)
+      ? [...new Set(goal.prerequisiteGoalNumbers.filter((number): number is number => Number.isInteger(number) && number >= 1 && number <= index))]
+      : [];
+    const progressPercent = clamp(Number(goal.progressPercent));
+    return {
+      id: `ai-planner-goal-${index + 1}`,
+      category,
+      title: clean(goal.title, `Progress goal ${index + 1}`),
+      reason: clean(goal.reason, 'Recommended from the loaded profile and stated priorities.'),
+      estimatedTime: clean(goal.estimatedTime, 'Time varies'),
+      estimatedCost: clean(goal.estimatedCost, 'Cost varies'),
+      estimatedCostCoins: null,
+      prerequisiteIds: prerequisiteIndexes.map((number) => `ai-planner-goal-${number}`),
+      prerequisites: prerequisiteIndexes.map((number) => clean((rawGoals[number - 1] as Partial<CuratedGoalInput> | undefined)?.title, `Goal ${number}`)),
+      expectedReward: clean(goal.expectedReward, 'Improved profile progression.'),
+      progressPercent,
+      status: 'upcoming',
+    };
+  });
+  const completed = new Set(goals.filter((goal) => goal.progressPercent >= 100).map((goal) => goal.id));
+  const current = goals.find((goal) => goal.progressPercent < 100 && goal.prerequisiteIds.every((id) => completed.has(id))) ?? null;
+  for (const goal of goals) goal.status = goal.progressPercent >= 100 ? 'completed' : goal.id === current?.id ? 'current' : goal.prerequisiteIds.some((id) => !completed.has(id)) ? 'locked' : 'upcoming';
+  return {
+    goals,
+    currentGoalId: current?.id ?? null,
+    completedGoals: completed.size,
+    overallProgressPercent: clamp(goals.reduce((sum, goal) => sum + goal.progressPercent, 0) / goals.length),
+    cheapestProgressionGoal: null,
+    generatedBy: 'ai-progress-planner',
+  };
 }

@@ -708,7 +708,7 @@ export default function Home() {
 
         {result && <ProgressionScoreCard progress={result.progressionScore} />}
         {result && <SkyProgressorAchievements key={`achievements:${result.profileScopeKey}`} summary={result.achievements} />}
-        {result && <ProgressPlanner key={`planner:${result.profileScopeKey}`} planner={result.planner} />}
+        {result && <ProgressPlanner key={`planner:${result.profileScopeKey}`} planner={result.planner} profileKey={result.profileScopeKey} playerData={advisorPlayerData} />}
         {result && <ProgressionRoadmap key={`roadmap:${result.profileScopeKey}`} roadmap={result.roadmap} />}
         {result && <ProfileComparisonCard candidates={comparisonCandidates} onLookup={lookupComparisonProfile} />}
 

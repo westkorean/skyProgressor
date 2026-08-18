@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { createProgressPlanner } from '../lib/progressPlanner.ts';
+import { createCuratedProgressPlanner, createProgressPlanner } from '../lib/progressPlanner.ts';
 import { parseHOTM } from '../lib/parseHOTM.ts';
 
 test('planner creates the deterministic mining dependency sequence with profile-derived progress and cost', () => {
@@ -23,4 +23,18 @@ test('planner marks owned Divan pieces and never mutates caller-owned arrays', (
   const planner = createProgressPlanner({ hotm, magicalPower: 500, ownedItemIds: owned, marketPrices: {}, bazaarPrices: {}, recommendations: [] });
   assert.deepEqual(owned, snapshot);
   assert.equal(planner.goals.find((goal) => goal.id === 'planner-divan-armor')?.progressPercent, 50);
+});
+
+test('AI planner output is bounded, sanitized, and dependency ordered', () => {
+  const planner = createCuratedProgressPlanner([
+    { category: 'skills', title: 'Raise Combat', reason: 'Profile evidence', estimatedTime: 'Two sessions', estimatedCost: 'No fixed cost', expectedReward: 'More damage', progressPercent: 40, prerequisiteGoalNumbers: [] },
+    { category: 'dungeons', title: 'Prepare gear', reason: 'Build a setup', estimatedTime: 'Several sessions', estimatedCost: 'Market varies', expectedReward: 'Consistent clears', progressPercent: 0, prerequisiteGoalNumbers: [1, 7] },
+    { category: 'dungeons', title: 'Run floors', reason: 'Apply the setup', estimatedTime: 'Ongoing', estimatedCost: 'No fixed cost', expectedReward: 'Dungeon progress', progressPercent: 0, prerequisiteGoalNumbers: [2] },
+  ]);
+
+  assert.equal(planner.generatedBy, 'ai-progress-planner');
+  assert.equal(planner.goals.length, 3);
+  assert.deepEqual(planner.goals[1]?.prerequisiteIds, ['ai-planner-goal-1']);
+  assert.equal(planner.goals[0]?.status, 'current');
+  assert.equal(planner.goals[1]?.status, 'locked');
 });
